@@ -1,0 +1,15 @@
+C:\Users\Filip\Desktop\Projekat\Server.ApplicationLogic\bin\Debug\Server.ApplicationLogic.dll
+C:\Users\Filip\Desktop\Projekat\Server.ApplicationLogic\bin\Debug\Server.ApplicationLogic.pdb
+C:\Users\Filip\Desktop\Projekat\Server.ApplicationLogic\bin\Debug\Common.Domain.dll
+C:\Users\Filip\Desktop\Projekat\Server.ApplicationLogic\bin\Debug\Server.SystemOperations.dll
+C:\Users\Filip\Desktop\Projekat\Server.ApplicationLogic\bin\Debug\Server.Repository.dll
+C:\Users\Filip\Desktop\Projekat\Server.ApplicationLogic\bin\Debug\Server.DatabaseBroker.dll
+C:\Users\Filip\Desktop\Projekat\Server.ApplicationLogic\bin\Debug\Common.Domain.pdb
+C:\Users\Filip\Desktop\Projekat\Server.ApplicationLogic\bin\Debug\Server.SystemOperations.pdb
+C:\Users\Filip\Desktop\Projekat\Server.ApplicationLogic\bin\Debug\Server.Repository.pdb
+C:\Users\Filip\Desktop\Projekat\Server.ApplicationLogic\bin\Debug\Server.DatabaseBroker.pdb
+C:\Users\Filip\Desktop\Projekat\Server.ApplicationLogic\obj\Debug\Server.ApplicationLogic.csproj.AssemblyReference.cache
+C:\Users\Filip\Desktop\Projekat\Server.ApplicationLogic\obj\Debug\Server.ApplicationLogic.csproj.CoreCompileInputs.cache
+C:\Users\Filip\Desktop\Projekat\Server.ApplicationLogic\obj\Debug\Server.ApplicationLogic.csproj.CopyComplete
+C:\Users\Filip\Desktop\Projekat\Server.ApplicationLogic\obj\Debug\Server.ApplicationLogic.dll
+C:\Users\Filip\Desktop\Projekat\Server.ApplicationLogic\obj\Debug\Server.ApplicationLogic.pdb

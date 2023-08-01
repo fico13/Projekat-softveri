@@ -1,0 +1,11 @@
+C:\Users\Filip\Desktop\Projekat\Server.Repository\bin\Debug\Server.Repository.dll
+C:\Users\Filip\Desktop\Projekat\Server.Repository\bin\Debug\Server.Repository.pdb
+C:\Users\Filip\Desktop\Projekat\Server.Repository\bin\Debug\Common.Domain.dll
+C:\Users\Filip\Desktop\Projekat\Server.Repository\bin\Debug\Server.DatabaseBroker.dll
+C:\Users\Filip\Desktop\Projekat\Server.Repository\bin\Debug\Common.Domain.pdb
+C:\Users\Filip\Desktop\Projekat\Server.Repository\bin\Debug\Server.DatabaseBroker.pdb
+C:\Users\Filip\Desktop\Projekat\Server.Repository\obj\Debug\Server.Repository.csproj.AssemblyReference.cache
+C:\Users\Filip\Desktop\Projekat\Server.Repository\obj\Debug\Server.Repository.csproj.CoreCompileInputs.cache
+C:\Users\Filip\Desktop\Projekat\Server.Repository\obj\Debug\Server.Repository.csproj.CopyComplete
+C:\Users\Filip\Desktop\Projekat\Server.Repository\obj\Debug\Server.Repository.dll
+C:\Users\Filip\Desktop\Projekat\Server.Repository\obj\Debug\Server.Repository.pdb

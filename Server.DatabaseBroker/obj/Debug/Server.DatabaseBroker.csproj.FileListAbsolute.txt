@@ -1,0 +1,6 @@
+C:\Users\Filip\Desktop\Projekat\Server.DatabaseBroker\bin\Debug\Server.DatabaseBroker.dll
+C:\Users\Filip\Desktop\Projekat\Server.DatabaseBroker\bin\Debug\Server.DatabaseBroker.pdb
+C:\Users\Filip\Desktop\Projekat\Server.DatabaseBroker\obj\Debug\Server.DatabaseBroker.csproj.AssemblyReference.cache
+C:\Users\Filip\Desktop\Projekat\Server.DatabaseBroker\obj\Debug\Server.DatabaseBroker.csproj.CoreCompileInputs.cache
+C:\Users\Filip\Desktop\Projekat\Server.DatabaseBroker\obj\Debug\Server.DatabaseBroker.dll
+C:\Users\Filip\Desktop\Projekat\Server.DatabaseBroker\obj\Debug\Server.DatabaseBroker.pdb

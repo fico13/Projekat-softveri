@@ -1,0 +1,6 @@
+C:\Users\Filip\Desktop\Projekat\Common.Domain\bin\Debug\Common.Domain.dll
+C:\Users\Filip\Desktop\Projekat\Common.Domain\bin\Debug\Common.Domain.pdb
+C:\Users\Filip\Desktop\Projekat\Common.Domain\obj\Debug\Common.Domain.csproj.AssemblyReference.cache
+C:\Users\Filip\Desktop\Projekat\Common.Domain\obj\Debug\Common.Domain.csproj.CoreCompileInputs.cache
+C:\Users\Filip\Desktop\Projekat\Common.Domain\obj\Debug\Common.Domain.dll
+C:\Users\Filip\Desktop\Projekat\Common.Domain\obj\Debug\Common.Domain.pdb
