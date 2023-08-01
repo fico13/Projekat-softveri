@@ -1,4 +1,6 @@
 ﻿
+using System.Windows.Forms;
+
 namespace Client.Forms.UserControls.Dvorana
 {
     partial class UCDodajDvoranu
@@ -105,6 +107,7 @@ namespace Client.Forms.UserControls.Dvorana
             this.btnDodajDvoranu.TabIndex = 6;
             this.btnDodajDvoranu.Text = "Dodaj dvoranu";
             this.btnDodajDvoranu.UseVisualStyleBackColor = true;
+            this.btnDodajDvoranu.Click += new System.EventHandler(this.btnDodajDvoranu_Click);
             // 
             // UCDodajDvoranu
             // 
@@ -135,5 +138,10 @@ namespace Client.Forms.UserControls.Dvorana
         private System.Windows.Forms.TextBox txtDrzava;
         private System.Windows.Forms.TextBox txtKapacitet;
         private System.Windows.Forms.Button btnDodajDvoranu;
+
+        public TextBox TxtImeDvorane { get => txtImeDvorane; set => txtImeDvorane = value; }
+        public TextBox TxtDrzava { get => txtDrzava; set => txtDrzava = value; }
+        public TextBox TxtKapacitet { get => txtKapacitet; set => txtKapacitet = value; }
+        public Button BtnDodajDvoranu { get => btnDodajDvoranu; set => btnDodajDvoranu = value; }
     }
 }

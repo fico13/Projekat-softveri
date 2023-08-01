@@ -8,6 +8,7 @@ namespace Common.Communication
 {
     public enum Operation
     {
-        UlogujAdministratora
+        UlogujAdministratora,
+        SacuvajDvoranu
     }
 }

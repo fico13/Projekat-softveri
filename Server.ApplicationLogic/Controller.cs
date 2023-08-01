@@ -1,6 +1,7 @@
 ﻿using Common.Domain;
 using Server.SystemOperations;
 using Server.SystemOperations.AdministratorSO;
+using Server.SystemOperations.DvoranaSO;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -32,6 +33,12 @@ namespace Server.ApplicationLogic
             SystemOperationBase so = new UlogujAdministratoraSO(administrator);
             so.ExecuteTemplate();
             return ((UlogujAdministratoraSO)so).Result;
+        }
+
+        public void SacuvajDvoranu(Dvorana dvorana)
+        {
+            SystemOperationBase so = new SacuvajDvoranuSO(dvorana);
+            so.ExecuteTemplate();
         }
     }
 }

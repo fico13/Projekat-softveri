@@ -57,7 +57,7 @@ namespace Server.Main
                 case Operation.UlogujAdministratora:
                     response.ResponseObject = Controller.Instance.UlogujAdministratora((Administrator)request.RequestObject);
                     Administrator administrator = (Administrator)response.ResponseObject;
-                    if(response.ResponseObject == null)
+                    if (response.ResponseObject == null)
                     {
                         response.Uspesno = false;
                         response.Poruka = "Administrator ne postoji!";
@@ -74,6 +74,9 @@ namespace Server.Main
                         }
                         administrators.Add(administrator);
                     }
+                    break;
+                case Operation.SacuvajDvoranu:
+                    Controller.Instance.SacuvajDvoranu((Dvorana)request.RequestObject);
                     break;
                 default:
                     break;

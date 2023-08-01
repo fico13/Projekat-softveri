@@ -15,5 +15,6 @@ namespace Server.Repository.DatabaseRepository
         void Commit();
         void Rollback();
         List<T> VratiSve(IDomainObject objekat);
+        void Sacuvaj(T objekat);
     }
 }

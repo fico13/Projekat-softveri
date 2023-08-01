@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Client.Forms.GUIController;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,11 +13,16 @@ namespace Client.Forms.UserControls.Dvorana
 {
     public partial class UCDodajDvoranu : UserControl
     {
+        private DodajDvoranuController dodajDvoranuController;
         public UCDodajDvoranu()
         {
             InitializeComponent();
+            dodajDvoranuController = new DodajDvoranuController();
         }
 
-       
+        private void btnDodajDvoranu_Click(object sender, EventArgs e)
+        {
+            dodajDvoranuController.DodajDvoranu(this);
+        }
     }
 }

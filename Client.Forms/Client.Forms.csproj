@@ -58,6 +58,7 @@
     <Compile Include="FrmMain.Designer.cs">
       <DependentUpon>FrmMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUIController\DodajDvoranuController.cs" />
     <Compile Include="GUIController\LoginController.cs" />
     <Compile Include="GUIHelper\UserControlsHelper.cs" />
     <Compile Include="Program.cs" />

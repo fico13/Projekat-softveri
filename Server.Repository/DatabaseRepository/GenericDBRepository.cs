@@ -37,6 +37,16 @@ namespace Server.Repository.DatabaseRepository
             broker.Rollback();
         }
 
+        public void Sacuvaj(IDomainObject objekat)
+        {
+            SqlCommand command = broker.CreateSqlCommand();
+            command.CommandText = $"insert into {objekat.TableName} values ({objekat.InsertValues})";
+            if (command.ExecuteNonQuery() != 1)
+            {
+                throw new Exception("Greska u bazi!");
+            }
+        }
+
         public List<IDomainObject> VratiSve(IDomainObject objekat)
         {
             List<IDomainObject> result = new List<IDomainObject>();

@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Administrator.cs" />
+    <Compile Include="Dvorana.cs" />
     <Compile Include="IDomainObject.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

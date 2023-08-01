@@ -22,42 +22,36 @@ namespace Client.Forms
 
         private void dodajDvoranuToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            pnlMain.Controls.Clear();
-            UCDodajDvoranu uCDodajDvoranu = new UCDodajDvoranu();
-            uCDodajDvoranu.Dock = DockStyle.Fill;
-            pnlMain.Controls.Add(uCDodajDvoranu);
+            ChangePanel(new UCDodajDvoranu());
         }
 
         private void dodajTimToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            pnlMain.Controls.Clear();
-            UCDodajTim uCDodajTim = new UCDodajTim();
-            uCDodajTim.Dock = DockStyle.Fill;
-            pnlMain.Controls.Add(uCDodajTim);
+            ChangePanel(new UCDodajTim());
         }
 
         private void nadjiTimToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            pnlMain.Controls.Clear();
-            UCNadjiTim uCNadjiTim = new UCNadjiTim();
-            uCNadjiTim.Dock = DockStyle.Fill;
-            pnlMain.Controls.Add(uCNadjiTim);
+            ChangePanel(new UCNadjiTim());
         }
 
         private void dodajIgračaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            pnlMain.Controls.Clear();
-            UCDodajIgraca uCDodajIgraca = new UCDodajIgraca();
-            uCDodajIgraca.Dock = DockStyle.Fill;
-            pnlMain.Controls.Add(uCDodajIgraca);
+            ChangePanel(new UCDodajIgraca());
         }
 
-        private void nađiIgračaToolStripMenuItem_Click(object sender, EventArgs e)
+        private void izmeniIgračaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ChangePanel(new UCIzmeniIgraca());
+        }
+
+        private void ChangePanel(UserControl userControl)
         {
             pnlMain.Controls.Clear();
-            UCIzmeniIgraca uCIzmeniIgraca = new UCIzmeniIgraca();
-            uCIzmeniIgraca.Dock = DockStyle.Fill;
-            pnlMain.Controls.Add(uCIzmeniIgraca);
+            userControl.Dock = DockStyle.Fill;
+            pnlMain.Controls.Add(userControl);
         }
+
+        
     }
 }

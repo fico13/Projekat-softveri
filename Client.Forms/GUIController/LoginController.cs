@@ -16,7 +16,7 @@ namespace Client.Forms.GUIController
     {
         internal void Login(FrmLogin frmLogin)
         {
-            if(UserControlsHelper.EmptyText(frmLogin.TxtUsername) || UserControlsHelper.EmptyText(frmLogin.TxtPassword))
+            if((UserControlsHelper.EmptyText(frmLogin.TxtUsername) && UserControlsHelper.EmptyText(frmLogin.TxtPassword)) || UserControlsHelper.EmptyText(frmLogin.TxtUsername) || UserControlsHelper.EmptyText(frmLogin.TxtPassword))
             {
                 MessageBox.Show("Niste uneli sve podatke! Pokušajte ponovo!");
                 return;

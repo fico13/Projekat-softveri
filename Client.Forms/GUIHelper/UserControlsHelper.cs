@@ -23,5 +23,19 @@ namespace Client.Forms.GUIHelper
                 return false;
             }
         }
+
+        internal static bool IntegerValidation(TextBox tekst)
+        {
+            if (!tekst.Text.All(Char.IsDigit))
+            {
+                tekst.BackColor = Color.LightCoral;
+                return true;
+            }
+            else
+            {
+                tekst.BackColor = Color.White;
+                return false;
+            }
+        }
     }
 }

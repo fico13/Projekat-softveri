@@ -45,6 +45,12 @@ namespace Client.Forms.ServerCommunication
             return GetResult<Output>();
         }
 
+        public void SendRequestNoResult(Operation operacija, object objekat = null)
+        {
+            SendRequest(operacija, objekat);
+            GetResult();
+        }
+
 
         private void SendRequest(Operation operacija, object objekat)
         {
@@ -75,6 +81,15 @@ namespace Client.Forms.ServerCommunication
             {
                 MessageBox.Show(response.Poruka);
                 return null;
+            }
+        }
+
+        private void GetResult()
+        {
+            Response response = helper.Receive<Response>();
+            if (!response.Uspesno)
+            {
+                MessageBox.Show(response.Poruka);
             }
         }
     }
