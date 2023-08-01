@@ -9,6 +9,9 @@ namespace Common.Communication
     public enum Operation
     {
         UlogujAdministratora,
-        SacuvajDvoranu
+        SacuvajDvoranu,
+        VratiSveDvorane,
+        SacuvajTim,
+        NadjiTimove
     }
 }

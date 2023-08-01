@@ -1,4 +1,6 @@
 ﻿
+using System.Windows.Forms;
+
 namespace Client.Forms.UserControls.Tim
 {
     partial class UCDodajTim
@@ -108,6 +110,7 @@ namespace Client.Forms.UserControls.Tim
             this.btnDodajTim.TabIndex = 6;
             this.btnDodajTim.Text = "Dodaj tim";
             this.btnDodajTim.UseVisualStyleBackColor = true;
+            this.btnDodajTim.Click += new System.EventHandler(this.btnDodajTim_Click);
             // 
             // pictureBox1
             // 
@@ -150,5 +153,10 @@ namespace Client.Forms.UserControls.Tim
         private System.Windows.Forms.ComboBox cbDvorane;
         private System.Windows.Forms.Button btnDodajTim;
         private System.Windows.Forms.PictureBox pictureBox1;
+
+        public TextBox TxtIme { get => txtIme; set => txtIme = value; }
+        public TextBox TxtDrzava { get => txtDrzava; set => txtDrzava = value; }
+        public ComboBox CbDvorane { get => cbDvorane; set => cbDvorane = value; }
+        public Button BtnDodajTim { get => btnDodajTim; set => btnDodajTim = value; }
     }
 }

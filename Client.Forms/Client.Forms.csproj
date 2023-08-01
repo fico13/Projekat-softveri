@@ -59,7 +59,9 @@
       <DependentUpon>FrmMain.cs</DependentUpon>
     </Compile>
     <Compile Include="GUIController\DodajDvoranuController.cs" />
+    <Compile Include="GUIController\DodajTimController.cs" />
     <Compile Include="GUIController\LoginController.cs" />
+    <Compile Include="GUIController\NadjiTimController.cs" />
     <Compile Include="GUIHelper\UserControlsHelper.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

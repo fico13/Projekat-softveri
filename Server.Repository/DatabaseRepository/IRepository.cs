@@ -16,5 +16,6 @@ namespace Server.Repository.DatabaseRepository
         void Rollback();
         List<T> VratiSve(IDomainObject objekat);
         void Sacuvaj(T objekat);
+        List<T> NadjiOdredjeni(IDomainObject objekat);
     }
 }

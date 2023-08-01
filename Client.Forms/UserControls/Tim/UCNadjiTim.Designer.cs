@@ -1,4 +1,6 @@
 ﻿
+using System.Windows.Forms;
+
 namespace Client.Forms.UserControls.Tim
 {
     partial class UCNadjiTim
@@ -65,6 +67,7 @@ namespace Client.Forms.UserControls.Tim
             this.btnPretrazi.TabIndex = 11;
             this.btnPretrazi.Text = "Pretrazi";
             this.btnPretrazi.UseVisualStyleBackColor = true;
+            this.btnPretrazi.Click += new System.EventHandler(this.btnPretrazi_Click);
             // 
             // txtDrzava
             // 
@@ -144,5 +147,10 @@ namespace Client.Forms.UserControls.Tim
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox1;
+
+        public DataGridView DgvTimovi { get => dgvTimovi; set => dgvTimovi = value; }
+        public Button BtnPretrazi { get => btnPretrazi; set => btnPretrazi = value; }
+        public TextBox TxtDrzava { get => txtDrzava; set => txtDrzava = value; }
+        public TextBox TxtNaziv { get => txtNaziv; set => txtNaziv = value; }
     }
 }

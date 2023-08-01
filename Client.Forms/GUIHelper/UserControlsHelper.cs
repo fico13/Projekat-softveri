@@ -37,5 +37,19 @@ namespace Client.Forms.GUIHelper
                 return false;
             }
         }
+
+        internal static bool ComboBoxValidation(ComboBox cmbox)
+        {
+            if (cmbox.SelectedIndex == -1)
+            {
+                cmbox.BackColor = Color.LightCoral;
+                return true;
+            }
+            else
+            {
+                cmbox.BackColor = Color.White;
+                return false;
+            }
+        }
     }
 }

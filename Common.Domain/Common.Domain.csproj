@@ -45,6 +45,7 @@
     <Compile Include="Dvorana.cs" />
     <Compile Include="IDomainObject.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Tim.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

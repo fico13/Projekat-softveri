@@ -78,6 +78,25 @@ namespace Server.Main
                 case Operation.SacuvajDvoranu:
                     Controller.Instance.SacuvajDvoranu((Dvorana)request.RequestObject);
                     break;
+                case Operation.VratiSveDvorane:
+                    response.ResponseObject = Controller.Instance.VratiSveDvorane();
+                    if (response.ResponseObject == null)
+                    {
+                        response.Uspesno = false;
+                        response.Poruka = "Sistem nije uspeo da pronadje dvorane!";
+                    }
+                    break;
+                case Operation.SacuvajTim:
+                    Controller.Instance.SacuvajTim((Tim)request.RequestObject);
+                    break;
+                case Operation.NadjiTimove:
+                    response.ResponseObject = Controller.Instance.NadjiTimove((Tim)request.RequestObject);
+                    if(response.ResponseObject == null)
+                    {
+                        response.Uspesno = false;
+                        response.Poruka = "Sistem ne moze da nadje timove po zadatom kriterijumu";
+                    }
+                    break;
                 default:
                     break;
             }

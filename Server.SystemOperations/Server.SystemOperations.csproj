@@ -43,8 +43,11 @@
   <ItemGroup>
     <Compile Include="AdministratorSO\UlogujAdministratoraSO.cs" />
     <Compile Include="DvoranaSO\SacuvajDvoranuSO.cs" />
+    <Compile Include="DvoranaSO\VratiListuDvoranaSO.cs" />
     <Compile Include="SystemOperationBase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TimSO\NadjiTimoveSO.cs" />
+    <Compile Include="TimSO\SacuvajTimSO.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Common.Domain\Common.Domain.csproj">

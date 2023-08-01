@@ -11,6 +11,11 @@ namespace Common.Domain
     {
         string TableName { get; }
         string InsertValues { get; }
+        string WhereCondition { get; }
+        string Alias { get; }
+        string JoinTable { get; }
+        string JoinCondition { get; }
+        string FindCondition { get; }
 
         IDomainObject ReadObjectRow(SqlDataReader reader);
     }

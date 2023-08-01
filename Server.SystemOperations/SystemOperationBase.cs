@@ -2,6 +2,7 @@
 using Server.Repository.DatabaseRepository;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -21,10 +22,10 @@ namespace Server.SystemOperations
                 Execute();
                 repository.Commit();
             }
-            catch(Exception)
+            catch(Exception ex)
             {
                 repository.Rollback();
-                throw;
+                Debug.WriteLine(ex.Message);
             }
             finally
             {

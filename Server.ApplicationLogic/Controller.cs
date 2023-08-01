@@ -2,6 +2,7 @@
 using Server.SystemOperations;
 using Server.SystemOperations.AdministratorSO;
 using Server.SystemOperations.DvoranaSO;
+using Server.SystemOperations.TimSO;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -39,6 +40,26 @@ namespace Server.ApplicationLogic
         {
             SystemOperationBase so = new SacuvajDvoranuSO(dvorana);
             so.ExecuteTemplate();
+        }
+
+        public object VratiSveDvorane()
+        {
+            SystemOperationBase so = new VratiListuDvoranaSO();
+            so.ExecuteTemplate();
+            return ((VratiListuDvoranaSO)so).Result;
+        }
+
+        public void SacuvajTim(Tim tim)
+        {
+            SystemOperationBase so = new SacuvajTimSO(tim);
+            so.ExecuteTemplate();
+        }
+
+        public object NadjiTimove(Tim tim)
+        {
+            SystemOperationBase so = new NadjiTimoveSO(tim);
+            so.ExecuteTemplate();
+            return ((NadjiTimoveSO)so).Result;
         }
     }
 }
