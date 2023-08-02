@@ -31,13 +31,13 @@ namespace Client.Forms.GUIController
         {
             if(UserControlsHelper.EmptyText(uCDodajTim.TxtIme) || UserControlsHelper.EmptyText(uCDodajTim.TxtDrzava))
             {
-                MessageBox.Show("Niste uneli sve potrebne podatke! Pokusajte ponovo");
+                MessageBox.Show("Sistem ne moze da zapamti tim! Niste uneli sve potrebne podatke! Pokusajte ponovo");
                 return;
             }
 
             if(UserControlsHelper.ComboBoxValidation(uCDodajTim.CbDvorane))
             {
-                MessageBox.Show("Niste lepo odabrali dvoranu u combo box-u! Pokusajte ponovo");
+                MessageBox.Show("Sistem ne moze da zapamti tim! Niste lepo odabrali dvoranu u combo box-u! Pokusajte ponovo!");
                 return;
             }
             try
@@ -50,11 +50,18 @@ namespace Client.Forms.GUIController
                 };
                 Communication.Instance.SendRequestNoResult(Operation.SacuvajTim, tim);
                 MessageBox.Show("Sistem je zapamtio tim.");
+                OcistiPodatke();
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Sistem ne moze da zapamti tim " + ex.Message);
             }
+        }
+
+        private void OcistiPodatke()
+        {
+            uCDodajTim.TxtIme.Clear();
+            uCDodajTim.TxtDrzava.Clear();
         }
     }
 }

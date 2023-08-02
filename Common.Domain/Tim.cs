@@ -54,5 +54,10 @@ namespace Common.Domain
             };
             return tim;
         }
+
+        public override string ToString()
+        {
+            return Ime;
+        }
     }
 }

@@ -18,12 +18,12 @@ namespace Client.Forms.GUIController
         {
             if(UserControlsHelper.EmptyText(uCDodajDvoranu.TxtImeDvorane) || UserControlsHelper.EmptyText(uCDodajDvoranu.TxtDrzava) || UserControlsHelper.EmptyText(uCDodajDvoranu.TxtKapacitet))
             {
-                MessageBox.Show("Niste uneli sve potrebne podatke, pokusajte ponovo");
+                MessageBox.Show("Sistem ne moze da zapamti dvoranu! Niste uneli sve potrebne podatke, pokusajte ponovo!");
                 return;
             }
             if (UserControlsHelper.IntegerValidation(uCDodajDvoranu.TxtKapacitet))
             {
-                MessageBox.Show("Kapacitet dvorane mora biti ceo broj! Pokusajte ponovo!");
+                MessageBox.Show("Sistem ne moze da zapamti dvoranu! Kapacitet dvorane mora biti pozitivan broj! Pokusajte ponovo!");
                 return;
             }
             try
@@ -34,18 +34,21 @@ namespace Client.Forms.GUIController
                     Drzava = uCDodajDvoranu.TxtDrzava.Text,
                     Kapacitet = Convert.ToInt32(uCDodajDvoranu.TxtKapacitet.Text)
                 };
-                if(dvorana.Kapacitet <= 0)
-                {
-                    MessageBox.Show("Kapacitet dvorane mora biti veci od 0! Pokusajte ponovo");
-                    return;
-                }
                 Communication.Instance.SendRequestNoResult(Operation.SacuvajDvoranu, dvorana);
                 MessageBox.Show("Sistem je zapamtio dvoranu");
+                OcistiPodatke(uCDodajDvoranu);
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Sistem ne moze da sacuva dvoranu " + ex.Message);
+                MessageBox.Show("Sistem ne moze da zapamti dvoranu " + ex.Message);
             }
+        }
+
+        private void OcistiPodatke(UCDodajDvoranu uCDodajDvoranu)
+        {
+            uCDodajDvoranu.TxtImeDvorane.Clear();
+            uCDodajDvoranu.TxtDrzava.Clear();
+            uCDodajDvoranu.TxtKapacitet.Clear();
         }
     }
 }

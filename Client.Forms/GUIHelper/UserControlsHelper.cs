@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -48,6 +49,22 @@ namespace Client.Forms.GUIHelper
             else
             {
                 cmbox.BackColor = Color.White;
+                return false;
+            }
+        }
+
+        internal static bool DoubleValidation(TextBox tekst)
+        {
+            Regex proveriDouble = new Regex(@"^[0-9]+[.]?[0-9]*$");
+
+            if (!proveriDouble.IsMatch(tekst.Text))
+            {
+                tekst.BackColor = Color.LightCoral;
+                return true;
+            }
+            else
+            {
+                tekst.BackColor = Color.White;
                 return false;
             }
         }

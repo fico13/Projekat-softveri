@@ -80,22 +80,18 @@ namespace Server.Main
                     break;
                 case Operation.VratiSveDvorane:
                     response.ResponseObject = Controller.Instance.VratiSveDvorane();
-                    if (response.ResponseObject == null)
-                    {
-                        response.Uspesno = false;
-                        response.Poruka = "Sistem nije uspeo da pronadje dvorane!";
-                    }
                     break;
                 case Operation.SacuvajTim:
                     Controller.Instance.SacuvajTim((Tim)request.RequestObject);
                     break;
                 case Operation.NadjiTimove:
                     response.ResponseObject = Controller.Instance.NadjiTimove((Tim)request.RequestObject);
-                    if(response.ResponseObject == null)
-                    {
-                        response.Uspesno = false;
-                        response.Poruka = "Sistem ne moze da nadje timove po zadatom kriterijumu";
-                    }
+                    break;
+                case Operation.VratiSveTimove:
+                    response.ResponseObject = Controller.Instance.VratiSveTimove();
+                    break;
+                case Operation.SacuvajIgraca:
+                    Controller.Instance.SacuvajIgraca((Igrac)request.RequestObject);
                     break;
                 default:
                     break;

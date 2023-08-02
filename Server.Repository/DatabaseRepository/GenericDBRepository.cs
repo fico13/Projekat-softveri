@@ -40,7 +40,6 @@ namespace Server.Repository.DatabaseRepository
                     result.Add(rowObject);
                 }
             }
-            
             return result;
         }
 
@@ -80,6 +79,20 @@ namespace Server.Repository.DatabaseRepository
             return result;
         }
 
-        
+        public List<IDomainObject> VratiSveJoin(IDomainObject objekat)
+        {
+            List<IDomainObject> result = new List<IDomainObject>();
+            SqlCommand command = broker.CreateSqlCommand();
+            command.CommandText = $"select * from {objekat.TableName} {objekat.Alias} join {objekat.JoinTable} on {objekat.JoinCondition}";
+            using (SqlDataReader reader = command.ExecuteReader())
+            {
+                while (reader.Read())
+                {
+                    IDomainObject rowObject = objekat.ReadObjectRow(reader);
+                    result.Add(rowObject);
+                }
+            }
+            return result;
+        }
     }
 }

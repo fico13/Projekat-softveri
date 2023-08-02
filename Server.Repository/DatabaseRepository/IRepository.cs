@@ -17,5 +17,7 @@ namespace Server.Repository.DatabaseRepository
         List<T> VratiSve(IDomainObject objekat);
         void Sacuvaj(T objekat);
         List<T> NadjiOdredjeni(IDomainObject objekat);
+
+        List<T> VratiSveJoin(IDomainObject objekat);
     }
 }

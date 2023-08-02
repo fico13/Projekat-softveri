@@ -24,5 +24,10 @@ namespace Client.Forms.UserControls.Tim
         {
             nadjiTimController.NadjiTim();
         }
+
+        private void btnPrikaziTim_Click(object sender, EventArgs e)
+        {
+            nadjiTimController.PrikaziTim();
+        }
     }
 }
