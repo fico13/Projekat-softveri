@@ -38,13 +38,14 @@ namespace Client.Forms
             this.nadjiTimToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.igracToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dodajIgračaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.izmeniIgračaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.utakmicaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dodajUtakmicuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.izmeniUtakmicuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.izmeniUtakmicuToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.pnlMain = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.izmeniIgračaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pretragaIgračaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.pnlMain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -106,7 +107,8 @@ namespace Client.Forms
             // 
             this.igracToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.dodajIgračaToolStripMenuItem,
-            this.izmeniIgračaToolStripMenuItem});
+            this.izmeniIgračaToolStripMenuItem,
+            this.pretragaIgračaToolStripMenuItem});
             this.igracToolStripMenuItem.Name = "igracToolStripMenuItem";
             this.igracToolStripMenuItem.Size = new System.Drawing.Size(56, 24);
             this.igracToolStripMenuItem.Text = "Igrač";
@@ -117,6 +119,13 @@ namespace Client.Forms
             this.dodajIgračaToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.dodajIgračaToolStripMenuItem.Text = "Dodaj igrača";
             this.dodajIgračaToolStripMenuItem.Click += new System.EventHandler(this.dodajIgračaToolStripMenuItem_Click);
+            // 
+            // izmeniIgračaToolStripMenuItem
+            // 
+            this.izmeniIgračaToolStripMenuItem.Name = "izmeniIgračaToolStripMenuItem";
+            this.izmeniIgračaToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.izmeniIgračaToolStripMenuItem.Text = "Izmeni igrača";
+            this.izmeniIgračaToolStripMenuItem.Click += new System.EventHandler(this.izmeniIgračaToolStripMenuItem_Click);
             // 
             // utakmicaToolStripMenuItem
             // 
@@ -168,12 +177,12 @@ namespace Client.Forms
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // izmeniIgračaToolStripMenuItem
+            // pretragaIgračaToolStripMenuItem
             // 
-            this.izmeniIgračaToolStripMenuItem.Name = "izmeniIgračaToolStripMenuItem";
-            this.izmeniIgračaToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.izmeniIgračaToolStripMenuItem.Text = "Izmeni igrača";
-            this.izmeniIgračaToolStripMenuItem.Click += new System.EventHandler(this.izmeniIgračaToolStripMenuItem_Click);
+            this.pretragaIgračaToolStripMenuItem.Name = "pretragaIgračaToolStripMenuItem";
+            this.pretragaIgračaToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.pretragaIgračaToolStripMenuItem.Text = "Pretraga igrača";
+            this.pretragaIgračaToolStripMenuItem.Click += new System.EventHandler(this.pretragaIgračaToolStripMenuItem_Click);
             // 
             // FrmMain
             // 
@@ -214,5 +223,6 @@ namespace Client.Forms
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.ToolStripMenuItem nadjiTimToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem izmeniIgračaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem pretragaIgračaToolStripMenuItem;
     }
 }

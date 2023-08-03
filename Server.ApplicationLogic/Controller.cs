@@ -75,5 +75,12 @@ namespace Server.ApplicationLogic
             SystemOperationBase so = new SacuvajIgracaSO(igrac);
             so.ExecuteTemplate();
         }
+
+        public object NadjiIgrace(Igrac igrac)
+        {
+            SystemOperationBase so = new NadjiIgraceSO(igrac);
+            so.ExecuteTemplate();
+            return ((NadjiIgraceSO)so).Result;
+        }
     }
 }

@@ -44,6 +44,7 @@
     <Compile Include="AdministratorSO\UlogujAdministratoraSO.cs" />
     <Compile Include="DvoranaSO\SacuvajDvoranuSO.cs" />
     <Compile Include="DvoranaSO\VratiListuDvoranaSO.cs" />
+    <Compile Include="IgracSO\NadjiIgraceSO.cs" />
     <Compile Include="IgracSO\SacuvajIgracaSO.cs" />
     <Compile Include="SystemOperationBase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

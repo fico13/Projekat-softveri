@@ -62,6 +62,7 @@
     <Compile Include="GUIController\DodajIgracaController.cs" />
     <Compile Include="GUIController\DodajTimController.cs" />
     <Compile Include="GUIController\LoginController.cs" />
+    <Compile Include="GUIController\NadjiIgracaController.cs" />
     <Compile Include="GUIController\NadjiTimController.cs" />
     <Compile Include="GUIHelper\UserControlsHelper.cs" />
     <Compile Include="Program.cs" />
@@ -85,6 +86,12 @@
     </Compile>
     <Compile Include="UserControls\Igrac\UCIzmeniIgraca.Designer.cs">
       <DependentUpon>UCIzmeniIgraca.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Igrac\UCPretragaIgraca.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\Igrac\UCPretragaIgraca.Designer.cs">
+      <DependentUpon>UCPretragaIgraca.cs</DependentUpon>
     </Compile>
     <Compile Include="UserControls\Tim\UCDodajTim.cs">
       <SubType>UserControl</SubType>
@@ -121,6 +128,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\Igrac\UCIzmeniIgraca.resx">
       <DependentUpon>UCIzmeniIgraca.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\Igrac\UCPretragaIgraca.resx">
+      <DependentUpon>UCPretragaIgraca.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\Tim\UCDodajTim.resx">
       <DependentUpon>UCDodajTim.cs</DependentUpon>

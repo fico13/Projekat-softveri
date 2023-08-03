@@ -45,6 +45,11 @@ namespace Client.Forms
             ChangePanel(new UCIzmeniIgraca());
         }
 
+        private void pretragaIgračaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ChangePanel(new UCPretragaIgraca());
+        }
+
         private void ChangePanel(UserControl userControl)
         {
             pnlMain.Controls.Clear();
@@ -52,6 +57,6 @@ namespace Client.Forms
             pnlMain.Controls.Add(userControl);
         }
 
-        
+       
     }
 }

@@ -19,3 +19,4 @@ C:\Users\Filip\Desktop\Projekat\Client.Forms\bin\Debug\Common.Domain.dll
 C:\Users\Filip\Desktop\Projekat\Client.Forms\bin\Debug\Common.Communication.pdb
 C:\Users\Filip\Desktop\Projekat\Client.Forms\bin\Debug\Common.Domain.pdb
 C:\Users\Filip\Desktop\Projekat\Client.Forms\obj\Debug\Client.Forms.csproj.CopyComplete
+C:\Users\Filip\Desktop\Projekat\Client.Forms\obj\Debug\Client.Forms.UserControls.Igrac.UCPretragaIgraca.resources

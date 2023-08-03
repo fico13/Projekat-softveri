@@ -28,13 +28,13 @@ namespace Common.Domain
         [Browsable(false)]
         public string WhereCondition => throw new NotImplementedException();
         [Browsable(false)]
-        public string Alias => throw new NotImplementedException();
+        public string Alias => "i";
         [Browsable(false)]
-        public string JoinTable => throw new NotImplementedException();
+        public string JoinTable => "Tim t on (i.TimId = t.TimId) join Dvorana d";
         [Browsable(false)]
-        public string JoinCondition => throw new NotImplementedException();
+        public string JoinCondition => "(t.DvoranaId = d.DvoranaId)";
         [Browsable(false)]
-        public string FindCondition => throw new NotImplementedException();
+        public string FindCondition { get; set; }
         
         public IDomainObject ReadObjectRow(SqlDataReader reader)
         {
@@ -68,6 +68,10 @@ namespace Common.Domain
             return igrac;
         }
 
-       
+        public override string ToString()
+        {
+            return ImeIgraca;
+        }
+
     }
 }

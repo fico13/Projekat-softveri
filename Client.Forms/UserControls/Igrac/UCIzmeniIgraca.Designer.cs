@@ -39,7 +39,6 @@ namespace Client.Forms.UserControls.Igrac
             this.btnIzaberiIgraca = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
             this.txtTezina = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.txtVisina = new System.Windows.Forms.TextBox();
@@ -54,6 +53,7 @@ namespace Client.Forms.UserControls.Igrac
             this.label3 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -170,19 +170,6 @@ namespace Client.Forms.UserControls.Igrac
             this.groupBox1.TabIndex = 24;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Igrač";
-            // 
-            // button1
-            // 
-            this.button1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(43, 397);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(202, 41);
-            this.button1.TabIndex = 25;
-            this.button1.Text = "Izmeni igrača";
-            this.button1.UseVisualStyleBackColor = true;
             // 
             // txtTezina
             // 
@@ -310,6 +297,19 @@ namespace Client.Forms.UserControls.Igrac
             this.label9.Size = new System.Drawing.Size(30, 17);
             this.label9.TabIndex = 26;
             this.label9.Text = "Ime";
+            // 
+            // button1
+            // 
+            this.button1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.Location = new System.Drawing.Point(43, 397);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(202, 41);
+            this.button1.TabIndex = 25;
+            this.button1.Text = "Izmeni igrača";
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // UCIzmeniIgraca
             // 
