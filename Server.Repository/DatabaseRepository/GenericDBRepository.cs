@@ -63,6 +63,16 @@ namespace Server.Repository.DatabaseRepository
             }
         }
 
+        public void Update(IDomainObject objekat)
+        {
+            SqlCommand command = broker.CreateSqlCommand();
+            command.CommandText = $"update {objekat.TableName} set {objekat.UpdateCondition} where {objekat.WhereCondition}";
+            if (command.ExecuteNonQuery() != 1)
+            {
+                throw new Exception();
+            }
+        }
+
         public List<IDomainObject> VratiSve(IDomainObject objekat)
         {
             List<IDomainObject> result = new List<IDomainObject>();

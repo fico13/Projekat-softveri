@@ -34,6 +34,9 @@ namespace Common.Domain
         [Browsable(false)]
         public string JoinCondition => "(t.DvoranaId = d.DvoranaId)";
         [Browsable(false)]
+        public string UpdateCondition => throw new NotImplementedException();
+
+        [Browsable(false)]
         public IDomainObject ReadObjectRow(SqlDataReader reader)
         {
             Tim tim = new Tim

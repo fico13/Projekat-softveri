@@ -61,6 +61,7 @@
     <Compile Include="GUIController\DodajDvoranuController.cs" />
     <Compile Include="GUIController\DodajIgracaController.cs" />
     <Compile Include="GUIController\DodajTimController.cs" />
+    <Compile Include="GUIController\IzmeniIgracaController.cs" />
     <Compile Include="GUIController\LoginController.cs" />
     <Compile Include="GUIController\NadjiIgracaController.cs" />
     <Compile Include="GUIController\NadjiTimController.cs" />

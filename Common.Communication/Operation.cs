@@ -15,6 +15,7 @@ namespace Common.Communication
         NadjiTimove,
         VratiSveTimove,
         SacuvajIgraca,
-        NadjiIgrace
+        NadjiIgrace,
+        IzmeniIgraca
     }
 }

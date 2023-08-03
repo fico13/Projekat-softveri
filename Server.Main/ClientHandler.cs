@@ -96,6 +96,9 @@ namespace Server.Main
                 case Operation.NadjiIgrace:
                     response.ResponseObject = Controller.Instance.NadjiIgrace((Igrac)request.RequestObject);
                     break;
+                case Operation.IzmeniIgraca:
+                    Controller.Instance.IzmeniIgraca((Igrac)request.RequestObject);
+                    break;
                 default:
                     break;
             }

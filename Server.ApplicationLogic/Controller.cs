@@ -82,5 +82,11 @@ namespace Server.ApplicationLogic
             so.ExecuteTemplate();
             return ((NadjiIgraceSO)so).Result;
         }
+
+        public void IzmeniIgraca(Igrac igrac)
+        {
+            SystemOperationBase so = new IzmeniIgracaSO(igrac);
+            so.ExecuteTemplate();
+        }
     }
 }

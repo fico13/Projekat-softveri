@@ -26,7 +26,7 @@ namespace Common.Domain
         [Browsable(false)]
         public string InsertValues => $"'{ImeIgraca}', '{PrezimeIgraca}', '{DrzavaIgraca}', {((int)Pozicija)}, {BrojNaDresu}, {Visina}, {Tezina}, {Tim.TimId}";
         [Browsable(false)]
-        public string WhereCondition => throw new NotImplementedException();
+        public string WhereCondition => $"IgracId={IgracId}";
         [Browsable(false)]
         public string Alias => "i";
         [Browsable(false)]
@@ -35,7 +35,9 @@ namespace Common.Domain
         public string JoinCondition => "(t.DvoranaId = d.DvoranaId)";
         [Browsable(false)]
         public string FindCondition { get; set; }
-        
+        [Browsable(false)]
+        public string UpdateCondition => $"ImeIgraca='{ImeIgraca}', PrezimeIgraca='{PrezimeIgraca}', DrzavaIgraca='{DrzavaIgraca}', Pozicija={((int)Pozicija)}, BrojNaDresu={BrojNaDresu}, Visina={Visina}, Tezina={Tezina}, TimId={Tim.TimId}";
+
         public IDomainObject ReadObjectRow(SqlDataReader reader)
         {
             Igrac igrac = new Igrac

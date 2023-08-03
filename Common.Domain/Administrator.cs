@@ -31,6 +31,9 @@ namespace Common.Domain
         [Browsable(false)]
         public string JoinCondition => throw new NotImplementedException();
         [Browsable(false)]
+        public string UpdateCondition => throw new NotImplementedException();
+
+        [Browsable(false)]
         public IDomainObject ReadObjectRow(SqlDataReader reader)
         {
             Administrator administrator = new Administrator
