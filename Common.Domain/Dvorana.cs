@@ -32,6 +32,9 @@ namespace Common.Domain
         public string JoinCondition => throw new NotImplementedException();
         [Browsable(false)]
         public string UpdateCondition => throw new NotImplementedException();
+        [Browsable(false)]
+
+        public string IdColumnName => throw new NotImplementedException();
 
         [Browsable(false)]
         public IDomainObject ReadObjectRow(SqlDataReader reader)

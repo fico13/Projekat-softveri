@@ -17,6 +17,8 @@ namespace Common.Domain
         string JoinCondition { get; }
         string FindCondition { get; }
         string UpdateCondition { get; }
+        string IdColumnName { get; }
+
 
         IDomainObject ReadObjectRow(SqlDataReader reader);
     }

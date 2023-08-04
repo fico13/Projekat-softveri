@@ -47,7 +47,9 @@
     <Compile Include="Igrac.cs" />
     <Compile Include="Pozicija.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Statistika.cs" />
     <Compile Include="Tim.cs" />
+    <Compile Include="Utakmica.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

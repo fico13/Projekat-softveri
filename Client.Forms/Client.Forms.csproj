@@ -61,6 +61,7 @@
     <Compile Include="GUIController\DodajDvoranuController.cs" />
     <Compile Include="GUIController\DodajIgracaController.cs" />
     <Compile Include="GUIController\DodajTimController.cs" />
+    <Compile Include="GUIController\DodajUtakmicuController.cs" />
     <Compile Include="GUIController\IzmeniIgracaController.cs" />
     <Compile Include="GUIController\LoginController.cs" />
     <Compile Include="GUIController\NadjiIgracaController.cs" />
@@ -106,6 +107,12 @@
     <Compile Include="UserControls\Tim\UCNadjiTim.Designer.cs">
       <DependentUpon>UCNadjiTim.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\Utakmica\UCDodajUtakmicu.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\Utakmica\UCDodajUtakmicu.Designer.cs">
+      <DependentUpon>UCDodajUtakmicu.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="FrmLogin.resx">
       <DependentUpon>FrmLogin.cs</DependentUpon>
     </EmbeddedResource>
@@ -139,6 +146,9 @@
     <EmbeddedResource Include="UserControls\Tim\UCNadjiTim.resx">
       <DependentUpon>UCNadjiTim.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\Utakmica\UCDodajUtakmicu.resx">
+      <DependentUpon>UCDodajUtakmicu.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -152,9 +162,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="UserControls\Utakmica\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\Common.Communication\Common.Communication.csproj">
       <Project>{C27A7023-F361-4DA1-AD2D-7CA67A31DB2D}</Project>

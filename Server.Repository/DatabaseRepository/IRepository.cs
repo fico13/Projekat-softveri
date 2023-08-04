@@ -21,5 +21,6 @@ namespace Server.Repository.DatabaseRepository
         List<T> VratiSveJoin(IDomainObject objekat);
 
         void Update(T objekat);
+        int DajNoviID(IDomainObject objekat);
     }
 }

@@ -27,6 +27,14 @@ namespace Server.Repository.DatabaseRepository
             broker.Commit();
         }
 
+        public int DajNoviID(IDomainObject objekat)
+        {
+            SqlCommand command = broker.CreateSqlCommand();
+            command.CommandText = $"select max({objekat.IdColumnName}) from {objekat.TableName}";
+            object maxId = command.ExecuteScalar();
+            return (int)maxId;
+        }
+
         public List<IDomainObject> NadjiOdredjeni(IDomainObject objekat)
         {
             List<IDomainObject> result = new List<IDomainObject>();

@@ -99,6 +99,9 @@ namespace Server.Main
                 case Operation.IzmeniIgraca:
                     Controller.Instance.IzmeniIgraca((Igrac)request.RequestObject);
                     break;
+                case Operation.SacuvajUtakmicu:
+                    Controller.Instance.SacuvajUtakmicu((Utakmica)request.RequestObject);
+                    break;
                 default:
                     break;
             }

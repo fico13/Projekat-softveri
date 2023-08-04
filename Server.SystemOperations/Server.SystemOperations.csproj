@@ -52,6 +52,7 @@
     <Compile Include="TimSO\NadjiTimoveSO.cs" />
     <Compile Include="TimSO\SacuvajTimSO.cs" />
     <Compile Include="TimSO\VratiListuTimovaSO.cs" />
+    <Compile Include="Utakmica\SacuvajUtakmicuSO.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Common.Domain\Common.Domain.csproj">

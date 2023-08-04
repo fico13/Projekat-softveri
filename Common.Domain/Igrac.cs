@@ -37,6 +37,8 @@ namespace Common.Domain
         public string FindCondition { get; set; }
         [Browsable(false)]
         public string UpdateCondition => $"ImeIgraca='{ImeIgraca}', PrezimeIgraca='{PrezimeIgraca}', DrzavaIgraca='{DrzavaIgraca}', Pozicija={((int)Pozicija)}, BrojNaDresu={BrojNaDresu}, Visina={Visina}, Tezina={Tezina}, TimId={Tim.TimId}";
+        [Browsable(false)]
+        public string IdColumnName => throw new NotImplementedException();
 
         public IDomainObject ReadObjectRow(SqlDataReader reader)
         {
@@ -72,7 +74,7 @@ namespace Common.Domain
 
         public override string ToString()
         {
-            return ImeIgraca;
+            return $"{ ImeIgraca} { PrezimeIgraca}";
         }
 
     }

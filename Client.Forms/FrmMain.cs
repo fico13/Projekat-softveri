@@ -1,6 +1,7 @@
 ﻿using Client.Forms.UserControls.Dvorana;
 using Client.Forms.UserControls.Igrac;
 using Client.Forms.UserControls.Tim;
+using Client.Forms.UserControls.Utakmica;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -50,6 +51,10 @@ namespace Client.Forms
             ChangePanel(new UCPretragaIgraca());
         }
 
+        private void dodajUtakmicuToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ChangePanel(new UCDodajUtakmicu());
+        }
         private void ChangePanel(UserControl userControl)
         {
             pnlMain.Controls.Clear();
@@ -57,6 +62,6 @@ namespace Client.Forms
             pnlMain.Controls.Add(userControl);
         }
 
-       
+      
     }
 }

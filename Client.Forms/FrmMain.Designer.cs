@@ -38,6 +38,7 @@ namespace Client.Forms
             this.nadjiTimToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.igracToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dodajIgračaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pretragaIgračaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.izmeniIgračaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.utakmicaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dodajUtakmicuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -45,7 +46,6 @@ namespace Client.Forms
             this.izmeniUtakmicuToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.pnlMain = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pretragaIgračaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.pnlMain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -92,14 +92,14 @@ namespace Client.Forms
             // dodajTimToolStripMenuItem
             // 
             this.dodajTimToolStripMenuItem.Name = "dodajTimToolStripMenuItem";
-            this.dodajTimToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.dodajTimToolStripMenuItem.Size = new System.Drawing.Size(198, 26);
             this.dodajTimToolStripMenuItem.Text = "Dodaj tim";
             this.dodajTimToolStripMenuItem.Click += new System.EventHandler(this.dodajTimToolStripMenuItem_Click);
             // 
             // nadjiTimToolStripMenuItem
             // 
             this.nadjiTimToolStripMenuItem.Name = "nadjiTimToolStripMenuItem";
-            this.nadjiTimToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.nadjiTimToolStripMenuItem.Size = new System.Drawing.Size(198, 26);
             this.nadjiTimToolStripMenuItem.Text = "Pretraga timova";
             this.nadjiTimToolStripMenuItem.Click += new System.EventHandler(this.nadjiTimToolStripMenuItem_Click);
             // 
@@ -107,8 +107,8 @@ namespace Client.Forms
             // 
             this.igracToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.dodajIgračaToolStripMenuItem,
-            this.izmeniIgračaToolStripMenuItem,
-            this.pretragaIgračaToolStripMenuItem});
+            this.pretragaIgračaToolStripMenuItem,
+            this.izmeniIgračaToolStripMenuItem});
             this.igracToolStripMenuItem.Name = "igracToolStripMenuItem";
             this.igracToolStripMenuItem.Size = new System.Drawing.Size(56, 24);
             this.igracToolStripMenuItem.Text = "Igrač";
@@ -116,14 +116,21 @@ namespace Client.Forms
             // dodajIgračaToolStripMenuItem
             // 
             this.dodajIgračaToolStripMenuItem.Name = "dodajIgračaToolStripMenuItem";
-            this.dodajIgračaToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.dodajIgračaToolStripMenuItem.Size = new System.Drawing.Size(193, 26);
             this.dodajIgračaToolStripMenuItem.Text = "Dodaj igrača";
             this.dodajIgračaToolStripMenuItem.Click += new System.EventHandler(this.dodajIgračaToolStripMenuItem_Click);
+            // 
+            // pretragaIgračaToolStripMenuItem
+            // 
+            this.pretragaIgračaToolStripMenuItem.Name = "pretragaIgračaToolStripMenuItem";
+            this.pretragaIgračaToolStripMenuItem.Size = new System.Drawing.Size(193, 26);
+            this.pretragaIgračaToolStripMenuItem.Text = "Pretraga igrača";
+            this.pretragaIgračaToolStripMenuItem.Click += new System.EventHandler(this.pretragaIgračaToolStripMenuItem_Click);
             // 
             // izmeniIgračaToolStripMenuItem
             // 
             this.izmeniIgračaToolStripMenuItem.Name = "izmeniIgračaToolStripMenuItem";
-            this.izmeniIgračaToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.izmeniIgračaToolStripMenuItem.Size = new System.Drawing.Size(193, 26);
             this.izmeniIgračaToolStripMenuItem.Text = "Izmeni igrača";
             this.izmeniIgračaToolStripMenuItem.Click += new System.EventHandler(this.izmeniIgračaToolStripMenuItem_Click);
             // 
@@ -140,19 +147,20 @@ namespace Client.Forms
             // dodajUtakmicuToolStripMenuItem
             // 
             this.dodajUtakmicuToolStripMenuItem.Name = "dodajUtakmicuToolStripMenuItem";
-            this.dodajUtakmicuToolStripMenuItem.Size = new System.Drawing.Size(212, 26);
+            this.dodajUtakmicuToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.dodajUtakmicuToolStripMenuItem.Text = "Dodaj utakmicu";
+            this.dodajUtakmicuToolStripMenuItem.Click += new System.EventHandler(this.dodajUtakmicuToolStripMenuItem_Click);
             // 
             // izmeniUtakmicuToolStripMenuItem
             // 
             this.izmeniUtakmicuToolStripMenuItem.Name = "izmeniUtakmicuToolStripMenuItem";
-            this.izmeniUtakmicuToolStripMenuItem.Size = new System.Drawing.Size(212, 26);
+            this.izmeniUtakmicuToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.izmeniUtakmicuToolStripMenuItem.Text = "Pretraga utakmica";
             // 
             // izmeniUtakmicuToolStripMenuItem1
             // 
             this.izmeniUtakmicuToolStripMenuItem1.Name = "izmeniUtakmicuToolStripMenuItem1";
-            this.izmeniUtakmicuToolStripMenuItem1.Size = new System.Drawing.Size(212, 26);
+            this.izmeniUtakmicuToolStripMenuItem1.Size = new System.Drawing.Size(224, 26);
             this.izmeniUtakmicuToolStripMenuItem1.Text = "Izmeni utakmicu";
             // 
             // pnlMain
@@ -176,13 +184,6 @@ namespace Client.Forms
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
-            // 
-            // pretragaIgračaToolStripMenuItem
-            // 
-            this.pretragaIgračaToolStripMenuItem.Name = "pretragaIgračaToolStripMenuItem";
-            this.pretragaIgračaToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.pretragaIgračaToolStripMenuItem.Text = "Pretraga igrača";
-            this.pretragaIgračaToolStripMenuItem.Click += new System.EventHandler(this.pretragaIgračaToolStripMenuItem_Click);
             // 
             // FrmMain
             // 

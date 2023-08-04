@@ -24,7 +24,7 @@ namespace Common.Domain
         [Browsable(false)]
         public string InsertValues => $"'{Ime}', '{Drzava}', {BrojPobeda}, {BrojPoraza}, {Bodovi},{Dvorana.DvoranaId}";
         [Browsable(false)]
-        public string WhereCondition => throw new NotImplementedException();
+        public string WhereCondition => $"TimId = {TimId}";
         [Browsable(false)]
         public string FindCondition { get; set; }
         [Browsable(false)]
@@ -34,7 +34,10 @@ namespace Common.Domain
         [Browsable(false)]
         public string JoinCondition => "(t.DvoranaId = d.DvoranaId)";
         [Browsable(false)]
-        public string UpdateCondition => throw new NotImplementedException();
+        public string UpdateCondition => $"BrojPobeda = {BrojPobeda}, BrojPoraza = {BrojPoraza}, Bodovi = {Bodovi}";
+        [Browsable(false)]
+
+        public string IdColumnName => throw new NotImplementedException();
 
         [Browsable(false)]
         public IDomainObject ReadObjectRow(SqlDataReader reader)

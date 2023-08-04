@@ -4,6 +4,7 @@ using Server.SystemOperations.AdministratorSO;
 using Server.SystemOperations.DvoranaSO;
 using Server.SystemOperations.IgracSO;
 using Server.SystemOperations.TimSO;
+using Server.SystemOperations.Utakmica;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -86,6 +87,12 @@ namespace Server.ApplicationLogic
         public void IzmeniIgraca(Igrac igrac)
         {
             SystemOperationBase so = new IzmeniIgracaSO(igrac);
+            so.ExecuteTemplate();
+        }
+
+        public void SacuvajUtakmicu(Utakmica utakmica)
+        {
+            SystemOperationBase so = new SacuvajUtakmicuSO(utakmica);
             so.ExecuteTemplate();
         }
     }
