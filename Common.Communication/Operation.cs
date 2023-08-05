@@ -17,6 +17,7 @@ namespace Common.Communication
         SacuvajIgraca,
         NadjiIgrace,
         IzmeniIgraca,
-        SacuvajUtakmicu
+        SacuvajUtakmicu,
+        NadjiUtakmice
     }
 }

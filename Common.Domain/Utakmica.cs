@@ -35,13 +35,13 @@ namespace Common.Domain
         public string Alias => "u";
         [Browsable(false)]
 
-        public string JoinTable => throw new NotImplementedException();
+        public string JoinTable => "Tim d";
         [Browsable(false)]
 
-        public string JoinCondition => throw new NotImplementedException();
+        public string JoinCondition => "(u.DomacinId = d.TimId) join Tim g on (u.GostId = g.TimId) join Dvorana dv on (d.DvoranaId = dv.DvoranaId) join Dvorana dvo on (g.DvoranaId = dvo.DvoranaId)";
         [Browsable(false)]
 
-        public string FindCondition => throw new NotImplementedException();
+        public string FindCondition { get; set; }
         [Browsable(false)]
 
         public string UpdateCondition => throw new NotImplementedException();
@@ -61,34 +61,34 @@ namespace Common.Domain
                 DatumOdigravanja = (DateTime)reader["DatumOdigravanja"],
                 Domacin = new Tim
                 {
-                    TimId = (int)reader["d.TimId"],
-                    Ime = (string)reader["d.ImeTima"],
-                    Drzava = (string)reader["d.DrzavaTima"],
-                    BrojPobeda = (int)reader["d.BrojPobeda"],
-                    BrojPoraza = (int)reader["d.BrojPoraza"],
-                    Bodovi = (int)reader["d.Bodovi"],
+                    TimId = reader.GetInt32(6),
+                    Ime = reader.GetString(7),
+                    Drzava = reader.GetString(8),
+                    BrojPobeda = reader.GetInt32(9),
+                    BrojPoraza = reader.GetInt32(10),
+                    Bodovi = reader.GetInt32(11),
                     Dvorana = new Dvorana
                     {
-                        DvoranaId = (int)reader["dv.DvoranaId"],
-                        Ime = (string)reader["dv.ImeDvorane"],
-                        Drzava = (string)reader["dv.DrzavaDvorane"],
-                        Kapacitet = (int)reader["dv.Kapacitet"]
+                        DvoranaId = reader.GetInt32(20),
+                        Ime = reader.GetString(21),
+                        Drzava = reader.GetString(22),
+                        Kapacitet = reader.GetInt32(23)
                     }
                 },
                 Gost = new Tim
                 {
-                    TimId = (int)reader["g.TimId"],
-                    Ime = (string)reader["g.ImeTima"],
-                    Drzava = (string)reader["g.DrzavaTima"],
-                    BrojPobeda = (int)reader["g.BrojPobeda"],
-                    BrojPoraza = (int)reader["g.BrojPoraza"],
-                    Bodovi = (int)reader["g.Bodovi"],
+                    TimId = reader.GetInt32(13),
+                    Ime = reader.GetString(14),
+                    Drzava = reader.GetString(15),
+                    BrojPobeda = reader.GetInt32(16),
+                    BrojPoraza = reader.GetInt32(17),
+                    Bodovi = reader.GetInt32(18),
                     Dvorana = new Dvorana
                     {
-                        DvoranaId = (int)reader["dvo.DvoranaId"],
-                        Ime = (string)reader["dvo.ImeDvorane"],
-                        Drzava = (string)reader["dvo.DrzavaDvorane"],
-                        Kapacitet = (int)reader["dvo.Kapacitet"]
+                        DvoranaId = reader.GetInt32(24),
+                        Ime = reader.GetString(25),
+                        Drzava = reader.GetString(26),
+                        Kapacitet = reader.GetInt32(27)
                     }
                 }
             };

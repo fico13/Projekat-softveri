@@ -81,7 +81,7 @@ namespace Client.Forms.UserControls.Utakmica
             // 
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(526, 45);
+            this.label2.Location = new System.Drawing.Point(580, 43);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(38, 17);
             this.label2.TabIndex = 1;

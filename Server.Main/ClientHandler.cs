@@ -102,6 +102,9 @@ namespace Server.Main
                 case Operation.SacuvajUtakmicu:
                     Controller.Instance.SacuvajUtakmicu((Utakmica)request.RequestObject);
                     break;
+                case Operation.NadjiUtakmice:
+                    response.ResponseObject = Controller.Instance.NadjiUtakmice((Utakmica)request.RequestObject);
+                    break;
                 default:
                     break;
             }

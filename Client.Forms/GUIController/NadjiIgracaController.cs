@@ -46,7 +46,6 @@ namespace Client.Forms.GUIController
                         return;
                     }
                     uCPretragaIgraca.DgvIgraci.DataSource = igraci;
-                    uCPretragaIgraca.DgvIgraci.Columns["IgracId"].Visible = false;
                     uCPretragaIgraca.TxtImeIgraca.Clear();
                 }
                 catch (Exception ex)
@@ -71,7 +70,6 @@ namespace Client.Forms.GUIController
                         return;
                     }
                     uCPretragaIgraca.DgvIgraci.DataSource = igraci;
-                    uCPretragaIgraca.DgvIgraci.Columns["IgracId"].Visible = false;
                     uCPretragaIgraca.TxtPrezimeIgraca.Clear();
                 }
                 catch (Exception ex)

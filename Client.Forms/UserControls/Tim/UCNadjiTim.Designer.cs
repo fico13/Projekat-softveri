@@ -31,6 +31,7 @@ namespace Client.Forms.UserControls.Tim
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UCNadjiTim));
             this.dgvTimovi = new System.Windows.Forms.DataGridView();
             this.btnPretrazi = new System.Windows.Forms.Button();
@@ -52,19 +53,39 @@ namespace Client.Forms.UserControls.Tim
             this.label4 = new System.Windows.Forms.Label();
             this.txtDrzavaTima = new System.Windows.Forms.TextBox();
             this.btnPrikaziTim = new System.Windows.Forms.Button();
+            this.timBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.imeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.drzavaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dvoranaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.brojPobedaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.brojPorazaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bodoviDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTimovi)).BeginInit();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.timBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvTimovi
             // 
+            this.dgvTimovi.AllowUserToAddRows = false;
+            this.dgvTimovi.AllowUserToDeleteRows = false;
             this.dgvTimovi.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.dgvTimovi.AutoGenerateColumns = false;
             this.dgvTimovi.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvTimovi.Location = new System.Drawing.Point(20, 207);
+            this.dgvTimovi.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.imeDataGridViewTextBoxColumn,
+            this.drzavaDataGridViewTextBoxColumn,
+            this.dvoranaDataGridViewTextBoxColumn,
+            this.brojPobedaDataGridViewTextBoxColumn,
+            this.brojPorazaDataGridViewTextBoxColumn,
+            this.bodoviDataGridViewTextBoxColumn});
+            this.dgvTimovi.DataSource = this.timBindingSource;
+            this.dgvTimovi.Location = new System.Drawing.Point(80, 208);
             this.dgvTimovi.Name = "dgvTimovi";
+            this.dgvTimovi.ReadOnly = true;
             this.dgvTimovi.RowHeadersWidth = 51;
             this.dgvTimovi.RowTemplate.Height = 24;
-            this.dgvTimovi.Size = new System.Drawing.Size(884, 226);
+            this.dgvTimovi.Size = new System.Drawing.Size(1092, 226);
             this.dgvTimovi.TabIndex = 12;
             // 
             // btnPretrazi
@@ -74,7 +95,7 @@ namespace Client.Forms.UserControls.Tim
             this.btnPretrazi.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btnPretrazi.Cursor = System.Windows.Forms.Cursors.Default;
             this.btnPretrazi.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnPretrazi.Location = new System.Drawing.Point(482, 146);
+            this.btnPretrazi.Location = new System.Drawing.Point(558, 147);
             this.btnPretrazi.Name = "btnPretrazi";
             this.btnPretrazi.Size = new System.Drawing.Size(178, 38);
             this.btnPretrazi.TabIndex = 11;
@@ -85,7 +106,7 @@ namespace Client.Forms.UserControls.Tim
             // txtDrzava
             // 
             this.txtDrzava.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtDrzava.Location = new System.Drawing.Point(249, 162);
+            this.txtDrzava.Location = new System.Drawing.Point(309, 163);
             this.txtDrzava.Name = "txtDrzava";
             this.txtDrzava.Size = new System.Drawing.Size(178, 22);
             this.txtDrzava.TabIndex = 10;
@@ -93,7 +114,7 @@ namespace Client.Forms.UserControls.Tim
             // txtNaziv
             // 
             this.txtNaziv.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtNaziv.Location = new System.Drawing.Point(20, 162);
+            this.txtNaziv.Location = new System.Drawing.Point(80, 163);
             this.txtNaziv.Name = "txtNaziv";
             this.txtNaziv.Size = new System.Drawing.Size(178, 22);
             this.txtNaziv.TabIndex = 9;
@@ -102,7 +123,7 @@ namespace Client.Forms.UserControls.Tim
             // 
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(246, 120);
+            this.label2.Location = new System.Drawing.Point(306, 121);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(144, 17);
             this.label2.TabIndex = 8;
@@ -112,7 +133,7 @@ namespace Client.Forms.UserControls.Tim
             // 
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(17, 120);
+            this.label1.Location = new System.Drawing.Point(77, 121);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(147, 17);
             this.label1.TabIndex = 7;
@@ -153,7 +174,7 @@ namespace Client.Forms.UserControls.Tim
             this.groupBox1.Controls.Add(this.txtDrzavaTima);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.txtIme);
-            this.groupBox1.Location = new System.Drawing.Point(1325, 120);
+            this.groupBox1.Location = new System.Drawing.Point(1565, 147);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(424, 344);
             this.groupBox1.TabIndex = 15;
@@ -262,13 +283,71 @@ namespace Client.Forms.UserControls.Tim
             this.btnPrikaziTim.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btnPrikaziTim.Cursor = System.Windows.Forms.Cursors.Default;
             this.btnPrikaziTim.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnPrikaziTim.Location = new System.Drawing.Point(20, 458);
+            this.btnPrikaziTim.Location = new System.Drawing.Point(80, 459);
             this.btnPrikaziTim.Name = "btnPrikaziTim";
             this.btnPrikaziTim.Size = new System.Drawing.Size(178, 38);
             this.btnPrikaziTim.TabIndex = 16;
             this.btnPrikaziTim.Text = "Prikazi tim";
             this.btnPrikaziTim.UseVisualStyleBackColor = true;
             this.btnPrikaziTim.Click += new System.EventHandler(this.btnPrikaziTim_Click);
+            // 
+            // timBindingSource
+            // 
+            this.timBindingSource.DataSource = typeof(Common.Domain.Tim);
+            // 
+            // imeDataGridViewTextBoxColumn
+            // 
+            this.imeDataGridViewTextBoxColumn.DataPropertyName = "Ime";
+            this.imeDataGridViewTextBoxColumn.HeaderText = "Ime";
+            this.imeDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.imeDataGridViewTextBoxColumn.Name = "imeDataGridViewTextBoxColumn";
+            this.imeDataGridViewTextBoxColumn.ReadOnly = true;
+            this.imeDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // drzavaDataGridViewTextBoxColumn
+            // 
+            this.drzavaDataGridViewTextBoxColumn.DataPropertyName = "Drzava";
+            this.drzavaDataGridViewTextBoxColumn.HeaderText = "Drzava";
+            this.drzavaDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.drzavaDataGridViewTextBoxColumn.Name = "drzavaDataGridViewTextBoxColumn";
+            this.drzavaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.drzavaDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // dvoranaDataGridViewTextBoxColumn
+            // 
+            this.dvoranaDataGridViewTextBoxColumn.DataPropertyName = "Dvorana";
+            this.dvoranaDataGridViewTextBoxColumn.HeaderText = "Dvorana";
+            this.dvoranaDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.dvoranaDataGridViewTextBoxColumn.Name = "dvoranaDataGridViewTextBoxColumn";
+            this.dvoranaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.dvoranaDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // brojPobedaDataGridViewTextBoxColumn
+            // 
+            this.brojPobedaDataGridViewTextBoxColumn.DataPropertyName = "BrojPobeda";
+            this.brojPobedaDataGridViewTextBoxColumn.HeaderText = "BrojPobeda";
+            this.brojPobedaDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.brojPobedaDataGridViewTextBoxColumn.Name = "brojPobedaDataGridViewTextBoxColumn";
+            this.brojPobedaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.brojPobedaDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // brojPorazaDataGridViewTextBoxColumn
+            // 
+            this.brojPorazaDataGridViewTextBoxColumn.DataPropertyName = "BrojPoraza";
+            this.brojPorazaDataGridViewTextBoxColumn.HeaderText = "BrojPoraza";
+            this.brojPorazaDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.brojPorazaDataGridViewTextBoxColumn.Name = "brojPorazaDataGridViewTextBoxColumn";
+            this.brojPorazaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.brojPorazaDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // bodoviDataGridViewTextBoxColumn
+            // 
+            this.bodoviDataGridViewTextBoxColumn.DataPropertyName = "Bodovi";
+            this.bodoviDataGridViewTextBoxColumn.HeaderText = "Bodovi";
+            this.bodoviDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.bodoviDataGridViewTextBoxColumn.Name = "bodoviDataGridViewTextBoxColumn";
+            this.bodoviDataGridViewTextBoxColumn.ReadOnly = true;
+            this.bodoviDataGridViewTextBoxColumn.Width = 125;
             // 
             // UCNadjiTim
             // 
@@ -286,10 +365,11 @@ namespace Client.Forms.UserControls.Tim
             this.Controls.Add(this.label1);
             this.DoubleBuffered = true;
             this.Name = "UCNadjiTim";
-            this.Size = new System.Drawing.Size(1800, 558);
+            this.Size = new System.Drawing.Size(2159, 558);
             ((System.ComponentModel.ISupportInitialize)(this.dgvTimovi)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.timBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -317,6 +397,13 @@ namespace Client.Forms.UserControls.Tim
         private Label label4;
         private TextBox txtDrzavaTima;
         private Button btnPrikaziTim;
+        private DataGridViewTextBoxColumn imeDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn drzavaDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn dvoranaDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn brojPobedaDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn brojPorazaDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn bodoviDataGridViewTextBoxColumn;
+        private BindingSource timBindingSource;
 
         public DataGridView DgvTimovi { get => dgvTimovi; set => dgvTimovi = value; }
         public Button BtnPretrazi { get => btnPretrazi; set => btnPretrazi = value; }

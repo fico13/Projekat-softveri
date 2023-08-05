@@ -66,6 +66,7 @@
     <Compile Include="GUIController\LoginController.cs" />
     <Compile Include="GUIController\NadjiIgracaController.cs" />
     <Compile Include="GUIController\NadjiTimController.cs" />
+    <Compile Include="GUIController\NadjiUtakmicuController.cs" />
     <Compile Include="GUIHelper\UserControlsHelper.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -113,6 +114,12 @@
     <Compile Include="UserControls\Utakmica\UCDodajUtakmicu.Designer.cs">
       <DependentUpon>UCDodajUtakmicu.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\Utakmica\UCPretragaUtakmica.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\Utakmica\UCPretragaUtakmica.Designer.cs">
+      <DependentUpon>UCPretragaUtakmica.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="FrmLogin.resx">
       <DependentUpon>FrmLogin.cs</DependentUpon>
     </EmbeddedResource>
@@ -149,6 +156,14 @@
     <EmbeddedResource Include="UserControls\Utakmica\UCDodajUtakmicu.resx">
       <DependentUpon>UCDodajUtakmicu.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\Utakmica\UCPretragaUtakmica.resx">
+      <DependentUpon>UCPretragaUtakmica.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\DataSources\Common.Domain.Dvorana.datasource" />
+    <None Include="Properties\DataSources\Common.Domain.Igrac.datasource" />
+    <None Include="Properties\DataSources\Common.Domain.Statistika.datasource" />
+    <None Include="Properties\DataSources\Common.Domain.Tim.datasource" />
+    <None Include="Properties\DataSources\Common.Domain.Utakmica.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

@@ -62,6 +62,9 @@ namespace Client.Forms
             pnlMain.Controls.Add(userControl);
         }
 
-      
+        private void izmeniUtakmicuToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ChangePanel(new UCPretragaUtakmica());
+        }
     }
 }

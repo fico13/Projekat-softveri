@@ -45,7 +45,6 @@ namespace Client.Forms.GUIController
                         return;
                     }
                     uCNadjiTim.DgvTimovi.DataSource = timovi;
-                    uCNadjiTim.DgvTimovi.Columns["TimId"].Visible = false;
                     uCNadjiTim.TxtNaziv.Clear();
                 }
                 catch (Exception ex)

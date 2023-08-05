@@ -5,13 +5,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Server.SystemOperations.Utakmica
+namespace Server.SystemOperations.UtakmicaSO
 {
     public class SacuvajUtakmicuSO : SystemOperationBase
     {
-        private Common.Domain.Utakmica utakmica;
+        private Utakmica utakmica;
 
-        public SacuvajUtakmicuSO(Common.Domain.Utakmica utakmica)
+        public SacuvajUtakmicuSO(Utakmica utakmica)
         {
             this.utakmica = utakmica;
         }
@@ -21,7 +21,7 @@ namespace Server.SystemOperations.Utakmica
             repository.Sacuvaj(utakmica);
             foreach (var statistika in utakmica.Statistka)
             {
-                statistika.Utakmica = new Common.Domain.Utakmica
+                statistika.Utakmica = new Utakmica
                 {
                     UtakmicaId = repository.DajNoviID(utakmica)
                 };

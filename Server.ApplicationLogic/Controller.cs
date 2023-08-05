@@ -4,7 +4,7 @@ using Server.SystemOperations.AdministratorSO;
 using Server.SystemOperations.DvoranaSO;
 using Server.SystemOperations.IgracSO;
 using Server.SystemOperations.TimSO;
-using Server.SystemOperations.Utakmica;
+using Server.SystemOperations.UtakmicaSO;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -94,6 +94,13 @@ namespace Server.ApplicationLogic
         {
             SystemOperationBase so = new SacuvajUtakmicuSO(utakmica);
             so.ExecuteTemplate();
+        }
+
+        public object NadjiUtakmice(Utakmica utakmica)
+        {
+            SystemOperationBase so = new NadjiUtakmiceSO(utakmica);
+            so.ExecuteTemplate();
+            return ((NadjiUtakmiceSO)so).Result;
         }
     }
 }

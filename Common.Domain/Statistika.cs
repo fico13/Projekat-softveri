@@ -28,16 +28,16 @@ namespace Common.Domain
         public string WhereCondition => throw new NotImplementedException();
         [Browsable(false)]
 
-        public string Alias => throw new NotImplementedException();
+        public string Alias => "s";
         [Browsable(false)]
 
-        public string JoinTable => throw new NotImplementedException();
+        public string JoinTable => "Utakmica u";
         [Browsable(false)]
 
-        public string JoinCondition => throw new NotImplementedException();
+        public string JoinCondition => "(s.UtakmicaId = u.UtakmicaId) join Igrac i on(s.IgracId = i.IgracId) join Tim t on (i.TimId = t.TimId)";
         [Browsable(false)]
 
-        public string FindCondition => throw new NotImplementedException();
+        public string FindCondition => $"s.UtakmicaId = {Utakmica.UtakmicaId}";
         [Browsable(false)]
 
         public string UpdateCondition => throw new NotImplementedException();
@@ -51,48 +51,31 @@ namespace Common.Domain
         {
             Statistika statistika = new Statistika
             {
-                Utakmica = new Utakmica
+                Poeni = reader.GetInt32(2),
+                Skokovi = reader.GetInt32(3),
+                Asistencije = reader.GetInt32(4),
+                Igrac = new Igrac
                 {
-                    UtakmicaId = (int)reader["UtakmicaID"],
-                    BrojPoenaDomacin = (int)reader["BrojPoenaDomacin"],
-                    BrojPoenaGost = (int)reader["BrojPoenaGost"],
-                    DatumOdigravanja = (DateTime)reader["DatumOdigravanja"],
-                    Domacin = new Tim
+                    IgracId = reader.GetInt32(11),
+                    ImeIgraca = reader.GetString(12),
+                    PrezimeIgraca = reader.GetString(13),
+                    DrzavaIgraca = reader.GetString(14),
+                    Pozicija = (Pozicija)reader.GetInt32(15),
+                    BrojNaDresu = reader.GetInt32(16),
+                    Visina = reader.GetInt32(17),
+                    Tezina = reader.GetDouble(18),
+                    Tim = new Tim
                     {
-                        TimId = (int)reader["DomacinId"],
-                        Ime = (string)reader["d.ImeTima"],
-                        Drzava = (string)reader["d.DrzavaTima"],
-                        BrojPobeda = (int)reader["d.BrojPobeda"],
-                        BrojPoraza = (int)reader["d.BrojPoraza"],
-                        Bodovi = (int)reader["d.Bodovi"],
-                        Dvorana = new Dvorana
-                        {
-                            DvoranaId = (int)reader["dv.DvoranaId"],
-                            Ime = (string)reader["dv.ImeDvorane"],
-                            Drzava = (string)reader["dv.DrzavaDvorane"],
-                            Kapacitet = (int)reader["dv.Kapacitet"],
-                        }
-                    },
-                    Gost = new Tim
-                    {
-                        TimId = (int)reader["GostId"],
-                        Ime = (string)reader["g.ImeTima"],
-                        Drzava = (string)reader["g.DrzavaTima"],
-                        BrojPobeda = (int)reader["g.BrojPobeda"],
-                        BrojPoraza = (int)reader["g.BrojPoraza"],
-                        Bodovi = (int)reader["g.Bodovi"],
-                        Dvorana = new Dvorana
-                        {
-                            DvoranaId = (int)reader["dvo.DvoranaId"],
-                            Ime = (string)reader["dvo.ImeDvorane"],
-                            Drzava = (string)reader["dvo.DrzavaDvorane"],
-                            Kapacitet = (int)reader["dvo.Kapacitet"],
-                        }
-                    },
-
+                        TimId = reader.GetInt32(20),
+                        Ime = reader.GetString(21)
+                    }
                 }
             };
             return statistika;
+        }
+        public override string ToString()
+        {
+            return $"{Igrac}  {Poeni}  {Skokovi}  {Asistencije}";
         }
     }
 }
