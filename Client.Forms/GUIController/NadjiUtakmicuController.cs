@@ -62,12 +62,12 @@ namespace Client.Forms.GUIController
             foreach (var statistika in Utakmica.Statistka)
             {
                 statistika.Utakmica = Utakmica;
-                if (statistika.Igrac.Tim.TimId == Utakmica.Domacin.TimId && statistika.Utakmica.UtakmicaId == Utakmica.UtakmicaId)
+                if (statistika.Igrac.Tim.TimId == Utakmica.Domacin.TimId)
                 {
                     statistikaDomacin.Add(statistika);
                 }
 
-                if (statistika.Igrac.Tim.TimId == Utakmica.Gost.TimId && statistika.Utakmica.UtakmicaId == Utakmica.UtakmicaId)
+                if (statistika.Igrac.Tim.TimId == Utakmica.Gost.TimId)
                 {
                     statistikaGost.Add(statistika);
                 }

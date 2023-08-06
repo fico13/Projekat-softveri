@@ -53,6 +53,7 @@ namespace Client.Forms
             // 
             // menuStrip1
             // 
+            this.menuStrip1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.dvoranaToolStripMenuItem,
@@ -61,7 +62,7 @@ namespace Client.Forms
             this.utakmicaToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(807, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(807, 36);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -70,13 +71,13 @@ namespace Client.Forms
             this.dvoranaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.dodajDvoranuToolStripMenuItem});
             this.dvoranaToolStripMenuItem.Name = "dvoranaToolStripMenuItem";
-            this.dvoranaToolStripMenuItem.Size = new System.Drawing.Size(79, 24);
+            this.dvoranaToolStripMenuItem.Size = new System.Drawing.Size(106, 32);
             this.dvoranaToolStripMenuItem.Text = "Dvorana";
             // 
             // dodajDvoranuToolStripMenuItem
             // 
             this.dodajDvoranuToolStripMenuItem.Name = "dodajDvoranuToolStripMenuItem";
-            this.dodajDvoranuToolStripMenuItem.Size = new System.Drawing.Size(191, 26);
+            this.dodajDvoranuToolStripMenuItem.Size = new System.Drawing.Size(238, 32);
             this.dodajDvoranuToolStripMenuItem.Text = "Dodaj dvoranu";
             this.dodajDvoranuToolStripMenuItem.Click += new System.EventHandler(this.dodajDvoranuToolStripMenuItem_Click);
             // 
@@ -86,20 +87,20 @@ namespace Client.Forms
             this.dodajTimToolStripMenuItem,
             this.nadjiTimToolStripMenuItem});
             this.timToolStripMenuItem.Name = "timToolStripMenuItem";
-            this.timToolStripMenuItem.Size = new System.Drawing.Size(48, 24);
+            this.timToolStripMenuItem.Size = new System.Drawing.Size(62, 32);
             this.timToolStripMenuItem.Text = "Tim";
             // 
             // dodajTimToolStripMenuItem
             // 
             this.dodajTimToolStripMenuItem.Name = "dodajTimToolStripMenuItem";
-            this.dodajTimToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.dodajTimToolStripMenuItem.Size = new System.Drawing.Size(251, 32);
             this.dodajTimToolStripMenuItem.Text = "Dodaj tim";
             this.dodajTimToolStripMenuItem.Click += new System.EventHandler(this.dodajTimToolStripMenuItem_Click);
             // 
             // nadjiTimToolStripMenuItem
             // 
             this.nadjiTimToolStripMenuItem.Name = "nadjiTimToolStripMenuItem";
-            this.nadjiTimToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.nadjiTimToolStripMenuItem.Size = new System.Drawing.Size(251, 32);
             this.nadjiTimToolStripMenuItem.Text = "Pretraga timova";
             this.nadjiTimToolStripMenuItem.Click += new System.EventHandler(this.nadjiTimToolStripMenuItem_Click);
             // 
@@ -110,27 +111,27 @@ namespace Client.Forms
             this.pretragaIgračaToolStripMenuItem,
             this.izmeniIgračaToolStripMenuItem});
             this.igracToolStripMenuItem.Name = "igracToolStripMenuItem";
-            this.igracToolStripMenuItem.Size = new System.Drawing.Size(56, 24);
+            this.igracToolStripMenuItem.Size = new System.Drawing.Size(73, 32);
             this.igracToolStripMenuItem.Text = "Igrač";
             // 
             // dodajIgračaToolStripMenuItem
             // 
             this.dodajIgračaToolStripMenuItem.Name = "dodajIgračaToolStripMenuItem";
-            this.dodajIgračaToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.dodajIgračaToolStripMenuItem.Size = new System.Drawing.Size(243, 32);
             this.dodajIgračaToolStripMenuItem.Text = "Dodaj igrača";
             this.dodajIgračaToolStripMenuItem.Click += new System.EventHandler(this.dodajIgračaToolStripMenuItem_Click);
             // 
             // pretragaIgračaToolStripMenuItem
             // 
             this.pretragaIgračaToolStripMenuItem.Name = "pretragaIgračaToolStripMenuItem";
-            this.pretragaIgračaToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.pretragaIgračaToolStripMenuItem.Size = new System.Drawing.Size(243, 32);
             this.pretragaIgračaToolStripMenuItem.Text = "Pretraga igrača";
             this.pretragaIgračaToolStripMenuItem.Click += new System.EventHandler(this.pretragaIgračaToolStripMenuItem_Click);
             // 
             // izmeniIgračaToolStripMenuItem
             // 
             this.izmeniIgračaToolStripMenuItem.Name = "izmeniIgračaToolStripMenuItem";
-            this.izmeniIgračaToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.izmeniIgračaToolStripMenuItem.Size = new System.Drawing.Size(243, 32);
             this.izmeniIgračaToolStripMenuItem.Text = "Izmeni igrača";
             this.izmeniIgračaToolStripMenuItem.Click += new System.EventHandler(this.izmeniIgračaToolStripMenuItem_Click);
             // 
@@ -141,36 +142,37 @@ namespace Client.Forms
             this.izmeniUtakmicuToolStripMenuItem,
             this.izmeniUtakmicuToolStripMenuItem1});
             this.utakmicaToolStripMenuItem.Name = "utakmicaToolStripMenuItem";
-            this.utakmicaToolStripMenuItem.Size = new System.Drawing.Size(85, 24);
+            this.utakmicaToolStripMenuItem.Size = new System.Drawing.Size(115, 32);
             this.utakmicaToolStripMenuItem.Text = "Utakmica";
             // 
             // dodajUtakmicuToolStripMenuItem
             // 
             this.dodajUtakmicuToolStripMenuItem.Name = "dodajUtakmicuToolStripMenuItem";
-            this.dodajUtakmicuToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.dodajUtakmicuToolStripMenuItem.Size = new System.Drawing.Size(272, 32);
             this.dodajUtakmicuToolStripMenuItem.Text = "Dodaj utakmicu";
             this.dodajUtakmicuToolStripMenuItem.Click += new System.EventHandler(this.dodajUtakmicuToolStripMenuItem_Click);
             // 
             // izmeniUtakmicuToolStripMenuItem
             // 
             this.izmeniUtakmicuToolStripMenuItem.Name = "izmeniUtakmicuToolStripMenuItem";
-            this.izmeniUtakmicuToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.izmeniUtakmicuToolStripMenuItem.Size = new System.Drawing.Size(272, 32);
             this.izmeniUtakmicuToolStripMenuItem.Text = "Pretraga utakmica";
             this.izmeniUtakmicuToolStripMenuItem.Click += new System.EventHandler(this.izmeniUtakmicuToolStripMenuItem_Click);
             // 
             // izmeniUtakmicuToolStripMenuItem1
             // 
             this.izmeniUtakmicuToolStripMenuItem1.Name = "izmeniUtakmicuToolStripMenuItem1";
-            this.izmeniUtakmicuToolStripMenuItem1.Size = new System.Drawing.Size(224, 26);
+            this.izmeniUtakmicuToolStripMenuItem1.Size = new System.Drawing.Size(272, 32);
             this.izmeniUtakmicuToolStripMenuItem1.Text = "Izmeni utakmicu";
+            this.izmeniUtakmicuToolStripMenuItem1.Click += new System.EventHandler(this.izmeniUtakmicuToolStripMenuItem1_Click);
             // 
             // pnlMain
             // 
             this.pnlMain.Controls.Add(this.pictureBox1);
             this.pnlMain.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlMain.Location = new System.Drawing.Point(0, 28);
+            this.pnlMain.Location = new System.Drawing.Point(0, 36);
             this.pnlMain.Name = "pnlMain";
-            this.pnlMain.Size = new System.Drawing.Size(807, 528);
+            this.pnlMain.Size = new System.Drawing.Size(807, 520);
             this.pnlMain.TabIndex = 1;
             // 
             // pictureBox1
@@ -181,7 +183,7 @@ namespace Client.Forms
             this.pictureBox1.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.InitialImage")));
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(807, 528);
+            this.pictureBox1.Size = new System.Drawing.Size(807, 520);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;

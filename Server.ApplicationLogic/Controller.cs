@@ -102,5 +102,11 @@ namespace Server.ApplicationLogic
             so.ExecuteTemplate();
             return ((NadjiUtakmiceSO)so).Result;
         }
+
+        public void IzmeniUtakmicu(Utakmica utakmica)
+        {
+            SystemOperationBase so = new IzmeniUtakmicuSO(utakmica);
+            so.ExecuteTemplate();
+        }
     }
 }

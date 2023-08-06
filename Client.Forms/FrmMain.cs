@@ -66,5 +66,10 @@ namespace Client.Forms
         {
             ChangePanel(new UCPretragaUtakmica());
         }
+
+        private void izmeniUtakmicuToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            ChangePanel(new UCIzmenaUtakmice());
+        }
     }
 }

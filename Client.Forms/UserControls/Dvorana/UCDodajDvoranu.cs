@@ -17,12 +17,12 @@ namespace Client.Forms.UserControls.Dvorana
         public UCDodajDvoranu()
         {
             InitializeComponent();
-            dodajDvoranuController = new DodajDvoranuController();
+            dodajDvoranuController = new DodajDvoranuController(this);
         }
 
         private void btnDodajDvoranu_Click(object sender, EventArgs e)
         {
-            dodajDvoranuController.DodajDvoranu(this);
+            dodajDvoranuController.DodajDvoranu();
         }
     }
 }

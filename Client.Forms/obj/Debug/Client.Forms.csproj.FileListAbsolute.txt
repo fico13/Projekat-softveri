@@ -22,3 +22,4 @@ C:\Users\Filip\Desktop\Projekat\Client.Forms\obj\Debug\Client.Forms.csproj.CopyC
 C:\Users\Filip\Desktop\Projekat\Client.Forms\obj\Debug\Client.Forms.UserControls.Igrac.UCPretragaIgraca.resources
 C:\Users\Filip\Desktop\Projekat\Client.Forms\obj\Debug\Client.Forms.UserControls.Utakmica.UCDodajUtakmicu.resources
 C:\Users\Filip\Desktop\Projekat\Client.Forms\obj\Debug\Client.Forms.UserControls.Utakmica.UCPretragaUtakmica.resources
+C:\Users\Filip\Desktop\Projekat\Client.Forms\obj\Debug\Client.Forms.UserControls.Utakmica.UCIzmenaUtakmice.resources

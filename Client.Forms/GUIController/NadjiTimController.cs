@@ -6,6 +6,7 @@ using Common.Domain;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -29,13 +30,39 @@ namespace Client.Forms.GUIController
                 MessageBox.Show("Sistem ne moze da nadje timove po zadatoj vrednosti! Niste uneli nijedan kriterijum za pretragu! Pokusajte ponovo!");
                 return;
             }
-            if(!UserControlsHelper.EmptyText(uCNadjiTim.TxtNaziv) && UserControlsHelper.EmptyText(uCNadjiTim.TxtDrzava))
+            uCNadjiTim.DgvTimovi.DataSource = null;
+            if (!UserControlsHelper.EmptyText(uCNadjiTim.TxtNaziv) && !UserControlsHelper.EmptyText(uCNadjiTim.TxtDrzava))
             {
+
                 try
                 {
                     Tim tim = new Tim
                     {
-                        FindCondition = $"ImeTima like '{uCNadjiTim.TxtNaziv.Text}%'"
+                        FindCondition = $"lower(DrzavaTima) like '{uCNadjiTim.TxtDrzava.Text.ToLower()}%' and lower(ImeTima) like '{uCNadjiTim.TxtNaziv.Text.ToLower()}%'"
+                    };
+                    BindingList<Tim> timovi = new BindingList<Tim>(Communication.Instance.SendRequestGetResult<List<Tim>>(Operation.NadjiTimove, tim));
+                    if (timovi.Count == 0)
+                    {
+                        MessageBox.Show("Sistem ne moze da nadje timove po zadatoj vrednosti");
+                        uCNadjiTim.DgvTimovi.DataSource = null;
+                        return;
+                    }
+                    uCNadjiTim.DgvTimovi.DataSource = timovi;
+                    OcistiPodatke();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Sistem ne moze da nadje timove po zadatoj vrednosti! " + ex.Message);
+                }
+            }
+            if (!UserControlsHelper.EmptyText(uCNadjiTim.TxtNaziv) && UserControlsHelper.EmptyText(uCNadjiTim.TxtDrzava))
+            {
+                
+                try
+                {
+                    Tim tim = new Tim
+                    {
+                        FindCondition = $"lower(ImeTima) like '{uCNadjiTim.TxtNaziv.Text.ToLower()}%'"
                     };
                     BindingList<Tim> timovi = new BindingList<Tim>(Communication.Instance.SendRequestGetResult<List<Tim>>(Operation.NadjiTimove, tim));
                     if (timovi.Count == 0)
@@ -45,7 +72,8 @@ namespace Client.Forms.GUIController
                         return;
                     }
                     uCNadjiTim.DgvTimovi.DataSource = timovi;
-                    uCNadjiTim.TxtNaziv.Clear();
+                    OcistiPodatke();
+                   
                 }
                 catch (Exception ex)
                 {
@@ -56,11 +84,12 @@ namespace Client.Forms.GUIController
 
             if (UserControlsHelper.EmptyText(uCNadjiTim.TxtNaziv) && !UserControlsHelper.EmptyText(uCNadjiTim.TxtDrzava))
             {
+                
                 try
                 {
                     Tim tim = new Tim
                     {
-                        FindCondition = $"DrzavaTima like '{uCNadjiTim.TxtDrzava.Text}%'"
+                        FindCondition = $"lower(DrzavaTima) like '{uCNadjiTim.TxtDrzava.Text.ToLower()}%'"
                     };
                     BindingList<Tim> timovi = new BindingList<Tim>(Communication.Instance.SendRequestGetResult<List<Tim>>(Operation.NadjiTimove, tim));
                     if (timovi.Count == 0)
@@ -70,14 +99,27 @@ namespace Client.Forms.GUIController
                         return;
                     }
                     uCNadjiTim.DgvTimovi.DataSource = timovi;
-                    uCNadjiTim.DgvTimovi.Columns["TimId"].Visible = false;
-                    uCNadjiTim.TxtDrzava.Clear();
+                    OcistiPodatke();
+                    
                 }
                 catch (Exception ex)
                 {
                     MessageBox.Show("Sistem ne moze da nadje timove po zadatoj vrednosti! " + ex.Message);
                 }
             }
+            
+        }
+
+        private void OcistiPodatke()
+        {
+            uCNadjiTim.TxtNaziv.BackColor = Color.White;
+            uCNadjiTim.TxtDrzava.BackColor = Color.White;
+            uCNadjiTim.TxtIme.Text = "";
+            uCNadjiTim.TxtDrzavaTima.Text = "";
+            uCNadjiTim.TxtBrojPobeda.Text = "";
+            uCNadjiTim.TxtBrojPoraza.Text = "";
+            uCNadjiTim.TxtBodovi.Text = "";
+            uCNadjiTim.TxtDvorana.Text = "";
         }
 
         internal void PrikaziTim()

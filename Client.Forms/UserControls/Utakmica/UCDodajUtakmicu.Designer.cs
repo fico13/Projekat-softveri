@@ -151,7 +151,7 @@ namespace Client.Forms.UserControls.Utakmica
             this.dtpDatum.Name = "dtpDatum";
             this.dtpDatum.Size = new System.Drawing.Size(216, 22);
             this.dtpDatum.TabIndex = 10;
-            this.dtpDatum.Value = new System.DateTime(2023, 8, 4, 20, 0, 0, 0);
+            this.dtpDatum.Value = new System.DateTime(2023, 1, 1, 20, 0, 0, 0);
             // 
             // groupBox1
             // 

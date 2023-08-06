@@ -251,6 +251,7 @@ namespace Client.Forms.UserControls.Utakmica
             this.txtDatum.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtDatum.Location = new System.Drawing.Point(97, 89);
             this.txtDatum.Name = "txtDatum";
+            this.txtDatum.ReadOnly = true;
             this.txtDatum.Size = new System.Drawing.Size(185, 22);
             this.txtDatum.TabIndex = 4;
             // 
@@ -259,6 +260,7 @@ namespace Client.Forms.UserControls.Utakmica
             this.txtPoeniGost.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtPoeniGost.Location = new System.Drawing.Point(312, 41);
             this.txtPoeniGost.Name = "txtPoeniGost";
+            this.txtPoeniGost.ReadOnly = true;
             this.txtPoeniGost.Size = new System.Drawing.Size(51, 22);
             this.txtPoeniGost.TabIndex = 3;
             // 
@@ -267,6 +269,7 @@ namespace Client.Forms.UserControls.Utakmica
             this.txtPoeniDomacin.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtPoeniDomacin.Location = new System.Drawing.Point(231, 41);
             this.txtPoeniDomacin.Name = "txtPoeniDomacin";
+            this.txtPoeniDomacin.ReadOnly = true;
             this.txtPoeniDomacin.Size = new System.Drawing.Size(51, 22);
             this.txtPoeniDomacin.TabIndex = 2;
             // 
@@ -275,6 +278,7 @@ namespace Client.Forms.UserControls.Utakmica
             this.txtGost.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtGost.Location = new System.Drawing.Point(387, 41);
             this.txtGost.Name = "txtGost";
+            this.txtGost.ReadOnly = true;
             this.txtGost.Size = new System.Drawing.Size(185, 22);
             this.txtGost.TabIndex = 1;
             // 
@@ -283,6 +287,7 @@ namespace Client.Forms.UserControls.Utakmica
             this.txtDomacin.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtDomacin.Location = new System.Drawing.Point(22, 41);
             this.txtDomacin.Name = "txtDomacin";
+            this.txtDomacin.ReadOnly = true;
             this.txtDomacin.Size = new System.Drawing.Size(185, 22);
             this.txtDomacin.TabIndex = 0;
             // 

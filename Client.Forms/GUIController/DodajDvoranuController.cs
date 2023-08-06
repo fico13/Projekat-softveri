@@ -14,7 +14,14 @@ namespace Client.Forms.GUIController
 {
     public class DodajDvoranuController
     {
-        internal void DodajDvoranu(UCDodajDvoranu uCDodajDvoranu)
+        private UCDodajDvoranu uCDodajDvoranu;
+
+        public DodajDvoranuController(UCDodajDvoranu uCDodajDvoranu)
+        {
+            this.uCDodajDvoranu = uCDodajDvoranu;
+        }
+
+        internal void DodajDvoranu()
         {
             if(UserControlsHelper.EmptyText(uCDodajDvoranu.TxtImeDvorane) || UserControlsHelper.EmptyText(uCDodajDvoranu.TxtDrzava) || UserControlsHelper.EmptyText(uCDodajDvoranu.TxtKapacitet))
             {

@@ -63,6 +63,7 @@
     <Compile Include="GUIController\DodajTimController.cs" />
     <Compile Include="GUIController\DodajUtakmicuController.cs" />
     <Compile Include="GUIController\IzmeniIgracaController.cs" />
+    <Compile Include="GUIController\IzmeniUtakmicuController.cs" />
     <Compile Include="GUIController\LoginController.cs" />
     <Compile Include="GUIController\NadjiIgracaController.cs" />
     <Compile Include="GUIController\NadjiTimController.cs" />
@@ -114,6 +115,12 @@
     <Compile Include="UserControls\Utakmica\UCDodajUtakmicu.Designer.cs">
       <DependentUpon>UCDodajUtakmicu.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\Utakmica\UCIzmenaUtakmice.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\Utakmica\UCIzmenaUtakmice.Designer.cs">
+      <DependentUpon>UCIzmenaUtakmice.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\Utakmica\UCPretragaUtakmica.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -155,6 +162,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\Utakmica\UCDodajUtakmicu.resx">
       <DependentUpon>UCDodajUtakmicu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\Utakmica\UCIzmenaUtakmice.resx">
+      <DependentUpon>UCIzmenaUtakmice.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\Utakmica\UCPretragaUtakmica.resx">
       <DependentUpon>UCPretragaUtakmica.cs</DependentUpon>

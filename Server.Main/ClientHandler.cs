@@ -105,6 +105,9 @@ namespace Server.Main
                 case Operation.NadjiUtakmice:
                     response.ResponseObject = Controller.Instance.NadjiUtakmice((Utakmica)request.RequestObject);
                     break;
+                case Operation.IzmeniUtakmicu:
+                    Controller.Instance.IzmeniUtakmicu((Utakmica)request.RequestObject);
+                    break;
                 default:
                     break;
             }

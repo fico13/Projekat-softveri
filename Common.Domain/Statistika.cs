@@ -25,7 +25,7 @@ namespace Common.Domain
         public string InsertValues => $"{Utakmica.UtakmicaId}, {Igrac.IgracId}, {Poeni}, {Skokovi}, {Asistencije}";
         [Browsable(false)]
 
-        public string WhereCondition => throw new NotImplementedException();
+        public string WhereCondition => $"UtakmicaId = {Utakmica.UtakmicaId} and IgracId = {Igrac.IgracId}";
         [Browsable(false)]
 
         public string Alias => "s";
@@ -40,7 +40,7 @@ namespace Common.Domain
         public string FindCondition => $"s.UtakmicaId = {Utakmica.UtakmicaId}";
         [Browsable(false)]
 
-        public string UpdateCondition => throw new NotImplementedException();
+        public string UpdateCondition => $"Poeni = {Poeni}, Skokovi = {Skokovi}, Asistencije = {Asistencije}";
         [Browsable(false)]
 
         public string IdColumnName => throw new NotImplementedException();

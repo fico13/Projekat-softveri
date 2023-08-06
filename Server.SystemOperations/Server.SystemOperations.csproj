@@ -52,6 +52,7 @@
     <Compile Include="TimSO\NadjiTimoveSO.cs" />
     <Compile Include="TimSO\SacuvajTimSO.cs" />
     <Compile Include="TimSO\VratiListuTimovaSO.cs" />
+    <Compile Include="UtakmicaSO\IzmeniUtakmicuSO.cs" />
     <Compile Include="UtakmicaSO\NadjiUtakmiceSO.cs" />
     <Compile Include="UtakmicaSO\SacuvajUtakmicuSO.cs" />
   </ItemGroup>

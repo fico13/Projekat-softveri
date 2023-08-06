@@ -29,7 +29,7 @@ namespace Common.Domain
         public string InsertValues => $"{BrojPoenaDomacin}, {BrojPoenaGost}, '{DateString}', {Domacin.TimId}, {Gost.TimId}";
         [Browsable(false)]
 
-        public string WhereCondition => throw new NotImplementedException();
+        public string WhereCondition => $"UtakmicaId = {UtakmicaId}";
         [Browsable(false)]
 
         public string Alias => "u";
@@ -44,7 +44,7 @@ namespace Common.Domain
         public string FindCondition { get; set; }
         [Browsable(false)]
 
-        public string UpdateCondition => throw new NotImplementedException();
+        public string UpdateCondition => $"BrojPoenaDomacin = {BrojPoenaDomacin}, BrojPoenaGost = {BrojPoenaGost}, DatumOdigravanja = '{DateString}'";
         [Browsable(false)]
 
         public string IdColumnName => "UtakmicaId";
