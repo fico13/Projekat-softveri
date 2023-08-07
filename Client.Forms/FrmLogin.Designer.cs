@@ -45,18 +45,20 @@ namespace Client.Forms
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(20, 67);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(20, 69);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(73, 17);
+            this.label1.Size = new System.Drawing.Size(94, 20);
             this.label1.TabIndex = 0;
             this.label1.Text = "Username";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(24, 120);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(20, 122);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(69, 17);
+            this.label2.Size = new System.Drawing.Size(91, 20);
             this.label2.TabIndex = 1;
             this.label2.Text = "Password";
             // 
@@ -70,23 +72,28 @@ namespace Client.Forms
             // 
             // txtUsername
             // 
+            this.txtUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtUsername.Location = new System.Drawing.Point(145, 62);
             this.txtUsername.Name = "txtUsername";
-            this.txtUsername.Size = new System.Drawing.Size(239, 22);
+            this.txtUsername.Size = new System.Drawing.Size(239, 27);
             this.txtUsername.TabIndex = 3;
+            this.txtUsername.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txtPassword
             // 
+            this.txtPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPassword.Location = new System.Drawing.Point(145, 115);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
-            this.txtPassword.Size = new System.Drawing.Size(239, 22);
+            this.txtPassword.Size = new System.Drawing.Size(239, 27);
             this.txtPassword.TabIndex = 4;
+            this.txtPassword.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // btnLogin
             // 
             this.btnLogin.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnLogin.BackgroundImage")));
             this.btnLogin.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogin.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnLogin.Location = new System.Drawing.Point(145, 177);
             this.btnLogin.Name = "btnLogin";
@@ -99,7 +106,7 @@ namespace Client.Forms
             // btnPrikaziLozinku
             // 
             this.btnPrikaziLozinku.Image = ((System.Drawing.Image)(resources.GetObject("btnPrikaziLozinku.Image")));
-            this.btnPrikaziLozinku.Location = new System.Drawing.Point(401, 104);
+            this.btnPrikaziLozinku.Location = new System.Drawing.Point(401, 109);
             this.btnPrikaziLozinku.Name = "btnPrikaziLozinku";
             this.btnPrikaziLozinku.Size = new System.Drawing.Size(41, 33);
             this.btnPrikaziLozinku.TabIndex = 6;
@@ -109,7 +116,7 @@ namespace Client.Forms
             // btnSakrijLozinku
             // 
             this.btnSakrijLozinku.Image = ((System.Drawing.Image)(resources.GetObject("btnSakrijLozinku.Image")));
-            this.btnSakrijLozinku.Location = new System.Drawing.Point(448, 103);
+            this.btnSakrijLozinku.Location = new System.Drawing.Point(448, 109);
             this.btnSakrijLozinku.Name = "btnSakrijLozinku";
             this.btnSakrijLozinku.Size = new System.Drawing.Size(41, 34);
             this.btnSakrijLozinku.TabIndex = 7;

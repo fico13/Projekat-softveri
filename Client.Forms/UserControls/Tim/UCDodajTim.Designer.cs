@@ -43,63 +43,78 @@ namespace Client.Forms.UserControls.Tim
             // 
             // label1
             // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(46, 116);
+            this.label1.BackColor = System.Drawing.Color.OrangeRed;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(234, 196);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(47, 25);
+            this.label1.Size = new System.Drawing.Size(39, 20);
             this.label1.TabIndex = 0;
             this.label1.Text = "Ime";
             // 
             // label2
             // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(46, 166);
+            this.label2.BackColor = System.Drawing.Color.OrangeRed;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(234, 246);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(80, 25);
+            this.label2.Size = new System.Drawing.Size(69, 20);
             this.label2.TabIndex = 1;
             this.label2.Text = "Država";
             // 
             // label3
             // 
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(46, 218);
+            this.label3.BackColor = System.Drawing.Color.OrangeRed;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(234, 298);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(93, 25);
+            this.label3.Size = new System.Drawing.Size(79, 20);
             this.label3.TabIndex = 2;
             this.label3.Text = "Dvorana";
             // 
             // txtIme
             // 
-            this.txtIme.Location = new System.Drawing.Point(163, 116);
+            this.txtIme.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtIme.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtIme.Location = new System.Drawing.Point(351, 188);
             this.txtIme.Name = "txtIme";
-            this.txtIme.Size = new System.Drawing.Size(201, 22);
+            this.txtIme.Size = new System.Drawing.Size(201, 27);
             this.txtIme.TabIndex = 3;
+            this.txtIme.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txtDrzava
             // 
-            this.txtDrzava.Location = new System.Drawing.Point(163, 166);
+            this.txtDrzava.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtDrzava.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDrzava.Location = new System.Drawing.Point(351, 238);
             this.txtDrzava.Name = "txtDrzava";
-            this.txtDrzava.Size = new System.Drawing.Size(201, 22);
+            this.txtDrzava.Size = new System.Drawing.Size(201, 27);
             this.txtDrzava.TabIndex = 4;
+            this.txtDrzava.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // cbDvorane
             // 
+            this.cbDvorane.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cbDvorane.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbDvorane.FormattingEnabled = true;
-            this.cbDvorane.Location = new System.Drawing.Point(163, 218);
+            this.cbDvorane.Location = new System.Drawing.Point(351, 290);
             this.cbDvorane.Name = "cbDvorane";
-            this.cbDvorane.Size = new System.Drawing.Size(201, 24);
+            this.cbDvorane.Size = new System.Drawing.Size(201, 28);
             this.cbDvorane.TabIndex = 5;
             // 
             // btnDodajTim
             // 
+            this.btnDodajTim.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnDodajTim.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnDodajTim.BackgroundImage")));
             this.btnDodajTim.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnDodajTim.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDodajTim.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDodajTim.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDodajTim.Location = new System.Drawing.Point(163, 281);
+            this.btnDodajTim.Location = new System.Drawing.Point(351, 361);
             this.btnDodajTim.Name = "btnDodajTim";
             this.btnDodajTim.Size = new System.Drawing.Size(201, 36);
             this.btnDodajTim.TabIndex = 6;
@@ -120,8 +135,9 @@ namespace Client.Forms.UserControls.Tim
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.DoubleBuffered = true;
             this.Name = "UCDodajTim";
-            this.Size = new System.Drawing.Size(474, 371);
+            this.Size = new System.Drawing.Size(835, 560);
             this.ResumeLayout(false);
             this.PerformLayout();
 

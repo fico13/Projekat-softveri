@@ -40,10 +40,11 @@ namespace Server.Main
             // 
             this.btnPokreni.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnPokreni.BackgroundImage")));
             this.btnPokreni.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnPokreni.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPokreni.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnPokreni.Location = new System.Drawing.Point(81, 57);
             this.btnPokreni.Name = "btnPokreni";
-            this.btnPokreni.Size = new System.Drawing.Size(189, 43);
+            this.btnPokreni.Size = new System.Drawing.Size(236, 43);
             this.btnPokreni.TabIndex = 0;
             this.btnPokreni.Text = "Pokreni server";
             this.btnPokreni.UseVisualStyleBackColor = true;
@@ -53,10 +54,11 @@ namespace Server.Main
             // 
             this.btnZaustavi.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnZaustavi.BackgroundImage")));
             this.btnZaustavi.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnZaustavi.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnZaustavi.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnZaustavi.Location = new System.Drawing.Point(381, 57);
             this.btnZaustavi.Name = "btnZaustavi";
-            this.btnZaustavi.Size = new System.Drawing.Size(189, 43);
+            this.btnZaustavi.Size = new System.Drawing.Size(236, 43);
             this.btnZaustavi.TabIndex = 1;
             this.btnZaustavi.Text = "Zaustavi server";
             this.btnZaustavi.UseVisualStyleBackColor = true;
@@ -65,17 +67,20 @@ namespace Server.Main
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(78, 143);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(48, 17);
+            this.label1.Size = new System.Drawing.Size(63, 20);
             this.label1.TabIndex = 2;
             this.label1.Text = "Status";
             // 
             // txtStatus
             // 
+            this.txtStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtStatus.Location = new System.Drawing.Point(157, 140);
             this.txtStatus.Name = "txtStatus";
-            this.txtStatus.Size = new System.Drawing.Size(413, 22);
+            this.txtStatus.ReadOnly = true;
+            this.txtStatus.Size = new System.Drawing.Size(413, 27);
             this.txtStatus.TabIndex = 3;
             this.txtStatus.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 

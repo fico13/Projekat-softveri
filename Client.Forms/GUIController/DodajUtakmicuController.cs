@@ -232,7 +232,7 @@ namespace Client.Forms.GUIController
 
         internal void UcitajIgrace()
         {
-            if(UserControlsHelper.ComboBoxValidation(uCDodajUtakmicu.CbDomacin) || UserControlsHelper.ComboBoxValidation(uCDodajUtakmicu.CbDomacin))
+            if(UserControlsHelper.ComboBoxValidation(uCDodajUtakmicu.CbDomacin) || UserControlsHelper.ComboBoxValidation(uCDodajUtakmicu.CbGost))
             {
                 MessageBox.Show("Sistem ne moze da zapamti utakmicu! Niste lepo odabrali tim u combo box-u! Pokusajte ponovo!");
                 return;

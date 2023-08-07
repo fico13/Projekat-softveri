@@ -6,6 +6,7 @@ using Common.Domain;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -38,11 +39,12 @@ namespace Client.Forms.GUIController
 
             if (!UserControlsHelper.EmptyText(uCIzmeniIgraca.TxtImeIgraca) && UserControlsHelper.EmptyText(uCIzmeniIgraca.TxtPrezimeIgraca))
             {
+                uCIzmeniIgraca.TxtPrezimeIgraca.BackColor = Color.White;
                 try
                 {
                     Igrac igrac = new Igrac
                     {
-                        FindCondition = $"ImeIgraca like '{uCIzmeniIgraca.TxtImeIgraca.Text}%'"
+                        FindCondition = $"lower(ImeIgraca) like '{uCIzmeniIgraca.TxtImeIgraca.Text.ToLower()}%'"
                     };
                     BindingList<Igrac> igraci = new BindingList<Igrac>(Communication.Instance.SendRequestGetResult<List<Igrac>>(Operation.NadjiIgrace, igrac));
                     if (igraci.Count == 0)
@@ -52,8 +54,6 @@ namespace Client.Forms.GUIController
                         return;
                     }
                     uCIzmeniIgraca.DgvIgraci.DataSource = igraci;
-                    uCIzmeniIgraca.DgvIgraci.Columns["IgracId"].Visible = false;
-                    uCIzmeniIgraca.TxtImeIgraca.Clear();
                 }
                 catch (Exception ex)
                 {
@@ -61,13 +61,14 @@ namespace Client.Forms.GUIController
                 }
             }
 
-            if (UserControlsHelper.EmptyText(uCIzmeniIgraca.TxtImeIgraca) && !UserControlsHelper.EmptyText(uCIzmeniIgraca.TxtPrezimeIgraca))
+            else if (UserControlsHelper.EmptyText(uCIzmeniIgraca.TxtImeIgraca) && !UserControlsHelper.EmptyText(uCIzmeniIgraca.TxtPrezimeIgraca))
             {
+                uCIzmeniIgraca.TxtImeIgraca.BackColor = Color.White;
                 try
                 {
                     Igrac igrac = new Igrac
                     {
-                        FindCondition = $"PrezimeIgraca like '{uCIzmeniIgraca.TxtPrezimeIgraca.Text}%'"
+                        FindCondition = $"lower(PrezimeIgraca) like '{uCIzmeniIgraca.TxtPrezimeIgraca.Text.ToLower()}%'"
                     };
                     BindingList<Igrac> igraci = new BindingList<Igrac>(Communication.Instance.SendRequestGetResult<List<Igrac>>(Operation.NadjiIgrace, igrac));
                     if (igraci.Count == 0)
@@ -77,8 +78,28 @@ namespace Client.Forms.GUIController
                         return;
                     }
                     uCIzmeniIgraca.DgvIgraci.DataSource = igraci;
-                    uCIzmeniIgraca.DgvIgraci.Columns["IgracId"].Visible = false;
-                    uCIzmeniIgraca.TxtPrezimeIgraca.Clear();
+                }
+                catch (Exception ex)
+                {
+                    System.Windows.Forms.MessageBox.Show("Sistem ne moze da nadje igrace po zadatoj vrednosti!" + ex.Message);
+                }
+            }
+            else if (!UserControlsHelper.EmptyText(uCIzmeniIgraca.TxtImeIgraca) && !UserControlsHelper.EmptyText(uCIzmeniIgraca.TxtPrezimeIgraca))
+            {
+                try
+                {
+                    Igrac igrac = new Igrac
+                    {
+                        FindCondition = $"lower(ImeIgraca) like '{uCIzmeniIgraca.TxtImeIgraca.Text.ToLower()}%' and lower(PrezimeIgraca) like '{uCIzmeniIgraca.TxtPrezimeIgraca.Text.ToLower()}%'"
+                    };
+                    BindingList<Igrac> igraci = new BindingList<Igrac>(Communication.Instance.SendRequestGetResult<List<Igrac>>(Operation.NadjiIgrace, igrac));
+                    if (igraci.Count == 0)
+                    {
+                        MessageBox.Show("Sistem ne moze da nadje igrace po zadatoj vrednosti!");
+                        uCIzmeniIgraca.DgvIgraci.DataSource = null;
+                        return;
+                    }
+                    uCIzmeniIgraca.DgvIgraci.DataSource = igraci;
                 }
                 catch (Exception ex)
                 {

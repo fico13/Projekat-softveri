@@ -25,6 +25,7 @@ namespace Client.Forms.GUIController
 
         internal void NadjiTim()
         {
+            OcistiPodatke();
             if(UserControlsHelper.EmptyText(uCNadjiTim.TxtNaziv) && UserControlsHelper.EmptyText(uCNadjiTim.TxtDrzava))
             {
                 MessageBox.Show("Sistem ne moze da nadje timove po zadatoj vrednosti! Niste uneli nijedan kriterijum za pretragu! Pokusajte ponovo!");
@@ -33,7 +34,6 @@ namespace Client.Forms.GUIController
             uCNadjiTim.DgvTimovi.DataSource = null;
             if (!UserControlsHelper.EmptyText(uCNadjiTim.TxtNaziv) && !UserControlsHelper.EmptyText(uCNadjiTim.TxtDrzava))
             {
-
                 try
                 {
                     Tim tim = new Tim
@@ -55,9 +55,9 @@ namespace Client.Forms.GUIController
                     MessageBox.Show("Sistem ne moze da nadje timove po zadatoj vrednosti! " + ex.Message);
                 }
             }
-            if (!UserControlsHelper.EmptyText(uCNadjiTim.TxtNaziv) && UserControlsHelper.EmptyText(uCNadjiTim.TxtDrzava))
+            else if (!UserControlsHelper.EmptyText(uCNadjiTim.TxtNaziv) && UserControlsHelper.EmptyText(uCNadjiTim.TxtDrzava))
             {
-                
+                uCNadjiTim.TxtDrzava.BackColor = Color.White;
                 try
                 {
                     Tim tim = new Tim
@@ -72,7 +72,6 @@ namespace Client.Forms.GUIController
                         return;
                     }
                     uCNadjiTim.DgvTimovi.DataSource = timovi;
-                    OcistiPodatke();
                    
                 }
                 catch (Exception ex)
@@ -82,11 +81,11 @@ namespace Client.Forms.GUIController
                 }
             }
 
-            if (UserControlsHelper.EmptyText(uCNadjiTim.TxtNaziv) && !UserControlsHelper.EmptyText(uCNadjiTim.TxtDrzava))
+            else if (UserControlsHelper.EmptyText(uCNadjiTim.TxtNaziv) && !UserControlsHelper.EmptyText(uCNadjiTim.TxtDrzava))
             {
-                
+                uCNadjiTim.TxtNaziv.BackColor = Color.White;
                 try
-                {
+                { 
                     Tim tim = new Tim
                     {
                         FindCondition = $"lower(DrzavaTima) like '{uCNadjiTim.TxtDrzava.Text.ToLower()}%'"
@@ -99,8 +98,6 @@ namespace Client.Forms.GUIController
                         return;
                     }
                     uCNadjiTim.DgvTimovi.DataSource = timovi;
-                    OcistiPodatke();
-                    
                 }
                 catch (Exception ex)
                 {
@@ -112,8 +109,6 @@ namespace Client.Forms.GUIController
 
         private void OcistiPodatke()
         {
-            uCNadjiTim.TxtNaziv.BackColor = Color.White;
-            uCNadjiTim.TxtDrzava.BackColor = Color.White;
             uCNadjiTim.TxtIme.Text = "";
             uCNadjiTim.TxtDrzavaTima.Text = "";
             uCNadjiTim.TxtBrojPobeda.Text = "";

@@ -29,5 +29,9 @@ namespace Client.Forms.UserControls.Igrac
         {
             nadjiIgracaController.PrikaziIgraca();
         }
+
+        
+
+        
     }
 }

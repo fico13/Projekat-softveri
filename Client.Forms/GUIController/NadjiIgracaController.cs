@@ -6,6 +6,7 @@ using Common.Domain;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -30,13 +31,14 @@ namespace Client.Forms.GUIController
                 return;
             }
 
-            if (!UserControlsHelper.EmptyText(uCPretragaIgraca.TxtImeIgraca) && UserControlsHelper.EmptyText(uCPretragaIgraca.TxtPrezimeIgraca))
+            else if (!UserControlsHelper.EmptyText(uCPretragaIgraca.TxtImeIgraca) && UserControlsHelper.EmptyText(uCPretragaIgraca.TxtPrezimeIgraca))
             {
+                uCPretragaIgraca.TxtPrezimeIgraca.BackColor = Color.White;
                 try
                 {
                     Igrac igrac = new Igrac
                     {
-                        FindCondition = $"ImeIgraca like '{uCPretragaIgraca.TxtImeIgraca.Text}%'"
+                        FindCondition = $"lower(ImeIgraca) like '{uCPretragaIgraca.TxtImeIgraca.Text.ToLower()}%'"
                     };
                     BindingList<Igrac> igraci = new BindingList<Igrac>(Communication.Instance.SendRequestGetResult<List<Igrac>>(Operation.NadjiIgrace, igrac));
                     if (igraci.Count == 0)
@@ -46,7 +48,6 @@ namespace Client.Forms.GUIController
                         return;
                     }
                     uCPretragaIgraca.DgvIgraci.DataSource = igraci;
-                    uCPretragaIgraca.TxtImeIgraca.Clear();
                 }
                 catch (Exception ex)
                 {
@@ -54,13 +55,14 @@ namespace Client.Forms.GUIController
                 }
             }
 
-            if (UserControlsHelper.EmptyText(uCPretragaIgraca.TxtImeIgraca) && !UserControlsHelper.EmptyText(uCPretragaIgraca.TxtPrezimeIgraca))
+            else if (UserControlsHelper.EmptyText(uCPretragaIgraca.TxtImeIgraca) && !UserControlsHelper.EmptyText(uCPretragaIgraca.TxtPrezimeIgraca))
             {
+                uCPretragaIgraca.TxtImeIgraca.BackColor = Color.White;
                 try
                 {
                     Igrac igrac = new Igrac
                     {
-                        FindCondition = $"PrezimeIgraca like '{uCPretragaIgraca.TxtPrezimeIgraca.Text}%'"
+                        FindCondition = $"lower(PrezimeIgraca) like '{uCPretragaIgraca.TxtPrezimeIgraca.Text.ToLower()}%'"
                     };
                     BindingList<Igrac> igraci = new BindingList<Igrac>(Communication.Instance.SendRequestGetResult<List<Igrac>>(Operation.NadjiIgrace, igrac));
                     if (igraci.Count == 0)
@@ -70,7 +72,30 @@ namespace Client.Forms.GUIController
                         return;
                     }
                     uCPretragaIgraca.DgvIgraci.DataSource = igraci;
-                    uCPretragaIgraca.TxtPrezimeIgraca.Clear();
+                }
+                catch (Exception ex)
+                {
+                    System.Windows.Forms.MessageBox.Show("Sistem ne moze da nadje igrace po zadatoj vrednosti!" + ex.Message);
+                }
+            }
+            else if (!UserControlsHelper.EmptyText(uCPretragaIgraca.TxtImeIgraca) && !UserControlsHelper.EmptyText(uCPretragaIgraca.TxtPrezimeIgraca))
+            {
+                try
+                { 
+                    Igrac igrac = new Igrac
+                    {
+                        FindCondition = $"lower(ImeIgraca) like '{uCPretragaIgraca.TxtImeIgraca.Text.ToLower()}%' and lower(PrezimeIgraca) like '{uCPretragaIgraca.TxtPrezimeIgraca.Text.ToLower()}%'"
+                    };
+                    BindingList<Igrac> igraci = new BindingList<Igrac>(Communication.Instance.SendRequestGetResult<List<Igrac>>(Operation.NadjiIgrace, igrac));
+                    if (igraci.Count == 0)
+                    {
+                        MessageBox.Show("Sistem ne moze da nadje igrace po zadatoj vrednosti!");
+                        uCPretragaIgraca.DgvIgraci.DataSource = null;
+                        uCPretragaIgraca.TxtImeIgraca.BackColor = Color.White;
+                        uCPretragaIgraca.TxtPrezimeIgraca.BackColor = Color.White;
+                        return;
+                    }
+                    uCPretragaIgraca.DgvIgraci.DataSource = igraci;
                 }
                 catch (Exception ex)
                 {

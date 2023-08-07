@@ -59,37 +59,43 @@ namespace Client.Forms.UserControls.Dvorana
             // txtKapacitet
             // 
             this.txtKapacitet.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtKapacitet.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtKapacitet.Location = new System.Drawing.Point(204, 144);
             this.txtKapacitet.Name = "txtKapacitet";
-            this.txtKapacitet.Size = new System.Drawing.Size(246, 22);
+            this.txtKapacitet.Size = new System.Drawing.Size(246, 27);
             this.txtKapacitet.TabIndex = 12;
+            this.txtKapacitet.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txtDrzava
             // 
             this.txtDrzava.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtDrzava.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDrzava.Location = new System.Drawing.Point(204, 89);
             this.txtDrzava.Name = "txtDrzava";
-            this.txtDrzava.Size = new System.Drawing.Size(246, 22);
+            this.txtDrzava.Size = new System.Drawing.Size(246, 27);
             this.txtDrzava.TabIndex = 11;
+            this.txtDrzava.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txtImeDvorane
             // 
             this.txtImeDvorane.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtImeDvorane.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtImeDvorane.Location = new System.Drawing.Point(204, 34);
             this.txtImeDvorane.Name = "txtImeDvorane";
-            this.txtImeDvorane.Size = new System.Drawing.Size(246, 22);
+            this.txtImeDvorane.Size = new System.Drawing.Size(246, 27);
             this.txtImeDvorane.TabIndex = 10;
+            this.txtImeDvorane.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label3
             // 
             this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Blue;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.SystemColors.Control;
-            this.label3.Location = new System.Drawing.Point(62, 141);
+            this.label3.BackColor = System.Drawing.Color.Chocolate;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label3.Location = new System.Drawing.Point(62, 151);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(103, 25);
+            this.label3.Size = new System.Drawing.Size(88, 20);
             this.label3.TabIndex = 9;
             this.label3.Text = "Kapacitet";
             // 
@@ -97,12 +103,12 @@ namespace Client.Forms.UserControls.Dvorana
             // 
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Blue;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.SystemColors.Control;
-            this.label2.Location = new System.Drawing.Point(62, 86);
+            this.label2.BackColor = System.Drawing.Color.Chocolate;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label2.Location = new System.Drawing.Point(62, 96);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(80, 25);
+            this.label2.Size = new System.Drawing.Size(69, 20);
             this.label2.TabIndex = 8;
             this.label2.Text = "Država";
             // 
@@ -110,12 +116,12 @@ namespace Client.Forms.UserControls.Dvorana
             // 
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Blue;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.SystemColors.Control;
-            this.label1.Location = new System.Drawing.Point(62, 31);
+            this.label1.BackColor = System.Drawing.Color.Chocolate;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label1.Location = new System.Drawing.Point(62, 41);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(47, 25);
+            this.label1.Size = new System.Drawing.Size(39, 20);
             this.label1.TabIndex = 7;
             this.label1.Text = "Ime";
             // 
@@ -132,6 +138,7 @@ namespace Client.Forms.UserControls.Dvorana
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.DoubleBuffered = true;
             this.Name = "UCDodajDvoranu";
             this.Size = new System.Drawing.Size(551, 302);
             this.ResumeLayout(false);

@@ -50,5 +50,7 @@ namespace Client.Forms.UserControls.Utakmica
         {
             izmeniUtakmicuController.IzmeniUtakmicu();
         }
+
+        
     }
 }
