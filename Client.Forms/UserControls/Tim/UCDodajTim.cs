@@ -1,4 +1,5 @@
-﻿using Client.Forms.GUIController;
+﻿using Client.Forms.Exceptions;
+using Client.Forms.GUIController;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,9 +17,17 @@ namespace Client.Forms.UserControls.Tim
         private DodajTimController dodajTimController;
         public UCDodajTim()
         {
-            InitializeComponent();
-            dodajTimController = new DodajTimController(this);
-            dodajTimController.Init();
+            try
+            {
+                InitializeComponent();
+                dodajTimController = new DodajTimController(this);
+                dodajTimController.Init();
+
+            }
+            catch (ServerCommunicationException)
+            {
+                throw;
+            }
         }
 
         private void btnDodajTim_Click(object sender, EventArgs e)

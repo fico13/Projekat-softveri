@@ -1,4 +1,5 @@
-﻿using Client.Forms.GUIController;
+﻿using Client.Forms.Exceptions;
+using Client.Forms.GUIController;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,9 +17,17 @@ namespace Client.Forms.UserControls.Igrac
         private IzmeniIgracaController izmeniIgracaController;
         public UCIzmeniIgraca()
         {
-            InitializeComponent();
-            izmeniIgracaController = new IzmeniIgracaController(this);
-            izmeniIgracaController.Init();
+            try
+            {
+                InitializeComponent();
+                izmeniIgracaController = new IzmeniIgracaController(this);
+                izmeniIgracaController.Init();
+
+            }
+            catch (ServerCommunicationException)
+            {
+                throw;
+            }
         }
 
         private void btnTraziIgraca_Click(object sender, EventArgs e)

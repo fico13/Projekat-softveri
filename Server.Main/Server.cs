@@ -33,8 +33,9 @@ namespace Server.Main
                 while(true)
                 {
                     Socket klijentSoket = serverSoket.Accept();
-                    ClientHandler handler = new ClientHandler(klijentSoket, clients, administrators);
+                    ClientHandler handler = new ClientHandler(klijentSoket);
                     clients.Add(handler);
+                    handler.OdjavljeniKlijent += Handler_OdjavljeniKlijent;
                     Thread nit = new Thread(handler.ObradiZahteve);
                     nit.Start();
                 }
@@ -49,10 +50,19 @@ namespace Server.Main
             }
         }
 
+        private void Handler_OdjavljeniKlijent(object sender, EventArgs e)
+        {
+            clients.Remove((ClientHandler)sender);
+        }
+
         internal void Close()
         {
             serverSoket?.Close();
             serverSoket = null;
+            foreach (var client in clients.ToList())
+            {
+                client.CloseSocket();
+            }
         }
     }
 }

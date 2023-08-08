@@ -1,4 +1,5 @@
-﻿using Client.Forms.UserControls.Dvorana;
+﻿using Client.Forms.ServerCommunication;
+using Client.Forms.UserControls.Dvorana;
 using Client.Forms.UserControls.Igrac;
 using Client.Forms.UserControls.Tim;
 using Client.Forms.UserControls.Utakmica;
@@ -7,6 +8,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -70,6 +72,20 @@ namespace Client.Forms
         private void izmeniUtakmicuToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             ChangePanel(new UCIzmenaUtakmice());
+        }
+
+        private void FrmMain_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            try
+            {
+                Communication.Instance.Close();
+
+            }
+            catch (IOException)
+            {
+
+                throw;
+            }
         }
     }
 }

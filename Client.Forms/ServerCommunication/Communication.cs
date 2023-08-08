@@ -1,6 +1,8 @@
-﻿using Common.Communication;
+﻿using Client.Forms.Exceptions;
+using Common.Communication;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Net.Sockets;
 using System.Text;
@@ -64,10 +66,9 @@ namespace Client.Forms.ServerCommunication
                 helper.Send(request);
 
             }
-            catch (Exception)
+            catch (IOException ex)
             {
-
-                throw;
+                throw new ServerCommunicationException(ex.Message);
             }
         }
         private T GetResult<T>() where T : class
@@ -79,9 +80,21 @@ namespace Client.Forms.ServerCommunication
             }
             else
             {
-                MessageBox.Show(response.Poruka);
-                return null;
+                throw new SystemOperationException(response.Poruka);
             }
+        }
+
+        internal void Close()
+        {
+            if (socket == null) return;
+            Request request = new Request
+            {
+                Operation = Operation.End
+            };
+            helper.Send(request);
+            socket.Shutdown(SocketShutdown.Both);
+            socket.Close();
+            socket = null;
         }
 
         private void GetResult()
@@ -89,7 +102,7 @@ namespace Client.Forms.ServerCommunication
             Response response = helper.Receive<Response>();
             if (!response.Uspesno)
             {
-                MessageBox.Show(response.Poruka);
+                throw new SystemOperationException(response.Poruka);
             }
         }
     }

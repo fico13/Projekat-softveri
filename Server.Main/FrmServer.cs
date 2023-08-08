@@ -37,9 +37,9 @@ namespace Server.Main
                 txtStatus.BackColor = Color.Green;
                 txtStatus.ForeColor = Color.White;
             }
-            catch (SocketException ex)
+            catch (SocketException)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("Prekinuta je veza sa serverom!");
             }
             catch(Exception ex)
             {

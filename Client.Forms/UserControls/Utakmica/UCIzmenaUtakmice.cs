@@ -1,4 +1,5 @@
-﻿using Client.Forms.GUIController;
+﻿using Client.Forms.Exceptions;
+using Client.Forms.GUIController;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,9 +17,16 @@ namespace Client.Forms.UserControls.Utakmica
         private IzmeniUtakmicuController izmeniUtakmicuController;
         public UCIzmenaUtakmice()
         {
-            InitializeComponent();
-            izmeniUtakmicuController = new IzmeniUtakmicuController(this);
-            izmeniUtakmicuController.Init();
+            try
+            {
+                InitializeComponent();
+                izmeniUtakmicuController = new IzmeniUtakmicuController(this);
+                izmeniUtakmicuController.Init();
+            }
+            catch (ServerCommunicationException)
+            {
+                throw;
+            }
         }
 
         private void btnPronadjiUtakmice_Click(object sender, EventArgs e)

@@ -1,4 +1,5 @@
-﻿using Client.Forms.GUIHelper;
+﻿using Client.Forms.Exceptions;
+using Client.Forms.GUIHelper;
 using Client.Forms.ServerCommunication;
 using Client.Forms.UserControls.Igrac;
 using Common.Communication;
@@ -27,7 +28,7 @@ namespace Client.Forms.GUIController
         {
             if(UserControlsHelper.EmptyText(uCPretragaIgraca.TxtImeIgraca) && UserControlsHelper.EmptyText(uCPretragaIgraca.TxtPrezimeIgraca))
             {
-                System.Windows.Forms.MessageBox.Show("Sistem ne moze da nadje igrace po zadatoj vrednosti! Niste uneli nijedan podatak za pretragu! Pokusajte ponovo!");
+                MessageBox.Show("Sistem ne može da nađe igrače po zadatoj vrednosti! Niste uneli nijedan podatak za pretragu! Pokušajte ponovo!");
                 return;
             }
 
@@ -43,15 +44,16 @@ namespace Client.Forms.GUIController
                     BindingList<Igrac> igraci = new BindingList<Igrac>(Communication.Instance.SendRequestGetResult<List<Igrac>>(Operation.NadjiIgrace, igrac));
                     if (igraci.Count == 0)
                     {
-                        MessageBox.Show("Sistem ne moze da nadje igrace po zadatoj vrednosti!");
+                        MessageBox.Show("Sistem ne može da nađe igrače po zadatoj vrednosti!");
                         uCPretragaIgraca.DgvIgraci.DataSource = null;
                         return;
                     }
                     uCPretragaIgraca.DgvIgraci.DataSource = igraci;
                 }
-                catch (Exception ex)
+                catch (ServerCommunicationException)
                 {
-                    System.Windows.Forms.MessageBox.Show("Sistem ne moze da nadje igrace po zadatoj vrednosti!" + ex.Message);
+                    MessageBox.Show("Sistem ne može da nađe igrače po zadatoj vrednosti!");
+                    throw;
                 }
             }
 
@@ -67,15 +69,16 @@ namespace Client.Forms.GUIController
                     BindingList<Igrac> igraci = new BindingList<Igrac>(Communication.Instance.SendRequestGetResult<List<Igrac>>(Operation.NadjiIgrace, igrac));
                     if (igraci.Count == 0)
                     {
-                        MessageBox.Show("Sistem ne moze da nadje igrace po zadatoj vrednosti!");
+                        MessageBox.Show("Sistem ne može da nađe igrače po zadatoj vrednosti!");
                         uCPretragaIgraca.DgvIgraci.DataSource = null;
                         return;
                     }
                     uCPretragaIgraca.DgvIgraci.DataSource = igraci;
                 }
-                catch (Exception ex)
+                catch (ServerCommunicationException)
                 {
-                    System.Windows.Forms.MessageBox.Show("Sistem ne moze da nadje igrace po zadatoj vrednosti!" + ex.Message);
+                    MessageBox.Show("Sistem ne može da nađe igrače po zadatoj vrednosti!");
+                    throw;
                 }
             }
             else if (!UserControlsHelper.EmptyText(uCPretragaIgraca.TxtImeIgraca) && !UserControlsHelper.EmptyText(uCPretragaIgraca.TxtPrezimeIgraca))
@@ -89,7 +92,7 @@ namespace Client.Forms.GUIController
                     BindingList<Igrac> igraci = new BindingList<Igrac>(Communication.Instance.SendRequestGetResult<List<Igrac>>(Operation.NadjiIgrace, igrac));
                     if (igraci.Count == 0)
                     {
-                        MessageBox.Show("Sistem ne moze da nadje igrace po zadatoj vrednosti!");
+                        MessageBox.Show("Sistem ne može da nađe igrače po zadatoj vrednosti!");
                         uCPretragaIgraca.DgvIgraci.DataSource = null;
                         uCPretragaIgraca.TxtImeIgraca.BackColor = Color.White;
                         uCPretragaIgraca.TxtPrezimeIgraca.BackColor = Color.White;
@@ -97,9 +100,10 @@ namespace Client.Forms.GUIController
                     }
                     uCPretragaIgraca.DgvIgraci.DataSource = igraci;
                 }
-                catch (Exception ex)
+                catch (ServerCommunicationException)
                 {
-                    System.Windows.Forms.MessageBox.Show("Sistem ne moze da nadje igrace po zadatoj vrednosti!" + ex.Message);
+                    MessageBox.Show("Sistem ne može da nađe igrače po zadatoj vrednosti!");
+                    throw;
                 }
             }
         }
@@ -108,7 +112,7 @@ namespace Client.Forms.GUIController
         {
             if (uCPretragaIgraca.DgvIgraci.SelectedRows.Count == 0)
             {
-                MessageBox.Show("Sistem ne moze da ucita igraca! Niste odabrali nijednog igraca, pokusajte ponovo!");
+                MessageBox.Show("Sistem ne može da učita igrača! Niste odabrali nijednog igrača! Pokušajte ponovo!");
                 return;
             }
             Igrac igrac = (Igrac)uCPretragaIgraca.DgvIgraci.SelectedRows[0].DataBoundItem;

@@ -1,4 +1,5 @@
-﻿using Client.Forms.GUIHelper;
+﻿using Client.Forms.Exceptions;
+using Client.Forms.GUIHelper;
 using Client.Forms.ServerCommunication;
 using Client.Forms.UserControls.Utakmica;
 using Common.Communication;
@@ -43,22 +44,22 @@ namespace Client.Forms.GUIController
         {
             if(UserControlsHelper.EmptyText(uCIzmenaUtakmice.TxtPoeni) || UserControlsHelper.EmptyText(uCIzmenaUtakmice.TxtSkokovi) || UserControlsHelper.EmptyText(uCIzmenaUtakmice.TxtAsistencije))
             {
-                MessageBox.Show("Sistem ne moze da izmeni statistku! Niste uneli sve podatke! Pokusajte ponovo!");
+                MessageBox.Show("Sistem ne može da izmeni statistku! Niste uneli sve podatke! Pokušajte ponovo!");
                 return;
             }
             if(UserControlsHelper.IntegerValidation(uCIzmenaUtakmice.TxtPoeni))
             {
-                MessageBox.Show("Sistem ne moze da izmeni statistku! Poeni moraju da budu prirodan broj! Pokusajte ponovo!");
+                MessageBox.Show("Sistem ne može da izmeni statistku! Poeni moraju da budu prirodan broj! Pokušajte ponovo!");
                 return;
             }
             if (UserControlsHelper.IntegerValidation(uCIzmenaUtakmice.TxtSkokovi))
             {
-                MessageBox.Show("Sistem ne moze da izmeni statistku! Skokovi moraju da budu prirodan broj! Pokusajte ponovo!");
+                MessageBox.Show("Sistem ne može da izmeni statistku! Skokovi moraju da budu prirodan broj! Pokušajte ponovo!");
                 return;
             }
             if (UserControlsHelper.IntegerValidation(uCIzmenaUtakmice.TxtAsistencije))
             {
-                MessageBox.Show("Sistem ne moze da izmeni statistku! Asistencije moraju da budu prirodan broj! Pokusajte ponovo!");
+                MessageBox.Show("Sistem ne može da izmeni statistku! Asistencije moraju da budu prirodan broj! Pokušajte ponovo!");
                 return;
             }
             Statistika.Poeni = Convert.ToInt32(uCIzmenaUtakmice.TxtPoeni.Text);
@@ -69,21 +70,30 @@ namespace Client.Forms.GUIController
 
         internal void IzmeniUtakmicu()
         {
-            Utakmica.BrojPoenaDomacin = Convert.ToInt32(uCIzmenaUtakmice.TxtPoeniDomacin.Text);
-            Utakmica.BrojPoenaGost = Convert.ToInt32(uCIzmenaUtakmice.TxtPoeniGost.Text);
-            Utakmica.DateString = uCIzmenaUtakmice.DtpDatum.Value.ToString();
-            Communication.Instance.SendRequestNoResult(Operation.IzmeniUtakmicu, Utakmica);
-            MessageBox.Show("Sistem je izmenio utakmicu!");
-            OcistiPodatke();
-            uCIzmenaUtakmice.DgvUtakmice.DataSource = null;
-            Init();
+            try
+            {
+                Utakmica.BrojPoenaDomacin = Convert.ToInt32(uCIzmenaUtakmice.TxtPoeniDomacin.Text);
+                Utakmica.BrojPoenaGost = Convert.ToInt32(uCIzmenaUtakmice.TxtPoeniGost.Text);
+                Utakmica.DateString = uCIzmenaUtakmice.DtpDatum.Value.ToString();
+                Communication.Instance.SendRequestNoResult(Operation.IzmeniUtakmicu, Utakmica);
+                MessageBox.Show("Sistem je izmenio utakmicu!");
+                OcistiPodatke();
+                uCIzmenaUtakmice.DgvUtakmice.DataSource = null;
+                Init();
+
+            }
+            catch (ServerCommunicationException)
+            {
+                MessageBox.Show("Sistem ne može da izmeni utakmicu!");
+                throw;
+            }
         }
 
         internal void UcitajStatistiku()
         {
             if (uCIzmenaUtakmice.DgvDomaci.SelectedRows.Count == 0 && uCIzmenaUtakmice.DgvGosti.SelectedRows.Count == 0)
             {
-                MessageBox.Show("Sistem ne moze da ucita statistiku igraca! Niste odabrali nijednu statistiku igraca! Pokusajte ponovo!");
+                MessageBox.Show("Sistem ne može da učita statistiku igrača! Niste odabrali nijednu statistiku igrača! Pokušajte ponovo!");
                 return;
             }
             if(uCIzmenaUtakmice.DgvDomaci.SelectedRows.Count > 0)
@@ -140,7 +150,7 @@ namespace Client.Forms.GUIController
         {
             if (uCIzmenaUtakmice.DgvUtakmice.SelectedRows.Count == 0)
             {
-                MessageBox.Show("Sistem ne moze da ucita utakmicu! Niste odabrali nijednu utakmicu! Pokusajte ponovo!");
+                MessageBox.Show("Sistem ne može da učita utakmicu! Niste odabrali nijednu utakmicu! Pokušajte ponovo!");
                 return;
             }
             Utakmica = (Utakmica)uCIzmenaUtakmice.DgvUtakmice.SelectedRows[0].DataBoundItem;
@@ -158,23 +168,32 @@ namespace Client.Forms.GUIController
         {
             if (UserControlsHelper.ComboBoxValidation(uCIzmenaUtakmice.CbTimovi))
             {
-                MessageBox.Show("Sistem ne moze da nadje utakmice po zadatoj vrednosti! Niste lepo odabrali tim iz combobox-a! Pokusajte ponovo!");
+                MessageBox.Show("Sistem ne može da nađe utakmice po zadatoj vrednosti! Niste lepo odabrali tim iz combobox-a! Pokušajte ponovo!");
             }
             //Tim tim = (Tim)uCPretragaUtakmica.CbTimovi.SelectedItem;
             Utakmica utakmica = new Utakmica
             {
                 FindCondition = $"lower(d.ImeTima) like '{uCIzmenaUtakmice.CbTimovi.Text.ToLower()}' or lower(g.ImeTima) like '{uCIzmenaUtakmice.CbTimovi.Text.ToLower()}'"
             };
-            BindingList<Utakmica> utakmice = new BindingList<Utakmica>(Communication.Instance.SendRequestGetResult<List<Utakmica>>(Operation.NadjiUtakmice, utakmica));
-            if (utakmice.Count == 0)
+            try
             {
-                MessageBox.Show("Sistem ne moze da nadje utakmice po zadatoj vrednosti!");
-                uCIzmenaUtakmice.DgvUtakmice.DataSource = null;
-                return;
+                BindingList<Utakmica> utakmice = new BindingList<Utakmica>(Communication.Instance.SendRequestGetResult<List<Utakmica>>(Operation.NadjiUtakmice, utakmica));
+                if (utakmice.Count == 0)
+                {
+                    MessageBox.Show("Sistem ne može da nađe utakmice po zadatoj vrednosti!");
+                    uCIzmenaUtakmice.DgvUtakmice.DataSource = null;
+                    return;
+                }
+                uCIzmenaUtakmice.DgvUtakmice.DataSource = utakmice;
+                uCIzmenaUtakmice.BtnUcitajUtakmicu.Enabled = true;
+                OcistiPodatke();
+
             }
-            uCIzmenaUtakmice.DgvUtakmice.DataSource = utakmice;
-            uCIzmenaUtakmice.BtnUcitajUtakmicu.Enabled = true;
-            OcistiPodatke();
+            catch (ServerCommunicationException)
+            {
+                MessageBox.Show("Sistem ne može da nađe utakmice po zadatoj vrednosti!");
+                throw;
+            }
         }
 
         private void OcistiPodatke()

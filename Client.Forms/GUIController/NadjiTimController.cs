@@ -1,4 +1,5 @@
-﻿using Client.Forms.GUIHelper;
+﻿using Client.Forms.Exceptions;
+using Client.Forms.GUIHelper;
 using Client.Forms.ServerCommunication;
 using Client.Forms.UserControls.Tim;
 using Common.Communication;
@@ -28,7 +29,7 @@ namespace Client.Forms.GUIController
             OcistiPodatke();
             if(UserControlsHelper.EmptyText(uCNadjiTim.TxtNaziv) && UserControlsHelper.EmptyText(uCNadjiTim.TxtDrzava))
             {
-                MessageBox.Show("Sistem ne moze da nadje timove po zadatoj vrednosti! Niste uneli nijedan kriterijum za pretragu! Pokusajte ponovo!");
+                MessageBox.Show("Sistem ne može da nađe timove po zadatoj vrednosti! Niste uneli nijedan kriterijum za pretragu! Pokušajte ponovo!");
                 return;
             }
             uCNadjiTim.DgvTimovi.DataSource = null;
@@ -43,16 +44,17 @@ namespace Client.Forms.GUIController
                     BindingList<Tim> timovi = new BindingList<Tim>(Communication.Instance.SendRequestGetResult<List<Tim>>(Operation.NadjiTimove, tim));
                     if (timovi.Count == 0)
                     {
-                        MessageBox.Show("Sistem ne moze da nadje timove po zadatoj vrednosti");
+                        MessageBox.Show("Sistem ne može da nađe timove po zadatoj vrednosti");
                         uCNadjiTim.DgvTimovi.DataSource = null;
                         return;
                     }
                     uCNadjiTim.DgvTimovi.DataSource = timovi;
                     OcistiPodatke();
                 }
-                catch (Exception ex)
+                catch (ServerCommunicationException)
                 {
-                    MessageBox.Show("Sistem ne moze da nadje timove po zadatoj vrednosti! " + ex.Message);
+                    MessageBox.Show("Sistem ne može da nađe timove po zadatoj vrednosti");
+                    throw;
                 }
             }
             else if (!UserControlsHelper.EmptyText(uCNadjiTim.TxtNaziv) && UserControlsHelper.EmptyText(uCNadjiTim.TxtDrzava))
@@ -67,17 +69,17 @@ namespace Client.Forms.GUIController
                     BindingList<Tim> timovi = new BindingList<Tim>(Communication.Instance.SendRequestGetResult<List<Tim>>(Operation.NadjiTimove, tim));
                     if (timovi.Count == 0)
                     {
-                        MessageBox.Show("Sistem ne moze da nadje timove po zadatoj vrednosti!");
+                        MessageBox.Show("Sistem ne može da nađe timove po zadatoj vrednosti!");
                         uCNadjiTim.DgvTimovi.DataSource = null;
                         return;
                     }
                     uCNadjiTim.DgvTimovi.DataSource = timovi;
                    
                 }
-                catch (Exception ex)
+                catch (ServerCommunicationException)
                 {
-                    MessageBox.Show("Sistem ne moze da nadje timove po zadatoj vrednosti! " + ex.Message);
-
+                    MessageBox.Show("Sistem ne može da nađe timove po zadatoj vrednosti");
+                    throw;
                 }
             }
 
@@ -93,15 +95,16 @@ namespace Client.Forms.GUIController
                     BindingList<Tim> timovi = new BindingList<Tim>(Communication.Instance.SendRequestGetResult<List<Tim>>(Operation.NadjiTimove, tim));
                     if (timovi.Count == 0)
                     {
-                        MessageBox.Show("Sistem ne moze da nadje timove po zadatoj vrednosti");
+                        MessageBox.Show("Sistem ne može da nađe timove po zadatoj vrednosti");
                         uCNadjiTim.DgvTimovi.DataSource = null;
                         return;
                     }
                     uCNadjiTim.DgvTimovi.DataSource = timovi;
                 }
-                catch (Exception ex)
+                catch (ServerCommunicationException)
                 {
-                    MessageBox.Show("Sistem ne moze da nadje timove po zadatoj vrednosti! " + ex.Message);
+                    MessageBox.Show("Sistem ne može da nađe timove po zadatoj vrednosti");
+                    throw new ServerCommunicationException();
                 }
             }
             
@@ -121,7 +124,7 @@ namespace Client.Forms.GUIController
         {
             if(uCNadjiTim.DgvTimovi.SelectedRows.Count == 0)
             {
-                MessageBox.Show("Sistem ne moze da ucita tim! Niste odabrali nijedan tim, pokusajte ponovo!");
+                MessageBox.Show("Sistem ne može da učita tim! Niste odabrali nijedan tim! Pokušajte ponovo!");
                 return;
             }
             Tim tim = (Tim)uCNadjiTim.DgvTimovi.SelectedRows[0].DataBoundItem;

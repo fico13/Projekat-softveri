@@ -1,4 +1,5 @@
-﻿using Client.Forms.GUIHelper;
+﻿using Client.Forms.Exceptions;
+using Client.Forms.GUIHelper;
 using Client.Forms.ServerCommunication;
 using Client.Forms.UserControls.Utakmica;
 using Common.Communication;
@@ -36,24 +37,24 @@ namespace Client.Forms.GUIController
         {
             if (UserControlsHelper.EmptyText(uCDodajUtakmicu.TxtPoeniDomacinIgrac) || UserControlsHelper.EmptyText(uCDodajUtakmicu.TxtSkokoviDomacinIgrac) || UserControlsHelper.EmptyText(uCDodajUtakmicu.TxtAsistencijeDomacinIgrac))
             {
-                MessageBox.Show("Sistem ne moze da zapamti utakmicu! Niste uneli sve podatke za statistiku domaceg igraca! Pokusajte ponovo!");
+                MessageBox.Show("Sistem ne može da zapamti utakmicu! Niste uneli sve podatke za statistiku domaćeg igrača! Pokušajte ponovo!");
                 return;
             }
             if(UserControlsHelper.IntegerValidation(uCDodajUtakmicu.TxtPoeniDomacinIgrac))
             {
-                MessageBox.Show("Sistem ne moze da zapamti utakmicu! Poeni igraca moraju biti prirodan broj! Pokusajte ponovo");
+                MessageBox.Show("Sistem ne može da zapamti utakmicu! Poeni igrača moraju biti prirodan broj! Pokušajte ponovo");
                 uCDodajUtakmicu.TxtPoeniDomacinIgrac.Text = "";
                 return;
             }
             if (UserControlsHelper.IntegerValidation(uCDodajUtakmicu.TxtSkokoviDomacinIgrac))
             {
-                MessageBox.Show("Sistem ne moze da zapamti utakmicu! Skokovi igraca moraju biti prirodan broj! Pokusajte ponovo");
+                MessageBox.Show("Sistem ne može da zapamti utakmicu! Skokovi igrača moraju biti prirodan broj! Pokušajte ponovo");
                 uCDodajUtakmicu.TxtSkokoviDomacinIgrac.Text = "";
                 return;
             }
             if (UserControlsHelper.IntegerValidation(uCDodajUtakmicu.TxtAsistencijeDomacinIgrac))
             {
-                MessageBox.Show("Sistem ne moze da zapamti utakmicu! Asistencije igraca moraju biti prirodan broj! Pokusajte ponovo");
+                MessageBox.Show("Sistem ne može da zapamti utakmicu! Asistencije igrača moraju biti prirodan broj! Pokušajte ponovo");
                 uCDodajUtakmicu.TxtAsistencijeDomacinIgrac.Text = "";
                 return;
             }
@@ -75,9 +76,9 @@ namespace Client.Forms.GUIController
                 uCDodajUtakmicu.BtnDodajStatistikuDomacin.Enabled = false;
                 uCDodajUtakmicu.BtnDodajStatistikuGost.Enabled = true;
             }
-            catch (Exception)
+            catch (ServerCommunicationException)
             {
-
+                MessageBox.Show("Sistem ne može da zapamti utakmicu!");
                 throw;
             }
            
@@ -97,27 +98,27 @@ namespace Client.Forms.GUIController
         {
             if (UserControlsHelper.EmptyText(uCDodajUtakmicu.TxtBrojPoenaDomacin))
             {
-                MessageBox.Show("Sistem ne moze da zapamti utakmicu! Niste uneli broj poena domacina! Pokusajte ponovo!");
+                MessageBox.Show("Sistem ne može da zapamti utakmicu! Niste uneli broj poena domaćina! Pokušajte ponovo!");
                 return;
             }
             if (UserControlsHelper.EmptyText(uCDodajUtakmicu.TxtBrojPoenaGost))
             {
-                MessageBox.Show("Sistem ne moze da zapamti utakmicu! Niste uneli broj poena gosta! Pokusajte ponovo!");
+                MessageBox.Show("Sistem ne može da zapamti utakmicu! Niste uneli broj poena gosta! Pokušajte ponovo!");
                 return;
             }
             if (UserControlsHelper.IntegerValidation(uCDodajUtakmicu.TxtBrojPoenaDomacin))
             {
-                MessageBox.Show("Sistem ne moze da zapamti utakmicu! Broj poena domacina mora da bude prirodan broj! Pokusajte ponovo!");
+                MessageBox.Show("Sistem ne može da zapamti utakmicu! Broj poena domaćina mora da bude prirodan broj! Pokušajte ponovo!");
                 return;
             }
             if (UserControlsHelper.IntegerValidation(uCDodajUtakmicu.TxtBrojPoenaGost))
             {
-                MessageBox.Show("Sistem ne moze da zapamti utakmicu! Broj poena domacina mora da bude prirodan broj! Pokusajte ponovo!");
+                MessageBox.Show("Sistem ne može da zapamti utakmicu! Broj poena gosta mora da bude prirodan broj! Pokušajte ponovo!");
                 return;
             }
             if(uCDodajUtakmicu.DtpDatum.Value >= DateTime.Now)
             {
-                MessageBox.Show("Sistem ne moze da zapamti utakmicu! Datum ne sme biti veci od danasnjeg dana! Pokusajte ponovo!");
+                MessageBox.Show("Sistem ne može da zapamti utakmicu! Datum ne sme biti veći od današnjeg dana! Pokušajte ponovo!");
                 return;
             }
             try
@@ -133,7 +134,7 @@ namespace Client.Forms.GUIController
                 };
                 if(utakmica.BrojPoenaDomacin == utakmica.BrojPoenaGost)
                 {
-                    MessageBox.Show("Sistem ne moze da zapamti utakmicu! Broj poena domacina i gosta ne moze biti isti! Pokusajte ponovo!");
+                    MessageBox.Show("Sistem ne može da zapamti utakmicu! Broj poena domaćina i gosta ne može biti isti! Pokušajte ponovo!");
                     return;
                 }
                 if(utakmica.BrojPoenaDomacin > utakmica.BrojPoenaGost)
@@ -156,9 +157,9 @@ namespace Client.Forms.GUIController
                 uCDodajUtakmicu.CbDomacin.DataSource = Communication.Instance.SendRequestGetResult<List<Tim>>(Operation.VratiSveTimove);
                 uCDodajUtakmicu.CbGost.DataSource = Communication.Instance.SendRequestGetResult<List<Tim>>(Operation.VratiSveTimove);
             }
-            catch (Exception)
+            catch (ServerCommunicationException)
             {
-
+                MessageBox.Show("Sistem ne može da zapamti utakmicu!");
                 throw;
             }
         }
@@ -184,24 +185,24 @@ namespace Client.Forms.GUIController
         {
             if (UserControlsHelper.EmptyText(uCDodajUtakmicu.TxtPoeniGostIgrac) || UserControlsHelper.EmptyText(uCDodajUtakmicu.TxtSkokoviGostIgrac) || UserControlsHelper.EmptyText(uCDodajUtakmicu.TxtAsistencijeGostIgrac))
             {
-                MessageBox.Show("Sistem ne moze da zapamti utakmicu! Niste uneli sve podatke za statistiku gostujuceg igraca! Pokusajte ponovo!");
+                MessageBox.Show("Sistem ne može da zapamti utakmicu! Niste uneli sve podatke za statistiku gostujućeg igrača! Pokušajte ponovo!");
                 return;
             }
             if (UserControlsHelper.IntegerValidation(uCDodajUtakmicu.TxtPoeniGostIgrac))
             {
-                MessageBox.Show("Sistem ne moze da zapamti utakmicu! Poeni igraca moraju biti prirodan broj! Pokusajte ponovo");
+                MessageBox.Show("Sistem ne može da zapamti utakmicu! Poeni igrača moraju biti prirodan broj! Pokušajte ponovo");
                 uCDodajUtakmicu.TxtPoeniGostIgrac.Text = "";
                 return;
             }
             if (UserControlsHelper.IntegerValidation(uCDodajUtakmicu.TxtSkokoviGostIgrac))
             {
-                MessageBox.Show("Sistem ne moze da zapamti utakmicu! Skokovi igraca moraju biti prirodan broj! Pokusajte ponovo");
+                MessageBox.Show("Sistem ne može da zapamti utakmicu! Skokovi igrača moraju biti prirodan broj! Pokušajte ponovo");
                 uCDodajUtakmicu.TxtSkokoviGostIgrac.Text = "";
                 return;
             }
             if (UserControlsHelper.IntegerValidation(uCDodajUtakmicu.TxtAsistencijeGostIgrac))
             {
-                MessageBox.Show("Sistem ne moze da zapamti utakmicu! Asistencije igraca moraju biti prirodan broj! Pokusajte ponovo");
+                MessageBox.Show("Sistem ne može da zapamti utakmicu! Asistencije igrača moraju biti prirodan broj! Pokušajte ponovo");
                 uCDodajUtakmicu.TxtAsistencijeGostIgrac.Text = "";
                 return;
             }
@@ -223,9 +224,9 @@ namespace Client.Forms.GUIController
                 uCDodajUtakmicu.BtnDodajStatistikuGost.Enabled = false;
                 uCDodajUtakmicu.BtnSacuvajUtakmicu.Enabled = true;
             }
-            catch (Exception)
+            catch (ServerCommunicationException)
             {
-
+                MessageBox.Show("Sistem ne može da zapamti utakmicu!");
                 throw;
             }
         }
@@ -234,12 +235,12 @@ namespace Client.Forms.GUIController
         {
             if(UserControlsHelper.ComboBoxValidation(uCDodajUtakmicu.CbDomacin) || UserControlsHelper.ComboBoxValidation(uCDodajUtakmicu.CbGost))
             {
-                MessageBox.Show("Sistem ne moze da zapamti utakmicu! Niste lepo odabrali tim u combo box-u! Pokusajte ponovo!");
+                MessageBox.Show("Sistem ne može da zapamti utakmicu! Niste lepo odabrali tim u combo box-u! Pokušajte ponovo!");
                 return;
             }
             if(uCDodajUtakmicu.CbDomacin.SelectedIndex == uCDodajUtakmicu.CbGost.SelectedIndex)
             {
-                MessageBox.Show("Sistem ne moze da zapamti utakmicu! Ne mogu isti timovi biti i domacin i gost! Pokusajte ponovo!");
+                MessageBox.Show("Sistem ne može da zapamti utakmicu! Ne mogu isti timovi biti i domaćin i gost! Pokušajte ponovo!");
                 return;
             }
             Tim domacin = (Tim)uCDodajUtakmicu.CbDomacin.SelectedItem;
@@ -254,7 +255,7 @@ namespace Client.Forms.GUIController
                 BindingList<Igrac> domaciIgraci = new BindingList<Igrac>(Communication.Instance.SendRequestGetResult<List<Igrac>>(Operation.NadjiIgrace, domaci));
                 if (domaciIgraci.Count == 0)
                 {
-                    MessageBox.Show("Sistem ne moze da nadje igrace po zadatoj vrednosti!");
+                    MessageBox.Show("Sistem ne može da nađe igrače po zadatoj vrednosti!");
                     uCDodajUtakmicu.CbIgracDomacina.DataSource = null;
                     return;
                 }
@@ -266,16 +267,17 @@ namespace Client.Forms.GUIController
                 BindingList<Igrac> gostujuciIgraci = new BindingList<Igrac>(Communication.Instance.SendRequestGetResult<List<Igrac>>(Operation.NadjiIgrace, gosti));
                 if (gostujuciIgraci.Count == 0)
                 {
-                    MessageBox.Show("Sistem ne moze da nadje igrace po zadatoj vrednosti!");
+                    MessageBox.Show("Sistem ne može da nađe igrače po zadatoj vrednosti!");
                     uCDodajUtakmicu.CbIgracGosta.DataSource = null;
                     return;
                 }
                 uCDodajUtakmicu.CbIgracGosta.DataSource = gostujuciIgraci;
                 uCDodajUtakmicu.BtnDodajStatistikuDomacin.Enabled = true;
             }
-            catch (Exception ex)
+            catch (ServerCommunicationException)
             {
-                System.Windows.Forms.MessageBox.Show("Sistem ne moze da nadje igrace po zadatoj vrednosti!" + ex.Message);
+                MessageBox.Show("Sistem ne može da nađe igrače po zadatoj vrednosti!");
+                throw;
             }
 
         }

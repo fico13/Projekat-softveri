@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Client.Forms.Exceptions;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Sockets;
@@ -35,9 +36,13 @@ namespace Client.Forms
                         MessageBox.Show("Pokusajte ponovo prijavu!");
                     }
                 }
-                catch (Exception)
+                catch (ServerCommunicationException)
                 {
-                    throw;
+                    MessageBox.Show("Server je isključen! Uključite ga i pokušajte ponovo!");
+                }
+                catch (SystemOperationException ex)
+                {
+                    MessageBox.Show(ex.Message);
                 }
             }
         }

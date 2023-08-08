@@ -53,9 +53,23 @@ namespace Client.Forms.GUIHelper
             }
         }
 
+        internal static bool WordValidation(TextBox tekst)
+        {
+            if (tekst.Text.Any(Char.IsDigit))
+            {
+                tekst.BackColor = Color.LightCoral;
+                return true;
+            }
+            else
+            {
+                tekst.BackColor = Color.White;
+                return false;
+            }
+        }
+
         internal static bool DoubleValidation(TextBox tekst)
         {
-            Regex proveriDouble = new Regex(@"^[0-9]+[.]?[0-9]*$");
+            Regex proveriDouble = new Regex(@"^[0-9]+(.|,)?[0-9]*$");
 
             if (!proveriDouble.IsMatch(tekst.Text))
             {

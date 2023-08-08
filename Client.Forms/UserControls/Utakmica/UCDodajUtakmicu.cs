@@ -1,4 +1,5 @@
-﻿using Client.Forms.GUIController;
+﻿using Client.Forms.Exceptions;
+using Client.Forms.GUIController;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,9 +17,16 @@ namespace Client.Forms.UserControls.Utakmica
         private DodajUtakmicuController dodajUtakmicuController;
         public UCDodajUtakmicu()
         {
-            InitializeComponent();
-            dodajUtakmicuController = new DodajUtakmicuController(this);
-            dodajUtakmicuController.Init();
+            try
+            {
+                InitializeComponent();
+                dodajUtakmicuController = new DodajUtakmicuController(this);
+                dodajUtakmicuController.Init();
+            }
+            catch (ServerCommunicationException)
+            {
+                throw;
+            }
         }
 
         private void btnUcitajIgrace_Click(object sender, EventArgs e)

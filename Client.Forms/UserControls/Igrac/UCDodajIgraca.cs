@@ -1,4 +1,5 @@
-﻿using Client.Forms.GUIController;
+﻿using Client.Forms.Exceptions;
+using Client.Forms.GUIController;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,9 +17,17 @@ namespace Client.Forms.UserControls.Igrac
         private DodajIgracaController dodajIgracaController;
         public UCDodajIgraca()
         {
-            InitializeComponent();
-            dodajIgracaController = new DodajIgracaController(this);
-            dodajIgracaController.Init();
+            try
+            {
+                InitializeComponent();
+                dodajIgracaController = new DodajIgracaController(this);
+                dodajIgracaController.Init();
+
+            }
+            catch (ServerCommunicationException)
+            {
+                throw;
+            }
         }
 
         private void btnDodajTim_Click(object sender, EventArgs e)

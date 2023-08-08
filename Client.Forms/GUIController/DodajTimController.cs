@@ -1,4 +1,5 @@
-﻿using Client.Forms.GUIHelper;
+﻿using Client.Forms.Exceptions;
+using Client.Forms.GUIHelper;
 using Client.Forms.ServerCommunication;
 using Client.Forms.UserControls.Tim;
 using Common.Communication;
@@ -31,13 +32,23 @@ namespace Client.Forms.GUIController
         {
             if(UserControlsHelper.EmptyText(uCDodajTim.TxtIme) || UserControlsHelper.EmptyText(uCDodajTim.TxtDrzava))
             {
-                MessageBox.Show("Sistem ne moze da zapamti tim! Niste uneli sve potrebne podatke! Pokusajte ponovo");
+                MessageBox.Show("Sistem ne može da zapamti tim! Niste uneli sve potrebne podatke! Pokušajte ponovo");
                 return;
             }
 
             if(UserControlsHelper.ComboBoxValidation(uCDodajTim.CbDvorane))
             {
-                MessageBox.Show("Sistem ne moze da zapamti tim! Niste lepo odabrali dvoranu u combo box-u! Pokusajte ponovo!");
+                MessageBox.Show("Sistem ne može da zapamti tim! Niste lepo odabrali dvoranu u combo box-u! Pokušajte ponovo!");
+                return;
+            }
+            if (UserControlsHelper.WordValidation(uCDodajTim.TxtIme))
+            {
+                MessageBox.Show("Sistem ne može da zapamti tim! Ime tima ne sme da sadrži broj u nazivu! Pokušajte ponovo!");
+                return;
+            }
+            if (UserControlsHelper.WordValidation(uCDodajTim.TxtDrzava))
+            {
+                MessageBox.Show("Sistem ne može da zapamti tim! Država ne sme da sadrži broj u nazivu! Pokušajte ponovo!");
                 return;
             }
             try
@@ -49,12 +60,13 @@ namespace Client.Forms.GUIController
                     Dvorana = (Dvorana)uCDodajTim.CbDvorane.SelectedItem
                 };
                 Communication.Instance.SendRequestNoResult(Operation.SacuvajTim, tim);
-                MessageBox.Show("Sistem je zapamtio tim.");
+                MessageBox.Show("Sistem je zapamtio tim!");
                 OcistiPodatke();
             }
-            catch (Exception ex)
+            catch (ServerCommunicationException)
             {
-                MessageBox.Show("Sistem ne moze da zapamti tim " + ex.Message);
+                MessageBox.Show("Sistem ne može da zapamti tim!");
+                throw;
             }
         }
 

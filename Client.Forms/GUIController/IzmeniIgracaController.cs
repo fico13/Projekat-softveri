@@ -1,4 +1,5 @@
-﻿using Client.Forms.GUIHelper;
+﻿using Client.Forms.Exceptions;
+using Client.Forms.GUIHelper;
 using Client.Forms.ServerCommunication;
 using Client.Forms.UserControls.Igrac;
 using Common.Communication;
@@ -7,6 +8,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -18,6 +20,7 @@ namespace Client.Forms.GUIController
     {
         private UCIzmeniIgraca uCIzmeniIgraca;
         public Igrac IzabraniIgrac { get; set; }
+        public Igrac IzmenjeniIgrac { get; set; }
         public IzmeniIgracaController(UCIzmeniIgraca uCIzmeniIgraca)
         {
             this.uCIzmeniIgraca = uCIzmeniIgraca;
@@ -33,7 +36,7 @@ namespace Client.Forms.GUIController
         {
             if (UserControlsHelper.EmptyText(uCIzmeniIgraca.TxtImeIgraca) && UserControlsHelper.EmptyText(uCIzmeniIgraca.TxtPrezimeIgraca))
             {
-                System.Windows.Forms.MessageBox.Show("Sistem ne moze da nadje igrace po zadatoj vrednosti! Niste uneli nijedan podatak za pretragu! Pokusajte ponovo!");
+                MessageBox.Show("Sistem ne može da nađe igrače po zadatoj vrednosti! Niste uneli nijedan podatak za pretragu! Pokušajte ponovo!");
                 return;
             }
 
@@ -49,15 +52,16 @@ namespace Client.Forms.GUIController
                     BindingList<Igrac> igraci = new BindingList<Igrac>(Communication.Instance.SendRequestGetResult<List<Igrac>>(Operation.NadjiIgrace, igrac));
                     if (igraci.Count == 0)
                     {
-                        MessageBox.Show("Sistem ne moze da nadje igrace po zadatoj vrednosti!");
+                        MessageBox.Show("Sistem ne može da nađe igrače po zadatoj vrednosti!");
                         uCIzmeniIgraca.DgvIgraci.DataSource = null;
                         return;
                     }
                     uCIzmeniIgraca.DgvIgraci.DataSource = igraci;
                 }
-                catch (Exception ex)
+                catch (ServerCommunicationException)
                 {
-                    System.Windows.Forms.MessageBox.Show("Sistem ne moze da nadje igrace po zadatoj vrednosti!" + ex.Message);
+                    MessageBox.Show("Sistem ne može da nađe igrače po zadatoj vrednosti!");
+                    throw;
                 }
             }
 
@@ -73,15 +77,16 @@ namespace Client.Forms.GUIController
                     BindingList<Igrac> igraci = new BindingList<Igrac>(Communication.Instance.SendRequestGetResult<List<Igrac>>(Operation.NadjiIgrace, igrac));
                     if (igraci.Count == 0)
                     {
-                        MessageBox.Show("Sistem ne moze da nadje igrace po zadatoj vrednosti!");
+                        MessageBox.Show("Sistem ne može da nađe igrače po zadatoj vrednosti!");
                         uCIzmeniIgraca.DgvIgraci.DataSource = null;
                         return;
                     }
                     uCIzmeniIgraca.DgvIgraci.DataSource = igraci;
                 }
-                catch (Exception ex)
+                catch (ServerCommunicationException)
                 {
-                    System.Windows.Forms.MessageBox.Show("Sistem ne moze da nadje igrace po zadatoj vrednosti!" + ex.Message);
+                    MessageBox.Show("Sistem ne može da nađe igrače po zadatoj vrednosti!");
+                    throw;
                 }
             }
             else if (!UserControlsHelper.EmptyText(uCIzmeniIgraca.TxtImeIgraca) && !UserControlsHelper.EmptyText(uCIzmeniIgraca.TxtPrezimeIgraca))
@@ -95,15 +100,16 @@ namespace Client.Forms.GUIController
                     BindingList<Igrac> igraci = new BindingList<Igrac>(Communication.Instance.SendRequestGetResult<List<Igrac>>(Operation.NadjiIgrace, igrac));
                     if (igraci.Count == 0)
                     {
-                        MessageBox.Show("Sistem ne moze da nadje igrace po zadatoj vrednosti!");
+                        MessageBox.Show("Sistem ne može da nađe igrače po zadatoj vrednosti!");
                         uCIzmeniIgraca.DgvIgraci.DataSource = null;
                         return;
                     }
                     uCIzmeniIgraca.DgvIgraci.DataSource = igraci;
                 }
-                catch (Exception ex)
+                catch (ServerCommunicationException)
                 {
-                    System.Windows.Forms.MessageBox.Show("Sistem ne moze da nadje igrace po zadatoj vrednosti!" + ex.Message);
+                    MessageBox.Show("Sistem ne može da nađe igrače po zadatoj vrednosti!");
+                    throw;
                 }
             }
         }
@@ -112,37 +118,52 @@ namespace Client.Forms.GUIController
         {
             if(UserControlsHelper.EmptyText(uCIzmeniIgraca.TxtIme) && UserControlsHelper.EmptyText(uCIzmeniIgraca.TxtPrezime) && UserControlsHelper.EmptyText(uCIzmeniIgraca.TxtDrzava) && UserControlsHelper.EmptyText(uCIzmeniIgraca.TxtBrojNaDresu) && UserControlsHelper.EmptyText(uCIzmeniIgraca.TxtVisina) && UserControlsHelper.EmptyText(uCIzmeniIgraca.TxtTezina))
             {
-                MessageBox.Show("Sistem ne moze da izmeni igraca! Niste uneli sve potrebne vrednosti! Pokusajte ponovo!");
+                MessageBox.Show("Sistem ne može da izmeni igrača! Niste uneli sve potrebne vrednosti! Pokušajte ponovo!");
                 return;
             }
             if(UserControlsHelper.IntegerValidation(uCIzmeniIgraca.TxtBrojNaDresu))
             {
-                MessageBox.Show("Sistem ne moze da izmeni igraca! Broj na dresu mora da bude pozitivan broj! Pokusajte ponovo!");
+                MessageBox.Show("Sistem ne može da izmeni igrača! Broj na dresu mora da bude pozitivan broj! Pokušajte ponovo!");
                 return;
             }
             if (UserControlsHelper.IntegerValidation(uCIzmeniIgraca.TxtVisina))
             {
-                MessageBox.Show("Sistem ne moze da izmeni igraca! Visina mora da bude pozitivan broj! Pokusajte ponovo!");
+                MessageBox.Show("Sistem ne može da izmeni igrača! Visina mora da bude pozitivan broj! Pokušajte ponovo!");
                 return;
             }
             if (UserControlsHelper.ComboBoxValidation(uCIzmeniIgraca.CbTim))
             {
-                MessageBox.Show("Sistem ne moze da zapamti igraca! Niste lepo odabrali tim u combo box-u! Pokusajte ponovo!");
+                MessageBox.Show("Sistem ne može da zapamti igrača! Niste lepo odabrali tim u combo box-u! Pokušajte ponovo!");
                 return;
             }
 
             if (UserControlsHelper.ComboBoxValidation(uCIzmeniIgraca.CbPozicije))
             {
-                MessageBox.Show("Sistem ne moze da zapamti igraca! Niste lepo odabrali poziciju u combo box-u! Pokusajte ponovo!");
+                MessageBox.Show("Sistem ne može da zapamti igrača! Niste lepo odabrali poziciju u combo box-u! Pokušajte ponovo!");
                 return;
             }
             if (UserControlsHelper.DoubleValidation(uCIzmeniIgraca.TxtTezina))
             {
-                MessageBox.Show("Sistem ne moze da zapamti igraca! Tezina mora da bude unesena kao decimalni broj! Pokusajte ponovo!");
+                MessageBox.Show("Sistem ne može da zapamti igrača! Težina mora da bude uenta kao decimalni broj! Pokušajte ponovo!");
+            }
+            if (UserControlsHelper.WordValidation(uCIzmeniIgraca.TxtIme))
+            {
+                MessageBox.Show("Sistem ne može da zapamti igrača! Ime ne sme da sadrži broj u nazivu! Pokušajte ponovo!");
+                return;
+            }
+            if (UserControlsHelper.WordValidation(uCIzmeniIgraca.TxtPrezime))
+            {
+                MessageBox.Show("Sistem ne može da zapamti igrača! Prezime ne sme da sadrži broj u nazivu! Pokušajte ponovo!");
+                return;
+            }
+            if (UserControlsHelper.WordValidation(uCIzmeniIgraca.TxtDrzava))
+            {
+                MessageBox.Show("Sistem ne može da zapamti igrača! Država ne sme da sadrži broj u nazivu! Pokušajte ponovo!");
+                return;
             }
             try
             {
-                Igrac igrac = new Igrac
+                IzmenjeniIgrac = new Igrac
                 {
                     IgracId = IzabraniIgrac.IgracId,
                     ImeIgraca = uCIzmeniIgraca.TxtIme.Text,
@@ -151,20 +172,27 @@ namespace Client.Forms.GUIController
                     Pozicija = (Pozicija)(uCIzmeniIgraca.CbPozicije.SelectedItem),
                     BrojNaDresu = Convert.ToInt32(uCIzmeniIgraca.TxtBrojNaDresu.Text),
                     Visina = Convert.ToInt32(uCIzmeniIgraca.TxtVisina.Text),
-                    Tezina = Convert.ToDouble(uCIzmeniIgraca.TxtTezina.Text),
                     Tim = (Tim)uCIzmeniIgraca.CbTim.SelectedItem
                 };
-                Communication.Instance.SendRequestNoResult(Operation.IzmeniIgraca, igrac);
-                MessageBox.Show("Sistem je izmenio igraca");
+                if (uCIzmeniIgraca.TxtTezina.Text.Contains(',') && CultureInfo.CurrentCulture.NumberFormat.NumberDecimalSeparator == ".")
+                {
+                    IzmenjeniIgrac.Tezina = Convert.ToDouble(uCIzmeniIgraca.TxtTezina.Text.Replace(',', '.'));
+                }
+                else if (uCIzmeniIgraca.TxtTezina.Text.Contains('.') && CultureInfo.CurrentCulture.NumberFormat.NumberDecimalSeparator == ",")
+                {
+                    IzmenjeniIgrac.Tezina = Convert.ToDouble(uCIzmeniIgraca.TxtTezina.Text.Replace('.', ','));
+                }
+                else
+                {
+                    IzmenjeniIgrac.Tezina = Convert.ToDouble(uCIzmeniIgraca.TxtTezina.Text);
+                }
+                Communication.Instance.SendRequestNoResult(Operation.IzmeniIgraca, IzmenjeniIgrac);
+                MessageBox.Show("Sistem je izmenio igraca!");
                 OcistiPodatke();
             }
-            catch (FormatException)
+            catch (ServerCommunicationException)
             {
-                MessageBox.Show("Za tezinu morate uneti decimalni broj sa decimalnom tackom!");
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Sistem ne moze da zapamti igraca! " + ex.Message);
+                MessageBox.Show("Sistem ne može da zapamti igrača");
                 throw;
             }
         }
@@ -186,7 +214,7 @@ namespace Client.Forms.GUIController
         {
             if (uCIzmeniIgraca.DgvIgraci.SelectedRows.Count == 0)
             {
-                MessageBox.Show("Sistem ne moze da ucita igraca! Niste odabrali nijednog igraca, pokusajte ponovo!");
+                MessageBox.Show("Sistem ne može da učita igrača! Niste odabrali nijednog igrača! Pokušajte ponovo!");
                 return;
             }
             IzabraniIgrac = (Igrac)uCIzmeniIgraca.DgvIgraci.SelectedRows[0].DataBoundItem;

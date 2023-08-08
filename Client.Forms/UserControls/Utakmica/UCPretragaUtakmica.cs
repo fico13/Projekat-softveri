@@ -1,4 +1,5 @@
-﻿using Client.Forms.GUIController;
+﻿using Client.Forms.Exceptions;
+using Client.Forms.GUIController;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,9 +17,16 @@ namespace Client.Forms.UserControls.Utakmica
         private NadjiUtakmicuController nadjiUtakmicuController;
         public UCPretragaUtakmica()
         {
-            InitializeComponent();
-            nadjiUtakmicuController = new NadjiUtakmicuController(this);
-            nadjiUtakmicuController.Init();
+            try
+            {
+                InitializeComponent();
+                nadjiUtakmicuController = new NadjiUtakmicuController(this);
+                nadjiUtakmicuController.Init();
+            }
+            catch (ServerCommunicationException)
+            {
+                throw;
+            }
         }
 
         private void btnPronadjiUtakmice_Click(object sender, EventArgs e)

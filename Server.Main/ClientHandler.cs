@@ -15,15 +15,15 @@ namespace Server.Main
     public class ClientHandler
     {
         private Socket klijentSoket;
-        private List<ClientHandler> clients;
         private CommunicationHelper helper;
-        private List<Administrator> administrators;
+        private List<Administrator> administrators = new List<Administrator>();
+        public EventHandler OdjavljeniKlijent;
+        private object lockObject = new object();
 
-        public ClientHandler(Socket klijentSoket, List<ClientHandler> clients, List<Administrator> administrators)
+
+        public ClientHandler(Socket klijentSoket)
         {
             this.klijentSoket = klijentSoket;
-            this.clients = clients;
-            this.administrators = administrators;
             helper = new CommunicationHelper(klijentSoket);
         }
 
@@ -39,9 +39,9 @@ namespace Server.Main
                     helper.Send(response);
                 }
             }
-            catch (IOException ex)
+            catch (IOException)
             {
-                Debug.WriteLine(">>>" + ex.Message);
+                administrators = new List<Administrator>();
             }
             finally
             {
@@ -108,14 +108,27 @@ namespace Server.Main
                 case Operation.IzmeniUtakmicu:
                     Controller.Instance.IzmeniUtakmicu((Utakmica)request.RequestObject);
                     break;
+                case Operation.End:
+                    kraj = true;
+                    break;
                 default:
                     break;
             }
             return response;
         }
-        private void CloseSocket()
+        internal void CloseSocket()
         {
-            Debug.WriteLine(">>>>");
+            lock(lockObject)
+            {
+                if(klijentSoket != null)
+                {
+                    kraj = true;
+                    klijentSoket.Shutdown(SocketShutdown.Both);
+                    klijentSoket.Close();
+                    klijentSoket = null;
+                    OdjavljeniKlijent?.Invoke(this, EventArgs.Empty);
+                }
+            }
         }
     }
 }

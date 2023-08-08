@@ -1,4 +1,5 @@
-﻿using Client.Forms.GUIHelper;
+﻿using Client.Forms.Exceptions;
+using Client.Forms.GUIHelper;
 using Client.Forms.ServerCommunication;
 using Common.Communication;
 using Common.Domain;
@@ -39,15 +40,19 @@ namespace Client.Forms.GUIController
                 }
                 else
                 {
-                    MessageBox.Show($"Dobrodosli {administrator.Ime} {administrator.Prezime}");
+                    MessageBox.Show($"Dobrodošli {administrator.Ime} {administrator.Prezime}");
                     frmLogin.DialogResult = DialogResult.OK;
                 }
             }
             catch (SocketException)
             {
-                MessageBox.Show("Server je iskljucen, ukljucite server i pokusajte ponovo");
-                frmLogin.DialogResult = DialogResult.Cancel;
+                throw new ServerCommunicationException();
             }
+            catch(SystemOperationException ex)
+            {
+                throw new SystemOperationException(ex.Message);
+            }
+           
 
         }
 

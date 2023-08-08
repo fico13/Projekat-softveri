@@ -36,5 +36,7 @@ namespace Client.Forms
         {
             loginController.HidePassword(this);
         }
+
+
     }
 }

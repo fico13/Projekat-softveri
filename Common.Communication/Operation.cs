@@ -19,6 +19,7 @@ namespace Common.Communication
         IzmeniIgraca,
         SacuvajUtakmicu,
         NadjiUtakmice,
-        IzmeniUtakmicu
+        IzmeniUtakmicu,
+        End
     }
 }

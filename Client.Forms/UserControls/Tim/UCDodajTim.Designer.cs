@@ -83,7 +83,7 @@ namespace Client.Forms.UserControls.Tim
             this.txtIme.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtIme.Location = new System.Drawing.Point(351, 188);
             this.txtIme.Name = "txtIme";
-            this.txtIme.Size = new System.Drawing.Size(201, 27);
+            this.txtIme.Size = new System.Drawing.Size(290, 27);
             this.txtIme.TabIndex = 3;
             this.txtIme.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -93,7 +93,7 @@ namespace Client.Forms.UserControls.Tim
             this.txtDrzava.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDrzava.Location = new System.Drawing.Point(351, 238);
             this.txtDrzava.Name = "txtDrzava";
-            this.txtDrzava.Size = new System.Drawing.Size(201, 27);
+            this.txtDrzava.Size = new System.Drawing.Size(290, 27);
             this.txtDrzava.TabIndex = 4;
             this.txtDrzava.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -104,7 +104,7 @@ namespace Client.Forms.UserControls.Tim
             this.cbDvorane.FormattingEnabled = true;
             this.cbDvorane.Location = new System.Drawing.Point(351, 290);
             this.cbDvorane.Name = "cbDvorane";
-            this.cbDvorane.Size = new System.Drawing.Size(201, 28);
+            this.cbDvorane.Size = new System.Drawing.Size(290, 28);
             this.cbDvorane.TabIndex = 5;
             // 
             // btnDodajTim
@@ -116,7 +116,7 @@ namespace Client.Forms.UserControls.Tim
             this.btnDodajTim.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnDodajTim.Location = new System.Drawing.Point(351, 361);
             this.btnDodajTim.Name = "btnDodajTim";
-            this.btnDodajTim.Size = new System.Drawing.Size(201, 36);
+            this.btnDodajTim.Size = new System.Drawing.Size(290, 36);
             this.btnDodajTim.TabIndex = 6;
             this.btnDodajTim.Text = "Dodaj tim";
             this.btnDodajTim.UseVisualStyleBackColor = true;
