@@ -16,14 +16,17 @@ namespace Server.Main
     {
         private Socket klijentSoket;
         private CommunicationHelper helper;
-        private List<Administrator> administrators = new List<Administrator>();
+        private List<Administrator> administrators;
         public EventHandler OdjavljeniKlijent;
+        public Administrator Administrator { get; set; }
         private object lockObject = new object();
+        
 
 
-        public ClientHandler(Socket klijentSoket)
+        public ClientHandler(Socket klijentSoket, List<Administrator> administrators)
         {
             this.klijentSoket = klijentSoket;
+            this.administrators = administrators;
             helper = new CommunicationHelper(klijentSoket);
         }
 
@@ -41,7 +44,7 @@ namespace Server.Main
             }
             catch (IOException)
             {
-                administrators = new List<Administrator>();
+                administrators.Remove(Administrator);
             }
             finally
             {
@@ -64,15 +67,16 @@ namespace Server.Main
                     }
                     else
                     {
-                        foreach (var admin in administrators)
+                        if (!administrators.Contains(administrator))
                         {
-                            if (admin.Username == administrator.Username && admin.Password == administrator.Password)
-                            {
-                                response.Uspesno = false;
-                                response.Poruka = "Administrator je vec ulogovan!";
-                            }
+                            administrators.Add(administrator);
+                            Administrator = administrator;
                         }
-                        administrators.Add(administrator);
+                        else
+                        {
+                            response.Uspesno = false;
+                            response.Poruka = "Administrator je već ulogovan";
+                        }
                     }
                     break;
                 case Operation.SacuvajDvoranu:

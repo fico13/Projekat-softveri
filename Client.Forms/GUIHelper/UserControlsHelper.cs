@@ -69,7 +69,7 @@ namespace Client.Forms.GUIHelper
 
         internal static bool DoubleValidation(TextBox tekst)
         {
-            Regex proveriDouble = new Regex(@"^[0-9]+(.|,)?[0-9]*$");
+            Regex proveriDouble = new Regex(@"^[0-9]{2,3}(.|,)?[0-9]*$");
 
             if (!proveriDouble.IsMatch(tekst.Text))
             {

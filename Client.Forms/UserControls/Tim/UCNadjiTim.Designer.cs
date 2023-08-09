@@ -357,7 +357,7 @@ namespace Client.Forms.UserControls.Tim
             // brojPobedaDataGridViewTextBoxColumn
             // 
             this.brojPobedaDataGridViewTextBoxColumn.DataPropertyName = "BrojPobeda";
-            this.brojPobedaDataGridViewTextBoxColumn.HeaderText = "BrojPobeda";
+            this.brojPobedaDataGridViewTextBoxColumn.HeaderText = "Broj pobeda";
             this.brojPobedaDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.brojPobedaDataGridViewTextBoxColumn.Name = "brojPobedaDataGridViewTextBoxColumn";
             this.brojPobedaDataGridViewTextBoxColumn.ReadOnly = true;
@@ -366,7 +366,7 @@ namespace Client.Forms.UserControls.Tim
             // brojPorazaDataGridViewTextBoxColumn
             // 
             this.brojPorazaDataGridViewTextBoxColumn.DataPropertyName = "BrojPoraza";
-            this.brojPorazaDataGridViewTextBoxColumn.HeaderText = "BrojPoraza";
+            this.brojPorazaDataGridViewTextBoxColumn.HeaderText = "Broj poraza";
             this.brojPorazaDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.brojPorazaDataGridViewTextBoxColumn.Name = "brojPorazaDataGridViewTextBoxColumn";
             this.brojPorazaDataGridViewTextBoxColumn.ReadOnly = true;

@@ -62,6 +62,7 @@ namespace Client.Forms.GUIController
             if(UserControlsHelper.DoubleValidation(uCDodajIgraca.TxtTezina))
             {
                 MessageBox.Show("Sistem ne može da zapamti igrača! Težina mora da bude uneta kao decimalni broj! Pokušajte ponovo!");
+                return;
             }
             if (UserControlsHelper.WordValidation(uCDodajIgraca.TxtIme))
             {

@@ -54,5 +54,30 @@ namespace Common.Domain
         {
             return $"{Ime} {Prezime}";
         }
+
+        public override bool Equals(object obj)
+        {
+            return ((Administrator)obj).Username == Username && ((Administrator)obj).Password == Password;
+        }
+
+        public override int GetHashCode()
+        {
+            int hashCode = 1499001239;
+            hashCode = hashCode * -1521134295 + AdministratorId.GetHashCode();
+            hashCode = hashCode * -1521134295 + EqualityComparer<string>.Default.GetHashCode(Username);
+            hashCode = hashCode * -1521134295 + EqualityComparer<string>.Default.GetHashCode(Password);
+            hashCode = hashCode * -1521134295 + EqualityComparer<string>.Default.GetHashCode(Ime);
+            hashCode = hashCode * -1521134295 + EqualityComparer<string>.Default.GetHashCode(Prezime);
+            hashCode = hashCode * -1521134295 + EqualityComparer<string>.Default.GetHashCode(TableName);
+            hashCode = hashCode * -1521134295 + EqualityComparer<string>.Default.GetHashCode(InsertValues);
+            hashCode = hashCode * -1521134295 + EqualityComparer<string>.Default.GetHashCode(WhereCondition);
+            hashCode = hashCode * -1521134295 + EqualityComparer<string>.Default.GetHashCode(FindCondition);
+            hashCode = hashCode * -1521134295 + EqualityComparer<string>.Default.GetHashCode(Alias);
+            hashCode = hashCode * -1521134295 + EqualityComparer<string>.Default.GetHashCode(JoinTable);
+            hashCode = hashCode * -1521134295 + EqualityComparer<string>.Default.GetHashCode(JoinCondition);
+            hashCode = hashCode * -1521134295 + EqualityComparer<string>.Default.GetHashCode(UpdateCondition);
+            hashCode = hashCode * -1521134295 + EqualityComparer<string>.Default.GetHashCode(IdColumnName);
+            return hashCode;
+        }
     }
 }

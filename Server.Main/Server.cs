@@ -33,7 +33,7 @@ namespace Server.Main
                 while(true)
                 {
                     Socket klijentSoket = serverSoket.Accept();
-                    ClientHandler handler = new ClientHandler(klijentSoket);
+                    ClientHandler handler = new ClientHandler(klijentSoket, administrators);
                     clients.Add(handler);
                     handler.OdjavljeniKlijent += Handler_OdjavljeniKlijent;
                     Thread nit = new Thread(handler.ObradiZahteve);

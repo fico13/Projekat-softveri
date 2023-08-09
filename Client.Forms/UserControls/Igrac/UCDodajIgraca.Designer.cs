@@ -194,9 +194,9 @@ namespace Client.Forms.UserControls.Igrac
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(38, 279);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(61, 20);
+            this.label6.Size = new System.Drawing.Size(106, 20);
             this.label6.TabIndex = 18;
-            this.label6.Text = "Visina";
+            this.label6.Text = "Visina (cm)";
             // 
             // txtTezina
             // 
@@ -216,9 +216,9 @@ namespace Client.Forms.UserControls.Igrac
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.Location = new System.Drawing.Point(38, 329);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(65, 20);
+            this.label7.Size = new System.Drawing.Size(104, 20);
             this.label7.TabIndex = 20;
-            this.label7.Text = "Težina";
+            this.label7.Text = "Težina (kg)";
             // 
             // cbTim
             // 
