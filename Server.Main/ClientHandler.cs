@@ -63,7 +63,7 @@ namespace Server.Main
                     if (response.ResponseObject == null)
                     {
                         response.Uspesno = false;
-                        response.Poruka = "Administrator ne postoji!";
+                        response.Poruka = "Sistem ne može da pronađe administratora na osnovu unetih vrednosti!";
                     }
                     else
                     {
@@ -114,6 +114,15 @@ namespace Server.Main
                     break;
                 case Operation.End:
                     kraj = true;
+                    break;
+                case Operation.UcitajUtakmicu:
+                    response.ResponseObject = Controller.Instance.UcitajUtakmicu((Utakmica)request.RequestObject);
+                    break;
+                case Operation.UcitajTim:
+                    response.ResponseObject = Controller.Instance.UcitajTim((Tim)request.RequestObject);
+                    break;
+                case Operation.UcitajIgraca:
+                    response.ResponseObject = Controller.Instance.UcitajIgraca((Igrac)request.RequestObject);
                     break;
                 default:
                     break;

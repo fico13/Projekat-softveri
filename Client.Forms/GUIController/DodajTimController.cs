@@ -74,6 +74,7 @@ namespace Client.Forms.GUIController
         {
             uCDodajTim.TxtIme.Clear();
             uCDodajTim.TxtDrzava.Clear();
+            uCDodajTim.CbDvorane.SelectedIndex = 0;
         }
     }
 }

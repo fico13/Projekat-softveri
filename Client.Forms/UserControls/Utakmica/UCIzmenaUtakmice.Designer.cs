@@ -551,7 +551,7 @@ namespace Client.Forms.UserControls.Utakmica
             this.btnUcitajStatistiku.Name = "btnUcitajStatistiku";
             this.btnUcitajStatistiku.Size = new System.Drawing.Size(230, 44);
             this.btnUcitajStatistiku.TabIndex = 58;
-            this.btnUcitajStatistiku.Text = "Učitaj statistiku";
+            this.btnUcitajStatistiku.Text = "Prikaži statistiku";
             this.btnUcitajStatistiku.UseVisualStyleBackColor = true;
             this.btnUcitajStatistiku.Click += new System.EventHandler(this.btnUcitajStatistiku_Click);
             // 
@@ -670,7 +670,7 @@ namespace Client.Forms.UserControls.Utakmica
             this.btnIzmeniUtakmicu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btnIzmeniUtakmicu.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnIzmeniUtakmicu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnIzmeniUtakmicu.Location = new System.Drawing.Point(707, 899);
+            this.btnIzmeniUtakmicu.Location = new System.Drawing.Point(709, 880);
             this.btnIzmeniUtakmicu.Name = "btnIzmeniUtakmicu";
             this.btnIzmeniUtakmicu.Size = new System.Drawing.Size(317, 44);
             this.btnIzmeniUtakmicu.TabIndex = 60;

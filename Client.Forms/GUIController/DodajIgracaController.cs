@@ -104,12 +104,12 @@ namespace Client.Forms.GUIController
                     Igrac.Tezina = Convert.ToDouble(uCDodajIgraca.TxtTezina.Text);
                 }
                 Communication.Instance.SendRequestNoResult(Operation.SacuvajIgraca, Igrac);
-                MessageBox.Show("Sistem je zapamtio igraca!");
+                MessageBox.Show("Sistem je zapamtio igrača!");
                 OcistiPodatke();
             }
             catch (ServerCommunicationException)
             {
-                MessageBox.Show("Sistem ne može da zapamti igraca!");
+                MessageBox.Show("Sistem ne može da zapamti igrača!");
                 throw;
             }
         }

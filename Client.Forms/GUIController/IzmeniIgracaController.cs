@@ -218,15 +218,26 @@ namespace Client.Forms.GUIController
                 MessageBox.Show("Sistem ne može da učita igrača! Niste odabrali nijednog igrača! Pokušajte ponovo!");
                 return;
             }
-            IzabraniIgrac = (Igrac)uCIzmeniIgraca.DgvIgraci.SelectedRows[0].DataBoundItem;
-            uCIzmeniIgraca.TxtIme.Text = IzabraniIgrac.ImeIgraca;
-            uCIzmeniIgraca.TxtPrezime.Text = IzabraniIgrac.PrezimeIgraca;
-            uCIzmeniIgraca.TxtDrzava.Text = IzabraniIgrac.DrzavaIgraca;
-            uCIzmeniIgraca.CbPozicije.Text = IzabraniIgrac.Pozicija.ToString();
-            uCIzmeniIgraca.TxtBrojNaDresu.Text = IzabraniIgrac.BrojNaDresu.ToString();
-            uCIzmeniIgraca.TxtVisina.Text = IzabraniIgrac.Visina.ToString();
-            uCIzmeniIgraca.TxtTezina.Text = IzabraniIgrac.Tezina.ToString();
-            uCIzmeniIgraca.CbTim.Text = IzabraniIgrac.Tim.ToString();
+            try
+            {
+                Igrac igrac = (Igrac)uCIzmeniIgraca.DgvIgraci.SelectedRows[0].DataBoundItem;
+                igrac.FindCondition = $"IgracId = {igrac.IgracId}";
+                IzabraniIgrac = Communication.Instance.SendRequestGetResult<Igrac>(Operation.UcitajIgraca, igrac);
+                uCIzmeniIgraca.TxtIme.Text = IzabraniIgrac.ImeIgraca;
+                uCIzmeniIgraca.TxtPrezime.Text = IzabraniIgrac.PrezimeIgraca;
+                uCIzmeniIgraca.TxtDrzava.Text = IzabraniIgrac.DrzavaIgraca;
+                uCIzmeniIgraca.CbPozicije.Text = IzabraniIgrac.Pozicija.ToString();
+                uCIzmeniIgraca.TxtBrojNaDresu.Text = IzabraniIgrac.BrojNaDresu.ToString();
+                uCIzmeniIgraca.TxtVisina.Text = IzabraniIgrac.Visina.ToString();
+                uCIzmeniIgraca.TxtTezina.Text = IzabraniIgrac.Tezina.ToString();
+                uCIzmeniIgraca.CbTim.Text = IzabraniIgrac.Tim.ToString();
+
+            }
+            catch (ServerCommunicationException)
+            {
+                MessageBox.Show("Sistem ne može da učita igrača");
+                throw;
+            }
         }
     }
 }

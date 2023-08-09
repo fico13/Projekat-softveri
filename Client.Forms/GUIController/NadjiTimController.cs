@@ -49,7 +49,7 @@ namespace Client.Forms.GUIController
                         return;
                     }
                     uCNadjiTim.DgvTimovi.DataSource = timovi;
-                    OcistiPodatke();
+                    MessageBox.Show("Sistem je našao timove po zadatoj vrednosti");
                 }
                 catch (ServerCommunicationException)
                 {
@@ -74,6 +74,7 @@ namespace Client.Forms.GUIController
                         return;
                     }
                     uCNadjiTim.DgvTimovi.DataSource = timovi;
+                    MessageBox.Show("Sistem je našao timove po zadatoj vrednosti");
                    
                 }
                 catch (ServerCommunicationException)
@@ -100,6 +101,7 @@ namespace Client.Forms.GUIController
                         return;
                     }
                     uCNadjiTim.DgvTimovi.DataSource = timovi;
+                    MessageBox.Show("Sistem je našao timove po zadatoj vrednosti");
                 }
                 catch (ServerCommunicationException)
                 {
@@ -127,13 +129,24 @@ namespace Client.Forms.GUIController
                 MessageBox.Show("Sistem ne može da učita tim! Niste odabrali nijedan tim! Pokušajte ponovo!");
                 return;
             }
-            Tim tim = (Tim)uCNadjiTim.DgvTimovi.SelectedRows[0].DataBoundItem;
-            uCNadjiTim.TxtIme.Text = tim.Ime;
-            uCNadjiTim.TxtDrzavaTima.Text = tim.Drzava;
-            uCNadjiTim.TxtBrojPobeda.Text = tim.BrojPobeda.ToString();
-            uCNadjiTim.TxtBrojPoraza.Text = tim.BrojPoraza.ToString();
-            uCNadjiTim.TxtBodovi.Text = tim.Bodovi.ToString();
-            uCNadjiTim.TxtDvorana.Text = tim.Dvorana.Ime;
+            try
+            {
+                Tim tim = (Tim)uCNadjiTim.DgvTimovi.SelectedRows[0].DataBoundItem;
+                tim.FindCondition = $"TimId = {tim.TimId}";
+                tim = Communication.Instance.SendRequestGetResult<Tim>(Operation.UcitajTim, tim);
+                uCNadjiTim.TxtIme.Text = tim.Ime;
+                uCNadjiTim.TxtDrzavaTima.Text = tim.Drzava;
+                uCNadjiTim.TxtBrojPobeda.Text = tim.BrojPobeda.ToString();
+                uCNadjiTim.TxtBrojPoraza.Text = tim.BrojPoraza.ToString();
+                uCNadjiTim.TxtBodovi.Text = tim.Bodovi.ToString();
+                uCNadjiTim.TxtDvorana.Text = tim.Dvorana.Ime;
+                MessageBox.Show("Sistem je učitao tim");
+            }
+            catch (ServerCommunicationException)
+            {
+                MessageBox.Show("Sistem ne može da učita tim");
+                throw;
+            }
         }
     }
 }

@@ -153,15 +153,26 @@ namespace Client.Forms.GUIController
                 MessageBox.Show("Sistem ne može da učita utakmicu! Niste odabrali nijednu utakmicu! Pokušajte ponovo!");
                 return;
             }
-            Utakmica = (Utakmica)uCIzmenaUtakmice.DgvUtakmice.SelectedRows[0].DataBoundItem;
-            uCIzmenaUtakmice.GbUtakmica.Visible = true;
-            uCIzmenaUtakmice.BtnPrikaziStatistiku.Enabled = true;
-            uCIzmenaUtakmice.TxtDomacin.Text = Utakmica.Domacin.ToString();
-            uCIzmenaUtakmice.TxtPoeniDomacin.Text = Utakmica.BrojPoenaDomacin.ToString();
-            uCIzmenaUtakmice.TxtGost.Text = Utakmica.Gost.ToString();
-            uCIzmenaUtakmice.TxtPoeniGost.Text = Utakmica.BrojPoenaGost.ToString();
-            uCIzmenaUtakmice.DtpDatum.Text = Utakmica.DatumOdigravanja.ToString();
-            uCIzmenaUtakmice.GbPretraga.Visible = false;
+            try
+            {
+                Utakmica utakmica = (Utakmica)uCIzmenaUtakmice.DgvUtakmice.SelectedRows[0].DataBoundItem;
+                utakmica.FindCondition = $"UtakmicaId = {utakmica.UtakmicaId}";
+                Utakmica = Communication.Instance.SendRequestGetResult<Utakmica>(Operation.UcitajUtakmicu, utakmica);
+                uCIzmenaUtakmice.GbUtakmica.Visible = true;
+                uCIzmenaUtakmice.BtnPrikaziStatistiku.Enabled = true;
+                uCIzmenaUtakmice.TxtDomacin.Text = Utakmica.Domacin.ToString();
+                uCIzmenaUtakmice.TxtPoeniDomacin.Text = Utakmica.BrojPoenaDomacin.ToString();
+                uCIzmenaUtakmice.TxtGost.Text = Utakmica.Gost.ToString();
+                uCIzmenaUtakmice.TxtPoeniGost.Text = Utakmica.BrojPoenaGost.ToString();
+                uCIzmenaUtakmice.DtpDatum.Text = Utakmica.DatumOdigravanja.ToString();
+                uCIzmenaUtakmice.GbPretraga.Visible = false;
+
+            }
+            catch (ServerCommunicationException)
+            {
+                MessageBox.Show("Sistem ne može da učita utakmicu");
+                throw;
+            }
         }
 
         internal void NadjiUtakmice()

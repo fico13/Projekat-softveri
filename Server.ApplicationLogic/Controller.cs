@@ -108,5 +108,26 @@ namespace Server.ApplicationLogic
             SystemOperationBase so = new IzmeniUtakmicuSO(utakmica);
             so.ExecuteTemplate();
         }
+
+        public Utakmica UcitajUtakmicu(Utakmica utakmica)
+        {
+            SystemOperationBase so = new UcitajUtakmicuSO(utakmica);
+            so.ExecuteTemplate();
+            return ((UcitajUtakmicuSO)so).Result;
+        }
+
+        public Tim UcitajTim(Tim tim)
+        {
+            SystemOperationBase so = new UcitajTimSO(tim);
+            so.ExecuteTemplate();
+            return ((UcitajTimSO)so).Result;
+        }
+
+        public Igrac UcitajIgraca(Igrac igrac)
+        {
+            SystemOperationBase so = new UcitajIgracaSO(igrac);
+            so.ExecuteTemplate();
+            return ((UcitajIgracaSO)so).Result;
+        }
     }
 }

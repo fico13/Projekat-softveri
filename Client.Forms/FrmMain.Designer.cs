@@ -70,12 +70,14 @@ namespace Client.Forms
             // 
             this.dvoranaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.dodajDvoranuToolStripMenuItem});
+            this.dvoranaToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("dvoranaToolStripMenuItem.Image")));
             this.dvoranaToolStripMenuItem.Name = "dvoranaToolStripMenuItem";
-            this.dvoranaToolStripMenuItem.Size = new System.Drawing.Size(106, 32);
+            this.dvoranaToolStripMenuItem.Size = new System.Drawing.Size(126, 32);
             this.dvoranaToolStripMenuItem.Text = "Dvorana";
             // 
             // dodajDvoranuToolStripMenuItem
             // 
+            this.dodajDvoranuToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("dodajDvoranuToolStripMenuItem.Image")));
             this.dodajDvoranuToolStripMenuItem.Name = "dodajDvoranuToolStripMenuItem";
             this.dodajDvoranuToolStripMenuItem.Size = new System.Drawing.Size(238, 32);
             this.dodajDvoranuToolStripMenuItem.Text = "Dodaj dvoranu";
@@ -86,12 +88,14 @@ namespace Client.Forms
             this.timToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.dodajTimToolStripMenuItem,
             this.nadjiTimToolStripMenuItem});
+            this.timToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("timToolStripMenuItem.Image")));
             this.timToolStripMenuItem.Name = "timToolStripMenuItem";
-            this.timToolStripMenuItem.Size = new System.Drawing.Size(62, 32);
+            this.timToolStripMenuItem.Size = new System.Drawing.Size(82, 32);
             this.timToolStripMenuItem.Text = "Tim";
             // 
             // dodajTimToolStripMenuItem
             // 
+            this.dodajTimToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("dodajTimToolStripMenuItem.Image")));
             this.dodajTimToolStripMenuItem.Name = "dodajTimToolStripMenuItem";
             this.dodajTimToolStripMenuItem.Size = new System.Drawing.Size(251, 32);
             this.dodajTimToolStripMenuItem.Text = "Dodaj tim";
@@ -99,6 +103,7 @@ namespace Client.Forms
             // 
             // nadjiTimToolStripMenuItem
             // 
+            this.nadjiTimToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("nadjiTimToolStripMenuItem.Image")));
             this.nadjiTimToolStripMenuItem.Name = "nadjiTimToolStripMenuItem";
             this.nadjiTimToolStripMenuItem.Size = new System.Drawing.Size(251, 32);
             this.nadjiTimToolStripMenuItem.Text = "Pretraga timova";
@@ -110,12 +115,14 @@ namespace Client.Forms
             this.dodajIgračaToolStripMenuItem,
             this.pretragaIgračaToolStripMenuItem,
             this.izmeniIgračaToolStripMenuItem});
+            this.igracToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("igracToolStripMenuItem.Image")));
             this.igracToolStripMenuItem.Name = "igracToolStripMenuItem";
-            this.igracToolStripMenuItem.Size = new System.Drawing.Size(73, 32);
+            this.igracToolStripMenuItem.Size = new System.Drawing.Size(93, 32);
             this.igracToolStripMenuItem.Text = "Igrač";
             // 
             // dodajIgračaToolStripMenuItem
             // 
+            this.dodajIgračaToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("dodajIgračaToolStripMenuItem.Image")));
             this.dodajIgračaToolStripMenuItem.Name = "dodajIgračaToolStripMenuItem";
             this.dodajIgračaToolStripMenuItem.Size = new System.Drawing.Size(243, 32);
             this.dodajIgračaToolStripMenuItem.Text = "Dodaj igrača";
@@ -123,6 +130,7 @@ namespace Client.Forms
             // 
             // pretragaIgračaToolStripMenuItem
             // 
+            this.pretragaIgračaToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("pretragaIgračaToolStripMenuItem.Image")));
             this.pretragaIgračaToolStripMenuItem.Name = "pretragaIgračaToolStripMenuItem";
             this.pretragaIgračaToolStripMenuItem.Size = new System.Drawing.Size(243, 32);
             this.pretragaIgračaToolStripMenuItem.Text = "Pretraga igrača";
@@ -130,6 +138,7 @@ namespace Client.Forms
             // 
             // izmeniIgračaToolStripMenuItem
             // 
+            this.izmeniIgračaToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("izmeniIgračaToolStripMenuItem.Image")));
             this.izmeniIgračaToolStripMenuItem.Name = "izmeniIgračaToolStripMenuItem";
             this.izmeniIgračaToolStripMenuItem.Size = new System.Drawing.Size(243, 32);
             this.izmeniIgračaToolStripMenuItem.Text = "Izmeni igrača";
@@ -141,12 +150,14 @@ namespace Client.Forms
             this.dodajUtakmicuToolStripMenuItem,
             this.izmeniUtakmicuToolStripMenuItem,
             this.izmeniUtakmicuToolStripMenuItem1});
+            this.utakmicaToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("utakmicaToolStripMenuItem.Image")));
             this.utakmicaToolStripMenuItem.Name = "utakmicaToolStripMenuItem";
-            this.utakmicaToolStripMenuItem.Size = new System.Drawing.Size(115, 32);
+            this.utakmicaToolStripMenuItem.Size = new System.Drawing.Size(135, 32);
             this.utakmicaToolStripMenuItem.Text = "Utakmica";
             // 
             // dodajUtakmicuToolStripMenuItem
             // 
+            this.dodajUtakmicuToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("dodajUtakmicuToolStripMenuItem.Image")));
             this.dodajUtakmicuToolStripMenuItem.Name = "dodajUtakmicuToolStripMenuItem";
             this.dodajUtakmicuToolStripMenuItem.Size = new System.Drawing.Size(272, 32);
             this.dodajUtakmicuToolStripMenuItem.Text = "Dodaj utakmicu";
@@ -154,6 +165,7 @@ namespace Client.Forms
             // 
             // izmeniUtakmicuToolStripMenuItem
             // 
+            this.izmeniUtakmicuToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("izmeniUtakmicuToolStripMenuItem.Image")));
             this.izmeniUtakmicuToolStripMenuItem.Name = "izmeniUtakmicuToolStripMenuItem";
             this.izmeniUtakmicuToolStripMenuItem.Size = new System.Drawing.Size(272, 32);
             this.izmeniUtakmicuToolStripMenuItem.Text = "Pretraga utakmica";
@@ -161,6 +173,7 @@ namespace Client.Forms
             // 
             // izmeniUtakmicuToolStripMenuItem1
             // 
+            this.izmeniUtakmicuToolStripMenuItem1.Image = ((System.Drawing.Image)(resources.GetObject("izmeniUtakmicuToolStripMenuItem1.Image")));
             this.izmeniUtakmicuToolStripMenuItem1.Name = "izmeniUtakmicuToolStripMenuItem1";
             this.izmeniUtakmicuToolStripMenuItem1.Size = new System.Drawing.Size(272, 32);
             this.izmeniUtakmicuToolStripMenuItem1.Text = "Izmeni utakmicu";

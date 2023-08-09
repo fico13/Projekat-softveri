@@ -20,6 +20,9 @@ namespace Common.Communication
         SacuvajUtakmicu,
         NadjiUtakmice,
         IzmeniUtakmicu,
-        End
+        End,
+        UcitajUtakmicu,
+        UcitajTim,
+        UcitajIgraca
     }
 }

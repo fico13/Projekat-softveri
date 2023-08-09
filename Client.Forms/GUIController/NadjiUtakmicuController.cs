@@ -108,13 +108,24 @@ namespace Client.Forms.GUIController
                 MessageBox.Show("Sistem ne može da učita utakmicu! Niste odabrali nijednu utakmicu! Pokušajte ponovo!");
                 return;
             }
-            Utakmica = (Utakmica)uCPretragaUtakmica.DgvUtakmice.SelectedRows[0].DataBoundItem;
-            uCPretragaUtakmica.TxtDomacin.Text = Utakmica.Domacin.ToString();
-            uCPretragaUtakmica.TxtPoeniDomacin.Text = Utakmica.BrojPoenaDomacin.ToString();
-            uCPretragaUtakmica.TxtGost.Text = Utakmica.Gost.ToString();
-            uCPretragaUtakmica.TxtPoeniGost.Text = Utakmica.BrojPoenaGost.ToString();
-            uCPretragaUtakmica.TxtDatum.Text = Utakmica.DatumOdigravanja.ToString();
-            uCPretragaUtakmica.BtnPrikaziStatistiku.Enabled = true;
+            try
+            {
+                Utakmica utakmica = (Utakmica)uCPretragaUtakmica.DgvUtakmice.SelectedRows[0].DataBoundItem;
+                utakmica.FindCondition = $"UtakmicaId = {utakmica.UtakmicaId}";
+                Utakmica = Communication.Instance.SendRequestGetResult<Utakmica>(Operation.UcitajUtakmicu, utakmica);
+                uCPretragaUtakmica.TxtDomacin.Text = Utakmica.Domacin.ToString();
+                uCPretragaUtakmica.TxtPoeniDomacin.Text = Utakmica.BrojPoenaDomacin.ToString();
+                uCPretragaUtakmica.TxtGost.Text = Utakmica.Gost.ToString();
+                uCPretragaUtakmica.TxtPoeniGost.Text = Utakmica.BrojPoenaGost.ToString();
+                uCPretragaUtakmica.TxtDatum.Text = Utakmica.DatumOdigravanja.ToString();
+                uCPretragaUtakmica.BtnPrikaziStatistiku.Enabled = true;
+
+            }
+            catch (ServerCommunicationException)
+            {
+                MessageBox.Show("Sistem ne može da učita utakmicu");
+                throw;
+            }
         }
     }
 }

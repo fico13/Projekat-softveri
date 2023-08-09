@@ -115,15 +115,26 @@ namespace Client.Forms.GUIController
                 MessageBox.Show("Sistem ne može da učita igrača! Niste odabrali nijednog igrača! Pokušajte ponovo!");
                 return;
             }
-            Igrac igrac = (Igrac)uCPretragaIgraca.DgvIgraci.SelectedRows[0].DataBoundItem;
-            uCPretragaIgraca.TxtIme.Text = igrac.ImeIgraca;
-            uCPretragaIgraca.TxtPrezime.Text = igrac.PrezimeIgraca;
-            uCPretragaIgraca.TxtDrzava.Text = igrac.DrzavaIgraca;
-            uCPretragaIgraca.TxtPozicija.Text = igrac.Pozicija.ToString();
-            uCPretragaIgraca.TxtBrojNaDresu.Text = igrac.BrojNaDresu.ToString();
-            uCPretragaIgraca.TxtVisina.Text = igrac.Visina.ToString();  
-            uCPretragaIgraca.TxtTezina.Text = igrac.Tezina.ToString();
-            uCPretragaIgraca.TxtTim.Text = igrac.Tim.ToString();  
+            try
+            {
+                Igrac igrac = (Igrac)uCPretragaIgraca.DgvIgraci.SelectedRows[0].DataBoundItem;
+                igrac.FindCondition = $"IgracId = {igrac.IgracId}";
+                igrac = Communication.Instance.SendRequestGetResult<Igrac>(Operation.UcitajIgraca, igrac);
+                uCPretragaIgraca.TxtIme.Text = igrac.ImeIgraca;
+                uCPretragaIgraca.TxtPrezime.Text = igrac.PrezimeIgraca;
+                uCPretragaIgraca.TxtDrzava.Text = igrac.DrzavaIgraca;
+                uCPretragaIgraca.TxtPozicija.Text = igrac.Pozicija.ToString();
+                uCPretragaIgraca.TxtBrojNaDresu.Text = igrac.BrojNaDresu.ToString();
+                uCPretragaIgraca.TxtVisina.Text = igrac.Visina.ToString();  
+                uCPretragaIgraca.TxtTezina.Text = igrac.Tezina.ToString();
+                uCPretragaIgraca.TxtTim.Text = igrac.Tim.ToString();  
+
+            }
+            catch (ServerCommunicationException)
+            {
+                MessageBox.Show("Sistem ne može da učita igrača");
+                throw;
+            }
         }
     }
 }
