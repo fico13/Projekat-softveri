@@ -10,6 +10,7 @@ namespace Server.SystemOperations.UtakmicaSO
     public class UcitajUtakmicuSO : SystemOperationBase
     {
         private Utakmica utakmica;
+        public List<Statistika> Statistike { get; set; }
 
         public UcitajUtakmicuSO(Utakmica utakmica)
         {
@@ -20,6 +21,12 @@ namespace Server.SystemOperations.UtakmicaSO
         protected override void Execute()
         {
             Result = repository.NadjiOdredjeni(utakmica).Cast<Utakmica>().First();
+            Statistika statistika = new Statistika
+            {
+                Utakmica = Result
+            };
+            Statistike = repository.NadjiOdredjeni(statistika).Cast<Statistika>().ToList();
+            Result.Statistka = Statistike;
         }
     }
 }

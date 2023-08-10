@@ -76,15 +76,14 @@ namespace Client.Forms.GUIController
                 Utakmica.BrojPoenaGost = Convert.ToInt32(uCIzmenaUtakmice.TxtPoeniGost.Text);
                 Utakmica.DateString = uCIzmenaUtakmice.DtpDatum.Value.ToString();
                 Communication.Instance.SendRequestNoResult(Operation.IzmeniUtakmicu, Utakmica);
-                MessageBox.Show("Sistem je izmenio utakmicu!");
+                MessageBox.Show("Sistem je izmenio utakmicu");
                 OcistiPodatke();
                 uCIzmenaUtakmice.DgvUtakmice.DataSource = null;
                 Init();
-
             }
             catch (ServerCommunicationException)
             {
-                MessageBox.Show("Sistem ne može da izmeni utakmicu!");
+                MessageBox.Show("Sistem ne može da izmeni utakmicu");
                 throw;
             }
         }
@@ -166,7 +165,7 @@ namespace Client.Forms.GUIController
                 uCIzmenaUtakmice.TxtPoeniGost.Text = Utakmica.BrojPoenaGost.ToString();
                 uCIzmenaUtakmice.DtpDatum.Text = Utakmica.DatumOdigravanja.ToString();
                 uCIzmenaUtakmice.GbPretraga.Visible = false;
-
+                MessageBox.Show("Sistem je učitao utakmicu");
             }
             catch (ServerCommunicationException)
             {
@@ -191,18 +190,18 @@ namespace Client.Forms.GUIController
                 BindingList<Utakmica> utakmice = new BindingList<Utakmica>(Communication.Instance.SendRequestGetResult<List<Utakmica>>(Operation.NadjiUtakmice, utakmica));
                 if (utakmice.Count == 0)
                 {
-                    MessageBox.Show("Sistem ne može da nađe utakmice po zadatoj vrednosti!");
+                    MessageBox.Show("Sistem ne može da nađe utakmice po zadatoj vrednosti");
                     uCIzmenaUtakmice.DgvUtakmice.DataSource = null;
                     return;
                 }
                 uCIzmenaUtakmice.DgvUtakmice.DataSource = utakmice;
+                MessageBox.Show("Sistem je našao utakmice po zadatoj vrednosti");
                 uCIzmenaUtakmice.BtnUcitajUtakmicu.Enabled = true;
                 OcistiPodatke();
-
             }
             catch (ServerCommunicationException)
             {
-                MessageBox.Show("Sistem ne može da nađe utakmice po zadatoj vrednosti!");
+                MessageBox.Show("Sistem ne može da nađe utakmice po zadatoj vrednosti");
                 throw;
             }
         }

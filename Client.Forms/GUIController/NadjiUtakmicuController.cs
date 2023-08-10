@@ -35,7 +35,10 @@ namespace Client.Forms.GUIController
 
         internal void NadjiUtakmice()
         {
-            if(UserControlsHelper.ComboBoxValidation(uCPretragaUtakmica.CbTimovi))
+            OcistiPodatke();
+            uCPretragaUtakmica.DgvDomaci.Visible = false;
+            uCPretragaUtakmica.DgvGosti.Visible = false;
+            if (UserControlsHelper.ComboBoxValidation(uCPretragaUtakmica.CbTimovi))
             {
                 MessageBox.Show("Sistem ne može da nađe utakmice po zadatoj vrednosti! Niste lepo odabrali tim iz combobox-a! Pokušajte ponovo!");
             }
@@ -48,18 +51,19 @@ namespace Client.Forms.GUIController
                 BindingList<Utakmica> utakmice = new BindingList<Utakmica>(Communication.Instance.SendRequestGetResult<List<Utakmica>>(Operation.NadjiUtakmice, utakmica));
                 if (utakmice.Count == 0)
                 {
-                    MessageBox.Show("Sistem ne može da nađe utakmice po zadatoj vrednosti!");
                     uCPretragaUtakmica.DgvUtakmice.DataSource = null;
+                    MessageBox.Show("Sistem ne može da nađe utakmice po zadatoj vrednosti");
                     return;
                 }
                 uCPretragaUtakmica.DgvUtakmice.DataSource = utakmice;
+                MessageBox.Show("Sistem je našao utakmice po zadatoj vrednosti");
                 uCPretragaUtakmica.BtnUcitajUtakmicu.Enabled = true;
                 OcistiPodatke();
 
             }
             catch (ServerCommunicationException)
             {
-                MessageBox.Show("Sistem ne može da nađe utakmice po zadatoj vrednosti!");
+                MessageBox.Show("Sistem ne može da nađe utakmice po zadatoj vrednosti");
                 throw;
             }
         }
@@ -99,6 +103,8 @@ namespace Client.Forms.GUIController
             uCPretragaUtakmica.TxtGost.Text = "";
             uCPretragaUtakmica.TxtPoeniGost.Text = "";
             uCPretragaUtakmica.TxtDatum.Text = "";
+            uCPretragaUtakmica.LblDomacin.Text = "";
+            uCPretragaUtakmica.LblGost.Text = "";
         }
 
         internal void UcitajUtakmicu()
@@ -119,7 +125,7 @@ namespace Client.Forms.GUIController
                 uCPretragaUtakmica.TxtPoeniGost.Text = Utakmica.BrojPoenaGost.ToString();
                 uCPretragaUtakmica.TxtDatum.Text = Utakmica.DatumOdigravanja.ToString();
                 uCPretragaUtakmica.BtnPrikaziStatistiku.Enabled = true;
-
+                MessageBox.Show("Sistem je učitao utakmicu");
             }
             catch (ServerCommunicationException)
             {

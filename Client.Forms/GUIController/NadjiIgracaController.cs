@@ -24,8 +24,12 @@ namespace Client.Forms.GUIController
             this.uCPretragaIgraca = uCPretragaIgraca;
         }
 
+        
+
         internal void NadjiIgrace()
         {
+            OcistiPodatke();
+            uCPretragaIgraca.DgvIgraci.DataSource = null;
             if(UserControlsHelper.EmptyText(uCPretragaIgraca.TxtImeIgraca) && UserControlsHelper.EmptyText(uCPretragaIgraca.TxtPrezimeIgraca))
             {
                 MessageBox.Show("Sistem ne može da nađe igrače po zadatoj vrednosti! Niste uneli nijedan podatak za pretragu! Pokušajte ponovo!");
@@ -49,6 +53,7 @@ namespace Client.Forms.GUIController
                         return;
                     }
                     uCPretragaIgraca.DgvIgraci.DataSource = igraci;
+                    MessageBox.Show("Sistem je našao igrače po zadatoj vrednosti");
                 }
                 catch (ServerCommunicationException)
                 {
@@ -74,6 +79,7 @@ namespace Client.Forms.GUIController
                         return;
                     }
                     uCPretragaIgraca.DgvIgraci.DataSource = igraci;
+                    MessageBox.Show("Sistem je našao igrače po zadatoj vrednosti");
                 }
                 catch (ServerCommunicationException)
                 {
@@ -99,6 +105,7 @@ namespace Client.Forms.GUIController
                         return;
                     }
                     uCPretragaIgraca.DgvIgraci.DataSource = igraci;
+                    MessageBox.Show("Sistem je našao igrače po zadatoj vrednosti");
                 }
                 catch (ServerCommunicationException)
                 {
@@ -106,6 +113,18 @@ namespace Client.Forms.GUIController
                     throw;
                 }
             }
+        }
+
+        private void OcistiPodatke()
+        {
+            uCPretragaIgraca.TxtIme.Clear();
+            uCPretragaIgraca.TxtPrezime.Clear();
+            uCPretragaIgraca.TxtDrzava.Clear();
+            uCPretragaIgraca.TxtPozicija.Clear();
+            uCPretragaIgraca.TxtBrojNaDresu.Clear();
+            uCPretragaIgraca.TxtVisina.Clear();
+            uCPretragaIgraca.TxtTezina.Clear();
+            uCPretragaIgraca.TxtTim.Clear();
         }
 
         internal void PrikaziIgraca()
@@ -127,8 +146,8 @@ namespace Client.Forms.GUIController
                 uCPretragaIgraca.TxtBrojNaDresu.Text = igrac.BrojNaDresu.ToString();
                 uCPretragaIgraca.TxtVisina.Text = igrac.Visina.ToString();  
                 uCPretragaIgraca.TxtTezina.Text = igrac.Tezina.ToString();
-                uCPretragaIgraca.TxtTim.Text = igrac.Tim.ToString();  
-
+                uCPretragaIgraca.TxtTim.Text = igrac.Tim.ToString();
+                MessageBox.Show("Sistem je učitao igrača");
             }
             catch (ServerCommunicationException)
             {

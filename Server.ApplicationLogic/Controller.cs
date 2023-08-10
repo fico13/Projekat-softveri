@@ -31,7 +31,7 @@ namespace Server.ApplicationLogic
             }
         }
 
-        public object UlogujAdministratora(Administrator administrator)
+        public Administrator UlogujAdministratora(Administrator administrator)
         {
             SystemOperationBase so = new UlogujAdministratoraSO(administrator);
             so.ExecuteTemplate();
@@ -44,7 +44,7 @@ namespace Server.ApplicationLogic
             so.ExecuteTemplate();
         }
 
-        public object VratiSveDvorane()
+        public List<Dvorana> VratiSveDvorane()
         {
             SystemOperationBase so = new VratiListuDvoranaSO();
             so.ExecuteTemplate();
@@ -57,14 +57,14 @@ namespace Server.ApplicationLogic
             so.ExecuteTemplate();
         }
 
-        public object NadjiTimove(Tim tim)
+        public List<Tim> NadjiTimove(Tim tim)
         {
             SystemOperationBase so = new NadjiTimoveSO(tim);
             so.ExecuteTemplate();
             return ((NadjiTimoveSO)so).Result;
         }
 
-        public object VratiSveTimove()
+        public List<Tim> VratiSveTimove()
         {
             SystemOperationBase so = new VratiListuTimovaSO();
             so.ExecuteTemplate();
@@ -77,7 +77,7 @@ namespace Server.ApplicationLogic
             so.ExecuteTemplate();
         }
 
-        public object NadjiIgrace(Igrac igrac)
+        public List<Igrac> NadjiIgrace(Igrac igrac)
         {
             SystemOperationBase so = new NadjiIgraceSO(igrac);
             so.ExecuteTemplate();
@@ -96,7 +96,7 @@ namespace Server.ApplicationLogic
             so.ExecuteTemplate();
         }
 
-        public object NadjiUtakmice(Utakmica utakmica)
+        public List<Utakmica> NadjiUtakmice(Utakmica utakmica)
         {
             SystemOperationBase so = new NadjiUtakmiceSO(utakmica);
             so.ExecuteTemplate();

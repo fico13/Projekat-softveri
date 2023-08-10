@@ -30,6 +30,7 @@ namespace Client.Forms.GUIController
         {
             uCIzmeniIgraca.CbPozicije.DataSource = Enum.GetValues(typeof(Pozicija));
             uCIzmeniIgraca.CbTim.DataSource = Communication.Instance.SendRequestGetResult<List<Tim>>(Operation.VratiSveTimove);
+            uCIzmeniIgraca.BtnIzmeniIgraca.Enabled = false;
         }
 
         internal void NadjiIgrace()
@@ -57,6 +58,7 @@ namespace Client.Forms.GUIController
                         return;
                     }
                     uCIzmeniIgraca.DgvIgraci.DataSource = igraci;
+                    MessageBox.Show("Sistem je našao igrače po zadatoj vrednosti");
                 }
                 catch (ServerCommunicationException)
                 {
@@ -82,6 +84,7 @@ namespace Client.Forms.GUIController
                         return;
                     }
                     uCIzmeniIgraca.DgvIgraci.DataSource = igraci;
+                    MessageBox.Show("Sistem je našao igrače po zadatoj vrednosti");
                 }
                 catch (ServerCommunicationException)
                 {
@@ -105,6 +108,7 @@ namespace Client.Forms.GUIController
                         return;
                     }
                     uCIzmeniIgraca.DgvIgraci.DataSource = igraci;
+                    MessageBox.Show("Sistem je našao igrače po zadatoj vrednosti");
                 }
                 catch (ServerCommunicationException)
                 {
@@ -209,6 +213,8 @@ namespace Client.Forms.GUIController
             uCIzmeniIgraca.CbPozicije.SelectedIndex = 0;
             uCIzmeniIgraca.CbTim.SelectedIndex = 0;
             uCIzmeniIgraca.DgvIgraci.DataSource = null;
+            uCIzmeniIgraca.TxtImeIgraca.Clear();
+            uCIzmeniIgraca.TxtPrezimeIgraca.Clear();
         }
 
         internal void UcitajIgraca()
@@ -231,7 +237,8 @@ namespace Client.Forms.GUIController
                 uCIzmeniIgraca.TxtVisina.Text = IzabraniIgrac.Visina.ToString();
                 uCIzmeniIgraca.TxtTezina.Text = IzabraniIgrac.Tezina.ToString();
                 uCIzmeniIgraca.CbTim.Text = IzabraniIgrac.Tim.ToString();
-
+                MessageBox.Show("Sistem je učitao igrača");
+                uCIzmeniIgraca.BtnIzmeniIgraca.Enabled = true;
             }
             catch (ServerCommunicationException)
             {

@@ -78,7 +78,7 @@ namespace Client.Forms.GUIController
             }
             catch (ServerCommunicationException)
             {
-                MessageBox.Show("Sistem ne može da zapamti utakmicu!");
+                MessageBox.Show("Sistem ne može da zapamti utakmicu");
                 throw;
             }
            
@@ -152,14 +152,14 @@ namespace Client.Forms.GUIController
                     utakmica.Gost.Bodovi += 2;
                 }
                 Communication.Instance.SendRequestNoResult(Operation.SacuvajUtakmicu, utakmica);
-                MessageBox.Show("Sistem je zapamtio utakmicu!");
+                MessageBox.Show("Sistem je zapamtio utakmicu");
                 OcistiPodatke();
                 uCDodajUtakmicu.CbDomacin.DataSource = Communication.Instance.SendRequestGetResult<List<Tim>>(Operation.VratiSveTimove);
                 uCDodajUtakmicu.CbGost.DataSource = Communication.Instance.SendRequestGetResult<List<Tim>>(Operation.VratiSveTimove);
             }
             catch (ServerCommunicationException)
             {
-                MessageBox.Show("Sistem ne može da zapamti utakmicu!");
+                MessageBox.Show("Sistem ne može da zapamti utakmicu");
                 throw;
             }
         }
@@ -226,7 +226,7 @@ namespace Client.Forms.GUIController
             }
             catch (ServerCommunicationException)
             {
-                MessageBox.Show("Sistem ne može da zapamti utakmicu!");
+                MessageBox.Show("Sistem ne može da zapamti utakmicu");
                 throw;
             }
         }
@@ -255,11 +255,10 @@ namespace Client.Forms.GUIController
                 BindingList<Igrac> domaciIgraci = new BindingList<Igrac>(Communication.Instance.SendRequestGetResult<List<Igrac>>(Operation.NadjiIgrace, domaci));
                 if (domaciIgraci.Count == 0)
                 {
-                    MessageBox.Show("Sistem ne može da nađe igrače po zadatoj vrednosti!");
+                    MessageBox.Show("Sistem ne može da nađe igrače po zadatoj vrednosti");
                     uCDodajUtakmicu.CbIgracDomacina.DataSource = null;
                     return;
                 }
-                uCDodajUtakmicu.CbIgracDomacina.DataSource = domaciIgraci;
                 Igrac gosti = new Igrac
                 {
                     FindCondition = $"t.TimId = {gost.TimId}"
@@ -267,16 +266,18 @@ namespace Client.Forms.GUIController
                 BindingList<Igrac> gostujuciIgraci = new BindingList<Igrac>(Communication.Instance.SendRequestGetResult<List<Igrac>>(Operation.NadjiIgrace, gosti));
                 if (gostujuciIgraci.Count == 0)
                 {
-                    MessageBox.Show("Sistem ne može da nađe igrače po zadatoj vrednosti!");
+                    MessageBox.Show("Sistem ne može da nađe igrače po zadatoj vrednosti");
                     uCDodajUtakmicu.CbIgracGosta.DataSource = null;
                     return;
                 }
+                uCDodajUtakmicu.CbIgracDomacina.DataSource = domaciIgraci;
                 uCDodajUtakmicu.CbIgracGosta.DataSource = gostujuciIgraci;
                 uCDodajUtakmicu.BtnDodajStatistikuDomacin.Enabled = true;
+                MessageBox.Show("Sistem je našao igrače po zadatoj vrednosti");
             }
             catch (ServerCommunicationException)
             {
-                MessageBox.Show("Sistem ne može da nađe igrače po zadatoj vrednosti!");
+                MessageBox.Show("Sistem ne može da nađe igrače po zadatoj vrednosti");
                 throw;
             }
 
