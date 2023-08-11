@@ -18,8 +18,6 @@ namespace Common.Domain
         string FindCondition { get; }
         string UpdateCondition { get; }
         string IdColumnName { get; }
-
-
         IDomainObject ReadObjectRow(SqlDataReader reader);
     }
 }

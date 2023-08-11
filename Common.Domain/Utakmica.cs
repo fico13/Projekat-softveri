@@ -17,6 +17,9 @@ namespace Common.Domain
         public DateTime DatumOdigravanja { get; set; }
         public Tim Domacin { get; set; }
         public Tim Gost { get; set; }
+        
+        
+        
         [Browsable(false)]
         public string DateString { get; set; }
 

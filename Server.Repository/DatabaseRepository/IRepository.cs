@@ -14,13 +14,13 @@ namespace Server.Repository.DatabaseRepository
         void BeginTransaction();
         void Commit();
         void Rollback();
-        List<T> VratiSve(IDomainObject objekat);
-        void Sacuvaj(T objekat);
-        List<T> NadjiOdredjeni(IDomainObject objekat);
+        List<IDomainObject> VratiSve(IDomainObject objekat);
+        void Sacuvaj(IDomainObject objekat);
+        List<IDomainObject> NadjiOdredjeni(IDomainObject objekat);
 
-        List<T> VratiSveJoin(IDomainObject objekat);
+        List<IDomainObject> VratiSveJoin(IDomainObject objekat);
 
-        void Update(T objekat);
+        void Update(IDomainObject objekat);
         int DajNoviID(IDomainObject objekat);
     }
 }

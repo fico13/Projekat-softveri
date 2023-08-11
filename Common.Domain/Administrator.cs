@@ -16,25 +16,28 @@ namespace Common.Domain
         public string Password { get; set; }
         public string Ime { get; set; }
         public string Prezime { get; set; }
+        
+        
+        
         [Browsable(false)]
         public string TableName => "Administrator";
         [Browsable(false)]
-        public string InsertValues => throw new NotImplementedException();
+        public string InsertValues => "";
         [Browsable(false)]
-        public string WhereCondition => throw new NotImplementedException();
+        public string WhereCondition => "";
         [Browsable(false)]
-        public string FindCondition => throw new NotImplementedException();
+        public string FindCondition => "";
         [Browsable(false)]
-        public string Alias => throw new NotImplementedException();
+        public string Alias => "";
         [Browsable(false)]
-        public string JoinTable => throw new NotImplementedException();
+        public string JoinTable => "";
         [Browsable(false)]
-        public string JoinCondition => throw new NotImplementedException();
+        public string JoinCondition => "";
         [Browsable(false)]
-        public string UpdateCondition => throw new NotImplementedException();
+        public string UpdateCondition => "";
         [Browsable(false)]
 
-        public string IdColumnName => throw new NotImplementedException();
+        public string IdColumnName => "";
 
         [Browsable(false)]
         public IDomainObject ReadObjectRow(SqlDataReader reader)

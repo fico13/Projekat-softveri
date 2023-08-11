@@ -21,6 +21,8 @@ namespace Common.Domain
         public Tim Tim { get; set; }
         public double Tezina { get; set; }
 
+        
+        
         [Browsable(false)]
         public string TableName => "Igrac";
         [Browsable(false)]
@@ -38,7 +40,7 @@ namespace Common.Domain
         [Browsable(false)]
         public string UpdateCondition => $"ImeIgraca='{ImeIgraca}', PrezimeIgraca='{PrezimeIgraca}', DrzavaIgraca='{DrzavaIgraca}', Pozicija={((int)Pozicija)}, BrojNaDresu={BrojNaDresu}, Visina={Visina}, Tezina={Tezina}, TimId={Tim.TimId}";
         [Browsable(false)]
-        public string IdColumnName => throw new NotImplementedException();
+        public string IdColumnName => "";
 
         public IDomainObject ReadObjectRow(SqlDataReader reader)
         {

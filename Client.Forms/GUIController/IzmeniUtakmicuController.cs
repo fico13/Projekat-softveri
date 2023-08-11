@@ -75,6 +75,25 @@ namespace Client.Forms.GUIController
                 Utakmica.BrojPoenaDomacin = Convert.ToInt32(uCIzmenaUtakmice.TxtPoeniDomacin.Text);
                 Utakmica.BrojPoenaGost = Convert.ToInt32(uCIzmenaUtakmice.TxtPoeniGost.Text);
                 Utakmica.DateString = uCIzmenaUtakmice.DtpDatum.Value.ToString();
+                if(Utakmica.BrojPoenaDomacin  == Utakmica.BrojPoenaGost)
+                {
+                    MessageBox.Show("Sistem ne može da izmeni utakmicu! Broj poena domaćina i gosta ne može biti isti! Pokušajte ponovo!");
+                    return;
+                }
+                else if(Utakmica.BrojPoenaDomacin > Utakmica.BrojPoenaGost)
+                {
+                    Utakmica.Domacin.BrojPobeda += 1;
+                    Utakmica.Domacin.Bodovi += 2;
+                    Utakmica.Gost.BrojPoraza += 1;
+                    Utakmica.Gost.Bodovi += 1;
+                }
+                else
+                {
+                    Utakmica.Domacin.BrojPoraza += 1;
+                    Utakmica.Domacin.Bodovi += 1;
+                    Utakmica.Gost.BrojPobeda += 1;
+                    Utakmica.Gost.Bodovi += 2;
+                }
                 Communication.Instance.SendRequestNoResult(Operation.IzmeniUtakmicu, Utakmica);
                 MessageBox.Show("Sistem je izmenio utakmicu");
                 OcistiPodatke();
@@ -165,6 +184,18 @@ namespace Client.Forms.GUIController
                 uCIzmenaUtakmice.TxtPoeniGost.Text = Utakmica.BrojPoenaGost.ToString();
                 uCIzmenaUtakmice.DtpDatum.Text = Utakmica.DatumOdigravanja.ToString();
                 uCIzmenaUtakmice.GbPretraga.Visible = false;
+                if(Utakmica.BrojPoenaDomacin > Utakmica.BrojPoenaGost)
+                {
+                    Utakmica.Domacin.BrojPobeda -= 1;
+                    Utakmica.Domacin.Bodovi -= 2;
+                    Utakmica.Gost.BrojPoraza -= 1;
+                    Utakmica.Gost.Bodovi -= 1;
+                }
+                else
+                {
+                    Utakmica.Domacin.BrojPoraza -= 1;
+                    Utakmica.Gost.BrojPobeda -= 1;
+                }
                 MessageBox.Show("Sistem je učitao utakmicu");
             }
             catch (ServerCommunicationException)

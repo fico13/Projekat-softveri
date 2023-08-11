@@ -23,6 +23,8 @@ namespace Server.SystemOperations.UtakmicaSO
             {
                 repository.Update(statistika);
             }
+            repository.Update(utakmica.Domacin);
+            repository.Update(utakmica.Gost);
         }
     }
 }

@@ -16,25 +16,27 @@ namespace Common.Domain
         public string Drzava { get; set; }
         public int Kapacitet { get; set; }
         
+        
+        
         [Browsable(false)]
         public string TableName => "Dvorana";
         [Browsable(false)]
         public string InsertValues => $"'{Ime}', '{Drzava}', {Kapacitet}";
         [Browsable(false)]
-        public string WhereCondition => throw new NotImplementedException();
+        public string WhereCondition => "";
         [Browsable(false)]
-        public string FindCondition => throw new NotImplementedException();
+        public string FindCondition => "";
         [Browsable(false)]
         public string Alias => "d";
         [Browsable(false)]
-        public string JoinTable => throw new NotImplementedException();
+        public string JoinTable => "";
         [Browsable(false)]
-        public string JoinCondition => throw new NotImplementedException();
+        public string JoinCondition => "";
         [Browsable(false)]
-        public string UpdateCondition => throw new NotImplementedException();
+        public string UpdateCondition => "";
         [Browsable(false)]
 
-        public string IdColumnName => throw new NotImplementedException();
+        public string IdColumnName => "";
 
         [Browsable(false)]
         public IDomainObject ReadObjectRow(SqlDataReader reader)

@@ -19,6 +19,9 @@ namespace Common.Domain
         public int Bodovi { get; set; } = 0;
         public Dvorana Dvorana { get; set; }
 
+        
+        
+        
         [Browsable(false)]
         public string TableName => "Tim";
         [Browsable(false)]
@@ -37,7 +40,7 @@ namespace Common.Domain
         public string UpdateCondition => $"BrojPobeda = {BrojPobeda}, BrojPoraza = {BrojPoraza}, Bodovi = {Bodovi}";
         [Browsable(false)]
 
-        public string IdColumnName => throw new NotImplementedException();
+        public string IdColumnName => "";
 
         [Browsable(false)]
         public IDomainObject ReadObjectRow(SqlDataReader reader)

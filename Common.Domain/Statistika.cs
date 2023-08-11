@@ -17,36 +17,27 @@ namespace Common.Domain
         public int Poeni { get; set; }
         public int Skokovi { get; set; }
         public int Asistencije { get; set; }
+        
+        
         [Browsable(false)]
-
         public string TableName => "Statistika";
         [Browsable(false)]
-
         public string InsertValues => $"{Utakmica.UtakmicaId}, {Igrac.IgracId}, {Poeni}, {Skokovi}, {Asistencije}";
         [Browsable(false)]
-
         public string WhereCondition => $"UtakmicaId = {Utakmica.UtakmicaId} and IgracId = {Igrac.IgracId}";
         [Browsable(false)]
-
         public string Alias => "s";
         [Browsable(false)]
-
         public string JoinTable => "Utakmica u";
         [Browsable(false)]
-
         public string JoinCondition => "(s.UtakmicaId = u.UtakmicaId) join Igrac i on(s.IgracId = i.IgracId) join Tim t on (i.TimId = t.TimId)";
         [Browsable(false)]
-
         public string FindCondition => $"s.UtakmicaId = {Utakmica.UtakmicaId}";
         [Browsable(false)]
-
         public string UpdateCondition => $"Poeni = {Poeni}, Skokovi = {Skokovi}, Asistencije = {Asistencije}";
         [Browsable(false)]
-
-        public string IdColumnName => throw new NotImplementedException();
-
+        public string IdColumnName => "";
         [Browsable(false)]
-
         public IDomainObject ReadObjectRow(SqlDataReader reader)
         {
             Statistika statistika = new Statistika
