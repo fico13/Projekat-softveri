@@ -36,6 +36,12 @@ namespace Client.Forms.UserControls.Tim
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UCNadjiTim));
             this.dgvTimovi = new System.Windows.Forms.DataGridView();
+            this.imeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.drzavaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dvoranaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.brojPobedaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.brojPorazaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bodoviDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.timBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.btnPretrazi = new System.Windows.Forms.Button();
             this.txtDrzava = new System.Windows.Forms.TextBox();
@@ -56,12 +62,6 @@ namespace Client.Forms.UserControls.Tim
             this.label4 = new System.Windows.Forms.Label();
             this.txtDrzavaTima = new System.Windows.Forms.TextBox();
             this.btnPrikaziTim = new System.Windows.Forms.Button();
-            this.imeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.drzavaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dvoranaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.brojPobedaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.brojPorazaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.bodoviDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTimovi)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.timBindingSource)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -106,6 +106,60 @@ namespace Client.Forms.UserControls.Tim
             this.dgvTimovi.Size = new System.Drawing.Size(1025, 226);
             this.dgvTimovi.TabIndex = 12;
             // 
+            // imeDataGridViewTextBoxColumn
+            // 
+            this.imeDataGridViewTextBoxColumn.DataPropertyName = "Ime";
+            this.imeDataGridViewTextBoxColumn.HeaderText = "Ime";
+            this.imeDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.imeDataGridViewTextBoxColumn.Name = "imeDataGridViewTextBoxColumn";
+            this.imeDataGridViewTextBoxColumn.ReadOnly = true;
+            this.imeDataGridViewTextBoxColumn.Width = 120;
+            // 
+            // drzavaDataGridViewTextBoxColumn
+            // 
+            this.drzavaDataGridViewTextBoxColumn.DataPropertyName = "Drzava";
+            this.drzavaDataGridViewTextBoxColumn.HeaderText = "Drzava";
+            this.drzavaDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.drzavaDataGridViewTextBoxColumn.Name = "drzavaDataGridViewTextBoxColumn";
+            this.drzavaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.drzavaDataGridViewTextBoxColumn.Width = 120;
+            // 
+            // dvoranaDataGridViewTextBoxColumn
+            // 
+            this.dvoranaDataGridViewTextBoxColumn.DataPropertyName = "Dvorana";
+            this.dvoranaDataGridViewTextBoxColumn.HeaderText = "Dvorana";
+            this.dvoranaDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.dvoranaDataGridViewTextBoxColumn.Name = "dvoranaDataGridViewTextBoxColumn";
+            this.dvoranaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.dvoranaDataGridViewTextBoxColumn.Width = 135;
+            // 
+            // brojPobedaDataGridViewTextBoxColumn
+            // 
+            this.brojPobedaDataGridViewTextBoxColumn.DataPropertyName = "BrojPobeda";
+            this.brojPobedaDataGridViewTextBoxColumn.HeaderText = "Broj pobeda";
+            this.brojPobedaDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.brojPobedaDataGridViewTextBoxColumn.Name = "brojPobedaDataGridViewTextBoxColumn";
+            this.brojPobedaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.brojPobedaDataGridViewTextBoxColumn.Width = 110;
+            // 
+            // brojPorazaDataGridViewTextBoxColumn
+            // 
+            this.brojPorazaDataGridViewTextBoxColumn.DataPropertyName = "BrojPoraza";
+            this.brojPorazaDataGridViewTextBoxColumn.HeaderText = "Broj poraza";
+            this.brojPorazaDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.brojPorazaDataGridViewTextBoxColumn.Name = "brojPorazaDataGridViewTextBoxColumn";
+            this.brojPorazaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.brojPorazaDataGridViewTextBoxColumn.Width = 110;
+            // 
+            // bodoviDataGridViewTextBoxColumn
+            // 
+            this.bodoviDataGridViewTextBoxColumn.DataPropertyName = "Bodovi";
+            this.bodoviDataGridViewTextBoxColumn.HeaderText = "Bodovi";
+            this.bodoviDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.bodoviDataGridViewTextBoxColumn.Name = "bodoviDataGridViewTextBoxColumn";
+            this.bodoviDataGridViewTextBoxColumn.ReadOnly = true;
+            this.bodoviDataGridViewTextBoxColumn.Width = 110;
+            // 
             // timBindingSource
             // 
             this.timBindingSource.DataSource = typeof(Common.Domain.Tim);
@@ -132,6 +186,7 @@ namespace Client.Forms.UserControls.Tim
             this.txtDrzava.Name = "txtDrzava";
             this.txtDrzava.Size = new System.Drawing.Size(216, 27);
             this.txtDrzava.TabIndex = 10;
+            this.txtDrzava.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txtNaziv
             // 
@@ -140,6 +195,7 @@ namespace Client.Forms.UserControls.Tim
             this.txtNaziv.Name = "txtNaziv";
             this.txtNaziv.Size = new System.Drawing.Size(216, 27);
             this.txtNaziv.TabIndex = 9;
+            this.txtNaziv.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label2
             // 
@@ -326,60 +382,6 @@ namespace Client.Forms.UserControls.Tim
             this.btnPrikaziTim.Text = "Prikaži tim";
             this.btnPrikaziTim.UseVisualStyleBackColor = true;
             this.btnPrikaziTim.Click += new System.EventHandler(this.btnPrikaziTim_Click);
-            // 
-            // imeDataGridViewTextBoxColumn
-            // 
-            this.imeDataGridViewTextBoxColumn.DataPropertyName = "Ime";
-            this.imeDataGridViewTextBoxColumn.HeaderText = "Ime";
-            this.imeDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.imeDataGridViewTextBoxColumn.Name = "imeDataGridViewTextBoxColumn";
-            this.imeDataGridViewTextBoxColumn.ReadOnly = true;
-            this.imeDataGridViewTextBoxColumn.Width = 120;
-            // 
-            // drzavaDataGridViewTextBoxColumn
-            // 
-            this.drzavaDataGridViewTextBoxColumn.DataPropertyName = "Drzava";
-            this.drzavaDataGridViewTextBoxColumn.HeaderText = "Drzava";
-            this.drzavaDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.drzavaDataGridViewTextBoxColumn.Name = "drzavaDataGridViewTextBoxColumn";
-            this.drzavaDataGridViewTextBoxColumn.ReadOnly = true;
-            this.drzavaDataGridViewTextBoxColumn.Width = 120;
-            // 
-            // dvoranaDataGridViewTextBoxColumn
-            // 
-            this.dvoranaDataGridViewTextBoxColumn.DataPropertyName = "Dvorana";
-            this.dvoranaDataGridViewTextBoxColumn.HeaderText = "Dvorana";
-            this.dvoranaDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.dvoranaDataGridViewTextBoxColumn.Name = "dvoranaDataGridViewTextBoxColumn";
-            this.dvoranaDataGridViewTextBoxColumn.ReadOnly = true;
-            this.dvoranaDataGridViewTextBoxColumn.Width = 135;
-            // 
-            // brojPobedaDataGridViewTextBoxColumn
-            // 
-            this.brojPobedaDataGridViewTextBoxColumn.DataPropertyName = "BrojPobeda";
-            this.brojPobedaDataGridViewTextBoxColumn.HeaderText = "Broj pobeda";
-            this.brojPobedaDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.brojPobedaDataGridViewTextBoxColumn.Name = "brojPobedaDataGridViewTextBoxColumn";
-            this.brojPobedaDataGridViewTextBoxColumn.ReadOnly = true;
-            this.brojPobedaDataGridViewTextBoxColumn.Width = 110;
-            // 
-            // brojPorazaDataGridViewTextBoxColumn
-            // 
-            this.brojPorazaDataGridViewTextBoxColumn.DataPropertyName = "BrojPoraza";
-            this.brojPorazaDataGridViewTextBoxColumn.HeaderText = "Broj poraza";
-            this.brojPorazaDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.brojPorazaDataGridViewTextBoxColumn.Name = "brojPorazaDataGridViewTextBoxColumn";
-            this.brojPorazaDataGridViewTextBoxColumn.ReadOnly = true;
-            this.brojPorazaDataGridViewTextBoxColumn.Width = 110;
-            // 
-            // bodoviDataGridViewTextBoxColumn
-            // 
-            this.bodoviDataGridViewTextBoxColumn.DataPropertyName = "Bodovi";
-            this.bodoviDataGridViewTextBoxColumn.HeaderText = "Bodovi";
-            this.bodoviDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.bodoviDataGridViewTextBoxColumn.Name = "bodoviDataGridViewTextBoxColumn";
-            this.bodoviDataGridViewTextBoxColumn.ReadOnly = true;
-            this.bodoviDataGridViewTextBoxColumn.Width = 110;
             // 
             // UCNadjiTim
             // 
