@@ -26,6 +26,15 @@ namespace Server.Repository.DatabaseRepository
         {
             broker.Commit();
         }
+        public void OpenConnection()
+        {
+            broker.OpenConnection();
+        }
+
+        public void Rollback()
+        {
+            broker.Rollback();
+        }
 
         public int DajNoviID(IDomainObject objekat)
         {
@@ -51,15 +60,6 @@ namespace Server.Repository.DatabaseRepository
             return result;
         }
 
-        public void OpenConnection()
-        {
-            broker.OpenConnection();
-        }
-
-        public void Rollback()
-        {
-            broker.Rollback();
-        }
 
         public void Sacuvaj(IDomainObject objekat)
         {
