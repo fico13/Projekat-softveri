@@ -79,6 +79,11 @@ namespace Client.Forms.GUIController
                 MessageBox.Show("Sistem ne može da zapamti igrača! Država ne sme da sadrži broj u nazivu! Pokušajte ponovo!");
                 return;
             }
+            if(UserControlsHelper.ThreeDigitsNumberValidation(uCDodajIgraca.TxtBrojNaDresu))
+            {
+                MessageBox.Show("Sistem ne može da zapamti igrača! Broj na dresu ne sme da bude trocifren broj! Pokušajte ponovo!");
+                return;
+            }
             try
             {
                 Igrac = new Igrac

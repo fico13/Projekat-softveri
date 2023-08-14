@@ -82,5 +82,35 @@ namespace Client.Forms.GUIHelper
                 return false;
             }
         }
+
+        internal static bool ZeroValidation(TextBox tekst)
+        {
+            int broj = Convert.ToInt32(tekst.Text);
+            if(broj == 0)
+            {
+                tekst.BackColor = Color.LightCoral;
+                return true;
+            }
+            else
+            {
+                tekst.BackColor = Color.White;
+                return false;
+            }
+        }
+
+        internal static bool ThreeDigitsNumberValidation(TextBox tekst)
+        {
+            int broj = Convert.ToInt32(tekst.Text);
+            if (broj > 99)
+            {
+                tekst.BackColor = Color.LightCoral;
+                return true;
+            }
+            else
+            {
+                tekst.BackColor = Color.White;
+                return false;
+            }
+        }
     }
 }

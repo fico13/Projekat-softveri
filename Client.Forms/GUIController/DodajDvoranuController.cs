@@ -45,6 +45,11 @@ namespace Client.Forms.GUIController
                 MessageBox.Show("Sistem ne može da zapamti dvoranu! Država ne sme da sadrži broj u nazivu! Pokušajte ponovo!");
                 return;
             }
+            if(UserControlsHelper.ZeroValidation(uCDodajDvoranu.TxtKapacitet))
+            {
+                MessageBox.Show("Sistem ne može da zapamti dvoranu! Kapacitet ne može da bude 0! Pokušajte ponovo!");
+                return;
+            }
             try
             {
                 Dvorana dvorana = new Dvorana
