@@ -194,7 +194,9 @@ namespace Client.Forms.GUIController
                 else
                 {
                     Utakmica.Domacin.BrojPoraza -= 1;
+                    Utakmica.Domacin.Bodovi -= 1;
                     Utakmica.Gost.BrojPobeda -= 1;
+                    Utakmica.Gost.Bodovi -= 2;
                 }
                 MessageBox.Show("Sistem je učitao utakmicu");
             }

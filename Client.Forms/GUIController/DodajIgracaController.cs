@@ -39,7 +39,7 @@ namespace Client.Forms.GUIController
             }
             if(UserControlsHelper.ComboBoxValidation(uCDodajIgraca.CbTim))
             {
-                MessageBox.Show("Sistem ne moe da zapamti igrača! Niste lepo odabrali tim u combo box-u! Pokušajte ponovo!");
+                MessageBox.Show("Sistem ne može da zapamti igrača! Niste lepo odabrali tim u combo box-u! Pokušajte ponovo!");
                 return;
             }
 
