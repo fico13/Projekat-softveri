@@ -44,7 +44,7 @@ namespace Client.Forms.GUIController
             }
             Utakmica utakmica = new Utakmica
             {
-                FindCondition = $"lower(d.ImeTima) like '{uCPretragaUtakmica.CbTimovi.Text.ToLower()}' or lower(g.ImeTima) like '{uCPretragaUtakmica.CbTimovi.Text.ToLower()}'"
+                FindCondition = $"lower(d.ImeTima) like '{uCPretragaUtakmica.CbTimovi.Text.ToLower()}' or lower(g.ImeTima) like '{uCPretragaUtakmica.CbTimovi.Text.ToLower()}' order by DatumOdigravanja asc"
             };
             try
             {

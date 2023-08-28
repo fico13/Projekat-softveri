@@ -270,7 +270,7 @@ namespace Client.Forms.UserControls.Utakmica
             this.cbIgracDomacina.FormattingEnabled = true;
             this.cbIgracDomacina.Location = new System.Drawing.Point(22, 77);
             this.cbIgracDomacina.Name = "cbIgracDomacina";
-            this.cbIgracDomacina.Size = new System.Drawing.Size(231, 28);
+            this.cbIgracDomacina.Size = new System.Drawing.Size(283, 28);
             this.cbIgracDomacina.TabIndex = 7;
             // 
             // label5
@@ -384,7 +384,7 @@ namespace Client.Forms.UserControls.Utakmica
             this.cbIgracGosta.FormattingEnabled = true;
             this.cbIgracGosta.Location = new System.Drawing.Point(23, 77);
             this.cbIgracGosta.Name = "cbIgracGosta";
-            this.cbIgracGosta.Size = new System.Drawing.Size(231, 28);
+            this.cbIgracGosta.Size = new System.Drawing.Size(283, 28);
             this.cbIgracGosta.TabIndex = 16;
             // 
             // label12

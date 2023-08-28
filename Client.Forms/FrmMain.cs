@@ -83,7 +83,6 @@ namespace Client.Forms
             }
             catch (IOException)
             {
-
                 throw;
             }
         }

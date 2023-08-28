@@ -36,7 +36,7 @@ namespace Server.Repository.DatabaseRepository
             broker.Rollback();
         }
 
-        public int DajNoviID(IDomainObject objekat)
+        public int VratiMaxID(IDomainObject objekat)
         {
             SqlCommand command = broker.CreateSqlCommand();
             command.CommandText = $"select max({objekat.IdColumnName}) from {objekat.TableName}";

@@ -23,7 +23,7 @@ namespace Server.SystemOperations.UtakmicaSO
             {
                 statistika.Utakmica = new Utakmica
                 {
-                    UtakmicaId = repository.DajNoviID(utakmica)
+                    UtakmicaId = repository.VratiMaxID(utakmica)
                 };
                 repository.Sacuvaj(statistika);
             }

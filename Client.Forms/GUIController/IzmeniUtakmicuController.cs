@@ -216,7 +216,7 @@ namespace Client.Forms.GUIController
             //Tim tim = (Tim)uCPretragaUtakmica.CbTimovi.SelectedItem;
             Utakmica utakmica = new Utakmica
             {
-                FindCondition = $"lower(d.ImeTima) like '{uCIzmenaUtakmice.CbTimovi.Text.ToLower()}' or lower(g.ImeTima) like '{uCIzmenaUtakmice.CbTimovi.Text.ToLower()}'"
+                FindCondition = $"lower(d.ImeTima) like '{uCIzmenaUtakmice.CbTimovi.Text.ToLower()}' or lower(g.ImeTima) like '{uCIzmenaUtakmice.CbTimovi.Text.ToLower()}' order by DatumOdigravanja asc"
             };
             try
             {

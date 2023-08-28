@@ -26,10 +26,10 @@ namespace Client.Forms
                     FrmLogin frmLogin = new FrmLogin();
                     frmLogin.ShowDialog();
                     DialogResult result = frmLogin.DialogResult;
-                    frmLogin.Dispose();
                     if(result == DialogResult.OK)
                     {
                         Application.Run(new FrmMain());
+                        frmLogin.Dispose();
                     }
                     if(result == DialogResult.Cancel)
                     {

@@ -21,6 +21,6 @@ namespace Server.Repository.DatabaseRepository
         List<IDomainObject> VratiSveJoin(IDomainObject objekat);
 
         void Update(IDomainObject objekat);
-        int DajNoviID(IDomainObject objekat);
+        int VratiMaxID(IDomainObject objekat);
     }
 }
