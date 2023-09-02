@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
@@ -15,7 +16,8 @@ namespace Server.DatabaseBroker
 
         public Broker()
         {
-            connection = new SqlConnection(@"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=Projekat;Integrated Security=True;");
+            string connectionString = ConfigurationManager.AppSettings["connectionString"];
+            connection = new SqlConnection(connectionString);
         }
 
         public void OpenConnection()
