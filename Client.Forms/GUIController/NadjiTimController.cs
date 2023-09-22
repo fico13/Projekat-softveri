@@ -27,6 +27,7 @@ namespace Client.Forms.GUIController
         internal void NadjiTim()
         {
             OcistiPodatke();
+            uCNadjiTim.DgvTimovi.DataSource = null;
             if(UserControlsHelper.EmptyText(uCNadjiTim.TxtNaziv) && UserControlsHelper.EmptyText(uCNadjiTim.TxtDrzava))
             {
                 MessageBox.Show("Sistem ne može da nađe timove po zadatoj vrednosti! Niste uneli nijedan kriterijum za pretragu! Pokušajte ponovo!");
