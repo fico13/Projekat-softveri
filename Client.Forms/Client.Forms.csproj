@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Dialogs\Igrac\FrmStatistikaIgraca.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\Igrac\FrmStatistikaIgraca.Designer.cs">
+      <DependentUpon>FrmStatistikaIgraca.cs</DependentUpon>
+    </Compile>
     <Compile Include="Exceptions\ServerCommunicationException.cs" />
     <Compile Include="Exceptions\SystemOperationException.cs" />
     <Compile Include="FrmLogin.cs">
@@ -70,10 +76,12 @@
     <Compile Include="GUIController\NadjiIgracaController.cs" />
     <Compile Include="GUIController\NadjiTimController.cs" />
     <Compile Include="GUIController\NadjiUtakmicuController.cs" />
+    <Compile Include="GUIController\PrikaziStatistikuController.cs" />
     <Compile Include="GUIHelper\UserControlsHelper.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ServerCommunication\Communication.cs" />
+    <Compile Include="Session\SessionData.cs" />
     <Compile Include="UserControls\Dvorana\UCDodajDvoranu.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -97,6 +105,12 @@
     </Compile>
     <Compile Include="UserControls\Igrac\UCPretragaIgraca.Designer.cs">
       <DependentUpon>UCPretragaIgraca.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Igrac\UCStatistikaIgraca.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\Igrac\UCStatistikaIgraca.Designer.cs">
+      <DependentUpon>UCStatistikaIgraca.cs</DependentUpon>
     </Compile>
     <Compile Include="UserControls\Tim\UCDodajTim.cs">
       <SubType>UserControl</SubType>
@@ -128,6 +142,9 @@
     <Compile Include="UserControls\Utakmica\UCPretragaUtakmica.Designer.cs">
       <DependentUpon>UCPretragaUtakmica.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Dialogs\Igrac\FrmStatistikaIgraca.resx">
+      <DependentUpon>FrmStatistikaIgraca.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmLogin.resx">
       <DependentUpon>FrmLogin.cs</DependentUpon>
     </EmbeddedResource>
@@ -154,6 +171,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\Igrac\UCPretragaIgraca.resx">
       <DependentUpon>UCPretragaIgraca.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\Igrac\UCStatistikaIgraca.resx">
+      <DependentUpon>UCStatistikaIgraca.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\Tim\UCDodajTim.resx">
       <DependentUpon>UCDodajTim.cs</DependentUpon>

@@ -37,6 +37,7 @@ namespace Client.Forms.UserControls.Igrac
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnStatistika = new System.Windows.Forms.Button();
             this.txtPozicija = new System.Windows.Forms.TextBox();
             this.txtTim = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
@@ -82,6 +83,7 @@ namespace Client.Forms.UserControls.Igrac
             // 
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox1.BackColor = System.Drawing.Color.OrangeRed;
+            this.groupBox1.Controls.Add(this.btnStatistika);
             this.groupBox1.Controls.Add(this.txtPozicija);
             this.groupBox1.Controls.Add(this.txtTim);
             this.groupBox1.Controls.Add(this.label10);
@@ -101,15 +103,25 @@ namespace Client.Forms.UserControls.Igrac
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(970, 110);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(492, 462);
+            this.groupBox1.Size = new System.Drawing.Size(492, 536);
             this.groupBox1.TabIndex = 32;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Igrač";
             // 
+            // btnStatistika
+            // 
+            this.btnStatistika.Location = new System.Drawing.Point(102, 478);
+            this.btnStatistika.Name = "btnStatistika";
+            this.btnStatistika.Size = new System.Drawing.Size(273, 38);
+            this.btnStatistika.TabIndex = 43;
+            this.btnStatistika.Text = "Prikaži statistiku";
+            this.btnStatistika.UseVisualStyleBackColor = true;
+            this.btnStatistika.Click += new System.EventHandler(this.btnStatistika_Click);
+            // 
             // txtPozicija
             // 
             this.txtPozicija.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtPozicija.Location = new System.Drawing.Point(198, 191);
+            this.txtPozicija.Location = new System.Drawing.Point(198, 204);
             this.txtPozicija.Name = "txtPozicija";
             this.txtPozicija.ReadOnly = true;
             this.txtPozicija.Size = new System.Drawing.Size(244, 27);
@@ -119,7 +131,7 @@ namespace Client.Forms.UserControls.Igrac
             // txtTim
             // 
             this.txtTim.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtTim.Location = new System.Drawing.Point(198, 399);
+            this.txtTim.Location = new System.Drawing.Point(198, 412);
             this.txtTim.Name = "txtTim";
             this.txtTim.ReadOnly = true;
             this.txtTim.Size = new System.Drawing.Size(244, 27);
@@ -130,7 +142,7 @@ namespace Client.Forms.UserControls.Igrac
             // 
             this.label10.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(35, 406);
+            this.label10.Location = new System.Drawing.Point(35, 419);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(40, 20);
             this.label10.TabIndex = 40;
@@ -139,7 +151,7 @@ namespace Client.Forms.UserControls.Igrac
             // txtTezina
             // 
             this.txtTezina.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtTezina.Location = new System.Drawing.Point(198, 347);
+            this.txtTezina.Location = new System.Drawing.Point(198, 360);
             this.txtTezina.Name = "txtTezina";
             this.txtTezina.ReadOnly = true;
             this.txtTezina.Size = new System.Drawing.Size(244, 27);
@@ -150,7 +162,7 @@ namespace Client.Forms.UserControls.Igrac
             // 
             this.label7.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(35, 354);
+            this.label7.Location = new System.Drawing.Point(35, 367);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(104, 20);
             this.label7.TabIndex = 38;
@@ -159,7 +171,7 @@ namespace Client.Forms.UserControls.Igrac
             // txtVisina
             // 
             this.txtVisina.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtVisina.Location = new System.Drawing.Point(198, 295);
+            this.txtVisina.Location = new System.Drawing.Point(198, 308);
             this.txtVisina.Name = "txtVisina";
             this.txtVisina.ReadOnly = true;
             this.txtVisina.Size = new System.Drawing.Size(244, 27);
@@ -170,7 +182,7 @@ namespace Client.Forms.UserControls.Igrac
             // 
             this.label6.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(35, 302);
+            this.label6.Location = new System.Drawing.Point(35, 315);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(106, 20);
             this.label6.TabIndex = 36;
@@ -179,7 +191,7 @@ namespace Client.Forms.UserControls.Igrac
             // txtBrojNaDresu
             // 
             this.txtBrojNaDresu.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtBrojNaDresu.Location = new System.Drawing.Point(198, 243);
+            this.txtBrojNaDresu.Location = new System.Drawing.Point(198, 256);
             this.txtBrojNaDresu.Name = "txtBrojNaDresu";
             this.txtBrojNaDresu.ReadOnly = true;
             this.txtBrojNaDresu.Size = new System.Drawing.Size(244, 27);
@@ -190,7 +202,7 @@ namespace Client.Forms.UserControls.Igrac
             // 
             this.label5.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(35, 250);
+            this.label5.Location = new System.Drawing.Point(35, 263);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(123, 20);
             this.label5.TabIndex = 34;
@@ -199,7 +211,7 @@ namespace Client.Forms.UserControls.Igrac
             // txtPrezime
             // 
             this.txtPrezime.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtPrezime.Location = new System.Drawing.Point(198, 87);
+            this.txtPrezime.Location = new System.Drawing.Point(198, 100);
             this.txtPrezime.Name = "txtPrezime";
             this.txtPrezime.ReadOnly = true;
             this.txtPrezime.Size = new System.Drawing.Size(244, 27);
@@ -210,7 +222,7 @@ namespace Client.Forms.UserControls.Igrac
             // 
             this.label4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(35, 94);
+            this.label4.Location = new System.Drawing.Point(35, 107);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(78, 20);
             this.label4.TabIndex = 32;
@@ -219,7 +231,7 @@ namespace Client.Forms.UserControls.Igrac
             // txtDrzava
             // 
             this.txtDrzava.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtDrzava.Location = new System.Drawing.Point(198, 139);
+            this.txtDrzava.Location = new System.Drawing.Point(198, 152);
             this.txtDrzava.Name = "txtDrzava";
             this.txtDrzava.ReadOnly = true;
             this.txtDrzava.Size = new System.Drawing.Size(244, 27);
@@ -229,7 +241,7 @@ namespace Client.Forms.UserControls.Igrac
             // txtIme
             // 
             this.txtIme.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtIme.Location = new System.Drawing.Point(198, 35);
+            this.txtIme.Location = new System.Drawing.Point(198, 48);
             this.txtIme.Name = "txtIme";
             this.txtIme.ReadOnly = true;
             this.txtIme.Size = new System.Drawing.Size(244, 27);
@@ -240,7 +252,7 @@ namespace Client.Forms.UserControls.Igrac
             // 
             this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(35, 198);
+            this.label3.Location = new System.Drawing.Point(35, 211);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(76, 20);
             this.label3.TabIndex = 28;
@@ -250,7 +262,7 @@ namespace Client.Forms.UserControls.Igrac
             // 
             this.label8.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(35, 146);
+            this.label8.Location = new System.Drawing.Point(35, 159);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(69, 20);
             this.label8.TabIndex = 27;
@@ -260,7 +272,7 @@ namespace Client.Forms.UserControls.Igrac
             // 
             this.label9.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(35, 42);
+            this.label9.Location = new System.Drawing.Point(35, 55);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(39, 20);
             this.label9.TabIndex = 26;
@@ -532,6 +544,7 @@ namespace Client.Forms.UserControls.Igrac
         private DataGridViewTextBoxColumn brojNaDresuDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn visinaDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn tezinaDataGridViewTextBoxColumn;
+        private Button btnStatistika;
 
         public TextBox TxtTezina { get => txtTezina; set => txtTezina = value; }
         public TextBox TxtVisina { get => txtVisina; set => txtVisina = value; }
@@ -544,5 +557,6 @@ namespace Client.Forms.UserControls.Igrac
         public TextBox TxtImeIgraca { get => txtImeIgraca; set => txtImeIgraca = value; }
         public TextBox TxtTim { get => txtTim; set => txtTim = value; }
         public TextBox TxtPozicija { get => txtPozicija; set => txtPozicija = value; }
+        public Button BtnStatistika { get => btnStatistika; set => btnStatistika = value; }
     }
 }

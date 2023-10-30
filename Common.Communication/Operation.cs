@@ -23,6 +23,7 @@ namespace Common.Communication
         End,
         UcitajUtakmicu,
         UcitajTim,
-        UcitajIgraca
+        UcitajIgraca,
+        NadjiStatistiku
     }
 }

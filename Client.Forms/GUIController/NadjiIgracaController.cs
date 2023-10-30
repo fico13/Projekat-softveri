@@ -1,6 +1,7 @@
 ﻿using Client.Forms.Exceptions;
 using Client.Forms.GUIHelper;
 using Client.Forms.ServerCommunication;
+using Client.Forms.Session;
 using Client.Forms.UserControls.Igrac;
 using Common.Communication;
 using Common.Domain;
@@ -18,6 +19,7 @@ namespace Client.Forms.GUIController
     public class NadjiIgracaController
     {
         private UCPretragaIgraca uCPretragaIgraca;
+        
 
         public NadjiIgracaController(UCPretragaIgraca uCPretragaIgraca)
         {
@@ -148,6 +150,7 @@ namespace Client.Forms.GUIController
                 uCPretragaIgraca.TxtTezina.Text = igrac.Tezina.ToString();
                 uCPretragaIgraca.TxtTim.Text = igrac.Tim.ToString();
                 MessageBox.Show("Sistem je učitao igrača");
+                SessionData.Instance.IzabraniIgrac = igrac;
             }
             catch (ServerCommunicationException)
             {

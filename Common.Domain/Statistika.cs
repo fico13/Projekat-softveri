@@ -30,9 +30,9 @@ namespace Common.Domain
         [Browsable(false)]
         public string JoinTable => "Utakmica u";
         [Browsable(false)]
-        public string JoinCondition => "(s.UtakmicaId = u.UtakmicaId) join Igrac i on(s.IgracId = i.IgracId) join Tim t on (i.TimId = t.TimId)";
+        public string JoinCondition => "(s.UtakmicaId = u.UtakmicaId) join Igrac i on(s.IgracId = i.IgracId) join Tim t on (i.TimId = t.TimId) join Tim d on (u.DomacinId = d.TimId) join Tim g on (u.GostId = g.TimId)";
         [Browsable(false)]
-        public string FindCondition => $"s.UtakmicaId = {Utakmica.UtakmicaId}";
+        public string FindCondition { get; set; }
         [Browsable(false)]
         public string UpdateCondition => $"Poeni = {Poeni}, Skokovi = {Skokovi}, Asistencije = {Asistencije}";
         [Browsable(false)]
@@ -59,6 +59,21 @@ namespace Common.Domain
                     {
                         TimId = reader.GetInt32(20),
                         Ime = reader.GetString(21)
+                    }
+                },
+                Utakmica = new Utakmica
+                {
+                    UtakmicaId = reader.GetInt32(5),
+                    BrojPoenaDomacin = reader.GetInt32(6),
+                    BrojPoenaGost = reader.GetInt32(7),
+                    DatumOdigravanja = reader.GetDateTime(8),
+                    Domacin = new Tim
+                    {
+                        Ime = reader.GetString(21)
+                    },
+                    Gost = new Tim
+                    {
+                        Ime = reader.GetString(28)
                     }
                 }
             };

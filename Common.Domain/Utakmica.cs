@@ -97,5 +97,10 @@ namespace Common.Domain
             };
             return utakmica;
         }
+
+        public override string ToString()
+        {
+            return $"{Domacin.Ime} {BrojPoenaDomacin} : {BrojPoenaGost} {Gost.Ime} {DatumOdigravanja}"; 
+        }
     }
 }

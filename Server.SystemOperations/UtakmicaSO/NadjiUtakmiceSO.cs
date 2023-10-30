@@ -11,7 +11,7 @@ namespace Server.SystemOperations.UtakmicaSO
     {
         private Utakmica utakmica;
         public List<Utakmica> Result { get; set; }
-        public List<Statistika> Statistike { get; set; }
+        public List<Common.Domain.Statistika> Statistike { get; set; }
         public NadjiUtakmiceSO(Utakmica utakmica)
         {
             this.utakmica = utakmica;
@@ -22,13 +22,14 @@ namespace Server.SystemOperations.UtakmicaSO
             Result = repository.NadjiOdredjeni(utakmica).Cast<Utakmica>().ToList();
             foreach (Utakmica u in Result)
             {
-                Statistika statistika = new Statistika
+                Common.Domain.Statistika statistika = new Common.Domain.Statistika
                 {
-                    Utakmica = u
+                    Utakmica = u,
+                    FindCondition = $"s.UtakmicaId = {u.UtakmicaId}"
                 };
-                Statistike = repository.NadjiOdredjeni(statistika).Cast<Statistika>().ToList();
+                Statistike = repository.NadjiOdredjeni(statistika).Cast<Common.Domain.Statistika>().ToList();
                 u.Statistka = Statistike;
-                Statistike = new List<Statistika>();
+                Statistike = new List<Common.Domain.Statistika>();
             }
         }
     }

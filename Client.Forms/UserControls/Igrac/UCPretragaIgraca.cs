@@ -1,4 +1,5 @@
-﻿using Client.Forms.GUIController;
+﻿using Client.Forms.Dialogs.Igrac;
+using Client.Forms.GUIController;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -30,8 +31,10 @@ namespace Client.Forms.UserControls.Igrac
             nadjiIgracaController.PrikaziIgraca();
         }
 
-        
-
-        
+        private void btnStatistika_Click(object sender, EventArgs e)
+        {
+            FrmStatistikaIgraca frmStatistikaIgraca = new FrmStatistikaIgraca();
+            frmStatistikaIgraca.ShowDialog();
+        }
     }
 }
