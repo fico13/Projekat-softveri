@@ -25,7 +25,7 @@ namespace Common.Domain
         [Browsable(false)]
         public string TableName => "Tim";
         [Browsable(false)]
-        public string InsertValues => $"'{Ime}', '{Drzava}', {BrojPobeda}, {BrojPoraza}, {Bodovi},{Dvorana.DvoranaId}";
+        public string InsertValues => $"'{Ime}', '{Drzava}', {BrojPobeda}, {BrojPoraza}, {Bodovi}, {Dvorana.DvoranaId}";
         [Browsable(false)]
         public string WhereCondition => $"TimId = {TimId}";
         [Browsable(false)]

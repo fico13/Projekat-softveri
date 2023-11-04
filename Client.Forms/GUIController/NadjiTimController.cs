@@ -40,7 +40,7 @@ namespace Client.Forms.GUIController
                 {
                     Tim tim = new Tim
                     {
-                        FindCondition = $"lower(DrzavaTima) like '{uCNadjiTim.TxtDrzava.Text.ToLower()}%' and lower(ImeTima) like '{uCNadjiTim.TxtNaziv.Text.ToLower()}%'"
+                        FindCondition = $"where lower(DrzavaTima) like '{uCNadjiTim.TxtDrzava.Text.ToLower()}%' and lower(ImeTima) like '{uCNadjiTim.TxtNaziv.Text.ToLower()}%'"
                     };
                     BindingList<Tim> timovi = new BindingList<Tim>(Communication.Instance.SendRequestGetResult<List<Tim>>(Operation.NadjiTimove, tim));
                     if (timovi.Count == 0)
@@ -65,7 +65,7 @@ namespace Client.Forms.GUIController
                 {
                     Tim tim = new Tim
                     {
-                        FindCondition = $"lower(ImeTima) like '{uCNadjiTim.TxtNaziv.Text.ToLower()}%'"
+                        FindCondition = $"where lower(ImeTima) like '{uCNadjiTim.TxtNaziv.Text.ToLower()}%'"
                     };
                     BindingList<Tim> timovi = new BindingList<Tim>(Communication.Instance.SendRequestGetResult<List<Tim>>(Operation.NadjiTimove, tim));
                     if (timovi.Count == 0)
@@ -92,7 +92,7 @@ namespace Client.Forms.GUIController
                 { 
                     Tim tim = new Tim
                     {
-                        FindCondition = $"lower(DrzavaTima) like '{uCNadjiTim.TxtDrzava.Text.ToLower()}%'"
+                        FindCondition = $"where lower(DrzavaTima) like '{uCNadjiTim.TxtDrzava.Text.ToLower()}%'"
                     };
                     BindingList<Tim> timovi = new BindingList<Tim>(Communication.Instance.SendRequestGetResult<List<Tim>>(Operation.NadjiTimove, tim));
                     if (timovi.Count == 0)
@@ -133,7 +133,7 @@ namespace Client.Forms.GUIController
             try
             {
                 Tim tim = (Tim)uCNadjiTim.DgvTimovi.SelectedRows[0].DataBoundItem;
-                tim.FindCondition = $"TimId = {tim.TimId}";
+                tim.FindCondition = $"where TimId = {tim.TimId}";
                 tim = Communication.Instance.SendRequestGetResult<Tim>(Operation.UcitajTim, tim);
                 uCNadjiTim.TxtIme.Text = tim.Ime;
                 uCNadjiTim.TxtDrzavaTima.Text = tim.Drzava;

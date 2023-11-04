@@ -36,17 +36,11 @@ namespace Client.Forms.UserControls.Igrac
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UCIzmeniIgraca));
             this.dgvIgraci = new System.Windows.Forms.DataGridView();
-            this.imeIgracaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.prezimeIgracaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.drzavaIgracaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.timDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pozicijaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.brojNaDresuDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.visinaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tezinaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.igracBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.btnIzaberiIgraca = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtDatumRodjenja = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
             this.cbTim = new System.Windows.Forms.ComboBox();
             this.label10 = new System.Windows.Forms.Label();
             this.txtTezina = new System.Windows.Forms.TextBox();
@@ -69,6 +63,15 @@ namespace Client.Forms.UserControls.Igrac
             this.btnTraziIgraca = new System.Windows.Forms.Button();
             this.txtPrezimeIgraca = new System.Windows.Forms.TextBox();
             this.txtImeIgraca = new System.Windows.Forms.TextBox();
+            this.imeIgracaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.prezimeIgracaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.drzavaIgracaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.datumRodjenjaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.timDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pozicijaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.brojNaDresuDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.visinaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tezinaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvIgraci)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.igracBindingSource)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -93,6 +96,7 @@ namespace Client.Forms.UserControls.Igrac
             this.imeIgracaDataGridViewTextBoxColumn,
             this.prezimeIgracaDataGridViewTextBoxColumn,
             this.drzavaIgracaDataGridViewTextBoxColumn,
+            this.datumRodjenjaDataGridViewTextBoxColumn,
             this.timDataGridViewTextBoxColumn,
             this.pozicijaDataGridViewTextBoxColumn,
             this.brojNaDresuDataGridViewTextBoxColumn,
@@ -112,80 +116,9 @@ namespace Client.Forms.UserControls.Igrac
             this.dgvIgraci.ReadOnly = true;
             this.dgvIgraci.RowHeadersWidth = 51;
             this.dgvIgraci.RowTemplate.Height = 24;
-            this.dgvIgraci.Size = new System.Drawing.Size(1400, 227);
+            this.dgvIgraci.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.dgvIgraci.Size = new System.Drawing.Size(1440, 227);
             this.dgvIgraci.TabIndex = 5;
-            // 
-            // imeIgracaDataGridViewTextBoxColumn
-            // 
-            this.imeIgracaDataGridViewTextBoxColumn.DataPropertyName = "ImeIgraca";
-            this.imeIgracaDataGridViewTextBoxColumn.HeaderText = "Ime igrača";
-            this.imeIgracaDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.imeIgracaDataGridViewTextBoxColumn.Name = "imeIgracaDataGridViewTextBoxColumn";
-            this.imeIgracaDataGridViewTextBoxColumn.ReadOnly = true;
-            this.imeIgracaDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // prezimeIgracaDataGridViewTextBoxColumn
-            // 
-            this.prezimeIgracaDataGridViewTextBoxColumn.DataPropertyName = "PrezimeIgraca";
-            this.prezimeIgracaDataGridViewTextBoxColumn.HeaderText = "Prezime igrača";
-            this.prezimeIgracaDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.prezimeIgracaDataGridViewTextBoxColumn.Name = "prezimeIgracaDataGridViewTextBoxColumn";
-            this.prezimeIgracaDataGridViewTextBoxColumn.ReadOnly = true;
-            this.prezimeIgracaDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // drzavaIgracaDataGridViewTextBoxColumn
-            // 
-            this.drzavaIgracaDataGridViewTextBoxColumn.DataPropertyName = "DrzavaIgraca";
-            this.drzavaIgracaDataGridViewTextBoxColumn.HeaderText = "Država igrača";
-            this.drzavaIgracaDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.drzavaIgracaDataGridViewTextBoxColumn.Name = "drzavaIgracaDataGridViewTextBoxColumn";
-            this.drzavaIgracaDataGridViewTextBoxColumn.ReadOnly = true;
-            this.drzavaIgracaDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // timDataGridViewTextBoxColumn
-            // 
-            this.timDataGridViewTextBoxColumn.DataPropertyName = "Tim";
-            this.timDataGridViewTextBoxColumn.HeaderText = "Tim";
-            this.timDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.timDataGridViewTextBoxColumn.Name = "timDataGridViewTextBoxColumn";
-            this.timDataGridViewTextBoxColumn.ReadOnly = true;
-            this.timDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // pozicijaDataGridViewTextBoxColumn
-            // 
-            this.pozicijaDataGridViewTextBoxColumn.DataPropertyName = "Pozicija";
-            this.pozicijaDataGridViewTextBoxColumn.HeaderText = "Pozicija";
-            this.pozicijaDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.pozicijaDataGridViewTextBoxColumn.Name = "pozicijaDataGridViewTextBoxColumn";
-            this.pozicijaDataGridViewTextBoxColumn.ReadOnly = true;
-            this.pozicijaDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // brojNaDresuDataGridViewTextBoxColumn
-            // 
-            this.brojNaDresuDataGridViewTextBoxColumn.DataPropertyName = "BrojNaDresu";
-            this.brojNaDresuDataGridViewTextBoxColumn.HeaderText = "Broj na dresu";
-            this.brojNaDresuDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.brojNaDresuDataGridViewTextBoxColumn.Name = "brojNaDresuDataGridViewTextBoxColumn";
-            this.brojNaDresuDataGridViewTextBoxColumn.ReadOnly = true;
-            this.brojNaDresuDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // visinaDataGridViewTextBoxColumn
-            // 
-            this.visinaDataGridViewTextBoxColumn.DataPropertyName = "Visina";
-            this.visinaDataGridViewTextBoxColumn.HeaderText = "Visina (cm)";
-            this.visinaDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.visinaDataGridViewTextBoxColumn.Name = "visinaDataGridViewTextBoxColumn";
-            this.visinaDataGridViewTextBoxColumn.ReadOnly = true;
-            this.visinaDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // tezinaDataGridViewTextBoxColumn
-            // 
-            this.tezinaDataGridViewTextBoxColumn.DataPropertyName = "Tezina";
-            this.tezinaDataGridViewTextBoxColumn.HeaderText = "Težina (kg)";
-            this.tezinaDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.tezinaDataGridViewTextBoxColumn.Name = "tezinaDataGridViewTextBoxColumn";
-            this.tezinaDataGridViewTextBoxColumn.ReadOnly = true;
-            this.tezinaDataGridViewTextBoxColumn.Width = 125;
             // 
             // igracBindingSource
             // 
@@ -209,6 +142,8 @@ namespace Client.Forms.UserControls.Igrac
             // 
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox1.BackColor = System.Drawing.Color.OrangeRed;
+            this.groupBox1.Controls.Add(this.txtDatumRodjenja);
+            this.groupBox1.Controls.Add(this.label11);
             this.groupBox1.Controls.Add(this.cbTim);
             this.groupBox1.Controls.Add(this.label10);
             this.groupBox1.Controls.Add(this.txtTezina);
@@ -229,19 +164,41 @@ namespace Client.Forms.UserControls.Igrac
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(972, 72);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(469, 549);
+            this.groupBox1.Size = new System.Drawing.Size(492, 580);
             this.groupBox1.TabIndex = 24;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Igrač";
+            // 
+            // txtDatumRodjenja
+            // 
+            this.txtDatumRodjenja.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtDatumRodjenja.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDatumRodjenja.Location = new System.Drawing.Point(195, 202);
+            this.txtDatumRodjenja.Name = "txtDatumRodjenja";
+            this.txtDatumRodjenja.ReadOnly = true;
+            this.txtDatumRodjenja.Size = new System.Drawing.Size(264, 27);
+            this.txtDatumRodjenja.TabIndex = 43;
+            this.txtDatumRodjenja.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label11
+            // 
+            this.label11.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(41, 209);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(132, 20);
+            this.label11.TabIndex = 42;
+            this.label11.Text = "Datum rođenja";
             // 
             // cbTim
             // 
             this.cbTim.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.cbTim.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbTim.FormattingEnabled = true;
-            this.cbTim.Location = new System.Drawing.Point(183, 408);
+            this.cbTim.Location = new System.Drawing.Point(195, 443);
             this.cbTim.Name = "cbTim";
-            this.cbTim.Size = new System.Drawing.Size(226, 28);
+            this.cbTim.Size = new System.Drawing.Size(264, 28);
             this.cbTim.TabIndex = 41;
             // 
             // label10
@@ -249,7 +206,7 @@ namespace Client.Forms.UserControls.Igrac
             this.label10.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(29, 416);
+            this.label10.Location = new System.Drawing.Point(41, 449);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(40, 20);
             this.label10.TabIndex = 40;
@@ -259,9 +216,9 @@ namespace Client.Forms.UserControls.Igrac
             // 
             this.txtTezina.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtTezina.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTezina.Location = new System.Drawing.Point(183, 356);
+            this.txtTezina.Location = new System.Drawing.Point(195, 395);
             this.txtTezina.Name = "txtTezina";
-            this.txtTezina.Size = new System.Drawing.Size(226, 27);
+            this.txtTezina.Size = new System.Drawing.Size(264, 27);
             this.txtTezina.TabIndex = 39;
             this.txtTezina.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -270,7 +227,7 @@ namespace Client.Forms.UserControls.Igrac
             this.label7.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(29, 363);
+            this.label7.Location = new System.Drawing.Point(41, 401);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(104, 20);
             this.label7.TabIndex = 38;
@@ -280,9 +237,9 @@ namespace Client.Forms.UserControls.Igrac
             // 
             this.txtVisina.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtVisina.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtVisina.Location = new System.Drawing.Point(183, 304);
+            this.txtVisina.Location = new System.Drawing.Point(195, 347);
             this.txtVisina.Name = "txtVisina";
-            this.txtVisina.Size = new System.Drawing.Size(226, 27);
+            this.txtVisina.Size = new System.Drawing.Size(264, 27);
             this.txtVisina.TabIndex = 37;
             this.txtVisina.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -291,7 +248,7 @@ namespace Client.Forms.UserControls.Igrac
             this.label6.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(29, 311);
+            this.label6.Location = new System.Drawing.Point(41, 353);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(106, 20);
             this.label6.TabIndex = 36;
@@ -301,9 +258,9 @@ namespace Client.Forms.UserControls.Igrac
             // 
             this.txtBrojNaDresu.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtBrojNaDresu.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBrojNaDresu.Location = new System.Drawing.Point(183, 252);
+            this.txtBrojNaDresu.Location = new System.Drawing.Point(195, 299);
             this.txtBrojNaDresu.Name = "txtBrojNaDresu";
-            this.txtBrojNaDresu.Size = new System.Drawing.Size(226, 27);
+            this.txtBrojNaDresu.Size = new System.Drawing.Size(264, 27);
             this.txtBrojNaDresu.TabIndex = 35;
             this.txtBrojNaDresu.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -312,7 +269,7 @@ namespace Client.Forms.UserControls.Igrac
             this.label5.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(29, 259);
+            this.label5.Location = new System.Drawing.Point(41, 305);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(123, 20);
             this.label5.TabIndex = 34;
@@ -322,9 +279,9 @@ namespace Client.Forms.UserControls.Igrac
             // 
             this.txtPrezime.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtPrezime.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPrezime.Location = new System.Drawing.Point(183, 95);
+            this.txtPrezime.Location = new System.Drawing.Point(195, 106);
             this.txtPrezime.Name = "txtPrezime";
-            this.txtPrezime.Size = new System.Drawing.Size(226, 27);
+            this.txtPrezime.Size = new System.Drawing.Size(264, 27);
             this.txtPrezime.TabIndex = 33;
             this.txtPrezime.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -333,7 +290,7 @@ namespace Client.Forms.UserControls.Igrac
             this.label4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(29, 102);
+            this.label4.Location = new System.Drawing.Point(42, 113);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(78, 20);
             this.label4.TabIndex = 32;
@@ -344,18 +301,18 @@ namespace Client.Forms.UserControls.Igrac
             this.cbPozicije.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.cbPozicije.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbPozicije.FormattingEnabled = true;
-            this.cbPozicije.Location = new System.Drawing.Point(183, 199);
+            this.cbPozicije.Location = new System.Drawing.Point(195, 250);
             this.cbPozicije.Name = "cbPozicije";
-            this.cbPozicije.Size = new System.Drawing.Size(226, 28);
+            this.cbPozicije.Size = new System.Drawing.Size(264, 28);
             this.cbPozicije.TabIndex = 31;
             // 
             // txtDrzava
             // 
             this.txtDrzava.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtDrzava.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDrzava.Location = new System.Drawing.Point(183, 147);
+            this.txtDrzava.Location = new System.Drawing.Point(195, 154);
             this.txtDrzava.Name = "txtDrzava";
-            this.txtDrzava.Size = new System.Drawing.Size(226, 27);
+            this.txtDrzava.Size = new System.Drawing.Size(264, 27);
             this.txtDrzava.TabIndex = 30;
             this.txtDrzava.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -363,9 +320,9 @@ namespace Client.Forms.UserControls.Igrac
             // 
             this.txtIme.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtIme.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtIme.Location = new System.Drawing.Point(183, 43);
+            this.txtIme.Location = new System.Drawing.Point(195, 58);
             this.txtIme.Name = "txtIme";
-            this.txtIme.Size = new System.Drawing.Size(226, 27);
+            this.txtIme.Size = new System.Drawing.Size(264, 27);
             this.txtIme.TabIndex = 29;
             this.txtIme.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -374,7 +331,7 @@ namespace Client.Forms.UserControls.Igrac
             this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(29, 207);
+            this.label3.Location = new System.Drawing.Point(41, 257);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(76, 20);
             this.label3.TabIndex = 28;
@@ -385,7 +342,7 @@ namespace Client.Forms.UserControls.Igrac
             this.label8.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(29, 154);
+            this.label8.Location = new System.Drawing.Point(42, 161);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(69, 20);
             this.label8.TabIndex = 27;
@@ -396,7 +353,7 @@ namespace Client.Forms.UserControls.Igrac
             this.label9.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(29, 50);
+            this.label9.Location = new System.Drawing.Point(42, 65);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(39, 20);
             this.label9.TabIndex = 26;
@@ -409,7 +366,7 @@ namespace Client.Forms.UserControls.Igrac
             this.btnIzmeniIgraca.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btnIzmeniIgraca.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnIzmeniIgraca.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnIzmeniIgraca.Location = new System.Drawing.Point(81, 476);
+            this.btnIzmeniIgraca.Location = new System.Drawing.Point(93, 491);
             this.btnIzmeniIgraca.Name = "btnIzmeniIgraca";
             this.btnIzmeniIgraca.Size = new System.Drawing.Size(294, 37);
             this.btnIzmeniIgraca.TabIndex = 25;
@@ -471,6 +428,86 @@ namespace Client.Forms.UserControls.Igrac
             this.txtImeIgraca.TabIndex = 2;
             this.txtImeIgraca.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
+            // imeIgracaDataGridViewTextBoxColumn
+            // 
+            this.imeIgracaDataGridViewTextBoxColumn.DataPropertyName = "ImeIgraca";
+            this.imeIgracaDataGridViewTextBoxColumn.HeaderText = "Ime igrača";
+            this.imeIgracaDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.imeIgracaDataGridViewTextBoxColumn.Name = "imeIgracaDataGridViewTextBoxColumn";
+            this.imeIgracaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.imeIgracaDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // prezimeIgracaDataGridViewTextBoxColumn
+            // 
+            this.prezimeIgracaDataGridViewTextBoxColumn.DataPropertyName = "PrezimeIgraca";
+            this.prezimeIgracaDataGridViewTextBoxColumn.HeaderText = "Prezime igrača";
+            this.prezimeIgracaDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.prezimeIgracaDataGridViewTextBoxColumn.Name = "prezimeIgracaDataGridViewTextBoxColumn";
+            this.prezimeIgracaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.prezimeIgracaDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // drzavaIgracaDataGridViewTextBoxColumn
+            // 
+            this.drzavaIgracaDataGridViewTextBoxColumn.DataPropertyName = "DrzavaIgraca";
+            this.drzavaIgracaDataGridViewTextBoxColumn.HeaderText = "Država";
+            this.drzavaIgracaDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.drzavaIgracaDataGridViewTextBoxColumn.Name = "drzavaIgracaDataGridViewTextBoxColumn";
+            this.drzavaIgracaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.drzavaIgracaDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // datumRodjenjaDataGridViewTextBoxColumn
+            // 
+            this.datumRodjenjaDataGridViewTextBoxColumn.DataPropertyName = "DatumRodjenja";
+            this.datumRodjenjaDataGridViewTextBoxColumn.HeaderText = "Datum rođenja";
+            this.datumRodjenjaDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.datumRodjenjaDataGridViewTextBoxColumn.Name = "datumRodjenjaDataGridViewTextBoxColumn";
+            this.datumRodjenjaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.datumRodjenjaDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // timDataGridViewTextBoxColumn
+            // 
+            this.timDataGridViewTextBoxColumn.DataPropertyName = "Tim";
+            this.timDataGridViewTextBoxColumn.HeaderText = "Tim";
+            this.timDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.timDataGridViewTextBoxColumn.Name = "timDataGridViewTextBoxColumn";
+            this.timDataGridViewTextBoxColumn.ReadOnly = true;
+            this.timDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // pozicijaDataGridViewTextBoxColumn
+            // 
+            this.pozicijaDataGridViewTextBoxColumn.DataPropertyName = "Pozicija";
+            this.pozicijaDataGridViewTextBoxColumn.HeaderText = "Pozicija";
+            this.pozicijaDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.pozicijaDataGridViewTextBoxColumn.Name = "pozicijaDataGridViewTextBoxColumn";
+            this.pozicijaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.pozicijaDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // brojNaDresuDataGridViewTextBoxColumn
+            // 
+            this.brojNaDresuDataGridViewTextBoxColumn.DataPropertyName = "BrojNaDresu";
+            this.brojNaDresuDataGridViewTextBoxColumn.HeaderText = "Broj na dresu";
+            this.brojNaDresuDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.brojNaDresuDataGridViewTextBoxColumn.Name = "brojNaDresuDataGridViewTextBoxColumn";
+            this.brojNaDresuDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // visinaDataGridViewTextBoxColumn
+            // 
+            this.visinaDataGridViewTextBoxColumn.DataPropertyName = "Visina";
+            this.visinaDataGridViewTextBoxColumn.HeaderText = "Visina (cm)";
+            this.visinaDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.visinaDataGridViewTextBoxColumn.Name = "visinaDataGridViewTextBoxColumn";
+            this.visinaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.visinaDataGridViewTextBoxColumn.Width = 90;
+            // 
+            // tezinaDataGridViewTextBoxColumn
+            // 
+            this.tezinaDataGridViewTextBoxColumn.DataPropertyName = "Tezina";
+            this.tezinaDataGridViewTextBoxColumn.HeaderText = "Tezina (kg)";
+            this.tezinaDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.tezinaDataGridViewTextBoxColumn.Name = "tezinaDataGridViewTextBoxColumn";
+            this.tezinaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.tezinaDataGridViewTextBoxColumn.Width = 90;
+            // 
             // UCIzmeniIgraca
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -511,10 +548,8 @@ namespace Client.Forms.UserControls.Igrac
         private System.Windows.Forms.TextBox txtPrezime;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox cbPozicije;
-        private System.Windows.Forms.TextBox txtDrzava;
         private System.Windows.Forms.TextBox txtIme;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
@@ -524,9 +559,14 @@ namespace Client.Forms.UserControls.Igrac
         private System.Windows.Forms.ComboBox cbTim;
         private System.Windows.Forms.Label label10;
         private BindingSource igracBindingSource;
+        private TextBox txtDatumRodjenja;
+        private Label label11;
+        private TextBox txtDrzava;
+        private Label label8;
         private DataGridViewTextBoxColumn imeIgracaDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn prezimeIgracaDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn drzavaIgracaDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn datumRodjenjaDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn timDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn pozicijaDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn brojNaDresuDataGridViewTextBoxColumn;
@@ -545,5 +585,6 @@ namespace Client.Forms.UserControls.Igrac
         public TextBox TxtImeIgraca { get => txtImeIgraca; set => txtImeIgraca = value; }
         public ComboBox CbTim { get => cbTim; set => cbTim = value; }
         public Button BtnIzmeniIgraca { get => btnIzmeniIgraca; set => btnIzmeniIgraca = value; }
+        public TextBox TxtDatumRodjenja { get => txtDatumRodjenja; set => txtDatumRodjenja = value; }
     }
 }

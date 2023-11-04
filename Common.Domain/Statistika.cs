@@ -47,18 +47,19 @@ namespace Common.Domain
                 Asistencije = reader.GetInt32(4),
                 Igrac = new Igrac
                 {
-                    IgracId = reader.GetInt32(11),
-                    ImeIgraca = reader.GetString(12),
-                    PrezimeIgraca = reader.GetString(13),
-                    DrzavaIgraca = reader.GetString(14),
-                    Pozicija = (Pozicija)reader.GetInt32(15),
-                    BrojNaDresu = reader.GetInt32(16),
-                    Visina = reader.GetInt32(17),
-                    Tezina = reader.GetDouble(18),
+                    IgracId = reader.GetInt32(12),
+                    ImeIgraca = reader.GetString(13),
+                    PrezimeIgraca = reader.GetString(14),
+                    DrzavaIgraca = reader.GetString(15),
+                    DatumRodjenja = reader.GetDateTime(16),
+                    Pozicija = (Pozicija)reader.GetInt32(17),
+                    BrojNaDresu = reader.GetInt32(18),
+                    Visina = reader.GetInt32(19),
+                    Tezina = reader.GetDouble(20),
                     Tim = new Tim
                     {
-                        TimId = reader.GetInt32(20),
-                        Ime = reader.GetString(21)
+                        TimId = reader.GetInt32(22),
+                        Ime = reader.GetString(23)
                     }
                 },
                 Utakmica = new Utakmica
@@ -67,13 +68,14 @@ namespace Common.Domain
                     BrojPoenaDomacin = reader.GetInt32(6),
                     BrojPoenaGost = reader.GetInt32(7),
                     DatumOdigravanja = reader.GetDateTime(8),
+                    BrojGledalaca = reader.GetInt32(9),
                     Domacin = new Tim
                     {
-                        Ime = reader.GetString(21)
+                        Ime = reader.GetString(30)
                     },
                     Gost = new Tim
                     {
-                        Ime = reader.GetString(28)
+                        Ime = reader.GetString(37)
                     }
                 }
             };

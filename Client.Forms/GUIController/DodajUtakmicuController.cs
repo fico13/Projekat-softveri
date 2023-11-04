@@ -133,6 +133,7 @@ namespace Client.Forms.GUIController
                     BrojPoenaDomacin = Convert.ToInt32(uCDodajUtakmicu.TxtBrojPoenaDomacin.Text),
                     BrojPoenaGost = Convert.ToInt32(uCDodajUtakmicu.TxtBrojPoenaGost.Text),
                     DateString = uCDodajUtakmicu.DtpDatum.Value.ToString(),
+                    BrojGledalaca = Convert.ToInt32(uCDodajUtakmicu.TxtBrojGledalaca.Text),
                     Domacin = (Tim)uCDodajUtakmicu.CbDomacin.SelectedItem,
                     Gost = (Tim)uCDodajUtakmicu.CbGost.SelectedItem,
                     Statistka = statistike
@@ -174,6 +175,7 @@ namespace Client.Forms.GUIController
             uCDodajUtakmicu.TxtBrojPoenaDomacin.Text = "";
             uCDodajUtakmicu.TxtBrojPoenaGost.Text = "";
             uCDodajUtakmicu.DtpDatum.Value = DateTime.Now;
+            uCDodajUtakmicu.TxtBrojGledalaca.Text = "";
             uCDodajUtakmicu.TxtPoeniDomacinIgrac.Text = "";
             uCDodajUtakmicu.TxtSkokoviDomacinIgrac.Text = "";
             uCDodajUtakmicu.TxtAsistencijeDomacinIgrac.Text = "";
@@ -259,7 +261,7 @@ namespace Client.Forms.GUIController
             {
                 Igrac domaci = new Igrac
                 {
-                    FindCondition = $"t.TimId = {domacin.TimId}",
+                    FindCondition = $"where t.TimId = {domacin.TimId}",
                     Tim = domacin
                 };
                 BindingList<Igrac> domaciIgraci = new BindingList<Igrac>(Communication.Instance.SendRequestGetResult<List<Igrac>>(Operation.NadjiIgrace, domaci));
@@ -271,7 +273,7 @@ namespace Client.Forms.GUIController
                 }
                 Igrac gosti = new Igrac
                 {
-                    FindCondition = $"t.TimId = {gost.TimId}"
+                    FindCondition = $"where t.TimId = {gost.TimId}"
                 };
                 BindingList<Igrac> gostujuciIgraci = new BindingList<Igrac>(Communication.Instance.SendRequestGetResult<List<Igrac>>(Operation.NadjiIgrace, gosti));
                 if (gostujuciIgraci.Count == 0)

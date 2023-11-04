@@ -44,7 +44,7 @@ namespace Client.Forms.GUIController
             }
             Utakmica utakmica = new Utakmica
             {
-                FindCondition = $"lower(d.ImeTima) like '{uCPretragaUtakmica.CbTimovi.Text.ToLower()}' or lower(g.ImeTima) like '{uCPretragaUtakmica.CbTimovi.Text.ToLower()}' order by DatumOdigravanja asc"
+                FindCondition = $"where lower(d.ImeTima) like '{uCPretragaUtakmica.CbTimovi.Text.ToLower()}' or lower(g.ImeTima) like '{uCPretragaUtakmica.CbTimovi.Text.ToLower()}' order by DatumOdigravanja asc"
             };
             try
             {
@@ -103,6 +103,7 @@ namespace Client.Forms.GUIController
             uCPretragaUtakmica.TxtGost.Text = "";
             uCPretragaUtakmica.TxtPoeniGost.Text = "";
             uCPretragaUtakmica.TxtDatum.Text = "";
+            uCPretragaUtakmica.TxtBrojGledalaca.Text = "";
             uCPretragaUtakmica.LblDomacin.Text = "";
             uCPretragaUtakmica.LblGost.Text = "";
         }
@@ -117,13 +118,14 @@ namespace Client.Forms.GUIController
             try
             {
                 Utakmica utakmica = (Utakmica)uCPretragaUtakmica.DgvUtakmice.SelectedRows[0].DataBoundItem;
-                utakmica.FindCondition = $"UtakmicaId = {utakmica.UtakmicaId}";
+                utakmica.FindCondition = $"where UtakmicaId = {utakmica.UtakmicaId}";
                 Utakmica = Communication.Instance.SendRequestGetResult<Utakmica>(Operation.UcitajUtakmicu, utakmica);
                 uCPretragaUtakmica.TxtDomacin.Text = Utakmica.Domacin.ToString();
                 uCPretragaUtakmica.TxtPoeniDomacin.Text = Utakmica.BrojPoenaDomacin.ToString();
                 uCPretragaUtakmica.TxtGost.Text = Utakmica.Gost.ToString();
                 uCPretragaUtakmica.TxtPoeniGost.Text = Utakmica.BrojPoenaGost.ToString();
                 uCPretragaUtakmica.TxtDatum.Text = Utakmica.DatumOdigravanja.ToString();
+                uCPretragaUtakmica.TxtBrojGledalaca.Text = utakmica.BrojGledalaca.ToString();
                 uCPretragaUtakmica.BtnPrikaziStatistiku.Enabled = true;
                 MessageBox.Show("Sistem je učitao utakmicu");
             }

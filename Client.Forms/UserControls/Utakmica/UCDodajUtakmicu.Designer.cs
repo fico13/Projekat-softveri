@@ -63,6 +63,8 @@ namespace Client.Forms.UserControls.Utakmica
             this.label12 = new System.Windows.Forms.Label();
             this.btnSacuvajUtakmicu = new System.Windows.Forms.Button();
             this.btnUcitajIgrace = new System.Windows.Forms.Button();
+            this.label13 = new System.Windows.Forms.Label();
+            this.txtBrojGledalaca = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -163,9 +165,9 @@ namespace Client.Forms.UserControls.Utakmica
             this.dtpDatum.CustomFormat = "dd.MM.yyyy. HH:mm";
             this.dtpDatum.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpDatum.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpDatum.Location = new System.Drawing.Point(308, 143);
+            this.dtpDatum.Location = new System.Drawing.Point(291, 143);
             this.dtpDatum.Name = "dtpDatum";
-            this.dtpDatum.Size = new System.Drawing.Size(279, 27);
+            this.dtpDatum.Size = new System.Drawing.Size(247, 27);
             this.dtpDatum.TabIndex = 10;
             this.dtpDatum.Value = new System.DateTime(2023, 1, 1, 20, 0, 0, 0);
             // 
@@ -427,12 +429,38 @@ namespace Client.Forms.UserControls.Utakmica
             this.btnUcitajIgrace.UseVisualStyleBackColor = true;
             this.btnUcitajIgrace.Click += new System.EventHandler(this.btnUcitajIgrace_Click);
             // 
+            // label13
+            // 
+            this.label13.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label13.AutoSize = true;
+            this.label13.BackColor = System.Drawing.Color.OrangeRed;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(570, 148);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(130, 20);
+            this.label13.TabIndex = 15;
+            this.label13.Text = "Broj gledalaca";
+            // 
+            // txtBrojGledalaca
+            // 
+            this.txtBrojGledalaca.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtBrojGledalaca.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBrojGledalaca.Location = new System.Drawing.Point(734, 143);
+            this.txtBrojGledalaca.MaxLength = 5;
+            this.txtBrojGledalaca.Multiline = true;
+            this.txtBrojGledalaca.Name = "txtBrojGledalaca";
+            this.txtBrojGledalaca.Size = new System.Drawing.Size(205, 27);
+            this.txtBrojGledalaca.TabIndex = 16;
+            this.txtBrojGledalaca.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // UCDodajUtakmicu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Controls.Add(this.txtBrojGledalaca);
+            this.Controls.Add(this.label13);
             this.Controls.Add(this.btnUcitajIgrace);
             this.Controls.Add(this.btnSacuvajUtakmicu);
             this.Controls.Add(this.groupBox2);
@@ -491,6 +519,8 @@ namespace Client.Forms.UserControls.Utakmica
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Button btnSacuvajUtakmicu;
         private Button btnUcitajIgrace;
+        private Label label13;
+        private TextBox txtBrojGledalaca;
 
         public TextBox TxtBrojPoenaDomacin { get => txtBrojPoenaDomacin; set => txtBrojPoenaDomacin = value; }
         public TextBox TxtBrojPoenaGost { get => txtBrojPoenaGost; set => txtBrojPoenaGost = value; }
@@ -511,5 +541,6 @@ namespace Client.Forms.UserControls.Utakmica
         public ComboBox CbIgracGosta { get => cbIgracGosta; set => cbIgracGosta = value; }
         public Button BtnSacuvajUtakmicu { get => btnSacuvajUtakmicu; set => btnSacuvajUtakmicu = value; }
         public Button BtnUcitajIgrace { get => btnUcitajIgrace; set => btnUcitajIgrace = value; }
+        public TextBox TxtBrojGledalaca { get => txtBrojGledalaca; set => txtBrojGledalaca = value; }
     }
 }

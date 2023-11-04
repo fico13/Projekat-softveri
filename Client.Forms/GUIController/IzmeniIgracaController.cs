@@ -48,7 +48,7 @@ namespace Client.Forms.GUIController
                 {
                     Igrac igrac = new Igrac
                     {
-                        FindCondition = $"lower(ImeIgraca) like '{uCIzmeniIgraca.TxtImeIgraca.Text.ToLower()}%'"
+                        FindCondition = $"where lower(ImeIgraca) like '{uCIzmeniIgraca.TxtImeIgraca.Text.ToLower()}%'"
                     };
                     BindingList<Igrac> igraci = new BindingList<Igrac>(Communication.Instance.SendRequestGetResult<List<Igrac>>(Operation.NadjiIgrace, igrac));
                     if (igraci.Count == 0)
@@ -74,7 +74,7 @@ namespace Client.Forms.GUIController
                 {
                     Igrac igrac = new Igrac
                     {
-                        FindCondition = $"lower(PrezimeIgraca) like '{uCIzmeniIgraca.TxtPrezimeIgraca.Text.ToLower()}%'"
+                        FindCondition = $"where lower(PrezimeIgraca) like '{uCIzmeniIgraca.TxtPrezimeIgraca.Text.ToLower()}%'"
                     };
                     BindingList<Igrac> igraci = new BindingList<Igrac>(Communication.Instance.SendRequestGetResult<List<Igrac>>(Operation.NadjiIgrace, igrac));
                     if (igraci.Count == 0)
@@ -98,7 +98,7 @@ namespace Client.Forms.GUIController
                 {
                     Igrac igrac = new Igrac
                     {
-                        FindCondition = $"lower(ImeIgraca) like '{uCIzmeniIgraca.TxtImeIgraca.Text.ToLower()}%' and lower(PrezimeIgraca) like '{uCIzmeniIgraca.TxtPrezimeIgraca.Text.ToLower()}%'"
+                        FindCondition = $"where lower(ImeIgraca) like '{uCIzmeniIgraca.TxtImeIgraca.Text.ToLower()}%' and lower(PrezimeIgraca) like '{uCIzmeniIgraca.TxtPrezimeIgraca.Text.ToLower()}%'"
                     };
                     BindingList<Igrac> igraci = new BindingList<Igrac>(Communication.Instance.SendRequestGetResult<List<Igrac>>(Operation.NadjiIgrace, igrac));
                     if (igraci.Count == 0)
@@ -179,6 +179,7 @@ namespace Client.Forms.GUIController
                     ImeIgraca = uCIzmeniIgraca.TxtIme.Text,
                     PrezimeIgraca = uCIzmeniIgraca.TxtPrezime.Text,
                     DrzavaIgraca = uCIzmeniIgraca.TxtDrzava.Text,
+                    DateString = uCIzmeniIgraca.TxtDatumRodjenja.Text,
                     Pozicija = (Pozicija)(uCIzmeniIgraca.CbPozicije.SelectedItem),
                     BrojNaDresu = Convert.ToInt32(uCIzmeniIgraca.TxtBrojNaDresu.Text),
                     Visina = Convert.ToInt32(uCIzmeniIgraca.TxtVisina.Text),
@@ -232,11 +233,12 @@ namespace Client.Forms.GUIController
             try
             {
                 Igrac igrac = (Igrac)uCIzmeniIgraca.DgvIgraci.SelectedRows[0].DataBoundItem;
-                igrac.FindCondition = $"IgracId = {igrac.IgracId}";
+                igrac.FindCondition = $"where IgracId = {igrac.IgracId}";
                 IzabraniIgrac = Communication.Instance.SendRequestGetResult<Igrac>(Operation.UcitajIgraca, igrac);
                 uCIzmeniIgraca.TxtIme.Text = IzabraniIgrac.ImeIgraca;
                 uCIzmeniIgraca.TxtPrezime.Text = IzabraniIgrac.PrezimeIgraca;
                 uCIzmeniIgraca.TxtDrzava.Text = IzabraniIgrac.DrzavaIgraca;
+                uCIzmeniIgraca.TxtDatumRodjenja.Text = IzabraniIgrac.DatumRodjenja.ToShortDateString();
                 uCIzmeniIgraca.CbPozicije.Text = IzabraniIgrac.Pozicija.ToString();
                 uCIzmeniIgraca.TxtBrojNaDresu.Text = IzabraniIgrac.BrojNaDresu.ToString();
                 uCIzmeniIgraca.TxtVisina.Text = IzabraniIgrac.Visina.ToString();

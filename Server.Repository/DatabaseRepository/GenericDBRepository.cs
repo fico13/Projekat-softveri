@@ -48,7 +48,7 @@ namespace Server.Repository.DatabaseRepository
         {
             List<IDomainObject> result = new List<IDomainObject>();
             SqlCommand command = broker.CreateSqlCommand();
-            command.CommandText = $"select * from {objekat.TableName} {objekat.Alias} join {objekat.JoinTable} on {objekat.JoinCondition} where {objekat.FindCondition}";
+            command.CommandText = $"select * from {objekat.TableName} {objekat.Alias} join {objekat.JoinTable} on {objekat.JoinCondition} {objekat.FindCondition}";
             using (SqlDataReader reader = command.ExecuteReader())
             {
                 while (reader.Read())

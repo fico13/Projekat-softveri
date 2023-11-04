@@ -1,6 +1,7 @@
 ﻿using Client.Forms.ServerCommunication;
 using Client.Forms.UserControls.Dvorana;
 using Client.Forms.UserControls.Igrac;
+using Client.Forms.UserControls.Statistika;
 using Client.Forms.UserControls.Tim;
 using Client.Forms.UserControls.Utakmica;
 using System;
@@ -85,6 +86,12 @@ namespace Client.Forms
             {
                 throw;
             }
+        }
+
+        private void timoviToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ChangePanel(new UCTabelaTimova());
+
         }
     }
 }

@@ -45,7 +45,7 @@ namespace Client.Forms.GUIController
                 {
                     Igrac igrac = new Igrac
                     {
-                        FindCondition = $"lower(ImeIgraca) like '{uCPretragaIgraca.TxtImeIgraca.Text.ToLower()}%'"
+                        FindCondition = $"where lower(ImeIgraca) like '{uCPretragaIgraca.TxtImeIgraca.Text.ToLower()}%'"
                     };
                     BindingList<Igrac> igraci = new BindingList<Igrac>(Communication.Instance.SendRequestGetResult<List<Igrac>>(Operation.NadjiIgrace, igrac));
                     if (igraci.Count == 0)
@@ -71,7 +71,7 @@ namespace Client.Forms.GUIController
                 {
                     Igrac igrac = new Igrac
                     {
-                        FindCondition = $"lower(PrezimeIgraca) like '{uCPretragaIgraca.TxtPrezimeIgraca.Text.ToLower()}%'"
+                        FindCondition = $"where lower(PrezimeIgraca) like '{uCPretragaIgraca.TxtPrezimeIgraca.Text.ToLower()}%'"
                     };
                     BindingList<Igrac> igraci = new BindingList<Igrac>(Communication.Instance.SendRequestGetResult<List<Igrac>>(Operation.NadjiIgrace, igrac));
                     if (igraci.Count == 0)
@@ -95,7 +95,7 @@ namespace Client.Forms.GUIController
                 { 
                     Igrac igrac = new Igrac
                     {
-                        FindCondition = $"lower(ImeIgraca) like '{uCPretragaIgraca.TxtImeIgraca.Text.ToLower()}%' and lower(PrezimeIgraca) like '{uCPretragaIgraca.TxtPrezimeIgraca.Text.ToLower()}%'"
+                        FindCondition = $"where lower(ImeIgraca) like '{uCPretragaIgraca.TxtImeIgraca.Text.ToLower()}%' and lower(PrezimeIgraca) like '{uCPretragaIgraca.TxtPrezimeIgraca.Text.ToLower()}%'"
                     };
                     BindingList<Igrac> igraci = new BindingList<Igrac>(Communication.Instance.SendRequestGetResult<List<Igrac>>(Operation.NadjiIgrace, igrac));
                     if (igraci.Count == 0)
@@ -139,11 +139,12 @@ namespace Client.Forms.GUIController
             try
             {
                 Igrac igrac = (Igrac)uCPretragaIgraca.DgvIgraci.SelectedRows[0].DataBoundItem;
-                igrac.FindCondition = $"IgracId = {igrac.IgracId}";
+                igrac.FindCondition = $"where IgracId = {igrac.IgracId}";
                 igrac = Communication.Instance.SendRequestGetResult<Igrac>(Operation.UcitajIgraca, igrac);
                 uCPretragaIgraca.TxtIme.Text = igrac.ImeIgraca;
                 uCPretragaIgraca.TxtPrezime.Text = igrac.PrezimeIgraca;
                 uCPretragaIgraca.TxtDrzava.Text = igrac.DrzavaIgraca;
+                uCPretragaIgraca.TxtDatumRodjenja.Text = igrac.DatumRodjenja.ToShortDateString();
                 uCPretragaIgraca.TxtPozicija.Text = igrac.Pozicija.ToString();
                 uCPretragaIgraca.TxtBrojNaDresu.Text = igrac.BrojNaDresu.ToString();
                 uCPretragaIgraca.TxtVisina.Text = igrac.Visina.ToString();  

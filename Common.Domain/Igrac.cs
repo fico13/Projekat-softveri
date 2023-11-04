@@ -15,6 +15,7 @@ namespace Common.Domain
         public string ImeIgraca { get; set; }
         public string PrezimeIgraca { get; set; }
         public string DrzavaIgraca { get; set; }
+        public DateTime DatumRodjenja { get; set; }
         public Pozicija Pozicija { get; set; }
         public int BrojNaDresu { get; set; }
         public int Visina { get; set; }
@@ -26,7 +27,9 @@ namespace Common.Domain
         [Browsable(false)]
         public string TableName => "Igrac";
         [Browsable(false)]
-        public string InsertValues => $"'{ImeIgraca}', '{PrezimeIgraca}', '{DrzavaIgraca}', {((int)Pozicija)}, {BrojNaDresu}, {Visina}, {Tezina}, {Tim.TimId}";
+        public string  DateString { get; set; }
+        [Browsable(false)]
+        public string InsertValues => $"'{ImeIgraca}', '{PrezimeIgraca}', '{DrzavaIgraca}', '{DateString}',{((int)Pozicija)}, {BrojNaDresu}, {Visina}, {Tezina}, {Tim.TimId}";
         [Browsable(false)]
         public string WhereCondition => $"IgracId={IgracId}";
         [Browsable(false)]
@@ -38,7 +41,7 @@ namespace Common.Domain
         [Browsable(false)]
         public string FindCondition { get; set; }
         [Browsable(false)]
-        public string UpdateCondition => $"ImeIgraca='{ImeIgraca}', PrezimeIgraca='{PrezimeIgraca}', DrzavaIgraca='{DrzavaIgraca}', Pozicija={((int)Pozicija)}, BrojNaDresu={BrojNaDresu}, Visina={Visina}, Tezina={Tezina}, TimId={Tim.TimId}";
+        public string UpdateCondition => $"ImeIgraca='{ImeIgraca}', PrezimeIgraca='{PrezimeIgraca}', DrzavaIgraca='{DrzavaIgraca}', DatumRodjenja = '{DateString}', Pozicija={((int)Pozicija)}, BrojNaDresu={BrojNaDresu}, Visina={Visina}, Tezina={Tezina}, TimId={Tim.TimId}";
         [Browsable(false)]
         public string IdColumnName => "";
 
@@ -50,6 +53,7 @@ namespace Common.Domain
                 ImeIgraca = (string)reader["ImeIgraca"],
                 PrezimeIgraca = (string)reader["PrezimeIgraca"],
                 DrzavaIgraca = (string)reader["DrzavaIgraca"],
+                DatumRodjenja = (DateTime)reader["DatumRodjenja"],
                 Pozicija = (Pozicija)reader["Pozicija"],
                 BrojNaDresu = (int)reader["BrojNaDresu"],
                 Visina = (int)reader["Visina"],

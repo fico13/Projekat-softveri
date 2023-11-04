@@ -75,7 +75,8 @@ namespace Client.Forms.GUIController
                 Utakmica.BrojPoenaDomacin = Convert.ToInt32(uCIzmenaUtakmice.TxtPoeniDomacin.Text);
                 Utakmica.BrojPoenaGost = Convert.ToInt32(uCIzmenaUtakmice.TxtPoeniGost.Text);
                 Utakmica.DateString = uCIzmenaUtakmice.DtpDatum.Value.ToString();
-                if(Utakmica.BrojPoenaDomacin  == Utakmica.BrojPoenaGost)
+                Utakmica.BrojGledalaca = Convert.ToInt32(uCIzmenaUtakmice.TxtBrojGledalaca.Text);
+                if (Utakmica.BrojPoenaDomacin  == Utakmica.BrojPoenaGost)
                 {
                     MessageBox.Show("Sistem ne može da izmeni utakmicu! Broj poena domaćina i gosta ne može biti isti! Pokušajte ponovo!");
                     return;
@@ -174,7 +175,7 @@ namespace Client.Forms.GUIController
             try
             {
                 Utakmica utakmica = (Utakmica)uCIzmenaUtakmice.DgvUtakmice.SelectedRows[0].DataBoundItem;
-                utakmica.FindCondition = $"UtakmicaId = {utakmica.UtakmicaId}";
+                utakmica.FindCondition = $"where UtakmicaId = {utakmica.UtakmicaId}";
                 Utakmica = Communication.Instance.SendRequestGetResult<Utakmica>(Operation.UcitajUtakmicu, utakmica);
                 uCIzmenaUtakmice.GbUtakmica.Visible = true;
                 uCIzmenaUtakmice.BtnPrikaziStatistiku.Enabled = true;
@@ -183,6 +184,7 @@ namespace Client.Forms.GUIController
                 uCIzmenaUtakmice.TxtGost.Text = Utakmica.Gost.ToString();
                 uCIzmenaUtakmice.TxtPoeniGost.Text = Utakmica.BrojPoenaGost.ToString();
                 uCIzmenaUtakmice.DtpDatum.Text = Utakmica.DatumOdigravanja.ToString();
+                uCIzmenaUtakmice.TxtBrojGledalaca.Text = Utakmica.BrojGledalaca.ToString();
                 uCIzmenaUtakmice.GbPretraga.Visible = false;
                 if(Utakmica.BrojPoenaDomacin > Utakmica.BrojPoenaGost)
                 {
@@ -216,7 +218,7 @@ namespace Client.Forms.GUIController
             //Tim tim = (Tim)uCPretragaUtakmica.CbTimovi.SelectedItem;
             Utakmica utakmica = new Utakmica
             {
-                FindCondition = $"lower(d.ImeTima) like '{uCIzmenaUtakmice.CbTimovi.Text.ToLower()}' or lower(g.ImeTima) like '{uCIzmenaUtakmice.CbTimovi.Text.ToLower()}' order by DatumOdigravanja asc"
+                FindCondition = $"where lower(d.ImeTima) like '{uCIzmenaUtakmice.CbTimovi.Text.ToLower()}' or lower(g.ImeTima) like '{uCIzmenaUtakmice.CbTimovi.Text.ToLower()}' order by DatumOdigravanja asc"
             };
             try
             {
@@ -246,6 +248,7 @@ namespace Client.Forms.GUIController
             uCIzmenaUtakmice.TxtGost.Text = "";
             uCIzmenaUtakmice.TxtPoeniGost.Text = "";
             uCIzmenaUtakmice.DtpDatum.Text = "";
+            uCIzmenaUtakmice.TxtBrojGledalaca.Text = "";
             uCIzmenaUtakmice.TxtIgrac.Text = "";
             uCIzmenaUtakmice.TxtPoeni.Text = "";
             uCIzmenaUtakmice.TxtSkokovi.Text = "";

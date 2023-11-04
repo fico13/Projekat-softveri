@@ -49,6 +49,8 @@ namespace Client.Forms.UserControls.Igrac
             this.label7 = new System.Windows.Forms.Label();
             this.cbTim = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.dtpDatum = new System.Windows.Forms.DateTimePicker();
             this.SuspendLayout();
             // 
             // btnDodajTim
@@ -58,7 +60,7 @@ namespace Client.Forms.UserControls.Igrac
             this.btnDodajTim.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btnDodajTim.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDodajTim.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDodajTim.Location = new System.Drawing.Point(214, 423);
+            this.btnDodajTim.Location = new System.Drawing.Point(214, 481);
             this.btnDodajTim.Name = "btnDodajTim";
             this.btnDodajTim.Size = new System.Drawing.Size(214, 36);
             this.btnDodajTim.TabIndex = 13;
@@ -71,7 +73,7 @@ namespace Client.Forms.UserControls.Igrac
             this.cbPozicije.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.cbPozicije.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbPozicije.FormattingEnabled = true;
-            this.cbPozicije.Location = new System.Drawing.Point(214, 171);
+            this.cbPozicije.Location = new System.Drawing.Point(214, 222);
             this.cbPozicije.Name = "cbPozicije";
             this.cbPozicije.Size = new System.Drawing.Size(214, 28);
             this.cbPozicije.TabIndex = 12;
@@ -80,7 +82,7 @@ namespace Client.Forms.UserControls.Igrac
             // 
             this.txtDrzava.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtDrzava.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDrzava.Location = new System.Drawing.Point(214, 121);
+            this.txtDrzava.Location = new System.Drawing.Point(214, 128);
             this.txtDrzava.Name = "txtDrzava";
             this.txtDrzava.Size = new System.Drawing.Size(214, 27);
             this.txtDrzava.TabIndex = 11;
@@ -90,7 +92,7 @@ namespace Client.Forms.UserControls.Igrac
             // 
             this.txtIme.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtIme.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtIme.Location = new System.Drawing.Point(214, 21);
+            this.txtIme.Location = new System.Drawing.Point(214, 34);
             this.txtIme.Name = "txtIme";
             this.txtIme.Size = new System.Drawing.Size(214, 27);
             this.txtIme.TabIndex = 10;
@@ -102,7 +104,7 @@ namespace Client.Forms.UserControls.Igrac
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Chocolate;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(38, 179);
+            this.label3.Location = new System.Drawing.Point(38, 229);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(76, 20);
             this.label3.TabIndex = 9;
@@ -114,7 +116,7 @@ namespace Client.Forms.UserControls.Igrac
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Chocolate;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(38, 128);
+            this.label2.Location = new System.Drawing.Point(38, 135);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(69, 20);
             this.label2.TabIndex = 8;
@@ -126,7 +128,7 @@ namespace Client.Forms.UserControls.Igrac
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Chocolate;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(38, 28);
+            this.label1.Location = new System.Drawing.Point(38, 41);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(39, 20);
             this.label1.TabIndex = 7;
@@ -136,7 +138,7 @@ namespace Client.Forms.UserControls.Igrac
             // 
             this.txtPrezime.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtPrezime.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPrezime.Location = new System.Drawing.Point(214, 71);
+            this.txtPrezime.Location = new System.Drawing.Point(214, 81);
             this.txtPrezime.Name = "txtPrezime";
             this.txtPrezime.Size = new System.Drawing.Size(214, 27);
             this.txtPrezime.TabIndex = 15;
@@ -148,7 +150,7 @@ namespace Client.Forms.UserControls.Igrac
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Chocolate;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(38, 78);
+            this.label4.Location = new System.Drawing.Point(38, 88);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(78, 20);
             this.label4.TabIndex = 14;
@@ -158,7 +160,7 @@ namespace Client.Forms.UserControls.Igrac
             // 
             this.txtBrojNaDresu.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtBrojNaDresu.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBrojNaDresu.Location = new System.Drawing.Point(214, 222);
+            this.txtBrojNaDresu.Location = new System.Drawing.Point(214, 270);
             this.txtBrojNaDresu.Name = "txtBrojNaDresu";
             this.txtBrojNaDresu.Size = new System.Drawing.Size(214, 27);
             this.txtBrojNaDresu.TabIndex = 17;
@@ -170,7 +172,7 @@ namespace Client.Forms.UserControls.Igrac
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.Chocolate;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(38, 229);
+            this.label5.Location = new System.Drawing.Point(38, 276);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(123, 20);
             this.label5.TabIndex = 16;
@@ -180,7 +182,7 @@ namespace Client.Forms.UserControls.Igrac
             // 
             this.txtVisina.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtVisina.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtVisina.Location = new System.Drawing.Point(214, 272);
+            this.txtVisina.Location = new System.Drawing.Point(214, 317);
             this.txtVisina.Name = "txtVisina";
             this.txtVisina.Size = new System.Drawing.Size(214, 27);
             this.txtVisina.TabIndex = 19;
@@ -192,7 +194,7 @@ namespace Client.Forms.UserControls.Igrac
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.Color.Chocolate;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(38, 279);
+            this.label6.Location = new System.Drawing.Point(38, 323);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(106, 20);
             this.label6.TabIndex = 18;
@@ -202,7 +204,7 @@ namespace Client.Forms.UserControls.Igrac
             // 
             this.txtTezina.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtTezina.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTezina.Location = new System.Drawing.Point(214, 322);
+            this.txtTezina.Location = new System.Drawing.Point(214, 364);
             this.txtTezina.Name = "txtTezina";
             this.txtTezina.Size = new System.Drawing.Size(214, 27);
             this.txtTezina.TabIndex = 21;
@@ -214,7 +216,7 @@ namespace Client.Forms.UserControls.Igrac
             this.label7.AutoSize = true;
             this.label7.BackColor = System.Drawing.Color.Chocolate;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(38, 329);
+            this.label7.Location = new System.Drawing.Point(38, 370);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(104, 20);
             this.label7.TabIndex = 20;
@@ -225,7 +227,7 @@ namespace Client.Forms.UserControls.Igrac
             this.cbTim.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.cbTim.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbTim.FormattingEnabled = true;
-            this.cbTim.Location = new System.Drawing.Point(214, 372);
+            this.cbTim.Location = new System.Drawing.Point(214, 411);
             this.cbTim.Name = "cbTim";
             this.cbTim.Size = new System.Drawing.Size(214, 28);
             this.cbTim.TabIndex = 24;
@@ -236,11 +238,35 @@ namespace Client.Forms.UserControls.Igrac
             this.label8.AutoSize = true;
             this.label8.BackColor = System.Drawing.Color.Chocolate;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(38, 380);
+            this.label8.Location = new System.Drawing.Point(38, 417);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(40, 20);
             this.label8.TabIndex = 23;
             this.label8.Text = "Tim";
+            // 
+            // label9
+            // 
+            this.label9.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label9.AutoSize = true;
+            this.label9.BackColor = System.Drawing.Color.Chocolate;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(38, 182);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(132, 20);
+            this.label9.TabIndex = 25;
+            this.label9.Text = "Datum rođenja";
+            // 
+            // dtpDatum
+            // 
+            this.dtpDatum.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.dtpDatum.CustomFormat = "dd.MM.yyyy";
+            this.dtpDatum.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpDatum.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpDatum.Location = new System.Drawing.Point(214, 175);
+            this.dtpDatum.Name = "dtpDatum";
+            this.dtpDatum.Size = new System.Drawing.Size(214, 27);
+            this.dtpDatum.TabIndex = 26;
+            this.dtpDatum.Value = new System.DateTime(1950, 1, 1, 0, 0, 0, 0);
             // 
             // UCDodajIgraca
             // 
@@ -248,6 +274,8 @@ namespace Client.Forms.UserControls.Igrac
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Controls.Add(this.dtpDatum);
+            this.Controls.Add(this.label9);
             this.Controls.Add(this.cbTim);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.txtTezina);
@@ -267,7 +295,7 @@ namespace Client.Forms.UserControls.Igrac
             this.Controls.Add(this.label1);
             this.DoubleBuffered = true;
             this.Name = "UCDodajIgraca";
-            this.Size = new System.Drawing.Size(519, 480);
+            this.Size = new System.Drawing.Size(519, 597);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -292,6 +320,8 @@ namespace Client.Forms.UserControls.Igrac
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.ComboBox cbTim;
         private System.Windows.Forms.Label label8;
+        private Label label9;
+        private DateTimePicker dtpDatum;
 
         public ComboBox CbPozicije { get => cbPozicije; set => cbPozicije = value; }
         public TextBox TxtDrzava { get => txtDrzava; set => txtDrzava = value; }
@@ -301,5 +331,6 @@ namespace Client.Forms.UserControls.Igrac
         public TextBox TxtVisina { get => txtVisina; set => txtVisina = value; }
         public TextBox TxtTezina { get => txtTezina; set => txtTezina = value; }
         public ComboBox CbTim { get => cbTim; set => cbTim = value; }
+        public DateTimePicker DtpDatum { get => dtpDatum; set => dtpDatum = value; }
     }
 }

@@ -91,6 +91,7 @@ namespace Client.Forms.GUIController
                     ImeIgraca = uCDodajIgraca.TxtIme.Text,
                     PrezimeIgraca = uCDodajIgraca.TxtPrezime.Text,
                     DrzavaIgraca = uCDodajIgraca.TxtDrzava.Text,
+                    DateString = uCDodajIgraca.DtpDatum.Value.ToString(),
                     Pozicija = (Pozicija)(uCDodajIgraca.CbPozicije.SelectedItem),
                     BrojNaDresu = Convert.ToInt32(uCDodajIgraca.TxtBrojNaDresu.Text),
                     Visina = Convert.ToInt32(uCDodajIgraca.TxtVisina.Text),
