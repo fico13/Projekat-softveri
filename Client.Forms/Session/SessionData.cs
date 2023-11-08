@@ -33,6 +33,8 @@ namespace Client.Forms.Session
             }
         }
 
-        public Igrac IzabraniIgrac { get; set; }
+        public List<Tim> Domaci { get; set; } 
+        public List<Tim> Gost { get; set; } 
+
     }
 }

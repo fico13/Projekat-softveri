@@ -1,4 +1,5 @@
-﻿using Client.Forms.Exceptions;
+﻿using Client.Forms.Dialogs.Igrac;
+using Client.Forms.Exceptions;
 using Client.Forms.GUIHelper;
 using Client.Forms.ServerCommunication;
 using Client.Forms.Session;
@@ -19,7 +20,7 @@ namespace Client.Forms.GUIController
     public class NadjiIgracaController
     {
         private UCPretragaIgraca uCPretragaIgraca;
-        
+        public Igrac IzabraniIgrac { get; set; }
 
         public NadjiIgracaController(UCPretragaIgraca uCPretragaIgraca)
         {
@@ -117,6 +118,12 @@ namespace Client.Forms.GUIController
             }
         }
 
+        internal void PrikaziStatistiku()
+        {
+            FrmStatistikaIgraca frmStatistikaIgraca = new FrmStatistikaIgraca(IzabraniIgrac);
+            frmStatistikaIgraca.ShowDialog();
+        }
+
         private void OcistiPodatke()
         {
             uCPretragaIgraca.TxtIme.Clear();
@@ -151,7 +158,7 @@ namespace Client.Forms.GUIController
                 uCPretragaIgraca.TxtTezina.Text = igrac.Tezina.ToString();
                 uCPretragaIgraca.TxtTim.Text = igrac.Tim.ToString();
                 MessageBox.Show("Sistem je učitao igrača");
-                SessionData.Instance.IzabraniIgrac = igrac;
+                IzabraniIgrac = igrac;
             }
             catch (ServerCommunicationException)
             {

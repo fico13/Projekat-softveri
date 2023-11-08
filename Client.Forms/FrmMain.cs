@@ -2,6 +2,7 @@
 using Client.Forms.UserControls.Dvorana;
 using Client.Forms.UserControls.Igrac;
 using Client.Forms.UserControls.Statistika;
+using Client.Forms.UserControls.Takmicenje;
 using Client.Forms.UserControls.Tim;
 using Client.Forms.UserControls.Utakmica;
 using System;
@@ -92,6 +93,11 @@ namespace Client.Forms
         {
             ChangePanel(new UCTabelaTimova());
 
+        }
+
+        private void regularniDeoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ChangePanel(new UCRegularniDeo());
         }
     }
 }

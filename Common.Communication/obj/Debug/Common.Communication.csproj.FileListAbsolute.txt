@@ -4,3 +4,9 @@ C:\Users\Filip\Desktop\Projekat\Common.Communication\obj\Debug\Common.Communicat
 C:\Users\Filip\Desktop\Projekat\Common.Communication\obj\Debug\Common.Communication.csproj.CoreCompileInputs.cache
 C:\Users\Filip\Desktop\Projekat\Common.Communication\obj\Debug\Common.Communication.dll
 C:\Users\Filip\Desktop\Projekat\Common.Communication\obj\Debug\Common.Communication.pdb
+C:\Users\Filip\Desktop\ide gas\Common.Communication\bin\Debug\Common.Communication.dll
+C:\Users\Filip\Desktop\ide gas\Common.Communication\bin\Debug\Common.Communication.pdb
+C:\Users\Filip\Desktop\ide gas\Common.Communication\obj\Debug\Common.Communication.csproj.AssemblyReference.cache
+C:\Users\Filip\Desktop\ide gas\Common.Communication\obj\Debug\Common.Communication.csproj.CoreCompileInputs.cache
+C:\Users\Filip\Desktop\ide gas\Common.Communication\obj\Debug\Common.Communication.dll
+C:\Users\Filip\Desktop\ide gas\Common.Communication\obj\Debug\Common.Communication.pdb

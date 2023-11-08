@@ -17,17 +17,18 @@ namespace Client.Forms.GUIController
     public class PrikaziStatistikuController
     {
         private FrmStatistikaIgraca frmStatistikaIgraca;
+        private Igrac izabraniIgrac;
 
-        public PrikaziStatistikuController(FrmStatistikaIgraca frmStatistikaIgraca)
+        public PrikaziStatistikuController(FrmStatistikaIgraca frmStatistikaIgraca, Igrac izabraniIgrac)
         {
             this.frmStatistikaIgraca = frmStatistikaIgraca;
-            Igrac igrac = SessionData.Instance.IzabraniIgrac;
-            frmStatistikaIgraca.LblIgrac.Text = igrac.ToString() + $"\nTim: {igrac.Tim.Ime}";
+            this.izabraniIgrac = izabraniIgrac;
+            frmStatistikaIgraca.LblIgrac.Text = izabraniIgrac.ToString() + $"\nTim: {izabraniIgrac.Tim.Ime}";
             try
             {
                 Statistika statistika = new Statistika
                 {
-                    FindCondition = $"where i.IgracId = {igrac.IgracId}"
+                    FindCondition = $"where i.IgracId = {izabraniIgrac.IgracId}"
                 };
                 List<Statistika> statistikas = Communication.Instance.SendRequestGetResult<List<Statistika>>(
                     Operation.NadjiStatistiku, statistika);
@@ -40,5 +41,7 @@ namespace Client.Forms.GUIController
             }
             
         }
+
+        
     }
 }

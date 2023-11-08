@@ -51,6 +51,7 @@
     <Compile Include="Statistika\NadjiStatistikeSO.cs" />
     <Compile Include="SystemOperationBase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Takmicenje\SacuvajTakmicenjeSO.cs" />
     <Compile Include="TimSO\NadjiTimoveSO.cs" />
     <Compile Include="TimSO\SacuvajTimSO.cs" />
     <Compile Include="TimSO\UcitajTimSO.cs" />

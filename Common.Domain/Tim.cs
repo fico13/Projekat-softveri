@@ -18,10 +18,10 @@ namespace Common.Domain
         public int BrojPoraza { get; set; } = 0;
         public int Bodovi { get; set; } = 0;
         public Dvorana Dvorana { get; set; }
+        
 
-        
-        
-        
+
+
         [Browsable(false)]
         public string TableName => "Tim";
         [Browsable(false)]
@@ -68,5 +68,7 @@ namespace Common.Domain
         {
             return Ime;
         }
+
+        
     }
 }

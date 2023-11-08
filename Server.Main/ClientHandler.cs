@@ -127,6 +127,9 @@ namespace Server.Main
                 case Operation.NadjiStatistiku:
                     response.ResponseObject = Controller.Instance.NadjiStatistike((Statistika)request.RequestObject);
                     break;
+                case Operation.SacuvajTakmicenje:
+                    Controller.Instance.SacuvajTakmicenje((Takmicenje)request.RequestObject);
+                    break;
                 default:
                     break;
             }

@@ -33,8 +33,8 @@ namespace Client.Forms.UserControls.Igrac
 
         private void btnStatistika_Click(object sender, EventArgs e)
         {
-            FrmStatistikaIgraca frmStatistikaIgraca = new FrmStatistikaIgraca();
-            frmStatistikaIgraca.ShowDialog();
+            nadjiIgracaController.PrikaziStatistiku();
+            
         }
     }
 }

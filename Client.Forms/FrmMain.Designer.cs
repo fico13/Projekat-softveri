@@ -44,13 +44,17 @@ namespace Client.Forms
             this.dodajUtakmicuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.izmeniUtakmicuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.izmeniUtakmicuToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.pnlMain = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tabelaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.timoviToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.najboljiStrelciToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.najboljiSkakačiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.najboljiAsistentiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pnlMain = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.takmicenjeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.regularniDeoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.plejofToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.finaleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.pnlMain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -64,6 +68,7 @@ namespace Client.Forms
             this.dvoranaToolStripMenuItem,
             this.timToolStripMenuItem,
             this.igracToolStripMenuItem,
+            this.takmicenjeToolStripMenuItem,
             this.utakmicaToolStripMenuItem,
             this.tabelaToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
@@ -185,28 +190,6 @@ namespace Client.Forms
             this.izmeniUtakmicuToolStripMenuItem1.Text = "Izmeni utakmicu";
             this.izmeniUtakmicuToolStripMenuItem1.Click += new System.EventHandler(this.izmeniUtakmicuToolStripMenuItem1_Click);
             // 
-            // pnlMain
-            // 
-            this.pnlMain.Controls.Add(this.pictureBox1);
-            this.pnlMain.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlMain.Location = new System.Drawing.Point(0, 36);
-            this.pnlMain.Name = "pnlMain";
-            this.pnlMain.Size = new System.Drawing.Size(807, 520);
-            this.pnlMain.TabIndex = 1;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox1.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.InitialImage")));
-            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(807, 520);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            // 
             // tabelaToolStripMenuItem
             // 
             this.tabelaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -242,6 +225,57 @@ namespace Client.Forms
             this.najboljiAsistentiToolStripMenuItem.Name = "najboljiAsistentiToolStripMenuItem";
             this.najboljiAsistentiToolStripMenuItem.Size = new System.Drawing.Size(259, 32);
             this.najboljiAsistentiToolStripMenuItem.Text = "Najbolji asistenti";
+            // 
+            // pnlMain
+            // 
+            this.pnlMain.Controls.Add(this.pictureBox1);
+            this.pnlMain.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlMain.Location = new System.Drawing.Point(0, 36);
+            this.pnlMain.Name = "pnlMain";
+            this.pnlMain.Size = new System.Drawing.Size(807, 520);
+            this.pnlMain.TabIndex = 1;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox1.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.InitialImage")));
+            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(807, 520);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            // 
+            // takmicenjeToolStripMenuItem
+            // 
+            this.takmicenjeToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.regularniDeoToolStripMenuItem,
+            this.plejofToolStripMenuItem,
+            this.finaleToolStripMenuItem});
+            this.takmicenjeToolStripMenuItem.Name = "takmicenjeToolStripMenuItem";
+            this.takmicenjeToolStripMenuItem.Size = new System.Drawing.Size(132, 32);
+            this.takmicenjeToolStripMenuItem.Text = "Takmicenje";
+            // 
+            // regularniDeoToolStripMenuItem
+            // 
+            this.regularniDeoToolStripMenuItem.Name = "regularniDeoToolStripMenuItem";
+            this.regularniDeoToolStripMenuItem.Size = new System.Drawing.Size(230, 32);
+            this.regularniDeoToolStripMenuItem.Text = "Regularni deo";
+            this.regularniDeoToolStripMenuItem.Click += new System.EventHandler(this.regularniDeoToolStripMenuItem_Click);
+            // 
+            // plejofToolStripMenuItem
+            // 
+            this.plejofToolStripMenuItem.Name = "plejofToolStripMenuItem";
+            this.plejofToolStripMenuItem.Size = new System.Drawing.Size(230, 32);
+            this.plejofToolStripMenuItem.Text = "Plejof";
+            // 
+            // finaleToolStripMenuItem
+            // 
+            this.finaleToolStripMenuItem.Name = "finaleToolStripMenuItem";
+            this.finaleToolStripMenuItem.Size = new System.Drawing.Size(230, 32);
+            this.finaleToolStripMenuItem.Text = "Finale";
             // 
             // FrmMain
             // 
@@ -289,5 +323,9 @@ namespace Client.Forms
         private System.Windows.Forms.ToolStripMenuItem najboljiStrelciToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem najboljiSkakačiToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem najboljiAsistentiToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem takmicenjeToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem regularniDeoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem plejofToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem finaleToolStripMenuItem;
     }
 }

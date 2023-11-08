@@ -4,6 +4,7 @@ using Server.SystemOperations.AdministratorSO;
 using Server.SystemOperations.DvoranaSO;
 using Server.SystemOperations.IgracSO;
 using Server.SystemOperations.Statistika;
+using Server.SystemOperations.Takmicenje;
 using Server.SystemOperations.TimSO;
 using Server.SystemOperations.UtakmicaSO;
 using System;
@@ -136,6 +137,12 @@ namespace Server.ApplicationLogic
             SystemOperationBase so = new NadjiStatistikeSO(statistika);
             so.ExecuteTemplate();
             return ((NadjiStatistikeSO)so).Result;
+        }
+
+        public void SacuvajTakmicenje(Takmicenje takmicenje)
+        {
+            SystemOperationBase so = new SacuvajTakmicenjeSO(takmicenje);
+            so.ExecuteTemplate();
         }
     }
 }

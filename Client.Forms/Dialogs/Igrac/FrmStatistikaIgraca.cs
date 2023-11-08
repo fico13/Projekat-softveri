@@ -15,10 +15,10 @@ namespace Client.Forms.Dialogs.Igrac
     public partial class FrmStatistikaIgraca : Form
     {
         private PrikaziStatistikuController prikaziStatistikuController;
-        public FrmStatistikaIgraca()
+        public FrmStatistikaIgraca(Common.Domain.Igrac izabraniIgrac)
         {
             InitializeComponent();
-            prikaziStatistikuController = new PrikaziStatistikuController(this);
+            prikaziStatistikuController = new PrikaziStatistikuController(this, izabraniIgrac);
         }
 
 
