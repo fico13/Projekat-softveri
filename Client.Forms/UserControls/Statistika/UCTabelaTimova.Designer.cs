@@ -43,6 +43,7 @@ namespace Client.Forms.UserControls.Statistika
             this.brojPobedaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.brojPorazaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bodoviDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.kosRazlikaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTabelaTimova)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.timBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -68,7 +69,8 @@ namespace Client.Forms.UserControls.Statistika
             this.drzavaDataGridViewTextBoxColumn,
             this.brojPobedaDataGridViewTextBoxColumn,
             this.brojPorazaDataGridViewTextBoxColumn,
-            this.bodoviDataGridViewTextBoxColumn});
+            this.bodoviDataGridViewTextBoxColumn,
+            this.kosRazlikaDataGridViewTextBoxColumn});
             this.dgvTabelaTimova.DataSource = this.timBindingSource;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
@@ -78,7 +80,7 @@ namespace Client.Forms.UserControls.Statistika
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvTabelaTimova.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvTabelaTimova.Location = new System.Drawing.Point(39, 33);
+            this.dgvTabelaTimova.Location = new System.Drawing.Point(35, 33);
             this.dgvTabelaTimova.Name = "dgvTabelaTimova";
             this.dgvTabelaTimova.ReadOnly = true;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
@@ -91,11 +93,11 @@ namespace Client.Forms.UserControls.Statistika
             this.dgvTabelaTimova.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvTabelaTimova.RowHeadersVisible = false;
             this.dgvTabelaTimova.RowHeadersWidth = 51;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.OrangeRed;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
             this.dgvTabelaTimova.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvTabelaTimova.RowTemplate.Height = 24;
             this.dgvTabelaTimova.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.dgvTabelaTimova.Size = new System.Drawing.Size(702, 585);
+            this.dgvTabelaTimova.Size = new System.Drawing.Size(989, 565);
             this.dgvTabelaTimova.TabIndex = 0;
             // 
             // timBindingSource
@@ -127,6 +129,7 @@ namespace Client.Forms.UserControls.Statistika
             this.brojPobedaDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.brojPobedaDataGridViewTextBoxColumn.Name = "brojPobedaDataGridViewTextBoxColumn";
             this.brojPobedaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.brojPobedaDataGridViewTextBoxColumn.Width = 125;
             // 
             // brojPorazaDataGridViewTextBoxColumn
             // 
@@ -135,6 +138,7 @@ namespace Client.Forms.UserControls.Statistika
             this.brojPorazaDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.brojPorazaDataGridViewTextBoxColumn.Name = "brojPorazaDataGridViewTextBoxColumn";
             this.brojPorazaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.brojPorazaDataGridViewTextBoxColumn.Width = 125;
             // 
             // bodoviDataGridViewTextBoxColumn
             // 
@@ -143,7 +147,16 @@ namespace Client.Forms.UserControls.Statistika
             this.bodoviDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.bodoviDataGridViewTextBoxColumn.Name = "bodoviDataGridViewTextBoxColumn";
             this.bodoviDataGridViewTextBoxColumn.ReadOnly = true;
-            this.bodoviDataGridViewTextBoxColumn.Width = 75;
+            this.bodoviDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // kosRazlikaDataGridViewTextBoxColumn
+            // 
+            this.kosRazlikaDataGridViewTextBoxColumn.DataPropertyName = "KosRazlika";
+            this.kosRazlikaDataGridViewTextBoxColumn.HeaderText = "Koš razlika";
+            this.kosRazlikaDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.kosRazlikaDataGridViewTextBoxColumn.Name = "kosRazlikaDataGridViewTextBoxColumn";
+            this.kosRazlikaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.kosRazlikaDataGridViewTextBoxColumn.Width = 125;
             // 
             // UCTabelaTimova
             // 
@@ -151,7 +164,7 @@ namespace Client.Forms.UserControls.Statistika
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.dgvTabelaTimova);
             this.Name = "UCTabelaTimova";
-            this.Size = new System.Drawing.Size(877, 634);
+            this.Size = new System.Drawing.Size(1058, 634);
             ((System.ComponentModel.ISupportInitialize)(this.dgvTabelaTimova)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.timBindingSource)).EndInit();
             this.ResumeLayout(false);
@@ -161,12 +174,13 @@ namespace Client.Forms.UserControls.Statistika
         #endregion
 
         private DataGridView dgvTabelaTimova;
-        private BindingSource timBindingSource;
         private DataGridViewTextBoxColumn imeDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn drzavaDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn brojPobedaDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn brojPorazaDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn bodoviDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn kosRazlikaDataGridViewTextBoxColumn;
+        private BindingSource timBindingSource;
 
         public DataGridView DgvTabelaTimova { get => dgvTabelaTimova; set => dgvTabelaTimova = value; }
     }

@@ -16,7 +16,7 @@ namespace Common.Domain
         public int BrojKola { get; set; }
 
         [Browsable(false)]
-        public List<Tim> Timovi { get; set; }
+        public List<Utakmica> Utakmice { get; set; }
 
         [Browsable(false)]
         public string TableName => "Takmicenje";
@@ -43,12 +43,17 @@ namespace Common.Domain
         public string UpdateCondition => throw new NotImplementedException();
 
         [Browsable(false)]
-        public string IdColumnName => throw new NotImplementedException();
+        public string IdColumnName => "TakmicenjeId";
 
         [Browsable(false)]
         public IDomainObject ReadObjectRow(SqlDataReader reader)
         {
             throw new NotImplementedException();
+        }
+
+        public override string ToString()
+        {
+            return $"{Naziv}"; 
         }
     }
 }

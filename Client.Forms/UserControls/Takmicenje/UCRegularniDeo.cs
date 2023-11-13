@@ -34,5 +34,25 @@ namespace Client.Forms.UserControls.Takmicenje
         {
             sacuvajTakmicenjeController.DodajUtakmice();
         }
+
+        private void btnUcitajIgrace_Click(object sender, EventArgs e)
+        {
+            sacuvajTakmicenjeController.UcitajIgrace();
+        }
+
+        private void btnDodajStatistikuDomacin_Click(object sender, EventArgs e)
+        {
+            sacuvajTakmicenjeController.DodajStatistikuDomacina();
+        }
+
+        private void btnDodajStatistikuGost_Click(object sender, EventArgs e)
+        {
+            sacuvajTakmicenjeController.DodajStatistikuGosta();
+        }
+
+        private void btnSacuvajUtakmicu_Click(object sender, EventArgs e)
+        {
+            sacuvajTakmicenjeController.DodajUtakmicu();
+        }
     }
 }

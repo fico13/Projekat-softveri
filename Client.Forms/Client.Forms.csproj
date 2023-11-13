@@ -52,6 +52,12 @@
     <Compile Include="Dialogs\Igrac\FrmStatistikaIgraca.Designer.cs">
       <DependentUpon>FrmStatistikaIgraca.cs</DependentUpon>
     </Compile>
+    <Compile Include="Dialogs\Utakmica\FrmUtakmica.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\Utakmica\FrmUtakmica.Designer.cs">
+      <DependentUpon>FrmUtakmica.cs</DependentUpon>
+    </Compile>
     <Compile Include="Exceptions\ServerCommunicationException.cs" />
     <Compile Include="Exceptions\SystemOperationException.cs" />
     <Compile Include="FrmLogin.cs">
@@ -68,6 +74,7 @@
     </Compile>
     <Compile Include="GUIController\DodajDvoranuController.cs" />
     <Compile Include="GUIController\DodajIgracaController.cs" />
+    <Compile Include="GUIController\DodajPlejofUtakmicu.cs" />
     <Compile Include="GUIController\DodajTimController.cs" />
     <Compile Include="GUIController\DodajUtakmicuController.cs" />
     <Compile Include="GUIController\IzmeniIgracaController.cs" />
@@ -76,6 +83,7 @@
     <Compile Include="GUIController\NadjiIgracaController.cs" />
     <Compile Include="GUIController\NadjiTimController.cs" />
     <Compile Include="GUIController\NadjiUtakmicuController.cs" />
+    <Compile Include="GUIController\PlejofController.cs" />
     <Compile Include="GUIController\PrikaziStatistikuController.cs" />
     <Compile Include="GUIController\SacuvajTakmicenjeController.cs" />
     <Compile Include="GUIController\TabelaTimovaController.cs" />
@@ -113,6 +121,12 @@
     </Compile>
     <Compile Include="UserControls\Statistika\UCTabelaTimova.Designer.cs">
       <DependentUpon>UCTabelaTimova.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Takmicenje\UCPlejof.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\Takmicenje\UCPlejof.Designer.cs">
+      <DependentUpon>UCPlejof.cs</DependentUpon>
     </Compile>
     <Compile Include="UserControls\Takmicenje\UCRegularniDeo.cs">
       <SubType>UserControl</SubType>
@@ -153,6 +167,9 @@
     <EmbeddedResource Include="Dialogs\Igrac\FrmStatistikaIgraca.resx">
       <DependentUpon>FrmStatistikaIgraca.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\Utakmica\FrmUtakmica.resx">
+      <DependentUpon>FrmUtakmica.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmLogin.resx">
       <DependentUpon>FrmLogin.cs</DependentUpon>
     </EmbeddedResource>
@@ -182,6 +199,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\Statistika\UCTabelaTimova.resx">
       <DependentUpon>UCTabelaTimova.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\Takmicenje\UCPlejof.resx">
+      <DependentUpon>UCPlejof.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\Takmicenje\UCRegularniDeo.resx">
       <DependentUpon>UCRegularniDeo.cs</DependentUpon>

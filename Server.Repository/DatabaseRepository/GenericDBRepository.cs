@@ -101,7 +101,7 @@ namespace Server.Repository.DatabaseRepository
         {
             List<IDomainObject> result = new List<IDomainObject>();
             SqlCommand command = broker.CreateSqlCommand();
-            command.CommandText = $"select * from {objekat.TableName} {objekat.Alias} join {objekat.JoinTable} on {objekat.JoinCondition}";
+            command.CommandText = $"select * from {objekat.TableName} {objekat.Alias} join {objekat.JoinTable} on {objekat.JoinCondition} {objekat.FindCondition}";
             using (SqlDataReader reader = command.ExecuteReader())
             {
                 while (reader.Read())
@@ -111,6 +111,15 @@ namespace Server.Repository.DatabaseRepository
                 }
             }
             return result;
+        }
+
+        public int DajNoviID(IDomainObject objekat)
+        {
+            SqlCommand command = broker.CreateSqlCommand();
+            command.CommandText = $"select max({objekat.IdColumnName}) from {objekat.TableName}";
+            object maxId = command.ExecuteScalar();
+            if (maxId is DBNull) return 1;
+            return (int)maxId + 1;
         }
     }
 }

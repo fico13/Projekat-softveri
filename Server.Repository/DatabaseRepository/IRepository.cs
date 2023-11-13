@@ -22,5 +22,6 @@ namespace Server.Repository.DatabaseRepository
 
         void Update(IDomainObject objekat);
         int VratiMaxID(IDomainObject objekat);
+        int DajNoviID(IDomainObject objekat);
     }
 }

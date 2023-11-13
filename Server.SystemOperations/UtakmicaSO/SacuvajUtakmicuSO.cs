@@ -18,12 +18,21 @@ namespace Server.SystemOperations.UtakmicaSO
 
         protected override void Execute()
         {
+            utakmica.Takmicenje = new Common.Domain.Takmicenje
+            {
+                TakmicenjeID = repository.VratiMaxID(new Common.Domain.Takmicenje())
+            };
+            utakmica.UtakmicaId = repository.DajNoviID(utakmica);
             repository.Sacuvaj(utakmica);
             foreach (var statistika in utakmica.Statistka)
             {
                 statistika.Utakmica = new Utakmica
                 {
-                    UtakmicaId = repository.VratiMaxID(utakmica)
+                    UtakmicaId = utakmica.UtakmicaId
+                };
+                statistika.Takmicenje = new Common.Domain.Takmicenje
+                {
+                    TakmicenjeID = utakmica.Takmicenje.TakmicenjeID
                 };
                 repository.Sacuvaj(statistika);
             }

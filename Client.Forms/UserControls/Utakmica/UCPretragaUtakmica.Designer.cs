@@ -43,6 +43,16 @@ namespace Client.Forms.UserControls.Utakmica
             this.cbTimovi = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.dgvUtakmice = new System.Windows.Forms.DataGridView();
+            this.takmicenjeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.domacinDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.brojPoenaDomacinDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.brojPoenaGostDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gostDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.datumOdigravanjaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.brojGledalacaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.rundaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fazaTakmicenjaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.utakmicaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.btnUcitajUtakmicu = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txtBrojGledalaca = new System.Windows.Forms.TextBox();
@@ -69,19 +79,12 @@ namespace Client.Forms.UserControls.Utakmica
             this.asistencijeDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblDomacin = new System.Windows.Forms.Label();
             this.lblGost = new System.Windows.Forms.Label();
-            this.utakmicaBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.domacinDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.brojPoenaDomacinDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.brojPoenaGostDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.gostDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.datumOdigravanjaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.brojGledalacaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUtakmice)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.utakmicaBindingSource)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDomaci)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.statistikaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvGosti)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.utakmicaBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // btnPronadjiUtakmice
@@ -138,12 +141,15 @@ namespace Client.Forms.UserControls.Utakmica
             this.dgvUtakmice.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvUtakmice.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvUtakmice.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.takmicenjeDataGridViewTextBoxColumn,
             this.domacinDataGridViewTextBoxColumn,
             this.brojPoenaDomacinDataGridViewTextBoxColumn,
             this.brojPoenaGostDataGridViewTextBoxColumn,
             this.gostDataGridViewTextBoxColumn,
             this.datumOdigravanjaDataGridViewTextBoxColumn,
-            this.brojGledalacaDataGridViewTextBoxColumn});
+            this.brojGledalacaDataGridViewTextBoxColumn,
+            this.rundaDataGridViewTextBoxColumn,
+            this.fazaTakmicenjaDataGridViewTextBoxColumn});
             this.dgvUtakmice.DataSource = this.utakmicaBindingSource;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
@@ -159,8 +165,93 @@ namespace Client.Forms.UserControls.Utakmica
             this.dgvUtakmice.RowHeadersWidth = 51;
             this.dgvUtakmice.RowTemplate.Height = 24;
             this.dgvUtakmice.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.dgvUtakmice.Size = new System.Drawing.Size(1060, 150);
+            this.dgvUtakmice.Size = new System.Drawing.Size(1570, 150);
             this.dgvUtakmice.TabIndex = 23;
+            // 
+            // takmicenjeDataGridViewTextBoxColumn
+            // 
+            this.takmicenjeDataGridViewTextBoxColumn.DataPropertyName = "Takmicenje";
+            this.takmicenjeDataGridViewTextBoxColumn.HeaderText = "Takmicenje";
+            this.takmicenjeDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.takmicenjeDataGridViewTextBoxColumn.Name = "takmicenjeDataGridViewTextBoxColumn";
+            this.takmicenjeDataGridViewTextBoxColumn.ReadOnly = true;
+            this.takmicenjeDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // domacinDataGridViewTextBoxColumn
+            // 
+            this.domacinDataGridViewTextBoxColumn.DataPropertyName = "Domacin";
+            this.domacinDataGridViewTextBoxColumn.HeaderText = "Domacin";
+            this.domacinDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.domacinDataGridViewTextBoxColumn.Name = "domacinDataGridViewTextBoxColumn";
+            this.domacinDataGridViewTextBoxColumn.ReadOnly = true;
+            this.domacinDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // brojPoenaDomacinDataGridViewTextBoxColumn
+            // 
+            this.brojPoenaDomacinDataGridViewTextBoxColumn.DataPropertyName = "BrojPoenaDomacin";
+            this.brojPoenaDomacinDataGridViewTextBoxColumn.HeaderText = "Broj poena domacin";
+            this.brojPoenaDomacinDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.brojPoenaDomacinDataGridViewTextBoxColumn.Name = "brojPoenaDomacinDataGridViewTextBoxColumn";
+            this.brojPoenaDomacinDataGridViewTextBoxColumn.ReadOnly = true;
+            this.brojPoenaDomacinDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // brojPoenaGostDataGridViewTextBoxColumn
+            // 
+            this.brojPoenaGostDataGridViewTextBoxColumn.DataPropertyName = "BrojPoenaGost";
+            this.brojPoenaGostDataGridViewTextBoxColumn.HeaderText = "Broj poena gost";
+            this.brojPoenaGostDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.brojPoenaGostDataGridViewTextBoxColumn.Name = "brojPoenaGostDataGridViewTextBoxColumn";
+            this.brojPoenaGostDataGridViewTextBoxColumn.ReadOnly = true;
+            this.brojPoenaGostDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // gostDataGridViewTextBoxColumn
+            // 
+            this.gostDataGridViewTextBoxColumn.DataPropertyName = "Gost";
+            this.gostDataGridViewTextBoxColumn.HeaderText = "Gost";
+            this.gostDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.gostDataGridViewTextBoxColumn.Name = "gostDataGridViewTextBoxColumn";
+            this.gostDataGridViewTextBoxColumn.ReadOnly = true;
+            this.gostDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // datumOdigravanjaDataGridViewTextBoxColumn
+            // 
+            this.datumOdigravanjaDataGridViewTextBoxColumn.DataPropertyName = "DatumOdigravanja";
+            this.datumOdigravanjaDataGridViewTextBoxColumn.HeaderText = "Datum odigravanja";
+            this.datumOdigravanjaDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.datumOdigravanjaDataGridViewTextBoxColumn.Name = "datumOdigravanjaDataGridViewTextBoxColumn";
+            this.datumOdigravanjaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.datumOdigravanjaDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // brojGledalacaDataGridViewTextBoxColumn
+            // 
+            this.brojGledalacaDataGridViewTextBoxColumn.DataPropertyName = "BrojGledalaca";
+            this.brojGledalacaDataGridViewTextBoxColumn.HeaderText = "Broj gledalaca";
+            this.brojGledalacaDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.brojGledalacaDataGridViewTextBoxColumn.Name = "brojGledalacaDataGridViewTextBoxColumn";
+            this.brojGledalacaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.brojGledalacaDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // rundaDataGridViewTextBoxColumn
+            // 
+            this.rundaDataGridViewTextBoxColumn.DataPropertyName = "Runda";
+            this.rundaDataGridViewTextBoxColumn.HeaderText = "Runda";
+            this.rundaDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.rundaDataGridViewTextBoxColumn.Name = "rundaDataGridViewTextBoxColumn";
+            this.rundaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.rundaDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // fazaTakmicenjaDataGridViewTextBoxColumn
+            // 
+            this.fazaTakmicenjaDataGridViewTextBoxColumn.DataPropertyName = "FazaTakmicenja";
+            this.fazaTakmicenjaDataGridViewTextBoxColumn.HeaderText = "Faza takmicenja";
+            this.fazaTakmicenjaDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.fazaTakmicenjaDataGridViewTextBoxColumn.Name = "fazaTakmicenjaDataGridViewTextBoxColumn";
+            this.fazaTakmicenjaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.fazaTakmicenjaDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // utakmicaBindingSource
+            // 
+            this.utakmicaBindingSource.DataSource = typeof(Common.Domain.Utakmica);
             // 
             // btnUcitajUtakmicu
             // 
@@ -345,12 +436,13 @@ namespace Client.Forms.UserControls.Utakmica
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvDomaci.DefaultCellStyle = dataGridViewCellStyle4;
-            this.dgvDomaci.Location = new System.Drawing.Point(887, 364);
+            this.dgvDomaci.Location = new System.Drawing.Point(948, 364);
             this.dgvDomaci.Name = "dgvDomaci";
             this.dgvDomaci.ReadOnly = true;
             this.dgvDomaci.RowHeadersWidth = 51;
             this.dgvDomaci.RowTemplate.Height = 24;
-            this.dgvDomaci.Size = new System.Drawing.Size(764, 183);
+            this.dgvDomaci.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.dgvDomaci.Size = new System.Drawing.Size(672, 183);
             this.dgvDomaci.TabIndex = 26;
             // 
             // igracDataGridViewTextBoxColumn
@@ -423,12 +515,13 @@ namespace Client.Forms.UserControls.Utakmica
             dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvGosti.DefaultCellStyle = dataGridViewCellStyle6;
-            this.dgvGosti.Location = new System.Drawing.Point(887, 607);
+            this.dgvGosti.Location = new System.Drawing.Point(948, 607);
             this.dgvGosti.Name = "dgvGosti";
             this.dgvGosti.ReadOnly = true;
             this.dgvGosti.RowHeadersWidth = 51;
             this.dgvGosti.RowTemplate.Height = 24;
-            this.dgvGosti.Size = new System.Drawing.Size(764, 183);
+            this.dgvGosti.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.dgvGosti.Size = new System.Drawing.Size(672, 183);
             this.dgvGosti.TabIndex = 27;
             // 
             // igracDataGridViewTextBoxColumn1
@@ -491,64 +584,6 @@ namespace Client.Forms.UserControls.Utakmica
             this.lblGost.TabIndex = 29;
             this.lblGost.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // utakmicaBindingSource
-            // 
-            this.utakmicaBindingSource.DataSource = typeof(Common.Domain.Utakmica);
-            // 
-            // domacinDataGridViewTextBoxColumn
-            // 
-            this.domacinDataGridViewTextBoxColumn.DataPropertyName = "Domacin";
-            this.domacinDataGridViewTextBoxColumn.HeaderText = "Domaćin";
-            this.domacinDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.domacinDataGridViewTextBoxColumn.Name = "domacinDataGridViewTextBoxColumn";
-            this.domacinDataGridViewTextBoxColumn.ReadOnly = true;
-            this.domacinDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // brojPoenaDomacinDataGridViewTextBoxColumn
-            // 
-            this.brojPoenaDomacinDataGridViewTextBoxColumn.DataPropertyName = "BrojPoenaDomacin";
-            this.brojPoenaDomacinDataGridViewTextBoxColumn.HeaderText = "Broj poena domaćin";
-            this.brojPoenaDomacinDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.brojPoenaDomacinDataGridViewTextBoxColumn.Name = "brojPoenaDomacinDataGridViewTextBoxColumn";
-            this.brojPoenaDomacinDataGridViewTextBoxColumn.ReadOnly = true;
-            this.brojPoenaDomacinDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // brojPoenaGostDataGridViewTextBoxColumn
-            // 
-            this.brojPoenaGostDataGridViewTextBoxColumn.DataPropertyName = "BrojPoenaGost";
-            this.brojPoenaGostDataGridViewTextBoxColumn.HeaderText = "Broj poena gost";
-            this.brojPoenaGostDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.brojPoenaGostDataGridViewTextBoxColumn.Name = "brojPoenaGostDataGridViewTextBoxColumn";
-            this.brojPoenaGostDataGridViewTextBoxColumn.ReadOnly = true;
-            this.brojPoenaGostDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // gostDataGridViewTextBoxColumn
-            // 
-            this.gostDataGridViewTextBoxColumn.DataPropertyName = "Gost";
-            this.gostDataGridViewTextBoxColumn.HeaderText = "Gost";
-            this.gostDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.gostDataGridViewTextBoxColumn.Name = "gostDataGridViewTextBoxColumn";
-            this.gostDataGridViewTextBoxColumn.ReadOnly = true;
-            this.gostDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // datumOdigravanjaDataGridViewTextBoxColumn
-            // 
-            this.datumOdigravanjaDataGridViewTextBoxColumn.DataPropertyName = "DatumOdigravanja";
-            this.datumOdigravanjaDataGridViewTextBoxColumn.HeaderText = "Datum odigravanja";
-            this.datumOdigravanjaDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.datumOdigravanjaDataGridViewTextBoxColumn.Name = "datumOdigravanjaDataGridViewTextBoxColumn";
-            this.datumOdigravanjaDataGridViewTextBoxColumn.ReadOnly = true;
-            this.datumOdigravanjaDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // brojGledalacaDataGridViewTextBoxColumn
-            // 
-            this.brojGledalacaDataGridViewTextBoxColumn.DataPropertyName = "BrojGledalaca";
-            this.brojGledalacaDataGridViewTextBoxColumn.HeaderText = "Broj gledalaca";
-            this.brojGledalacaDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.brojGledalacaDataGridViewTextBoxColumn.Name = "brojGledalacaDataGridViewTextBoxColumn";
-            this.brojGledalacaDataGridViewTextBoxColumn.ReadOnly = true;
-            this.brojGledalacaDataGridViewTextBoxColumn.Width = 125;
-            // 
             // UCPretragaUtakmica
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -569,12 +604,12 @@ namespace Client.Forms.UserControls.Utakmica
             this.Name = "UCPretragaUtakmica";
             this.Size = new System.Drawing.Size(1781, 804);
             ((System.ComponentModel.ISupportInitialize)(this.dgvUtakmice)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.utakmicaBindingSource)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDomaci)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.statistikaBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvGosti)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.utakmicaBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -613,12 +648,15 @@ namespace Client.Forms.UserControls.Utakmica
         private TextBox txtBrojGledalaca;
         private Label label13;
         private BindingSource utakmicaBindingSource;
+        private DataGridViewTextBoxColumn takmicenjeDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn domacinDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn brojPoenaDomacinDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn brojPoenaGostDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn gostDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn datumOdigravanjaDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn brojGledalacaDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn rundaDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn fazaTakmicenjaDataGridViewTextBoxColumn;
 
         public ComboBox CbTimovi { get => cbTimovi; set => cbTimovi = value; }
         public DataGridView DgvUtakmice { get => dgvUtakmice; set => dgvUtakmice = value; }

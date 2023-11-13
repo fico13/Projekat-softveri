@@ -16,6 +16,7 @@ namespace Common.Domain
         public string Drzava { get; set; }
         public int BrojPobeda { get; set; } = 0;
         public int BrojPoraza { get; set; } = 0;
+        public int KosRazlika { get; set; } = 0;
         public int Bodovi { get; set; } = 0;
         public Dvorana Dvorana { get; set; }
         
@@ -25,7 +26,7 @@ namespace Common.Domain
         [Browsable(false)]
         public string TableName => "Tim";
         [Browsable(false)]
-        public string InsertValues => $"'{Ime}', '{Drzava}', {BrojPobeda}, {BrojPoraza}, {Bodovi}, {Dvorana.DvoranaId}";
+        public string InsertValues => $"'{Ime}', '{Drzava}', {BrojPobeda}, {BrojPoraza}, {KosRazlika}, {Bodovi}, {Dvorana.DvoranaId}";
         [Browsable(false)]
         public string WhereCondition => $"TimId = {TimId}";
         [Browsable(false)]
@@ -52,6 +53,7 @@ namespace Common.Domain
                 Drzava = (string)reader["DrzavaTima"],
                 BrojPobeda = (int)reader["BrojPobeda"],
                 BrojPoraza = (int)reader["BrojPoraza"],
+                KosRazlika = (int)reader["KosRazlika"],
                 Bodovi = (int)reader["Bodovi"],
                 Dvorana = new Dvorana
                 {

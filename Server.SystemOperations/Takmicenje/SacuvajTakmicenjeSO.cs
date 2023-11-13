@@ -19,6 +19,29 @@ namespace Server.SystemOperations.Takmicenje
         protected override void Execute()
         {
             repository.Sacuvaj(takmicenje);
+            foreach (var utakmica in takmicenje.Utakmice)
+            {
+                utakmica.Takmicenje = new Common.Domain.Takmicenje
+                {
+                    TakmicenjeID = repository.VratiMaxID(takmicenje)
+                };
+                utakmica.UtakmicaId = repository.DajNoviID(utakmica);
+                repository.Sacuvaj(utakmica);
+                foreach (var statistika in utakmica.Statistka)
+                {
+                    statistika.Utakmica = new Utakmica
+                    {
+                        UtakmicaId = repository.VratiMaxID(utakmica)
+                    };
+                    statistika.Takmicenje = new Common.Domain.Takmicenje
+                    {
+                        TakmicenjeID = repository.VratiMaxID(takmicenje)
+                    };
+                    repository.Sacuvaj(statistika);
+                }
+                repository.Update(utakmica.Domacin);
+                repository.Update(utakmica.Gost);
+            }
         }
     }
 }

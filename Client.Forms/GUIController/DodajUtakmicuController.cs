@@ -261,8 +261,7 @@ namespace Client.Forms.GUIController
             {
                 Igrac domaci = new Igrac
                 {
-                    FindCondition = $"where t.TimId = {domacin.TimId}",
-                    Tim = domacin
+                    FindCondition = $"where t.TimId = {domacin.TimId}"
                 };
                 BindingList<Igrac> domaciIgraci = new BindingList<Igrac>(Communication.Instance.SendRequestGetResult<List<Igrac>>(Operation.NadjiIgrace, domaci));
                 if (domaciIgraci.Count == 0)

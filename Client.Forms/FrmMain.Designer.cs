@@ -40,6 +40,10 @@ namespace Client.Forms
             this.dodajIgračaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pretragaIgračaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.izmeniIgračaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.takmicenjeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.regularniDeoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.plejofToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.finaleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.utakmicaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dodajUtakmicuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.izmeniUtakmicuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -51,10 +55,6 @@ namespace Client.Forms
             this.najboljiAsistentiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pnlMain = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.takmicenjeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.regularniDeoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.plejofToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.finaleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.pnlMain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -155,6 +155,36 @@ namespace Client.Forms
             this.izmeniIgračaToolStripMenuItem.Text = "Izmeni igrača";
             this.izmeniIgračaToolStripMenuItem.Click += new System.EventHandler(this.izmeniIgračaToolStripMenuItem_Click);
             // 
+            // takmicenjeToolStripMenuItem
+            // 
+            this.takmicenjeToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.regularniDeoToolStripMenuItem,
+            this.plejofToolStripMenuItem,
+            this.finaleToolStripMenuItem});
+            this.takmicenjeToolStripMenuItem.Name = "takmicenjeToolStripMenuItem";
+            this.takmicenjeToolStripMenuItem.Size = new System.Drawing.Size(132, 32);
+            this.takmicenjeToolStripMenuItem.Text = "Takmicenje";
+            // 
+            // regularniDeoToolStripMenuItem
+            // 
+            this.regularniDeoToolStripMenuItem.Name = "regularniDeoToolStripMenuItem";
+            this.regularniDeoToolStripMenuItem.Size = new System.Drawing.Size(230, 32);
+            this.regularniDeoToolStripMenuItem.Text = "Regularni deo";
+            this.regularniDeoToolStripMenuItem.Click += new System.EventHandler(this.regularniDeoToolStripMenuItem_Click);
+            // 
+            // plejofToolStripMenuItem
+            // 
+            this.plejofToolStripMenuItem.Name = "plejofToolStripMenuItem";
+            this.plejofToolStripMenuItem.Size = new System.Drawing.Size(230, 32);
+            this.plejofToolStripMenuItem.Text = "Plejof";
+            this.plejofToolStripMenuItem.Click += new System.EventHandler(this.plejofToolStripMenuItem_Click);
+            // 
+            // finaleToolStripMenuItem
+            // 
+            this.finaleToolStripMenuItem.Name = "finaleToolStripMenuItem";
+            this.finaleToolStripMenuItem.Size = new System.Drawing.Size(230, 32);
+            this.finaleToolStripMenuItem.Text = "Finale";
+            // 
             // utakmicaToolStripMenuItem
             // 
             this.utakmicaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -247,35 +277,6 @@ namespace Client.Forms
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
-            // 
-            // takmicenjeToolStripMenuItem
-            // 
-            this.takmicenjeToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.regularniDeoToolStripMenuItem,
-            this.plejofToolStripMenuItem,
-            this.finaleToolStripMenuItem});
-            this.takmicenjeToolStripMenuItem.Name = "takmicenjeToolStripMenuItem";
-            this.takmicenjeToolStripMenuItem.Size = new System.Drawing.Size(132, 32);
-            this.takmicenjeToolStripMenuItem.Text = "Takmicenje";
-            // 
-            // regularniDeoToolStripMenuItem
-            // 
-            this.regularniDeoToolStripMenuItem.Name = "regularniDeoToolStripMenuItem";
-            this.regularniDeoToolStripMenuItem.Size = new System.Drawing.Size(230, 32);
-            this.regularniDeoToolStripMenuItem.Text = "Regularni deo";
-            this.regularniDeoToolStripMenuItem.Click += new System.EventHandler(this.regularniDeoToolStripMenuItem_Click);
-            // 
-            // plejofToolStripMenuItem
-            // 
-            this.plejofToolStripMenuItem.Name = "plejofToolStripMenuItem";
-            this.plejofToolStripMenuItem.Size = new System.Drawing.Size(230, 32);
-            this.plejofToolStripMenuItem.Text = "Plejof";
-            // 
-            // finaleToolStripMenuItem
-            // 
-            this.finaleToolStripMenuItem.Name = "finaleToolStripMenuItem";
-            this.finaleToolStripMenuItem.Size = new System.Drawing.Size(230, 32);
-            this.finaleToolStripMenuItem.Text = "Finale";
             // 
             // FrmMain
             // 

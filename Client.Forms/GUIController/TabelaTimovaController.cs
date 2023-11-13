@@ -6,6 +6,7 @@ using Common.Domain;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -24,10 +25,11 @@ namespace Client.Forms.GUIController
             {
                 Tim tim = new Tim
                 {
-                    FindCondition = "order by BrojBodova desc"
+                    FindCondition = "order by t.Bodovi desc, t.KosRazlika desc"
                 };
-                BindingList<Tim> timovi = new BindingList<Tim>(Communication.Instance.SendRequestGetResult<List<Tim>>(Operation.VratiSveTimove, tim)); 
+                BindingList<Tim> timovi = new BindingList<Tim>(Communication.Instance.SendRequestGetResult<List<Tim>>(Operation.NadjiTimove, tim)); 
                 uCTabelaTimova.DgvTabelaTimova.DataSource = timovi;
+                
             }
             catch (ServerCommunicationException)
             {

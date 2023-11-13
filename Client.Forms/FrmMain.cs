@@ -99,5 +99,10 @@ namespace Client.Forms
         {
             ChangePanel(new UCRegularniDeo());
         }
+
+        private void plejofToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ChangePanel(new UCPlejof());
+        }
     }
 }

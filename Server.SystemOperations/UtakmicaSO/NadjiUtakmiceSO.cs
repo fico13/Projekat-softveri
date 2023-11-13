@@ -24,8 +24,9 @@ namespace Server.SystemOperations.UtakmicaSO
             {
                 Common.Domain.Statistika statistika = new Common.Domain.Statistika
                 {
+                    Takmicenje = u.Takmicenje,
                     Utakmica = u,
-                    FindCondition = $"where s.UtakmicaId = {u.UtakmicaId}"
+                    FindCondition = $"where s.UtakmicaId = {u.UtakmicaId} and s.TakmicenjeId = {u.Takmicenje.TakmicenjeID}"
                 };
                 Statistike = repository.NadjiOdredjeni(statistika).Cast<Common.Domain.Statistika>().ToList();
                 u.Statistka = Statistike;

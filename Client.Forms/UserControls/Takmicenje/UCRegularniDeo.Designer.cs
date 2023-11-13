@@ -192,6 +192,7 @@ namespace Client.Forms.UserControls.Takmicenje
             this.btnDodajStatistikuGost.TabIndex = 20;
             this.btnDodajStatistikuGost.Text = "Dodaj statistiku igrača";
             this.btnDodajStatistikuGost.UseVisualStyleBackColor = true;
+            this.btnDodajStatistikuGost.Click += new System.EventHandler(this.btnDodajStatistikuGost_Click);
             // 
             // label9
             // 
@@ -284,6 +285,7 @@ namespace Client.Forms.UserControls.Takmicenje
             this.btnDodajStatistikuDomacin.TabIndex = 11;
             this.btnDodajStatistikuDomacin.Text = "Dodaj statistiku igrača";
             this.btnDodajStatistikuDomacin.UseVisualStyleBackColor = true;
+            this.btnDodajStatistikuDomacin.Click += new System.EventHandler(this.btnDodajStatistikuDomacin_Click);
             // 
             // label8
             // 
@@ -318,6 +320,7 @@ namespace Client.Forms.UserControls.Takmicenje
             this.btnUcitajIgrace.TabIndex = 29;
             this.btnUcitajIgrace.Text = "Učitaj igrače";
             this.btnUcitajIgrace.UseVisualStyleBackColor = true;
+            this.btnUcitajIgrace.Click += new System.EventHandler(this.btnUcitajIgrace_Click);
             // 
             // btnSacuvajUtakmicu
             // 
@@ -332,12 +335,13 @@ namespace Client.Forms.UserControls.Takmicenje
             this.btnSacuvajUtakmicu.TabIndex = 28;
             this.btnSacuvajUtakmicu.Text = "Sačuvaj utakmicu i statistiku";
             this.btnSacuvajUtakmicu.UseVisualStyleBackColor = true;
+            this.btnSacuvajUtakmicu.Click += new System.EventHandler(this.btnSacuvajUtakmicu_Click);
             // 
             // txtBrojGledalaca
             // 
             this.txtBrojGledalaca.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtBrojGledalaca.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBrojGledalaca.Location = new System.Drawing.Point(998, 246);
+            this.txtBrojGledalaca.Location = new System.Drawing.Point(1063, 246);
             this.txtBrojGledalaca.MaxLength = 5;
             this.txtBrojGledalaca.Multiline = true;
             this.txtBrojGledalaca.Name = "txtBrojGledalaca";
@@ -370,7 +374,7 @@ namespace Client.Forms.UserControls.Takmicenje
             this.label13.AutoSize = true;
             this.label13.BackColor = System.Drawing.Color.OrangeRed;
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(834, 251);
+            this.label13.Location = new System.Drawing.Point(899, 251);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(130, 20);
             this.label13.TabIndex = 30;
@@ -413,7 +417,7 @@ namespace Client.Forms.UserControls.Takmicenje
             this.dtpDatum.CustomFormat = "dd.MM.yyyy. HH:mm";
             this.dtpDatum.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpDatum.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpDatum.Location = new System.Drawing.Point(555, 246);
+            this.dtpDatum.Location = new System.Drawing.Point(586, 244);
             this.dtpDatum.Name = "dtpDatum";
             this.dtpDatum.Size = new System.Drawing.Size(247, 27);
             this.dtpDatum.TabIndex = 25;
@@ -521,6 +525,7 @@ namespace Client.Forms.UserControls.Takmicenje
             // 
             // label14
             // 
+            this.label14.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label14.AutoSize = true;
             this.label14.BackColor = System.Drawing.Color.OrangeRed;
             this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -532,6 +537,7 @@ namespace Client.Forms.UserControls.Takmicenje
             // 
             // nudRunda
             // 
+            this.nudRunda.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.nudRunda.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nudRunda.Location = new System.Drawing.Point(476, 296);
             this.nudRunda.Name = "nudRunda";
