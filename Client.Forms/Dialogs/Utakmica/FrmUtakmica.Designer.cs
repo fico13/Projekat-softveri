@@ -80,6 +80,11 @@ namespace Client.Forms.Dialogs.Utakmica
             this.nudRunda.Name = "nudRunda";
             this.nudRunda.Size = new System.Drawing.Size(58, 27);
             this.nudRunda.TabIndex = 51;
+            this.nudRunda.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // label14
             // 
@@ -107,7 +112,7 @@ namespace Client.Forms.Dialogs.Utakmica
             this.groupBox2.Controls.Add(this.cbIgracGosta);
             this.groupBox2.Controls.Add(this.label12);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(562, 231);
+            this.groupBox2.Location = new System.Drawing.Point(718, 231);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(365, 332);
             this.groupBox2.TabIndex = 45;
@@ -241,7 +246,7 @@ namespace Client.Forms.Dialogs.Utakmica
             // 
             this.txtBrojGledalaca.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtBrojGledalaca.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBrojGledalaca.Location = new System.Drawing.Point(731, 126);
+            this.txtBrojGledalaca.Location = new System.Drawing.Point(887, 128);
             this.txtBrojGledalaca.MaxLength = 5;
             this.txtBrojGledalaca.Multiline = true;
             this.txtBrojGledalaca.Name = "txtBrojGledalaca";
@@ -255,7 +260,7 @@ namespace Client.Forms.Dialogs.Utakmica
             this.label13.AutoSize = true;
             this.label13.BackColor = System.Drawing.Color.OrangeRed;
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(558, 133);
+            this.label13.Location = new System.Drawing.Point(714, 135);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(130, 20);
             this.label13.TabIndex = 48;

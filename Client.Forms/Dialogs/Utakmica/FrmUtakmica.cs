@@ -16,10 +16,10 @@ namespace Client.Forms.Dialogs.Utakmica
     {
         private DodajPlejofUtakmicu dodajPlejofUtakmicu;
 
-        public FrmUtakmica(Tim tim1, Tim tim2)
+        public FrmUtakmica(Tim tim1, Tim tim2, string faza)
         {
             InitializeComponent();
-            dodajPlejofUtakmicu = new DodajPlejofUtakmicu(this, tim1, tim2);
+            dodajPlejofUtakmicu = new DodajPlejofUtakmicu(this, tim1, tim2, faza);
         }
 
         private void FrmUtakmica_FormClosed(object sender, FormClosedEventArgs e)

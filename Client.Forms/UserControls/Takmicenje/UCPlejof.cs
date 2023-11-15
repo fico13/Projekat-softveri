@@ -41,5 +41,10 @@ namespace Client.Forms.UserControls.Takmicenje
         {
             plejofController.DodajUtakmicuD();
         }
+
+        private void btnDodajE_Click(object sender, EventArgs e)
+        {
+            plejofController.DodajUtakmicuE();
+        }
     }
 }

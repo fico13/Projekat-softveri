@@ -19,12 +19,14 @@ namespace Client.Forms.GUIController
         private Tim tim1;
         private Tim tim2;
         private List<Statistika> statistike = new List<Statistika>();
+        private string faza;
 
-        public DodajPlejofUtakmicu(FrmUtakmica frmUtakmica, Tim tim1, Tim tim2)
+        public DodajPlejofUtakmicu(FrmUtakmica frmUtakmica, Tim tim1, Tim tim2, string faza)
         {
             this.frmUtakmica = frmUtakmica;
             this.tim1 = tim1;
             this.tim2 = tim2;
+            this.faza = faza;
             this.frmUtakmica.TxtTim1.Text = tim1.Ime;
             this.frmUtakmica.TxtTim2.Text = tim2.Ime;
         }
@@ -78,7 +80,7 @@ namespace Client.Forms.GUIController
                     DateString = frmUtakmica.DtpDatum.Value.ToString(),
                     BrojGledalaca = Convert.ToInt32(frmUtakmica.TxtBrojGledalaca.Text),
                     Runda = (int)frmUtakmica.NudRunda.Value,
-                    FazaTakmicenja = "top8",
+                    FazaTakmicenja = faza,
                     Domacin = tim1,
                     Gost = tim2,
                     Statistka = statistike
