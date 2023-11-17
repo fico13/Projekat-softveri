@@ -69,24 +69,85 @@ namespace Client.Forms.GUIController
             }
         }
 
+        internal void DodajUtakmicuG()
+        {
+            FrmUtakmica frmUtakmica = new FrmUtakmica(g1, g2, "finale");
+            frmUtakmica.ShowDialog();
+            Utakmica utakmica = new Utakmica
+            {
+                FindCondition = $"where d.ImeTima like '{g1.Ime}%' and u.FazaTakmicenja = 'finale'"
+            };
+            List<Utakmica> utakmice = Communication.Instance.SendRequestGetResult<List<Utakmica>>(Operation.NadjiUtakmice, utakmica);
+            utakmica = utakmice[0];
+            uCPlejof.BtnDodajG.Enabled = false;
+            if (utakmica.BrojPoenaDomacin > utakmica.BrojPoenaGost)
+            {
+                MessageBox.Show($"Finale je zavrseno, pobednik je {g1.Ime}");
+                uCPlejof.TxtRezultatG1.Text = utakmica.BrojPoenaDomacin.ToString();
+                uCPlejof.TxtRezultatG2.Text = utakmica.BrojPoenaGost.ToString();
+            }
+            else
+            {
+                MessageBox.Show($"Finale je zavrseno, pobednik je {g2.Ime}");
+                uCPlejof.TxtRezultatG1.Text = utakmica.BrojPoenaDomacin.ToString();
+                uCPlejof.TxtRezultatG2.Text = utakmica.BrojPoenaGost.ToString();
+            }
+        }
+
+        internal void DodajUtakmicuF()
+        {
+            FrmUtakmica frmUtakmica = new FrmUtakmica(f1, f2, "polufinale");
+            frmUtakmica.ShowDialog();
+            Utakmica utakmica = new Utakmica
+            {
+                FindCondition = $"where d.ImeTima like '{f1.Ime}%' and u.FazaTakmicenja = 'polufinale'"
+            };
+            List<Utakmica> utakmice = Communication.Instance.SendRequestGetResult<List<Utakmica>>(Operation.NadjiUtakmice, utakmica);
+            utakmica = utakmice[0];
+            uCPlejof.BtnDodajF.Enabled = false;
+            if (utakmica.BrojPoenaDomacin > utakmica.BrojPoenaGost)
+            {
+                MessageBox.Show($"Polufinale je zavrseno, pobednik je {f1.Ime}");
+                uCPlejof.TxtG2.Text = f1.Ime;
+                uCPlejof.TxtRezultatF1.Text = utakmica.BrojPoenaDomacin.ToString();
+                uCPlejof.TxtRezultatF2.Text = utakmica.BrojPoenaGost.ToString();
+                g2 = f1;
+            }
+            else
+            {
+                MessageBox.Show($"Polufinale je zavrseno, pobednik je {f2.Ime}");
+                uCPlejof.TxtG2.Text = f2.Ime;
+                uCPlejof.TxtRezultatF1.Text = utakmica.BrojPoenaDomacin.ToString();
+                uCPlejof.TxtRezultatF2.Text = utakmica.BrojPoenaGost.ToString();
+                g2 = f2;
+            }
+        }
+
         internal void DodajUtakmicuE()
         {
             FrmUtakmica frmUtakmica = new FrmUtakmica(e1, e2, "polufinale");
             frmUtakmica.ShowDialog();
             Utakmica utakmica = new Utakmica
             {
-                FindCondition = $"where d.ImeTime like '{e1.Ime}%' and u.FazaTakmicenja = 'polufinale'"
+                FindCondition = $"where d.ImeTima like '{e1.Ime}%' and u.FazaTakmicenja = 'polufinale'"
             };
             List<Utakmica> utakmice = Communication.Instance.SendRequestGetResult<List<Utakmica>>(Operation.NadjiUtakmice, utakmica);
             utakmica = utakmice[0];
+            uCPlejof.BtnDodajE.Enabled = false;
             if (utakmica.BrojPoenaDomacin > utakmica.BrojPoenaGost)
             {
                 MessageBox.Show($"Polufinale je zavrseno, pobednik je {e1.Ime}");
+                uCPlejof.TxtG1.Text = e1.Ime;
+                uCPlejof.TxtRezultatE1.Text = utakmica.BrojPoenaDomacin.ToString();
+                uCPlejof.TxtRezultatE2.Text = utakmica.BrojPoenaGost.ToString();
                 g1 = e1;
             }
             else
             {
                 MessageBox.Show($"Polufinale je zavrseno, pobednik je {e2.Ime}");
+                uCPlejof.TxtG1.Text = e2.Ime;
+                uCPlejof.TxtRezultatE1.Text = utakmica.BrojPoenaDomacin.ToString();
+                uCPlejof.TxtRezultatE2.Text = utakmica.BrojPoenaGost.ToString();
                 g1 = e2;
             }
 
@@ -118,14 +179,14 @@ namespace Client.Forms.GUIController
             FrmUtakmica frmUtakmica = new FrmUtakmica(c1, c2, "top8");
             frmUtakmica.ShowDialog();
             UpisiRezultat(c1, c2, uCPlejof.TxtRezultatC1, uCPlejof.TxtRezultatC2);
-            if (uCPlejof.TxtRezultatB1.Text == "3")
+            if (uCPlejof.TxtRezultatC1.Text == "3")
             {
                 MessageBox.Show($"Serija je zavrsena, ponbednik je {c1.Ime}");
                 uCPlejof.BtnDodajC.Enabled = false;
                 uCPlejof.TxtF1.Text = c1.Ime;
                 f1 = c1;
             }
-            if (uCPlejof.TxtRezultatB2.Text == "3")
+            if (uCPlejof.TxtRezultatC2.Text == "3")
             {
                 MessageBox.Show($"Serija je zavrsena, ponbednik je {c2.Ime}");
                 uCPlejof.BtnDodajC.Enabled = false;

@@ -57,8 +57,15 @@ namespace Client.Forms.UserControls.Takmicenje
             this.btnDodajF = new System.Windows.Forms.Button();
             this.txtF2 = new System.Windows.Forms.TextBox();
             this.txtF1 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtG1 = new System.Windows.Forms.TextBox();
+            this.txtG2 = new System.Windows.Forms.TextBox();
+            this.txtRezultatE1 = new System.Windows.Forms.TextBox();
+            this.txtRezultatE2 = new System.Windows.Forms.TextBox();
+            this.btnDodajG = new System.Windows.Forms.Button();
+            this.txtRezultatF2 = new System.Windows.Forms.TextBox();
+            this.txtRezultatF1 = new System.Windows.Forms.TextBox();
+            this.txtRezultatG1 = new System.Windows.Forms.TextBox();
+            this.txtRezultatG2 = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // txtA1
@@ -360,6 +367,7 @@ namespace Client.Forms.UserControls.Takmicenje
             this.btnDodajF.TabIndex = 44;
             this.btnDodajF.Text = "Dodaj utakmicu";
             this.btnDodajF.UseVisualStyleBackColor = true;
+            this.btnDodajF.Click += new System.EventHandler(this.btnDodajF_Click);
             // 
             // txtF2
             // 
@@ -387,39 +395,130 @@ namespace Client.Forms.UserControls.Takmicenje
             this.txtF1.TabIndex = 42;
             this.txtF1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // textBox1
+            // txtG1
             // 
-            this.textBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(742, 548);
-            this.textBox1.MaxLength = 5;
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(205, 38);
-            this.textBox1.TabIndex = 45;
-            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtG1.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txtG1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtG1.Location = new System.Drawing.Point(716, 559);
+            this.txtG1.MaxLength = 5;
+            this.txtG1.Multiline = true;
+            this.txtG1.Name = "txtG1";
+            this.txtG1.ReadOnly = true;
+            this.txtG1.Size = new System.Drawing.Size(205, 27);
+            this.txtG1.TabIndex = 45;
+            this.txtG1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // textBox2
+            // txtG2
             // 
-            this.textBox2.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(1143, 548);
-            this.textBox2.MaxLength = 5;
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.ReadOnly = true;
-            this.textBox2.Size = new System.Drawing.Size(205, 38);
-            this.textBox2.TabIndex = 46;
-            this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtG2.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.txtG2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtG2.Location = new System.Drawing.Point(1104, 559);
+            this.txtG2.MaxLength = 5;
+            this.txtG2.Multiline = true;
+            this.txtG2.Name = "txtG2";
+            this.txtG2.ReadOnly = true;
+            this.txtG2.Size = new System.Drawing.Size(205, 27);
+            this.txtG2.TabIndex = 46;
+            this.txtG2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // txtRezultatE1
+            // 
+            this.txtRezultatE1.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txtRezultatE1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtRezultatE1.Location = new System.Drawing.Point(526, 464);
+            this.txtRezultatE1.MaxLength = 5;
+            this.txtRezultatE1.Name = "txtRezultatE1";
+            this.txtRezultatE1.ReadOnly = true;
+            this.txtRezultatE1.Size = new System.Drawing.Size(63, 27);
+            this.txtRezultatE1.TabIndex = 47;
+            this.txtRezultatE1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // txtRezultatE2
+            // 
+            this.txtRezultatE2.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txtRezultatE2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtRezultatE2.Location = new System.Drawing.Point(526, 643);
+            this.txtRezultatE2.MaxLength = 5;
+            this.txtRezultatE2.Name = "txtRezultatE2";
+            this.txtRezultatE2.ReadOnly = true;
+            this.txtRezultatE2.Size = new System.Drawing.Size(63, 27);
+            this.txtRezultatE2.TabIndex = 48;
+            this.txtRezultatE2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // btnDodajG
+            // 
+            this.btnDodajG.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.btnDodajG.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDodajG.Location = new System.Drawing.Point(913, 602);
+            this.btnDodajG.Name = "btnDodajG";
+            this.btnDodajG.Size = new System.Drawing.Size(205, 38);
+            this.btnDodajG.TabIndex = 49;
+            this.btnDodajG.Text = "Dodaj utakmicu";
+            this.btnDodajG.UseVisualStyleBackColor = true;
+            this.btnDodajG.Click += new System.EventHandler(this.btnDodajG_Click);
+            // 
+            // txtRezultatF2
+            // 
+            this.txtRezultatF2.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.txtRezultatF2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtRezultatF2.Location = new System.Drawing.Point(1432, 643);
+            this.txtRezultatF2.MaxLength = 5;
+            this.txtRezultatF2.Name = "txtRezultatF2";
+            this.txtRezultatF2.ReadOnly = true;
+            this.txtRezultatF2.Size = new System.Drawing.Size(63, 27);
+            this.txtRezultatF2.TabIndex = 51;
+            this.txtRezultatF2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // txtRezultatF1
+            // 
+            this.txtRezultatF1.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.txtRezultatF1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtRezultatF1.Location = new System.Drawing.Point(1432, 464);
+            this.txtRezultatF1.MaxLength = 5;
+            this.txtRezultatF1.Name = "txtRezultatF1";
+            this.txtRezultatF1.ReadOnly = true;
+            this.txtRezultatF1.Size = new System.Drawing.Size(63, 27);
+            this.txtRezultatF1.TabIndex = 50;
+            this.txtRezultatF1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // txtRezultatG1
+            // 
+            this.txtRezultatG1.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txtRezultatG1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtRezultatG1.Location = new System.Drawing.Point(941, 559);
+            this.txtRezultatG1.MaxLength = 5;
+            this.txtRezultatG1.Name = "txtRezultatG1";
+            this.txtRezultatG1.ReadOnly = true;
+            this.txtRezultatG1.Size = new System.Drawing.Size(63, 27);
+            this.txtRezultatG1.TabIndex = 52;
+            this.txtRezultatG1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // txtRezultatG2
+            // 
+            this.txtRezultatG2.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.txtRezultatG2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtRezultatG2.Location = new System.Drawing.Point(1022, 559);
+            this.txtRezultatG2.MaxLength = 5;
+            this.txtRezultatG2.Name = "txtRezultatG2";
+            this.txtRezultatG2.ReadOnly = true;
+            this.txtRezultatG2.Size = new System.Drawing.Size(63, 27);
+            this.txtRezultatG2.TabIndex = 53;
+            this.txtRezultatG2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // UCPlejof
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtRezultatG2);
+            this.Controls.Add(this.txtRezultatG1);
+            this.Controls.Add(this.txtRezultatF2);
+            this.Controls.Add(this.txtRezultatF1);
+            this.Controls.Add(this.btnDodajG);
+            this.Controls.Add(this.txtRezultatE2);
+            this.Controls.Add(this.txtRezultatE1);
+            this.Controls.Add(this.txtG2);
+            this.Controls.Add(this.txtG1);
             this.Controls.Add(this.btnDodajF);
             this.Controls.Add(this.txtF2);
             this.Controls.Add(this.txtF1);
@@ -481,8 +580,15 @@ namespace Client.Forms.UserControls.Takmicenje
         private Button btnDodajF;
         private TextBox txtF2;
         private TextBox txtF1;
-        private TextBox textBox1;
-        private TextBox textBox2;
+        private TextBox txtG1;
+        private TextBox txtG2;
+        private TextBox txtRezultatE1;
+        private TextBox txtRezultatE2;
+        private Button btnDodajG;
+        private TextBox txtRezultatF2;
+        private TextBox txtRezultatF1;
+        private TextBox txtRezultatG1;
+        private TextBox txtRezultatG2;
 
         public TextBox TxtA1 { get => txtA1; set => txtA1 = value; }
         public TextBox TxtA2 { get => txtA2; set => txtA2 = value; }
@@ -510,5 +616,14 @@ namespace Client.Forms.UserControls.Takmicenje
         public Button BtnDodajF { get => btnDodajF; set => btnDodajF = value; }
         public TextBox TxtF2 { get => txtF2; set => txtF2 = value; }
         public TextBox TxtF1 { get => txtF1; set => txtF1 = value; }
+        public TextBox TxtG1 { get => txtG1; set => txtG1 = value; }
+        public TextBox TxtG2 { get => txtG2; set => txtG2 = value; }
+        public TextBox TxtRezultatE1 { get => txtRezultatE1; set => txtRezultatE1 = value; }
+        public TextBox TxtRezultatE2 { get => txtRezultatE2; set => txtRezultatE2 = value; }
+        public Button BtnDodajG { get => btnDodajG; set => btnDodajG = value; }
+        public TextBox TxtRezultatF2 { get => txtRezultatF2; set => txtRezultatF2 = value; }
+        public TextBox TxtRezultatF1 { get => txtRezultatF1; set => txtRezultatF1 = value; }
+        public TextBox TxtRezultatG1 { get => txtRezultatG1; set => txtRezultatG1 = value; }
+        public TextBox TxtRezultatG2 { get => txtRezultatG2; set => txtRezultatG2 = value; }
     }
 }
