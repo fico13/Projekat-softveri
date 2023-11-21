@@ -51,7 +51,7 @@ namespace Common.Domain
         public string FindCondition { get; set; }
         [Browsable(false)]
 
-        public string UpdateCondition => $"BrojPoenaDomacin = {BrojPoenaDomacin}, BrojPoenaGost = {BrojPoenaGost}, DatumOdigravanja = '{DateString}', BrojGledalaca = {BrojGledalaca}";
+        public string UpdateCondition => $"BrojPoenaDomacin = {BrojPoenaDomacin}, BrojPoenaGost = {BrojPoenaGost}, DatumOdigravanja = '{DateString}', Runda = {Runda}, BrojGledalaca = {BrojGledalaca}";
         [Browsable(false)]
 
         public string IdColumnName => "UtakmicaId";

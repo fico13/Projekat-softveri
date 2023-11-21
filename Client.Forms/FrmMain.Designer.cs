@@ -43,16 +43,12 @@ namespace Client.Forms
             this.takmicenjeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.regularniDeoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.plejofToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.finaleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.utakmicaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dodajUtakmicuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.izmeniUtakmicuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.izmeniUtakmicuToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.tabelaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.timoviToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.najboljiStrelciToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.najboljiSkakačiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.najboljiAsistentiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pnlMain = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.menuStrip1.SuspendLayout();
@@ -159,8 +155,7 @@ namespace Client.Forms
             // 
             this.takmicenjeToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.regularniDeoToolStripMenuItem,
-            this.plejofToolStripMenuItem,
-            this.finaleToolStripMenuItem});
+            this.plejofToolStripMenuItem});
             this.takmicenjeToolStripMenuItem.Name = "takmicenjeToolStripMenuItem";
             this.takmicenjeToolStripMenuItem.Size = new System.Drawing.Size(132, 32);
             this.takmicenjeToolStripMenuItem.Text = "Takmicenje";
@@ -178,12 +173,6 @@ namespace Client.Forms
             this.plejofToolStripMenuItem.Size = new System.Drawing.Size(230, 32);
             this.plejofToolStripMenuItem.Text = "Plejof";
             this.plejofToolStripMenuItem.Click += new System.EventHandler(this.plejofToolStripMenuItem_Click);
-            // 
-            // finaleToolStripMenuItem
-            // 
-            this.finaleToolStripMenuItem.Name = "finaleToolStripMenuItem";
-            this.finaleToolStripMenuItem.Size = new System.Drawing.Size(230, 32);
-            this.finaleToolStripMenuItem.Text = "Finale";
             // 
             // utakmicaToolStripMenuItem
             // 
@@ -223,10 +212,7 @@ namespace Client.Forms
             // tabelaToolStripMenuItem
             // 
             this.tabelaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.timoviToolStripMenuItem,
-            this.najboljiStrelciToolStripMenuItem,
-            this.najboljiSkakačiToolStripMenuItem,
-            this.najboljiAsistentiToolStripMenuItem});
+            this.timoviToolStripMenuItem});
             this.tabelaToolStripMenuItem.Name = "tabelaToolStripMenuItem";
             this.tabelaToolStripMenuItem.Size = new System.Drawing.Size(87, 32);
             this.tabelaToolStripMenuItem.Text = "Tabela";
@@ -234,27 +220,9 @@ namespace Client.Forms
             // timoviToolStripMenuItem
             // 
             this.timoviToolStripMenuItem.Name = "timoviToolStripMenuItem";
-            this.timoviToolStripMenuItem.Size = new System.Drawing.Size(259, 32);
+            this.timoviToolStripMenuItem.Size = new System.Drawing.Size(224, 32);
             this.timoviToolStripMenuItem.Text = "Timovi";
             this.timoviToolStripMenuItem.Click += new System.EventHandler(this.timoviToolStripMenuItem_Click);
-            // 
-            // najboljiStrelciToolStripMenuItem
-            // 
-            this.najboljiStrelciToolStripMenuItem.Name = "najboljiStrelciToolStripMenuItem";
-            this.najboljiStrelciToolStripMenuItem.Size = new System.Drawing.Size(259, 32);
-            this.najboljiStrelciToolStripMenuItem.Text = "Najbolji strelci";
-            // 
-            // najboljiSkakačiToolStripMenuItem
-            // 
-            this.najboljiSkakačiToolStripMenuItem.Name = "najboljiSkakačiToolStripMenuItem";
-            this.najboljiSkakačiToolStripMenuItem.Size = new System.Drawing.Size(259, 32);
-            this.najboljiSkakačiToolStripMenuItem.Text = "Najbolji skakači";
-            // 
-            // najboljiAsistentiToolStripMenuItem
-            // 
-            this.najboljiAsistentiToolStripMenuItem.Name = "najboljiAsistentiToolStripMenuItem";
-            this.najboljiAsistentiToolStripMenuItem.Size = new System.Drawing.Size(259, 32);
-            this.najboljiAsistentiToolStripMenuItem.Text = "Najbolji asistenti";
             // 
             // pnlMain
             // 
@@ -321,12 +289,8 @@ namespace Client.Forms
         private System.Windows.Forms.ToolStripMenuItem pretragaIgračaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem tabelaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem timoviToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem najboljiStrelciToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem najboljiSkakačiToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem najboljiAsistentiToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem takmicenjeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem regularniDeoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem plejofToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem finaleToolStripMenuItem;
     }
 }

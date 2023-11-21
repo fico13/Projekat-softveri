@@ -64,7 +64,6 @@ namespace Client.Forms.UserControls.Dvorana
             this.txtKapacitet.Name = "txtKapacitet";
             this.txtKapacitet.Size = new System.Drawing.Size(246, 27);
             this.txtKapacitet.TabIndex = 12;
-            this.txtKapacitet.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txtDrzava
             // 
@@ -74,7 +73,6 @@ namespace Client.Forms.UserControls.Dvorana
             this.txtDrzava.Name = "txtDrzava";
             this.txtDrzava.Size = new System.Drawing.Size(246, 27);
             this.txtDrzava.TabIndex = 11;
-            this.txtDrzava.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txtImeDvorane
             // 
@@ -84,7 +82,6 @@ namespace Client.Forms.UserControls.Dvorana
             this.txtImeDvorane.Name = "txtImeDvorane";
             this.txtImeDvorane.Size = new System.Drawing.Size(246, 27);
             this.txtImeDvorane.TabIndex = 10;
-            this.txtImeDvorane.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label3
             // 
@@ -121,9 +118,9 @@ namespace Client.Forms.UserControls.Dvorana
             this.label1.ForeColor = System.Drawing.SystemColors.ControlText;
             this.label1.Location = new System.Drawing.Point(62, 41);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(39, 20);
+            this.label1.Size = new System.Drawing.Size(56, 20);
             this.label1.TabIndex = 7;
-            this.label1.Text = "Ime";
+            this.label1.Text = "Naziv";
             // 
             // UCDodajDvoranu
             // 

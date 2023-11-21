@@ -126,6 +126,7 @@ namespace Client.Forms.GUIController
                 uCPretragaUtakmica.TxtPoeniGost.Text = Utakmica.BrojPoenaGost.ToString();
                 uCPretragaUtakmica.TxtDatum.Text = Utakmica.DatumOdigravanja.ToString();
                 uCPretragaUtakmica.TxtBrojGledalaca.Text = utakmica.BrojGledalaca.ToString();
+                uCPretragaUtakmica.TxtRunda.Text = utakmica.Runda.ToString();
                 uCPretragaUtakmica.BtnPrikaziStatistiku.Enabled = true;
                 MessageBox.Show("Sistem je učitao utakmicu");
             }

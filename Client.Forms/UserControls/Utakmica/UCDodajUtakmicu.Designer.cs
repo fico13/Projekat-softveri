@@ -65,8 +65,11 @@ namespace Client.Forms.UserControls.Utakmica
             this.btnUcitajIgrace = new System.Windows.Forms.Button();
             this.label13 = new System.Windows.Forms.Label();
             this.txtBrojGledalaca = new System.Windows.Forms.TextBox();
+            this.nudRunda = new System.Windows.Forms.NumericUpDown();
+            this.label14 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudRunda)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -185,7 +188,7 @@ namespace Client.Forms.UserControls.Utakmica
             this.groupBox1.Controls.Add(this.cbIgracDomacina);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(107, 227);
+            this.groupBox1.Location = new System.Drawing.Point(107, 235);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(365, 332);
             this.groupBox1.TabIndex = 11;
@@ -299,7 +302,7 @@ namespace Client.Forms.UserControls.Utakmica
             this.groupBox2.Controls.Add(this.cbIgracGosta);
             this.groupBox2.Controls.Add(this.label12);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(574, 227);
+            this.groupBox2.Location = new System.Drawing.Point(574, 235);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(365, 332);
             this.groupBox2.TabIndex = 12;
@@ -406,7 +409,7 @@ namespace Client.Forms.UserControls.Utakmica
             this.btnSacuvajUtakmicu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btnSacuvajUtakmicu.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSacuvajUtakmicu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSacuvajUtakmicu.Location = new System.Drawing.Point(107, 600);
+            this.btnSacuvajUtakmicu.Location = new System.Drawing.Point(107, 608);
             this.btnSacuvajUtakmicu.Name = "btnSacuvajUtakmicu";
             this.btnSacuvajUtakmicu.Size = new System.Drawing.Size(365, 44);
             this.btnSacuvajUtakmicu.TabIndex = 13;
@@ -453,12 +456,40 @@ namespace Client.Forms.UserControls.Utakmica
             this.txtBrojGledalaca.TabIndex = 16;
             this.txtBrojGledalaca.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
+            // nudRunda
+            // 
+            this.nudRunda.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.nudRunda.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nudRunda.Location = new System.Drawing.Point(212, 186);
+            this.nudRunda.Name = "nudRunda";
+            this.nudRunda.Size = new System.Drawing.Size(58, 27);
+            this.nudRunda.TabIndex = 36;
+            this.nudRunda.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // label14
+            // 
+            this.label14.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label14.AutoSize = true;
+            this.label14.BackColor = System.Drawing.Color.OrangeRed;
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(104, 193);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(62, 20);
+            this.label14.TabIndex = 35;
+            this.label14.Text = "Runda";
+            // 
             // UCDodajUtakmicu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Controls.Add(this.nudRunda);
+            this.Controls.Add(this.label14);
             this.Controls.Add(this.txtBrojGledalaca);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.btnUcitajIgrace);
@@ -481,6 +512,7 @@ namespace Client.Forms.UserControls.Utakmica
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudRunda)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -521,6 +553,8 @@ namespace Client.Forms.UserControls.Utakmica
         private Button btnUcitajIgrace;
         private Label label13;
         private TextBox txtBrojGledalaca;
+        private NumericUpDown nudRunda;
+        private Label label14;
 
         public TextBox TxtBrojPoenaDomacin { get => txtBrojPoenaDomacin; set => txtBrojPoenaDomacin = value; }
         public TextBox TxtBrojPoenaGost { get => txtBrojPoenaGost; set => txtBrojPoenaGost = value; }
@@ -542,5 +576,6 @@ namespace Client.Forms.UserControls.Utakmica
         public Button BtnSacuvajUtakmicu { get => btnSacuvajUtakmicu; set => btnSacuvajUtakmicu = value; }
         public Button BtnUcitajIgrace { get => btnUcitajIgrace; set => btnUcitajIgrace = value; }
         public TextBox TxtBrojGledalaca { get => txtBrojGledalaca; set => txtBrojGledalaca = value; }
+        public NumericUpDown NudRunda { get => nudRunda; set => nudRunda = value; }
     }
 }

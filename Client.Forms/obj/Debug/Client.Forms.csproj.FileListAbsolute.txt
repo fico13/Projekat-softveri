@@ -54,4 +54,5 @@ C:\Users\Filip\Desktop\ide gas\Client.Forms\obj\Debug\Client.Forms.exe
 C:\Users\Filip\Desktop\ide gas\Client.Forms\obj\Debug\Client.Forms.pdb
 C:\Users\Filip\Desktop\ide gas\Client.Forms\obj\Debug\Client.Forms.UserControls.Takmicenje.UCRegularniDeo.resources
 C:\Users\Filip\Desktop\ide gas\Client.Forms\obj\Debug\Client.Forms.UserControls.Takmicenje.UCPlejof.resources
-C:\Users\Filip\Desktop\ide gas\Client.Forms\obj\Debug\Client.Forms.Dialogs.Utakmica.FrmUtakmica.resources
+C:\Users\Filip\Desktop\ide gas\Client.Forms\obj\Debug\Client.Forms.Dialogs.Utakmica.FrmPlejofUtakmica.resources
+C:\Users\Filip\Desktop\ide gas\Client.Forms\obj\Debug\Client.Forms.Dialogs.Utakmica.FrmRegularUtakmica.resources

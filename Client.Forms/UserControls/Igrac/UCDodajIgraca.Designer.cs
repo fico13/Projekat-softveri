@@ -86,7 +86,6 @@ namespace Client.Forms.UserControls.Igrac
             this.txtDrzava.Name = "txtDrzava";
             this.txtDrzava.Size = new System.Drawing.Size(214, 27);
             this.txtDrzava.TabIndex = 11;
-            this.txtDrzava.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txtIme
             // 
@@ -96,7 +95,6 @@ namespace Client.Forms.UserControls.Igrac
             this.txtIme.Name = "txtIme";
             this.txtIme.Size = new System.Drawing.Size(214, 27);
             this.txtIme.TabIndex = 10;
-            this.txtIme.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label3
             // 
@@ -142,7 +140,6 @@ namespace Client.Forms.UserControls.Igrac
             this.txtPrezime.Name = "txtPrezime";
             this.txtPrezime.Size = new System.Drawing.Size(214, 27);
             this.txtPrezime.TabIndex = 15;
-            this.txtPrezime.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label4
             // 
@@ -164,7 +161,6 @@ namespace Client.Forms.UserControls.Igrac
             this.txtBrojNaDresu.Name = "txtBrojNaDresu";
             this.txtBrojNaDresu.Size = new System.Drawing.Size(214, 27);
             this.txtBrojNaDresu.TabIndex = 17;
-            this.txtBrojNaDresu.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label5
             // 
@@ -186,7 +182,6 @@ namespace Client.Forms.UserControls.Igrac
             this.txtVisina.Name = "txtVisina";
             this.txtVisina.Size = new System.Drawing.Size(214, 27);
             this.txtVisina.TabIndex = 19;
-            this.txtVisina.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label6
             // 
@@ -208,7 +203,6 @@ namespace Client.Forms.UserControls.Igrac
             this.txtTezina.Name = "txtTezina";
             this.txtTezina.Size = new System.Drawing.Size(214, 27);
             this.txtTezina.TabIndex = 21;
-            this.txtTezina.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label7
             // 
@@ -266,7 +260,7 @@ namespace Client.Forms.UserControls.Igrac
             this.dtpDatum.Name = "dtpDatum";
             this.dtpDatum.Size = new System.Drawing.Size(214, 27);
             this.dtpDatum.TabIndex = 26;
-            this.dtpDatum.Value = new System.DateTime(1950, 1, 1, 0, 0, 0, 0);
+            this.dtpDatum.Value = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);
             // 
             // UCDodajIgraca
             // 

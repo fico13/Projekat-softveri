@@ -134,6 +134,8 @@ namespace Client.Forms.GUIController
                     BrojPoenaGost = Convert.ToInt32(uCDodajUtakmicu.TxtBrojPoenaGost.Text),
                     DateString = uCDodajUtakmicu.DtpDatum.Value.ToString(),
                     BrojGledalaca = Convert.ToInt32(uCDodajUtakmicu.TxtBrojGledalaca.Text),
+                    Runda = Convert.ToInt32(uCDodajUtakmicu.NudRunda.Value),
+                    FazaTakmicenja = "regularni deo",
                     Domacin = (Tim)uCDodajUtakmicu.CbDomacin.SelectedItem,
                     Gost = (Tim)uCDodajUtakmicu.CbGost.SelectedItem,
                     Statistka = statistike
@@ -175,6 +177,7 @@ namespace Client.Forms.GUIController
             uCDodajUtakmicu.TxtBrojPoenaDomacin.Text = "";
             uCDodajUtakmicu.TxtBrojPoenaGost.Text = "";
             uCDodajUtakmicu.DtpDatum.Value = DateTime.Now;
+            uCDodajUtakmicu.NudRunda.Value = 1;
             uCDodajUtakmicu.TxtBrojGledalaca.Text = "";
             uCDodajUtakmicu.TxtPoeniDomacinIgrac.Text = "";
             uCDodajUtakmicu.TxtSkokoviDomacinIgrac.Text = "";

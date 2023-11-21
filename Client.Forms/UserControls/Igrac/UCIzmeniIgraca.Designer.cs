@@ -36,6 +36,15 @@ namespace Client.Forms.UserControls.Igrac
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UCIzmeniIgraca));
             this.dgvIgraci = new System.Windows.Forms.DataGridView();
+            this.imeIgracaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.prezimeIgracaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.drzavaIgracaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.datumRodjenjaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.timDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pozicijaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.brojNaDresuDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.visinaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tezinaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.igracBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.btnIzaberiIgraca = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -63,15 +72,6 @@ namespace Client.Forms.UserControls.Igrac
             this.btnTraziIgraca = new System.Windows.Forms.Button();
             this.txtPrezimeIgraca = new System.Windows.Forms.TextBox();
             this.txtImeIgraca = new System.Windows.Forms.TextBox();
-            this.imeIgracaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.prezimeIgracaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.drzavaIgracaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.datumRodjenjaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.timDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pozicijaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.brojNaDresuDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.visinaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tezinaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvIgraci)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.igracBindingSource)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -119,6 +119,87 @@ namespace Client.Forms.UserControls.Igrac
             this.dgvIgraci.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dgvIgraci.Size = new System.Drawing.Size(1440, 227);
             this.dgvIgraci.TabIndex = 5;
+            // 
+            // imeIgracaDataGridViewTextBoxColumn
+            // 
+            this.imeIgracaDataGridViewTextBoxColumn.DataPropertyName = "ImeIgraca";
+            this.imeIgracaDataGridViewTextBoxColumn.HeaderText = "Ime igrača";
+            this.imeIgracaDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.imeIgracaDataGridViewTextBoxColumn.Name = "imeIgracaDataGridViewTextBoxColumn";
+            this.imeIgracaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.imeIgracaDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // prezimeIgracaDataGridViewTextBoxColumn
+            // 
+            this.prezimeIgracaDataGridViewTextBoxColumn.DataPropertyName = "PrezimeIgraca";
+            this.prezimeIgracaDataGridViewTextBoxColumn.HeaderText = "Prezime igrača";
+            this.prezimeIgracaDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.prezimeIgracaDataGridViewTextBoxColumn.Name = "prezimeIgracaDataGridViewTextBoxColumn";
+            this.prezimeIgracaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.prezimeIgracaDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // drzavaIgracaDataGridViewTextBoxColumn
+            // 
+            this.drzavaIgracaDataGridViewTextBoxColumn.DataPropertyName = "DrzavaIgraca";
+            this.drzavaIgracaDataGridViewTextBoxColumn.HeaderText = "Država";
+            this.drzavaIgracaDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.drzavaIgracaDataGridViewTextBoxColumn.Name = "drzavaIgracaDataGridViewTextBoxColumn";
+            this.drzavaIgracaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.drzavaIgracaDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // datumRodjenjaDataGridViewTextBoxColumn
+            // 
+            this.datumRodjenjaDataGridViewTextBoxColumn.DataPropertyName = "DatumRodjenja";
+            this.datumRodjenjaDataGridViewTextBoxColumn.HeaderText = "Datum rođenja";
+            this.datumRodjenjaDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.datumRodjenjaDataGridViewTextBoxColumn.Name = "datumRodjenjaDataGridViewTextBoxColumn";
+            this.datumRodjenjaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.datumRodjenjaDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // timDataGridViewTextBoxColumn
+            // 
+            this.timDataGridViewTextBoxColumn.DataPropertyName = "Tim";
+            this.timDataGridViewTextBoxColumn.HeaderText = "Tim";
+            this.timDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.timDataGridViewTextBoxColumn.Name = "timDataGridViewTextBoxColumn";
+            this.timDataGridViewTextBoxColumn.ReadOnly = true;
+            this.timDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // pozicijaDataGridViewTextBoxColumn
+            // 
+            this.pozicijaDataGridViewTextBoxColumn.DataPropertyName = "Pozicija";
+            this.pozicijaDataGridViewTextBoxColumn.HeaderText = "Pozicija";
+            this.pozicijaDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.pozicijaDataGridViewTextBoxColumn.Name = "pozicijaDataGridViewTextBoxColumn";
+            this.pozicijaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.pozicijaDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // brojNaDresuDataGridViewTextBoxColumn
+            // 
+            this.brojNaDresuDataGridViewTextBoxColumn.DataPropertyName = "BrojNaDresu";
+            this.brojNaDresuDataGridViewTextBoxColumn.HeaderText = "Broj na dresu";
+            this.brojNaDresuDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.brojNaDresuDataGridViewTextBoxColumn.Name = "brojNaDresuDataGridViewTextBoxColumn";
+            this.brojNaDresuDataGridViewTextBoxColumn.ReadOnly = true;
+            this.brojNaDresuDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // visinaDataGridViewTextBoxColumn
+            // 
+            this.visinaDataGridViewTextBoxColumn.DataPropertyName = "Visina";
+            this.visinaDataGridViewTextBoxColumn.HeaderText = "Visina (cm)";
+            this.visinaDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.visinaDataGridViewTextBoxColumn.Name = "visinaDataGridViewTextBoxColumn";
+            this.visinaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.visinaDataGridViewTextBoxColumn.Width = 90;
+            // 
+            // tezinaDataGridViewTextBoxColumn
+            // 
+            this.tezinaDataGridViewTextBoxColumn.DataPropertyName = "Tezina";
+            this.tezinaDataGridViewTextBoxColumn.HeaderText = "Tezina (kg)";
+            this.tezinaDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.tezinaDataGridViewTextBoxColumn.Name = "tezinaDataGridViewTextBoxColumn";
+            this.tezinaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.tezinaDataGridViewTextBoxColumn.Width = 90;
             // 
             // igracBindingSource
             // 
@@ -178,7 +259,6 @@ namespace Client.Forms.UserControls.Igrac
             this.txtDatumRodjenja.ReadOnly = true;
             this.txtDatumRodjenja.Size = new System.Drawing.Size(264, 27);
             this.txtDatumRodjenja.TabIndex = 43;
-            this.txtDatumRodjenja.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label11
             // 
@@ -220,7 +300,6 @@ namespace Client.Forms.UserControls.Igrac
             this.txtTezina.Name = "txtTezina";
             this.txtTezina.Size = new System.Drawing.Size(264, 27);
             this.txtTezina.TabIndex = 39;
-            this.txtTezina.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label7
             // 
@@ -241,7 +320,6 @@ namespace Client.Forms.UserControls.Igrac
             this.txtVisina.Name = "txtVisina";
             this.txtVisina.Size = new System.Drawing.Size(264, 27);
             this.txtVisina.TabIndex = 37;
-            this.txtVisina.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label6
             // 
@@ -262,7 +340,6 @@ namespace Client.Forms.UserControls.Igrac
             this.txtBrojNaDresu.Name = "txtBrojNaDresu";
             this.txtBrojNaDresu.Size = new System.Drawing.Size(264, 27);
             this.txtBrojNaDresu.TabIndex = 35;
-            this.txtBrojNaDresu.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label5
             // 
@@ -283,7 +360,6 @@ namespace Client.Forms.UserControls.Igrac
             this.txtPrezime.Name = "txtPrezime";
             this.txtPrezime.Size = new System.Drawing.Size(264, 27);
             this.txtPrezime.TabIndex = 33;
-            this.txtPrezime.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label4
             // 
@@ -314,7 +390,6 @@ namespace Client.Forms.UserControls.Igrac
             this.txtDrzava.Name = "txtDrzava";
             this.txtDrzava.Size = new System.Drawing.Size(264, 27);
             this.txtDrzava.TabIndex = 30;
-            this.txtDrzava.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txtIme
             // 
@@ -324,7 +399,6 @@ namespace Client.Forms.UserControls.Igrac
             this.txtIme.Name = "txtIme";
             this.txtIme.Size = new System.Drawing.Size(264, 27);
             this.txtIme.TabIndex = 29;
-            this.txtIme.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label3
             // 
@@ -417,7 +491,6 @@ namespace Client.Forms.UserControls.Igrac
             this.txtPrezimeIgraca.Name = "txtPrezimeIgraca";
             this.txtPrezimeIgraca.Size = new System.Drawing.Size(294, 27);
             this.txtPrezimeIgraca.TabIndex = 3;
-            this.txtPrezimeIgraca.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txtImeIgraca
             // 
@@ -426,87 +499,6 @@ namespace Client.Forms.UserControls.Igrac
             this.txtImeIgraca.Name = "txtImeIgraca";
             this.txtImeIgraca.Size = new System.Drawing.Size(294, 27);
             this.txtImeIgraca.TabIndex = 2;
-            this.txtImeIgraca.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // imeIgracaDataGridViewTextBoxColumn
-            // 
-            this.imeIgracaDataGridViewTextBoxColumn.DataPropertyName = "ImeIgraca";
-            this.imeIgracaDataGridViewTextBoxColumn.HeaderText = "Ime igrača";
-            this.imeIgracaDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.imeIgracaDataGridViewTextBoxColumn.Name = "imeIgracaDataGridViewTextBoxColumn";
-            this.imeIgracaDataGridViewTextBoxColumn.ReadOnly = true;
-            this.imeIgracaDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // prezimeIgracaDataGridViewTextBoxColumn
-            // 
-            this.prezimeIgracaDataGridViewTextBoxColumn.DataPropertyName = "PrezimeIgraca";
-            this.prezimeIgracaDataGridViewTextBoxColumn.HeaderText = "Prezime igrača";
-            this.prezimeIgracaDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.prezimeIgracaDataGridViewTextBoxColumn.Name = "prezimeIgracaDataGridViewTextBoxColumn";
-            this.prezimeIgracaDataGridViewTextBoxColumn.ReadOnly = true;
-            this.prezimeIgracaDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // drzavaIgracaDataGridViewTextBoxColumn
-            // 
-            this.drzavaIgracaDataGridViewTextBoxColumn.DataPropertyName = "DrzavaIgraca";
-            this.drzavaIgracaDataGridViewTextBoxColumn.HeaderText = "Država";
-            this.drzavaIgracaDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.drzavaIgracaDataGridViewTextBoxColumn.Name = "drzavaIgracaDataGridViewTextBoxColumn";
-            this.drzavaIgracaDataGridViewTextBoxColumn.ReadOnly = true;
-            this.drzavaIgracaDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // datumRodjenjaDataGridViewTextBoxColumn
-            // 
-            this.datumRodjenjaDataGridViewTextBoxColumn.DataPropertyName = "DatumRodjenja";
-            this.datumRodjenjaDataGridViewTextBoxColumn.HeaderText = "Datum rođenja";
-            this.datumRodjenjaDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.datumRodjenjaDataGridViewTextBoxColumn.Name = "datumRodjenjaDataGridViewTextBoxColumn";
-            this.datumRodjenjaDataGridViewTextBoxColumn.ReadOnly = true;
-            this.datumRodjenjaDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // timDataGridViewTextBoxColumn
-            // 
-            this.timDataGridViewTextBoxColumn.DataPropertyName = "Tim";
-            this.timDataGridViewTextBoxColumn.HeaderText = "Tim";
-            this.timDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.timDataGridViewTextBoxColumn.Name = "timDataGridViewTextBoxColumn";
-            this.timDataGridViewTextBoxColumn.ReadOnly = true;
-            this.timDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // pozicijaDataGridViewTextBoxColumn
-            // 
-            this.pozicijaDataGridViewTextBoxColumn.DataPropertyName = "Pozicija";
-            this.pozicijaDataGridViewTextBoxColumn.HeaderText = "Pozicija";
-            this.pozicijaDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.pozicijaDataGridViewTextBoxColumn.Name = "pozicijaDataGridViewTextBoxColumn";
-            this.pozicijaDataGridViewTextBoxColumn.ReadOnly = true;
-            this.pozicijaDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // brojNaDresuDataGridViewTextBoxColumn
-            // 
-            this.brojNaDresuDataGridViewTextBoxColumn.DataPropertyName = "BrojNaDresu";
-            this.brojNaDresuDataGridViewTextBoxColumn.HeaderText = "Broj na dresu";
-            this.brojNaDresuDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.brojNaDresuDataGridViewTextBoxColumn.Name = "brojNaDresuDataGridViewTextBoxColumn";
-            this.brojNaDresuDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // visinaDataGridViewTextBoxColumn
-            // 
-            this.visinaDataGridViewTextBoxColumn.DataPropertyName = "Visina";
-            this.visinaDataGridViewTextBoxColumn.HeaderText = "Visina (cm)";
-            this.visinaDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.visinaDataGridViewTextBoxColumn.Name = "visinaDataGridViewTextBoxColumn";
-            this.visinaDataGridViewTextBoxColumn.ReadOnly = true;
-            this.visinaDataGridViewTextBoxColumn.Width = 90;
-            // 
-            // tezinaDataGridViewTextBoxColumn
-            // 
-            this.tezinaDataGridViewTextBoxColumn.DataPropertyName = "Tezina";
-            this.tezinaDataGridViewTextBoxColumn.HeaderText = "Tezina (kg)";
-            this.tezinaDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.tezinaDataGridViewTextBoxColumn.Name = "tezinaDataGridViewTextBoxColumn";
-            this.tezinaDataGridViewTextBoxColumn.ReadOnly = true;
-            this.tezinaDataGridViewTextBoxColumn.Width = 90;
             // 
             // UCIzmeniIgraca
             // 

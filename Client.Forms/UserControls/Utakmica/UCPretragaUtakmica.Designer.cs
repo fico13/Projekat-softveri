@@ -33,28 +33,21 @@ namespace Client.Forms.UserControls.Utakmica
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UCPretragaUtakmica));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnPronadjiUtakmice = new System.Windows.Forms.Button();
             this.cbTimovi = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.dgvUtakmice = new System.Windows.Forms.DataGridView();
-            this.takmicenjeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.domacinDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.brojPoenaDomacinDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.brojPoenaGostDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.gostDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.datumOdigravanjaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.brojGledalacaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.rundaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fazaTakmicenjaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.utakmicaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.btnUcitajUtakmicu = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtRunda = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.txtBrojGledalaca = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.btnPrikaziStatistiku = new System.Windows.Forms.Button();
@@ -79,6 +72,15 @@ namespace Client.Forms.UserControls.Utakmica
             this.asistencijeDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblDomacin = new System.Windows.Forms.Label();
             this.lblGost = new System.Windows.Forms.Label();
+            this.takmicenjeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.domacinDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.brojPoenaDomacinDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.brojPoenaGostDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gostDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.datumOdigravanjaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.brojGledalacaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.rundaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fazaTakmicenjaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUtakmice)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.utakmicaBindingSource)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -131,14 +133,14 @@ namespace Client.Forms.UserControls.Utakmica
             this.dgvUtakmice.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dgvUtakmice.AutoGenerateColumns = false;
             this.dgvUtakmice.BackgroundColor = System.Drawing.Color.OrangeRed;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvUtakmice.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvUtakmice.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.dgvUtakmice.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvUtakmice.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.takmicenjeDataGridViewTextBoxColumn,
@@ -151,14 +153,14 @@ namespace Client.Forms.UserControls.Utakmica
             this.rundaDataGridViewTextBoxColumn,
             this.fazaTakmicenjaDataGridViewTextBoxColumn});
             this.dgvUtakmice.DataSource = this.utakmicaBindingSource;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvUtakmice.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvUtakmice.DefaultCellStyle = dataGridViewCellStyle8;
             this.dgvUtakmice.Location = new System.Drawing.Point(50, 134);
             this.dgvUtakmice.Name = "dgvUtakmice";
             this.dgvUtakmice.ReadOnly = true;
@@ -168,10 +170,371 @@ namespace Client.Forms.UserControls.Utakmica
             this.dgvUtakmice.Size = new System.Drawing.Size(1570, 150);
             this.dgvUtakmice.TabIndex = 23;
             // 
+            // utakmicaBindingSource
+            // 
+            this.utakmicaBindingSource.DataSource = typeof(Common.Domain.Utakmica);
+            // 
+            // btnUcitajUtakmicu
+            // 
+            this.btnUcitajUtakmicu.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnUcitajUtakmicu.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnUcitajUtakmicu.BackgroundImage")));
+            this.btnUcitajUtakmicu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnUcitajUtakmicu.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUcitajUtakmicu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnUcitajUtakmicu.Location = new System.Drawing.Point(50, 311);
+            this.btnUcitajUtakmicu.Name = "btnUcitajUtakmicu";
+            this.btnUcitajUtakmicu.Size = new System.Drawing.Size(282, 44);
+            this.btnUcitajUtakmicu.TabIndex = 24;
+            this.btnUcitajUtakmicu.Text = "Učitaj utakmicu";
+            this.btnUcitajUtakmicu.UseVisualStyleBackColor = true;
+            this.btnUcitajUtakmicu.Click += new System.EventHandler(this.btnUcitajUtakmicu_Click);
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.groupBox1.BackColor = System.Drawing.Color.OrangeRed;
+            this.groupBox1.Controls.Add(this.txtRunda);
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.txtBrojGledalaca);
+            this.groupBox1.Controls.Add(this.label13);
+            this.groupBox1.Controls.Add(this.btnPrikaziStatistiku);
+            this.groupBox1.Controls.Add(this.label4);
+            this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Controls.Add(this.txtDatum);
+            this.groupBox1.Controls.Add(this.txtPoeniGost);
+            this.groupBox1.Controls.Add(this.txtPoeniDomacin);
+            this.groupBox1.Controls.Add(this.txtGost);
+            this.groupBox1.Controls.Add(this.txtDomacin);
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.Location = new System.Drawing.Point(50, 378);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(589, 310);
+            this.groupBox1.TabIndex = 25;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Utakmica";
+            // 
+            // txtRunda
+            // 
+            this.txtRunda.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtRunda.Location = new System.Drawing.Point(180, 180);
+            this.txtRunda.MaxLength = 3;
+            this.txtRunda.Multiline = true;
+            this.txtRunda.Name = "txtRunda";
+            this.txtRunda.ReadOnly = true;
+            this.txtRunda.Size = new System.Drawing.Size(242, 27);
+            this.txtRunda.TabIndex = 30;
+            this.txtRunda.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label2
+            // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.OrangeRed;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(20, 187);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(62, 20);
+            this.label2.TabIndex = 29;
+            this.label2.Text = "Runda";
+            // 
+            // txtBrojGledalaca
+            // 
+            this.txtBrojGledalaca.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtBrojGledalaca.Location = new System.Drawing.Point(180, 133);
+            this.txtBrojGledalaca.MaxLength = 3;
+            this.txtBrojGledalaca.Multiline = true;
+            this.txtBrojGledalaca.Name = "txtBrojGledalaca";
+            this.txtBrojGledalaca.ReadOnly = true;
+            this.txtBrojGledalaca.Size = new System.Drawing.Size(242, 27);
+            this.txtBrojGledalaca.TabIndex = 28;
+            this.txtBrojGledalaca.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label13
+            // 
+            this.label13.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label13.AutoSize = true;
+            this.label13.BackColor = System.Drawing.Color.OrangeRed;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(18, 140);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(130, 20);
+            this.label13.TabIndex = 27;
+            this.label13.Text = "Broj gledalaca";
+            // 
+            // btnPrikaziStatistiku
+            // 
+            this.btnPrikaziStatistiku.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnPrikaziStatistiku.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnPrikaziStatistiku.BackgroundImage")));
+            this.btnPrikaziStatistiku.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnPrikaziStatistiku.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnPrikaziStatistiku.Location = new System.Drawing.Point(22, 245);
+            this.btnPrikaziStatistiku.Name = "btnPrikaziStatistiku";
+            this.btnPrikaziStatistiku.Size = new System.Drawing.Size(260, 44);
+            this.btnPrikaziStatistiku.TabIndex = 26;
+            this.btnPrikaziStatistiku.Text = "Prikaži statistiku";
+            this.btnPrikaziStatistiku.UseVisualStyleBackColor = true;
+            this.btnPrikaziStatistiku.Click += new System.EventHandler(this.btnPrikaziStatistiku_Click);
+            // 
+            // label4
+            // 
+            this.label4.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(18, 93);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(64, 20);
+            this.label4.TabIndex = 6;
+            this.label4.Text = "Datum";
+            // 
+            // label3
+            // 
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(288, 31);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(18, 25);
+            this.label3.TabIndex = 5;
+            this.label3.Text = ":";
+            // 
+            // txtDatum
+            // 
+            this.txtDatum.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtDatum.Location = new System.Drawing.Point(180, 86);
+            this.txtDatum.Name = "txtDatum";
+            this.txtDatum.ReadOnly = true;
+            this.txtDatum.Size = new System.Drawing.Size(242, 27);
+            this.txtDatum.TabIndex = 4;
+            // 
+            // txtPoeniGost
+            // 
+            this.txtPoeniGost.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtPoeniGost.Location = new System.Drawing.Point(312, 34);
+            this.txtPoeniGost.Name = "txtPoeniGost";
+            this.txtPoeniGost.ReadOnly = true;
+            this.txtPoeniGost.Size = new System.Drawing.Size(51, 27);
+            this.txtPoeniGost.TabIndex = 3;
+            this.txtPoeniGost.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // txtPoeniDomacin
+            // 
+            this.txtPoeniDomacin.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtPoeniDomacin.Location = new System.Drawing.Point(231, 34);
+            this.txtPoeniDomacin.Name = "txtPoeniDomacin";
+            this.txtPoeniDomacin.ReadOnly = true;
+            this.txtPoeniDomacin.Size = new System.Drawing.Size(51, 27);
+            this.txtPoeniDomacin.TabIndex = 2;
+            this.txtPoeniDomacin.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // txtGost
+            // 
+            this.txtGost.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtGost.Location = new System.Drawing.Point(387, 34);
+            this.txtGost.Name = "txtGost";
+            this.txtGost.ReadOnly = true;
+            this.txtGost.Size = new System.Drawing.Size(185, 27);
+            this.txtGost.TabIndex = 1;
+            this.txtGost.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // txtDomacin
+            // 
+            this.txtDomacin.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtDomacin.Location = new System.Drawing.Point(22, 34);
+            this.txtDomacin.Name = "txtDomacin";
+            this.txtDomacin.ReadOnly = true;
+            this.txtDomacin.Size = new System.Drawing.Size(185, 27);
+            this.txtDomacin.TabIndex = 0;
+            this.txtDomacin.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "Utakmica";
+            this.dataGridViewTextBoxColumn1.HeaderText = "Tim";
+            this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.Width = 125;
+            // 
+            // dgvDomaci
+            // 
+            this.dgvDomaci.AllowUserToAddRows = false;
+            this.dgvDomaci.AllowUserToDeleteRows = false;
+            this.dgvDomaci.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.dgvDomaci.AutoGenerateColumns = false;
+            this.dgvDomaci.BackgroundColor = System.Drawing.Color.OrangeRed;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvDomaci.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            this.dgvDomaci.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvDomaci.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.igracDataGridViewTextBoxColumn,
+            this.poeniDataGridViewTextBoxColumn,
+            this.skokoviDataGridViewTextBoxColumn,
+            this.asistencijeDataGridViewTextBoxColumn});
+            this.dgvDomaci.DataSource = this.statistikaBindingSource;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvDomaci.DefaultCellStyle = dataGridViewCellStyle10;
+            this.dgvDomaci.Location = new System.Drawing.Point(948, 364);
+            this.dgvDomaci.Name = "dgvDomaci";
+            this.dgvDomaci.ReadOnly = true;
+            this.dgvDomaci.RowHeadersWidth = 51;
+            this.dgvDomaci.RowTemplate.Height = 24;
+            this.dgvDomaci.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.dgvDomaci.Size = new System.Drawing.Size(672, 183);
+            this.dgvDomaci.TabIndex = 26;
+            // 
+            // igracDataGridViewTextBoxColumn
+            // 
+            this.igracDataGridViewTextBoxColumn.DataPropertyName = "Igrac";
+            this.igracDataGridViewTextBoxColumn.HeaderText = "Igrač";
+            this.igracDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.igracDataGridViewTextBoxColumn.Name = "igracDataGridViewTextBoxColumn";
+            this.igracDataGridViewTextBoxColumn.ReadOnly = true;
+            this.igracDataGridViewTextBoxColumn.Width = 120;
+            // 
+            // poeniDataGridViewTextBoxColumn
+            // 
+            this.poeniDataGridViewTextBoxColumn.DataPropertyName = "Poeni";
+            this.poeniDataGridViewTextBoxColumn.HeaderText = "Poeni";
+            this.poeniDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.poeniDataGridViewTextBoxColumn.Name = "poeniDataGridViewTextBoxColumn";
+            this.poeniDataGridViewTextBoxColumn.ReadOnly = true;
+            this.poeniDataGridViewTextBoxColumn.Width = 110;
+            // 
+            // skokoviDataGridViewTextBoxColumn
+            // 
+            this.skokoviDataGridViewTextBoxColumn.DataPropertyName = "Skokovi";
+            this.skokoviDataGridViewTextBoxColumn.HeaderText = "Skokovi";
+            this.skokoviDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.skokoviDataGridViewTextBoxColumn.Name = "skokoviDataGridViewTextBoxColumn";
+            this.skokoviDataGridViewTextBoxColumn.ReadOnly = true;
+            this.skokoviDataGridViewTextBoxColumn.Width = 110;
+            // 
+            // asistencijeDataGridViewTextBoxColumn
+            // 
+            this.asistencijeDataGridViewTextBoxColumn.DataPropertyName = "Asistencije";
+            this.asistencijeDataGridViewTextBoxColumn.HeaderText = "Asistencije";
+            this.asistencijeDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.asistencijeDataGridViewTextBoxColumn.Name = "asistencijeDataGridViewTextBoxColumn";
+            this.asistencijeDataGridViewTextBoxColumn.ReadOnly = true;
+            this.asistencijeDataGridViewTextBoxColumn.Width = 110;
+            // 
+            // statistikaBindingSource
+            // 
+            this.statistikaBindingSource.DataSource = typeof(Common.Domain.Statistika);
+            // 
+            // dgvGosti
+            // 
+            this.dgvGosti.AllowUserToAddRows = false;
+            this.dgvGosti.AllowUserToDeleteRows = false;
+            this.dgvGosti.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.dgvGosti.AutoGenerateColumns = false;
+            this.dgvGosti.BackgroundColor = System.Drawing.Color.OrangeRed;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvGosti.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
+            this.dgvGosti.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvGosti.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.igracDataGridViewTextBoxColumn1,
+            this.poeniDataGridViewTextBoxColumn1,
+            this.skokoviDataGridViewTextBoxColumn1,
+            this.asistencijeDataGridViewTextBoxColumn1});
+            this.dgvGosti.DataSource = this.statistikaBindingSource;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvGosti.DefaultCellStyle = dataGridViewCellStyle12;
+            this.dgvGosti.Location = new System.Drawing.Point(948, 607);
+            this.dgvGosti.Name = "dgvGosti";
+            this.dgvGosti.ReadOnly = true;
+            this.dgvGosti.RowHeadersWidth = 51;
+            this.dgvGosti.RowTemplate.Height = 24;
+            this.dgvGosti.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.dgvGosti.Size = new System.Drawing.Size(672, 183);
+            this.dgvGosti.TabIndex = 27;
+            // 
+            // igracDataGridViewTextBoxColumn1
+            // 
+            this.igracDataGridViewTextBoxColumn1.DataPropertyName = "Igrac";
+            this.igracDataGridViewTextBoxColumn1.HeaderText = "Igrač";
+            this.igracDataGridViewTextBoxColumn1.MinimumWidth = 6;
+            this.igracDataGridViewTextBoxColumn1.Name = "igracDataGridViewTextBoxColumn1";
+            this.igracDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.igracDataGridViewTextBoxColumn1.Width = 120;
+            // 
+            // poeniDataGridViewTextBoxColumn1
+            // 
+            this.poeniDataGridViewTextBoxColumn1.DataPropertyName = "Poeni";
+            this.poeniDataGridViewTextBoxColumn1.HeaderText = "Poeni";
+            this.poeniDataGridViewTextBoxColumn1.MinimumWidth = 6;
+            this.poeniDataGridViewTextBoxColumn1.Name = "poeniDataGridViewTextBoxColumn1";
+            this.poeniDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.poeniDataGridViewTextBoxColumn1.Width = 110;
+            // 
+            // skokoviDataGridViewTextBoxColumn1
+            // 
+            this.skokoviDataGridViewTextBoxColumn1.DataPropertyName = "Skokovi";
+            this.skokoviDataGridViewTextBoxColumn1.HeaderText = "Skokovi";
+            this.skokoviDataGridViewTextBoxColumn1.MinimumWidth = 6;
+            this.skokoviDataGridViewTextBoxColumn1.Name = "skokoviDataGridViewTextBoxColumn1";
+            this.skokoviDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.skokoviDataGridViewTextBoxColumn1.Width = 110;
+            // 
+            // asistencijeDataGridViewTextBoxColumn1
+            // 
+            this.asistencijeDataGridViewTextBoxColumn1.DataPropertyName = "Asistencije";
+            this.asistencijeDataGridViewTextBoxColumn1.HeaderText = "Asistencije";
+            this.asistencijeDataGridViewTextBoxColumn1.MinimumWidth = 6;
+            this.asistencijeDataGridViewTextBoxColumn1.Name = "asistencijeDataGridViewTextBoxColumn1";
+            this.asistencijeDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.asistencijeDataGridViewTextBoxColumn1.Width = 110;
+            // 
+            // lblDomacin
+            // 
+            this.lblDomacin.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblDomacin.AutoSize = true;
+            this.lblDomacin.BackColor = System.Drawing.Color.OrangeRed;
+            this.lblDomacin.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDomacin.Location = new System.Drawing.Point(946, 335);
+            this.lblDomacin.Name = "lblDomacin";
+            this.lblDomacin.Size = new System.Drawing.Size(0, 20);
+            this.lblDomacin.TabIndex = 28;
+            this.lblDomacin.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblGost
+            // 
+            this.lblGost.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblGost.AutoSize = true;
+            this.lblGost.BackColor = System.Drawing.Color.OrangeRed;
+            this.lblGost.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGost.Location = new System.Drawing.Point(944, 575);
+            this.lblGost.Name = "lblGost";
+            this.lblGost.Size = new System.Drawing.Size(0, 20);
+            this.lblGost.TabIndex = 29;
+            this.lblGost.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // takmicenjeDataGridViewTextBoxColumn
             // 
             this.takmicenjeDataGridViewTextBoxColumn.DataPropertyName = "Takmicenje";
-            this.takmicenjeDataGridViewTextBoxColumn.HeaderText = "Takmicenje";
+            this.takmicenjeDataGridViewTextBoxColumn.HeaderText = "Takmičenje";
             this.takmicenjeDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.takmicenjeDataGridViewTextBoxColumn.Name = "takmicenjeDataGridViewTextBoxColumn";
             this.takmicenjeDataGridViewTextBoxColumn.ReadOnly = true;
@@ -180,7 +543,7 @@ namespace Client.Forms.UserControls.Utakmica
             // domacinDataGridViewTextBoxColumn
             // 
             this.domacinDataGridViewTextBoxColumn.DataPropertyName = "Domacin";
-            this.domacinDataGridViewTextBoxColumn.HeaderText = "Domacin";
+            this.domacinDataGridViewTextBoxColumn.HeaderText = "Domaćin";
             this.domacinDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.domacinDataGridViewTextBoxColumn.Name = "domacinDataGridViewTextBoxColumn";
             this.domacinDataGridViewTextBoxColumn.ReadOnly = true;
@@ -189,7 +552,7 @@ namespace Client.Forms.UserControls.Utakmica
             // brojPoenaDomacinDataGridViewTextBoxColumn
             // 
             this.brojPoenaDomacinDataGridViewTextBoxColumn.DataPropertyName = "BrojPoenaDomacin";
-            this.brojPoenaDomacinDataGridViewTextBoxColumn.HeaderText = "Broj poena domacin";
+            this.brojPoenaDomacinDataGridViewTextBoxColumn.HeaderText = "Broj poena domaćin";
             this.brojPoenaDomacinDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.brojPoenaDomacinDataGridViewTextBoxColumn.Name = "brojPoenaDomacinDataGridViewTextBoxColumn";
             this.brojPoenaDomacinDataGridViewTextBoxColumn.ReadOnly = true;
@@ -248,341 +611,6 @@ namespace Client.Forms.UserControls.Utakmica
             this.fazaTakmicenjaDataGridViewTextBoxColumn.Name = "fazaTakmicenjaDataGridViewTextBoxColumn";
             this.fazaTakmicenjaDataGridViewTextBoxColumn.ReadOnly = true;
             this.fazaTakmicenjaDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // utakmicaBindingSource
-            // 
-            this.utakmicaBindingSource.DataSource = typeof(Common.Domain.Utakmica);
-            // 
-            // btnUcitajUtakmicu
-            // 
-            this.btnUcitajUtakmicu.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnUcitajUtakmicu.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnUcitajUtakmicu.BackgroundImage")));
-            this.btnUcitajUtakmicu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnUcitajUtakmicu.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUcitajUtakmicu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnUcitajUtakmicu.Location = new System.Drawing.Point(50, 311);
-            this.btnUcitajUtakmicu.Name = "btnUcitajUtakmicu";
-            this.btnUcitajUtakmicu.Size = new System.Drawing.Size(282, 44);
-            this.btnUcitajUtakmicu.TabIndex = 24;
-            this.btnUcitajUtakmicu.Text = "Učitaj utakmicu";
-            this.btnUcitajUtakmicu.UseVisualStyleBackColor = true;
-            this.btnUcitajUtakmicu.Click += new System.EventHandler(this.btnUcitajUtakmicu_Click);
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.groupBox1.BackColor = System.Drawing.Color.OrangeRed;
-            this.groupBox1.Controls.Add(this.txtBrojGledalaca);
-            this.groupBox1.Controls.Add(this.label13);
-            this.groupBox1.Controls.Add(this.btnPrikaziStatistiku);
-            this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.txtDatum);
-            this.groupBox1.Controls.Add(this.txtPoeniGost);
-            this.groupBox1.Controls.Add(this.txtPoeniDomacin);
-            this.groupBox1.Controls.Add(this.txtGost);
-            this.groupBox1.Controls.Add(this.txtDomacin);
-            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(50, 378);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(589, 246);
-            this.groupBox1.TabIndex = 25;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Utakmica";
-            // 
-            // txtBrojGledalaca
-            // 
-            this.txtBrojGledalaca.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtBrojGledalaca.Location = new System.Drawing.Point(180, 142);
-            this.txtBrojGledalaca.MaxLength = 3;
-            this.txtBrojGledalaca.Multiline = true;
-            this.txtBrojGledalaca.Name = "txtBrojGledalaca";
-            this.txtBrojGledalaca.ReadOnly = true;
-            this.txtBrojGledalaca.Size = new System.Drawing.Size(242, 27);
-            this.txtBrojGledalaca.TabIndex = 28;
-            this.txtBrojGledalaca.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label13
-            // 
-            this.label13.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label13.AutoSize = true;
-            this.label13.BackColor = System.Drawing.Color.OrangeRed;
-            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(30, 149);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(130, 20);
-            this.label13.TabIndex = 27;
-            this.label13.Text = "Broj gledalaca";
-            // 
-            // btnPrikaziStatistiku
-            // 
-            this.btnPrikaziStatistiku.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnPrikaziStatistiku.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnPrikaziStatistiku.BackgroundImage")));
-            this.btnPrikaziStatistiku.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnPrikaziStatistiku.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnPrikaziStatistiku.Location = new System.Drawing.Point(22, 183);
-            this.btnPrikaziStatistiku.Name = "btnPrikaziStatistiku";
-            this.btnPrikaziStatistiku.Size = new System.Drawing.Size(260, 44);
-            this.btnPrikaziStatistiku.TabIndex = 26;
-            this.btnPrikaziStatistiku.Text = "Prikaži statistiku";
-            this.btnPrikaziStatistiku.UseVisualStyleBackColor = true;
-            this.btnPrikaziStatistiku.Click += new System.EventHandler(this.btnPrikaziStatistiku_Click);
-            // 
-            // label4
-            // 
-            this.label4.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(30, 94);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(64, 20);
-            this.label4.TabIndex = 6;
-            this.label4.Text = "Datum";
-            // 
-            // label3
-            // 
-            this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(288, 38);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(18, 25);
-            this.label3.TabIndex = 5;
-            this.label3.Text = ":";
-            // 
-            // txtDatum
-            // 
-            this.txtDatum.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtDatum.Location = new System.Drawing.Point(180, 91);
-            this.txtDatum.Name = "txtDatum";
-            this.txtDatum.ReadOnly = true;
-            this.txtDatum.Size = new System.Drawing.Size(242, 27);
-            this.txtDatum.TabIndex = 4;
-            // 
-            // txtPoeniGost
-            // 
-            this.txtPoeniGost.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtPoeniGost.Location = new System.Drawing.Point(312, 41);
-            this.txtPoeniGost.Name = "txtPoeniGost";
-            this.txtPoeniGost.ReadOnly = true;
-            this.txtPoeniGost.Size = new System.Drawing.Size(51, 27);
-            this.txtPoeniGost.TabIndex = 3;
-            this.txtPoeniGost.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // txtPoeniDomacin
-            // 
-            this.txtPoeniDomacin.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtPoeniDomacin.Location = new System.Drawing.Point(231, 41);
-            this.txtPoeniDomacin.Name = "txtPoeniDomacin";
-            this.txtPoeniDomacin.ReadOnly = true;
-            this.txtPoeniDomacin.Size = new System.Drawing.Size(51, 27);
-            this.txtPoeniDomacin.TabIndex = 2;
-            this.txtPoeniDomacin.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // txtGost
-            // 
-            this.txtGost.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtGost.Location = new System.Drawing.Point(387, 41);
-            this.txtGost.Name = "txtGost";
-            this.txtGost.ReadOnly = true;
-            this.txtGost.Size = new System.Drawing.Size(185, 27);
-            this.txtGost.TabIndex = 1;
-            this.txtGost.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // txtDomacin
-            // 
-            this.txtDomacin.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtDomacin.Location = new System.Drawing.Point(22, 41);
-            this.txtDomacin.Name = "txtDomacin";
-            this.txtDomacin.ReadOnly = true;
-            this.txtDomacin.Size = new System.Drawing.Size(185, 27);
-            this.txtDomacin.TabIndex = 0;
-            this.txtDomacin.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "Utakmica";
-            this.dataGridViewTextBoxColumn1.HeaderText = "Tim";
-            this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.Width = 125;
-            // 
-            // dgvDomaci
-            // 
-            this.dgvDomaci.AllowUserToAddRows = false;
-            this.dgvDomaci.AllowUserToDeleteRows = false;
-            this.dgvDomaci.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.dgvDomaci.AutoGenerateColumns = false;
-            this.dgvDomaci.BackgroundColor = System.Drawing.Color.OrangeRed;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvDomaci.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.dgvDomaci.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvDomaci.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.igracDataGridViewTextBoxColumn,
-            this.poeniDataGridViewTextBoxColumn,
-            this.skokoviDataGridViewTextBoxColumn,
-            this.asistencijeDataGridViewTextBoxColumn});
-            this.dgvDomaci.DataSource = this.statistikaBindingSource;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvDomaci.DefaultCellStyle = dataGridViewCellStyle4;
-            this.dgvDomaci.Location = new System.Drawing.Point(948, 364);
-            this.dgvDomaci.Name = "dgvDomaci";
-            this.dgvDomaci.ReadOnly = true;
-            this.dgvDomaci.RowHeadersWidth = 51;
-            this.dgvDomaci.RowTemplate.Height = 24;
-            this.dgvDomaci.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.dgvDomaci.Size = new System.Drawing.Size(672, 183);
-            this.dgvDomaci.TabIndex = 26;
-            // 
-            // igracDataGridViewTextBoxColumn
-            // 
-            this.igracDataGridViewTextBoxColumn.DataPropertyName = "Igrac";
-            this.igracDataGridViewTextBoxColumn.HeaderText = "Igrač";
-            this.igracDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.igracDataGridViewTextBoxColumn.Name = "igracDataGridViewTextBoxColumn";
-            this.igracDataGridViewTextBoxColumn.ReadOnly = true;
-            this.igracDataGridViewTextBoxColumn.Width = 120;
-            // 
-            // poeniDataGridViewTextBoxColumn
-            // 
-            this.poeniDataGridViewTextBoxColumn.DataPropertyName = "Poeni";
-            this.poeniDataGridViewTextBoxColumn.HeaderText = "Poeni";
-            this.poeniDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.poeniDataGridViewTextBoxColumn.Name = "poeniDataGridViewTextBoxColumn";
-            this.poeniDataGridViewTextBoxColumn.ReadOnly = true;
-            this.poeniDataGridViewTextBoxColumn.Width = 110;
-            // 
-            // skokoviDataGridViewTextBoxColumn
-            // 
-            this.skokoviDataGridViewTextBoxColumn.DataPropertyName = "Skokovi";
-            this.skokoviDataGridViewTextBoxColumn.HeaderText = "Skokovi";
-            this.skokoviDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.skokoviDataGridViewTextBoxColumn.Name = "skokoviDataGridViewTextBoxColumn";
-            this.skokoviDataGridViewTextBoxColumn.ReadOnly = true;
-            this.skokoviDataGridViewTextBoxColumn.Width = 110;
-            // 
-            // asistencijeDataGridViewTextBoxColumn
-            // 
-            this.asistencijeDataGridViewTextBoxColumn.DataPropertyName = "Asistencije";
-            this.asistencijeDataGridViewTextBoxColumn.HeaderText = "Asistencije";
-            this.asistencijeDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.asistencijeDataGridViewTextBoxColumn.Name = "asistencijeDataGridViewTextBoxColumn";
-            this.asistencijeDataGridViewTextBoxColumn.ReadOnly = true;
-            this.asistencijeDataGridViewTextBoxColumn.Width = 110;
-            // 
-            // statistikaBindingSource
-            // 
-            this.statistikaBindingSource.DataSource = typeof(Common.Domain.Statistika);
-            // 
-            // dgvGosti
-            // 
-            this.dgvGosti.AllowUserToAddRows = false;
-            this.dgvGosti.AllowUserToDeleteRows = false;
-            this.dgvGosti.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.dgvGosti.AutoGenerateColumns = false;
-            this.dgvGosti.BackgroundColor = System.Drawing.Color.OrangeRed;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvGosti.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
-            this.dgvGosti.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvGosti.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.igracDataGridViewTextBoxColumn1,
-            this.poeniDataGridViewTextBoxColumn1,
-            this.skokoviDataGridViewTextBoxColumn1,
-            this.asistencijeDataGridViewTextBoxColumn1});
-            this.dgvGosti.DataSource = this.statistikaBindingSource;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvGosti.DefaultCellStyle = dataGridViewCellStyle6;
-            this.dgvGosti.Location = new System.Drawing.Point(948, 607);
-            this.dgvGosti.Name = "dgvGosti";
-            this.dgvGosti.ReadOnly = true;
-            this.dgvGosti.RowHeadersWidth = 51;
-            this.dgvGosti.RowTemplate.Height = 24;
-            this.dgvGosti.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.dgvGosti.Size = new System.Drawing.Size(672, 183);
-            this.dgvGosti.TabIndex = 27;
-            // 
-            // igracDataGridViewTextBoxColumn1
-            // 
-            this.igracDataGridViewTextBoxColumn1.DataPropertyName = "Igrac";
-            this.igracDataGridViewTextBoxColumn1.HeaderText = "Igrač";
-            this.igracDataGridViewTextBoxColumn1.MinimumWidth = 6;
-            this.igracDataGridViewTextBoxColumn1.Name = "igracDataGridViewTextBoxColumn1";
-            this.igracDataGridViewTextBoxColumn1.ReadOnly = true;
-            this.igracDataGridViewTextBoxColumn1.Width = 120;
-            // 
-            // poeniDataGridViewTextBoxColumn1
-            // 
-            this.poeniDataGridViewTextBoxColumn1.DataPropertyName = "Poeni";
-            this.poeniDataGridViewTextBoxColumn1.HeaderText = "Poeni";
-            this.poeniDataGridViewTextBoxColumn1.MinimumWidth = 6;
-            this.poeniDataGridViewTextBoxColumn1.Name = "poeniDataGridViewTextBoxColumn1";
-            this.poeniDataGridViewTextBoxColumn1.ReadOnly = true;
-            this.poeniDataGridViewTextBoxColumn1.Width = 110;
-            // 
-            // skokoviDataGridViewTextBoxColumn1
-            // 
-            this.skokoviDataGridViewTextBoxColumn1.DataPropertyName = "Skokovi";
-            this.skokoviDataGridViewTextBoxColumn1.HeaderText = "Skokovi";
-            this.skokoviDataGridViewTextBoxColumn1.MinimumWidth = 6;
-            this.skokoviDataGridViewTextBoxColumn1.Name = "skokoviDataGridViewTextBoxColumn1";
-            this.skokoviDataGridViewTextBoxColumn1.ReadOnly = true;
-            this.skokoviDataGridViewTextBoxColumn1.Width = 110;
-            // 
-            // asistencijeDataGridViewTextBoxColumn1
-            // 
-            this.asistencijeDataGridViewTextBoxColumn1.DataPropertyName = "Asistencije";
-            this.asistencijeDataGridViewTextBoxColumn1.HeaderText = "Asistencije";
-            this.asistencijeDataGridViewTextBoxColumn1.MinimumWidth = 6;
-            this.asistencijeDataGridViewTextBoxColumn1.Name = "asistencijeDataGridViewTextBoxColumn1";
-            this.asistencijeDataGridViewTextBoxColumn1.ReadOnly = true;
-            this.asistencijeDataGridViewTextBoxColumn1.Width = 110;
-            // 
-            // lblDomacin
-            // 
-            this.lblDomacin.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblDomacin.AutoSize = true;
-            this.lblDomacin.BackColor = System.Drawing.Color.OrangeRed;
-            this.lblDomacin.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDomacin.Location = new System.Drawing.Point(910, 325);
-            this.lblDomacin.Name = "lblDomacin";
-            this.lblDomacin.Size = new System.Drawing.Size(0, 20);
-            this.lblDomacin.TabIndex = 28;
-            this.lblDomacin.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lblGost
-            // 
-            this.lblGost.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblGost.AutoSize = true;
-            this.lblGost.BackColor = System.Drawing.Color.OrangeRed;
-            this.lblGost.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGost.Location = new System.Drawing.Point(910, 573);
-            this.lblGost.Name = "lblGost";
-            this.lblGost.Size = new System.Drawing.Size(0, 20);
-            this.lblGost.TabIndex = 29;
-            this.lblGost.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // UCPretragaUtakmica
             // 
@@ -648,6 +676,8 @@ namespace Client.Forms.UserControls.Utakmica
         private TextBox txtBrojGledalaca;
         private Label label13;
         private BindingSource utakmicaBindingSource;
+        private TextBox txtRunda;
+        private Label label2;
         private DataGridViewTextBoxColumn takmicenjeDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn domacinDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn brojPoenaDomacinDataGridViewTextBoxColumn;
@@ -672,5 +702,6 @@ namespace Client.Forms.UserControls.Utakmica
         public Label LblDomacin { get => lblDomacin; set => lblDomacin = value; }
         public Label LblGost { get => lblGost; set => lblGost = value; }
         public TextBox TxtBrojGledalaca { get => txtBrojGledalaca; set => txtBrojGledalaca = value; }
+        public TextBox TxtRunda { get => txtRunda; set => txtRunda = value; }
     }
 }

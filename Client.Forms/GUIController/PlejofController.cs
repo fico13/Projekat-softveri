@@ -71,7 +71,7 @@ namespace Client.Forms.GUIController
 
         internal void DodajUtakmicuG()
         {
-            FrmUtakmica frmUtakmica = new FrmUtakmica(g1, g2, "finale");
+            FrmPlejofUtakmica frmUtakmica = new FrmPlejofUtakmica(g1, g2, "finale");
             frmUtakmica.ShowDialog();
             Utakmica utakmica = new Utakmica
             {
@@ -96,7 +96,7 @@ namespace Client.Forms.GUIController
 
         internal void DodajUtakmicuF()
         {
-            FrmUtakmica frmUtakmica = new FrmUtakmica(f1, f2, "polufinale");
+            FrmPlejofUtakmica frmUtakmica = new FrmPlejofUtakmica(f1, f2, "polufinale");
             frmUtakmica.ShowDialog();
             Utakmica utakmica = new Utakmica
             {
@@ -125,7 +125,7 @@ namespace Client.Forms.GUIController
 
         internal void DodajUtakmicuE()
         {
-            FrmUtakmica frmUtakmica = new FrmUtakmica(e1, e2, "polufinale");
+            FrmPlejofUtakmica frmUtakmica = new FrmPlejofUtakmica(e1, e2, "polufinale");
             frmUtakmica.ShowDialog();
             Utakmica utakmica = new Utakmica
             {
@@ -155,7 +155,7 @@ namespace Client.Forms.GUIController
 
         internal void DodajUtakmicuD()
         {
-            FrmUtakmica frmUtakmica = new FrmUtakmica(d1, d2, "top8");
+            FrmPlejofUtakmica frmUtakmica = new FrmPlejofUtakmica(d1, d2, "top8");
             frmUtakmica.ShowDialog();
             UpisiRezultat(d1, d2, uCPlejof.TxtRezultatD1, uCPlejof.TxtRezultatD2);
             if (uCPlejof.TxtRezultatD1.Text == "3")
@@ -176,7 +176,7 @@ namespace Client.Forms.GUIController
 
         internal void DodajUtakmicuC()
         {
-            FrmUtakmica frmUtakmica = new FrmUtakmica(c1, c2, "top8");
+            FrmPlejofUtakmica frmUtakmica = new FrmPlejofUtakmica(c1, c2, "top8");
             frmUtakmica.ShowDialog();
             UpisiRezultat(c1, c2, uCPlejof.TxtRezultatC1, uCPlejof.TxtRezultatC2);
             if (uCPlejof.TxtRezultatC1.Text == "3")
@@ -197,7 +197,7 @@ namespace Client.Forms.GUIController
 
         internal void DodajUtakmicuB()
         {
-            FrmUtakmica frmUtakmica = new FrmUtakmica(b1, b2, "top8");
+            FrmPlejofUtakmica frmUtakmica = new FrmPlejofUtakmica(b1, b2, "top8");
             frmUtakmica.ShowDialog();
             UpisiRezultat(b1, b2, uCPlejof.TxtRezultatB1, uCPlejof.TxtRezultatB2);
             if (uCPlejof.TxtRezultatB1.Text == "3")
@@ -218,7 +218,7 @@ namespace Client.Forms.GUIController
 
         internal void DodajUtakmicuA()
         {
-            FrmUtakmica frmUtakmica = new FrmUtakmica(a1, a2, "top8");
+            FrmPlejofUtakmica frmUtakmica = new FrmPlejofUtakmica(a1, a2, "top8");
             frmUtakmica.ShowDialog();
             UpisiRezultat(a1, a2, uCPlejof.TxtRezultatA1, uCPlejof.TxtRezultatiA2);
             if (uCPlejof.TxtRezultatA1.Text == "3")

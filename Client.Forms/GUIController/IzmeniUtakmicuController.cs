@@ -75,6 +75,7 @@ namespace Client.Forms.GUIController
                 Utakmica.BrojPoenaDomacin = Convert.ToInt32(uCIzmenaUtakmice.TxtPoeniDomacin.Text);
                 Utakmica.BrojPoenaGost = Convert.ToInt32(uCIzmenaUtakmice.TxtPoeniGost.Text);
                 Utakmica.DateString = uCIzmenaUtakmice.DtpDatum.Value.ToString();
+                Utakmica.Runda = Convert.ToInt32(uCIzmenaUtakmice.TxtRunda.Text);
                 Utakmica.BrojGledalaca = Convert.ToInt32(uCIzmenaUtakmice.TxtBrojGledalaca.Text);
                 if (Utakmica.BrojPoenaDomacin  == Utakmica.BrojPoenaGost)
                 {
@@ -185,6 +186,7 @@ namespace Client.Forms.GUIController
                 uCIzmenaUtakmice.TxtPoeniGost.Text = Utakmica.BrojPoenaGost.ToString();
                 uCIzmenaUtakmice.DtpDatum.Text = Utakmica.DatumOdigravanja.ToString();
                 uCIzmenaUtakmice.TxtBrojGledalaca.Text = Utakmica.BrojGledalaca.ToString();
+                uCIzmenaUtakmice.TxtRunda.Text = Utakmica.Runda.ToString();
                 uCIzmenaUtakmice.GbPretraga.Visible = false;
                 if(Utakmica.BrojPoenaDomacin > Utakmica.BrojPoenaGost)
                 {

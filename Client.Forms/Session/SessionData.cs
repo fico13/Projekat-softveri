@@ -33,8 +33,9 @@ namespace Client.Forms.Session
             }
         }
 
-        public List<Tim> Domaci { get; set; } 
-        public List<Tim> Gost { get; set; } 
+        public List<Tim> Domaci { get; set; }
+        public List<Tim> Gost { get; set; }
+        public Utakmica Utakmica { get; set; } 
 
     }
 }

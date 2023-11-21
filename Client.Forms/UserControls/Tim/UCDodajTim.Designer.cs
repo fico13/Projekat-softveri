@@ -49,9 +49,9 @@ namespace Client.Forms.UserControls.Tim
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(234, 196);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(39, 20);
+            this.label1.Size = new System.Drawing.Size(56, 20);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Ime";
+            this.label1.Text = "Naziv";
             // 
             // label2
             // 
@@ -85,7 +85,6 @@ namespace Client.Forms.UserControls.Tim
             this.txtIme.Name = "txtIme";
             this.txtIme.Size = new System.Drawing.Size(290, 27);
             this.txtIme.TabIndex = 3;
-            this.txtIme.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txtDrzava
             // 
@@ -95,7 +94,6 @@ namespace Client.Forms.UserControls.Tim
             this.txtDrzava.Name = "txtDrzava";
             this.txtDrzava.Size = new System.Drawing.Size(290, 27);
             this.txtDrzava.TabIndex = 4;
-            this.txtDrzava.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // cbDvorane
             // 

@@ -68,6 +68,8 @@ namespace Client.Forms.UserControls.Utakmica
             this.skokoviDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.asistencijeDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gbUtakmica = new System.Windows.Forms.GroupBox();
+            this.txtRunda = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
             this.txtBrojGledalaca = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.btnUcitajStatistiku = new System.Windows.Forms.Button();
@@ -83,12 +85,15 @@ namespace Client.Forms.UserControls.Utakmica
             this.gbStatistikaIgraca = new System.Windows.Forms.GroupBox();
             this.btnIzmeniUtakmicu = new System.Windows.Forms.Button();
             this.utakmicaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.takmicenjeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.domacinDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.brojPoenaDomacinDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.brojPoenaGostDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gostDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.datumOdigravanjaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.brojGledalacaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.rundaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fazaTakmicenjaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDomaci)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.statistikaBindingSource)).BeginInit();
             this.gbPretraga.SuspendLayout();
@@ -307,7 +312,7 @@ namespace Client.Forms.UserControls.Utakmica
             this.gbPretraga.Controls.Add(this.btnUcitajUtakmicu);
             this.gbPretraga.Location = new System.Drawing.Point(64, 94);
             this.gbPretraga.Name = "gbPretraga";
-            this.gbPretraga.Size = new System.Drawing.Size(1100, 330);
+            this.gbPretraga.Size = new System.Drawing.Size(1600, 330);
             this.gbPretraga.TabIndex = 63;
             this.gbPretraga.TabStop = false;
             // 
@@ -316,7 +321,7 @@ namespace Client.Forms.UserControls.Utakmica
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(26, 26);
+            this.label1.Location = new System.Drawing.Point(26, 27);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(40, 20);
             this.label1.TabIndex = 30;
@@ -327,7 +332,7 @@ namespace Client.Forms.UserControls.Utakmica
             this.cbTimovi.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.cbTimovi.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbTimovi.FormattingEnabled = true;
-            this.cbTimovi.Location = new System.Drawing.Point(23, 56);
+            this.cbTimovi.Location = new System.Drawing.Point(23, 57);
             this.cbTimovi.Name = "cbTimovi";
             this.cbTimovi.Size = new System.Drawing.Size(181, 28);
             this.cbTimovi.TabIndex = 31;
@@ -339,7 +344,7 @@ namespace Client.Forms.UserControls.Utakmica
             this.btnPronadjiUtakmice.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btnPronadjiUtakmice.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPronadjiUtakmice.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnPronadjiUtakmice.Location = new System.Drawing.Point(262, 40);
+            this.btnPronadjiUtakmice.Location = new System.Drawing.Point(262, 41);
             this.btnPronadjiUtakmice.Name = "btnPronadjiUtakmice";
             this.btnPronadjiUtakmice.Size = new System.Drawing.Size(282, 44);
             this.btnPronadjiUtakmice.TabIndex = 32;
@@ -364,12 +369,15 @@ namespace Client.Forms.UserControls.Utakmica
             this.dgvUtakmice.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvUtakmice.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvUtakmice.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.takmicenjeDataGridViewTextBoxColumn,
             this.domacinDataGridViewTextBoxColumn,
             this.brojPoenaDomacinDataGridViewTextBoxColumn,
             this.brojPoenaGostDataGridViewTextBoxColumn,
             this.gostDataGridViewTextBoxColumn,
             this.datumOdigravanjaDataGridViewTextBoxColumn,
-            this.brojGledalacaDataGridViewTextBoxColumn});
+            this.brojGledalacaDataGridViewTextBoxColumn,
+            this.rundaDataGridViewTextBoxColumn,
+            this.fazaTakmicenjaDataGridViewTextBoxColumn});
             this.dgvUtakmice.DataSource = this.utakmicaBindingSource;
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
@@ -379,13 +387,13 @@ namespace Client.Forms.UserControls.Utakmica
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvUtakmice.DefaultCellStyle = dataGridViewCellStyle4;
-            this.dgvUtakmice.Location = new System.Drawing.Point(23, 107);
+            this.dgvUtakmice.Location = new System.Drawing.Point(23, 108);
             this.dgvUtakmice.Name = "dgvUtakmice";
             this.dgvUtakmice.ReadOnly = true;
             this.dgvUtakmice.RowHeadersWidth = 51;
             this.dgvUtakmice.RowTemplate.Height = 24;
             this.dgvUtakmice.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.dgvUtakmice.Size = new System.Drawing.Size(1060, 150);
+            this.dgvUtakmice.Size = new System.Drawing.Size(1570, 150);
             this.dgvUtakmice.TabIndex = 33;
             // 
             // btnUcitajUtakmicu
@@ -395,7 +403,7 @@ namespace Client.Forms.UserControls.Utakmica
             this.btnUcitajUtakmicu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btnUcitajUtakmicu.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUcitajUtakmicu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnUcitajUtakmicu.Location = new System.Drawing.Point(23, 263);
+            this.btnUcitajUtakmicu.Location = new System.Drawing.Point(23, 264);
             this.btnUcitajUtakmicu.Name = "btnUcitajUtakmicu";
             this.btnUcitajUtakmicu.Size = new System.Drawing.Size(282, 44);
             this.btnUcitajUtakmicu.TabIndex = 34;
@@ -481,6 +489,8 @@ namespace Client.Forms.UserControls.Utakmica
             // 
             this.gbUtakmica.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.gbUtakmica.BackColor = System.Drawing.Color.OrangeRed;
+            this.gbUtakmica.Controls.Add(this.txtRunda);
+            this.gbUtakmica.Controls.Add(this.label8);
             this.gbUtakmica.Controls.Add(this.txtBrojGledalaca);
             this.gbUtakmica.Controls.Add(this.label13);
             this.gbUtakmica.Controls.Add(this.dtpDatum);
@@ -499,10 +509,33 @@ namespace Client.Forms.UserControls.Utakmica
             this.gbUtakmica.TabStop = false;
             this.gbUtakmica.Text = "Utakmica";
             // 
+            // txtRunda
+            // 
+            this.txtRunda.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtRunda.Location = new System.Drawing.Point(190, 183);
+            this.txtRunda.MaxLength = 3;
+            this.txtRunda.Multiline = true;
+            this.txtRunda.Name = "txtRunda";
+            this.txtRunda.Size = new System.Drawing.Size(230, 27);
+            this.txtRunda.TabIndex = 31;
+            this.txtRunda.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label8
+            // 
+            this.label8.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label8.AutoSize = true;
+            this.label8.BackColor = System.Drawing.Color.OrangeRed;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(18, 190);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(62, 20);
+            this.label8.TabIndex = 30;
+            this.label8.Text = "Runda";
+            // 
             // txtBrojGledalaca
             // 
             this.txtBrojGledalaca.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtBrojGledalaca.Location = new System.Drawing.Point(190, 143);
+            this.txtBrojGledalaca.Location = new System.Drawing.Point(190, 136);
             this.txtBrojGledalaca.MaxLength = 3;
             this.txtBrojGledalaca.Multiline = true;
             this.txtBrojGledalaca.Name = "txtBrojGledalaca";
@@ -516,7 +549,7 @@ namespace Client.Forms.UserControls.Utakmica
             this.label13.AutoSize = true;
             this.label13.BackColor = System.Drawing.Color.OrangeRed;
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(18, 150);
+            this.label13.Location = new System.Drawing.Point(18, 143);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(130, 20);
             this.label13.TabIndex = 28;
@@ -667,6 +700,15 @@ namespace Client.Forms.UserControls.Utakmica
             // 
             this.utakmicaBindingSource.DataSource = typeof(Common.Domain.Utakmica);
             // 
+            // takmicenjeDataGridViewTextBoxColumn
+            // 
+            this.takmicenjeDataGridViewTextBoxColumn.DataPropertyName = "Takmicenje";
+            this.takmicenjeDataGridViewTextBoxColumn.HeaderText = "Takmičenje";
+            this.takmicenjeDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.takmicenjeDataGridViewTextBoxColumn.Name = "takmicenjeDataGridViewTextBoxColumn";
+            this.takmicenjeDataGridViewTextBoxColumn.ReadOnly = true;
+            this.takmicenjeDataGridViewTextBoxColumn.Width = 125;
+            // 
             // domacinDataGridViewTextBoxColumn
             // 
             this.domacinDataGridViewTextBoxColumn.DataPropertyName = "Domacin";
@@ -720,6 +762,24 @@ namespace Client.Forms.UserControls.Utakmica
             this.brojGledalacaDataGridViewTextBoxColumn.Name = "brojGledalacaDataGridViewTextBoxColumn";
             this.brojGledalacaDataGridViewTextBoxColumn.ReadOnly = true;
             this.brojGledalacaDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // rundaDataGridViewTextBoxColumn
+            // 
+            this.rundaDataGridViewTextBoxColumn.DataPropertyName = "Runda";
+            this.rundaDataGridViewTextBoxColumn.HeaderText = "Runda";
+            this.rundaDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.rundaDataGridViewTextBoxColumn.Name = "rundaDataGridViewTextBoxColumn";
+            this.rundaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.rundaDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // fazaTakmicenjaDataGridViewTextBoxColumn
+            // 
+            this.fazaTakmicenjaDataGridViewTextBoxColumn.DataPropertyName = "FazaTakmicenja";
+            this.fazaTakmicenjaDataGridViewTextBoxColumn.HeaderText = "Faza takmičenja";
+            this.fazaTakmicenjaDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.fazaTakmicenjaDataGridViewTextBoxColumn.Name = "fazaTakmicenjaDataGridViewTextBoxColumn";
+            this.fazaTakmicenjaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.fazaTakmicenjaDataGridViewTextBoxColumn.Width = 125;
             // 
             // UCIzmenaUtakmice
             // 
@@ -800,13 +860,18 @@ namespace Client.Forms.UserControls.Utakmica
         private DataGridViewTextBoxColumn asistencijeDataGridViewTextBoxColumn1;
         private TextBox txtBrojGledalaca;
         private Label label13;
-        private BindingSource utakmicaBindingSource;
+        private TextBox txtRunda;
+        private Label label8;
+        private DataGridViewTextBoxColumn takmicenjeDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn domacinDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn brojPoenaDomacinDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn brojPoenaGostDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn gostDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn datumOdigravanjaDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn brojGledalacaDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn rundaDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn fazaTakmicenjaDataGridViewTextBoxColumn;
+        private BindingSource utakmicaBindingSource;
 
         public TextBox TxtAsistencije { get => txtAsistencije; set => txtAsistencije = value; }
         public Label LblGost { get => lblGost; set => lblGost = value; }
@@ -856,5 +921,6 @@ namespace Client.Forms.UserControls.Utakmica
         public GroupBox GbStatistikaIgraca { get => gbStatistikaIgraca; set => gbStatistikaIgraca = value; }
         public Button BtnIzmeniUtakmicu { get => btnIzmeniUtakmicu; set => btnIzmeniUtakmicu = value; }
         public TextBox TxtBrojGledalaca { get => txtBrojGledalaca; set => txtBrojGledalaca = value; }
+        public TextBox TxtRunda { get => txtRunda; set => txtRunda = value; }
     }
 }
