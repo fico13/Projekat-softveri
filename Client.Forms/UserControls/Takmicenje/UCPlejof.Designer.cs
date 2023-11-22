@@ -31,6 +31,7 @@ namespace Client.Forms.UserControls.Takmicenje
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UCPlejof));
             this.txtA1 = new System.Windows.Forms.TextBox();
             this.txtA2 = new System.Windows.Forms.TextBox();
             this.txtB1 = new System.Windows.Forms.TextBox();
@@ -172,10 +173,12 @@ namespace Client.Forms.UserControls.Takmicenje
             // 
             // btnDodajA
             // 
+            this.btnDodajA.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnDodajA.BackgroundImage")));
+            this.btnDodajA.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btnDodajA.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDodajA.Location = new System.Drawing.Point(50, 168);
             this.btnDodajA.Name = "btnDodajA";
-            this.btnDodajA.Size = new System.Drawing.Size(205, 38);
+            this.btnDodajA.Size = new System.Drawing.Size(239, 38);
             this.btnDodajA.TabIndex = 25;
             this.btnDodajA.Text = "Dodaj utakmicu";
             this.btnDodajA.UseVisualStyleBackColor = true;
@@ -184,10 +187,12 @@ namespace Client.Forms.UserControls.Takmicenje
             // btnDodajB
             // 
             this.btnDodajB.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnDodajB.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnDodajB.BackgroundImage")));
+            this.btnDodajB.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btnDodajB.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDodajB.Location = new System.Drawing.Point(50, 960);
             this.btnDodajB.Name = "btnDodajB";
-            this.btnDodajB.Size = new System.Drawing.Size(205, 38);
+            this.btnDodajB.Size = new System.Drawing.Size(239, 38);
             this.btnDodajB.TabIndex = 26;
             this.btnDodajB.Text = "Dodaj utakmicu";
             this.btnDodajB.UseVisualStyleBackColor = true;
@@ -196,10 +201,12 @@ namespace Client.Forms.UserControls.Takmicenje
             // btnDodajD
             // 
             this.btnDodajD.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnDodajD.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnDodajD.BackgroundImage")));
+            this.btnDodajD.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btnDodajD.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDodajD.Location = new System.Drawing.Point(1760, 960);
+            this.btnDodajD.Location = new System.Drawing.Point(1726, 960);
             this.btnDodajD.Name = "btnDodajD";
-            this.btnDodajD.Size = new System.Drawing.Size(205, 38);
+            this.btnDodajD.Size = new System.Drawing.Size(239, 38);
             this.btnDodajD.TabIndex = 27;
             this.btnDodajD.Text = "Dodaj utakmicu";
             this.btnDodajD.UseVisualStyleBackColor = true;
@@ -208,10 +215,12 @@ namespace Client.Forms.UserControls.Takmicenje
             // btnDodajC
             // 
             this.btnDodajC.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnDodajC.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnDodajC.BackgroundImage")));
+            this.btnDodajC.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btnDodajC.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDodajC.Location = new System.Drawing.Point(1760, 168);
+            this.btnDodajC.Location = new System.Drawing.Point(1726, 168);
             this.btnDodajC.Name = "btnDodajC";
-            this.btnDodajC.Size = new System.Drawing.Size(205, 38);
+            this.btnDodajC.Size = new System.Drawing.Size(239, 38);
             this.btnDodajC.TabIndex = 28;
             this.btnDodajC.Text = "Dodaj utakmicu";
             this.btnDodajC.UseVisualStyleBackColor = true;
@@ -322,10 +331,12 @@ namespace Client.Forms.UserControls.Takmicenje
             // btnDodajE
             // 
             this.btnDodajE.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.btnDodajE.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnDodajE.BackgroundImage")));
+            this.btnDodajE.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btnDodajE.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDodajE.Location = new System.Drawing.Point(288, 548);
             this.btnDodajE.Name = "btnDodajE";
-            this.btnDodajE.Size = new System.Drawing.Size(205, 38);
+            this.btnDodajE.Size = new System.Drawing.Size(239, 38);
             this.btnDodajE.TabIndex = 39;
             this.btnDodajE.Text = "Dodaj utakmicu";
             this.btnDodajE.UseVisualStyleBackColor = true;
@@ -360,10 +371,12 @@ namespace Client.Forms.UserControls.Takmicenje
             // btnDodajF
             // 
             this.btnDodajF.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.btnDodajF.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnDodajF.BackgroundImage")));
+            this.btnDodajF.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btnDodajF.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDodajF.Location = new System.Drawing.Point(1525, 548);
+            this.btnDodajF.Location = new System.Drawing.Point(1491, 548);
             this.btnDodajF.Name = "btnDodajF";
-            this.btnDodajF.Size = new System.Drawing.Size(205, 38);
+            this.btnDodajF.Size = new System.Drawing.Size(239, 38);
             this.btnDodajF.TabIndex = 44;
             this.btnDodajF.Text = "Dodaj utakmicu";
             this.btnDodajF.UseVisualStyleBackColor = true;
@@ -448,10 +461,12 @@ namespace Client.Forms.UserControls.Takmicenje
             // btnDodajG
             // 
             this.btnDodajG.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.btnDodajG.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnDodajG.BackgroundImage")));
+            this.btnDodajG.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btnDodajG.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDodajG.Location = new System.Drawing.Point(913, 602);
+            this.btnDodajG.Location = new System.Drawing.Point(918, 602);
             this.btnDodajG.Name = "btnDodajG";
-            this.btnDodajG.Size = new System.Drawing.Size(205, 38);
+            this.btnDodajG.Size = new System.Drawing.Size(239, 38);
             this.btnDodajG.TabIndex = 49;
             this.btnDodajG.Text = "Dodaj utakmicu";
             this.btnDodajG.UseVisualStyleBackColor = true;
@@ -509,6 +524,7 @@ namespace Client.Forms.UserControls.Takmicenje
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.Controls.Add(this.txtRezultatG2);
             this.Controls.Add(this.txtRezultatG1);
@@ -545,6 +561,7 @@ namespace Client.Forms.UserControls.Takmicenje
             this.Controls.Add(this.txtB1);
             this.Controls.Add(this.txtA2);
             this.Controls.Add(this.txtA1);
+            this.DoubleBuffered = true;
             this.Name = "UCPlejof";
             this.Size = new System.Drawing.Size(2030, 1233);
             this.ResumeLayout(false);

@@ -78,7 +78,7 @@ namespace Client.Forms.UserControls.Utakmica
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.OrangeRed;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(103, 41);
+            this.label1.Location = new System.Drawing.Point(107, 41);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(83, 20);
             this.label1.TabIndex = 0;
@@ -90,7 +90,7 @@ namespace Client.Forms.UserControls.Utakmica
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.OrangeRed;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(696, 41);
+            this.label2.Location = new System.Drawing.Point(693, 41);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(49, 20);
             this.label2.TabIndex = 1;
@@ -168,7 +168,7 @@ namespace Client.Forms.UserControls.Utakmica
             this.dtpDatum.CustomFormat = "dd.MM.yyyy. HH:mm";
             this.dtpDatum.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpDatum.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpDatum.Location = new System.Drawing.Point(291, 143);
+            this.dtpDatum.Location = new System.Drawing.Point(321, 141);
             this.dtpDatum.Name = "dtpDatum";
             this.dtpDatum.Size = new System.Drawing.Size(247, 27);
             this.dtpDatum.TabIndex = 10;
@@ -438,7 +438,7 @@ namespace Client.Forms.UserControls.Utakmica
             this.label13.AutoSize = true;
             this.label13.BackColor = System.Drawing.Color.OrangeRed;
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(570, 148);
+            this.label13.Location = new System.Drawing.Point(635, 148);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(130, 20);
             this.label13.TabIndex = 15;
@@ -448,7 +448,7 @@ namespace Client.Forms.UserControls.Utakmica
             // 
             this.txtBrojGledalaca.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtBrojGledalaca.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBrojGledalaca.Location = new System.Drawing.Point(734, 143);
+            this.txtBrojGledalaca.Location = new System.Drawing.Point(799, 141);
             this.txtBrojGledalaca.MaxLength = 5;
             this.txtBrojGledalaca.Multiline = true;
             this.txtBrojGledalaca.Name = "txtBrojGledalaca";

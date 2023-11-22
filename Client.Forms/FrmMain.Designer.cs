@@ -156,12 +156,14 @@ namespace Client.Forms
             this.takmicenjeToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.regularniDeoToolStripMenuItem,
             this.plejofToolStripMenuItem});
+            this.takmicenjeToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("takmicenjeToolStripMenuItem.Image")));
             this.takmicenjeToolStripMenuItem.Name = "takmicenjeToolStripMenuItem";
-            this.takmicenjeToolStripMenuItem.Size = new System.Drawing.Size(132, 32);
-            this.takmicenjeToolStripMenuItem.Text = "Takmicenje";
+            this.takmicenjeToolStripMenuItem.Size = new System.Drawing.Size(113, 32);
+            this.takmicenjeToolStripMenuItem.Text = "Sezona";
             // 
             // regularniDeoToolStripMenuItem
             // 
+            this.regularniDeoToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("regularniDeoToolStripMenuItem.Image")));
             this.regularniDeoToolStripMenuItem.Name = "regularniDeoToolStripMenuItem";
             this.regularniDeoToolStripMenuItem.Size = new System.Drawing.Size(230, 32);
             this.regularniDeoToolStripMenuItem.Text = "Regularni deo";
@@ -169,6 +171,7 @@ namespace Client.Forms
             // 
             // plejofToolStripMenuItem
             // 
+            this.plejofToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("plejofToolStripMenuItem.Image")));
             this.plejofToolStripMenuItem.Name = "plejofToolStripMenuItem";
             this.plejofToolStripMenuItem.Size = new System.Drawing.Size(230, 32);
             this.plejofToolStripMenuItem.Text = "Plejof";
@@ -213,12 +216,14 @@ namespace Client.Forms
             // 
             this.tabelaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.timoviToolStripMenuItem});
+            this.tabelaToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("tabelaToolStripMenuItem.Image")));
             this.tabelaToolStripMenuItem.Name = "tabelaToolStripMenuItem";
-            this.tabelaToolStripMenuItem.Size = new System.Drawing.Size(87, 32);
+            this.tabelaToolStripMenuItem.Size = new System.Drawing.Size(107, 32);
             this.tabelaToolStripMenuItem.Text = "Tabela";
             // 
             // timoviToolStripMenuItem
             // 
+            this.timoviToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("timoviToolStripMenuItem.Image")));
             this.timoviToolStripMenuItem.Name = "timoviToolStripMenuItem";
             this.timoviToolStripMenuItem.Size = new System.Drawing.Size(224, 32);
             this.timoviToolStripMenuItem.Text = "Timovi";
@@ -257,7 +262,7 @@ namespace Client.Forms
             this.MainMenuStrip = this.menuStrip1;
             this.MaximizeBox = false;
             this.Name = "FrmMain";
-            this.Text = "Euroleague";
+            this.Text = "Košarka";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmMain_FormClosed);
             this.menuStrip1.ResumeLayout(false);

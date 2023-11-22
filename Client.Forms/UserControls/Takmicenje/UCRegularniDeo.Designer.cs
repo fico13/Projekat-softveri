@@ -31,6 +31,7 @@ namespace Client.Forms.UserControls.Takmicenje
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UCRegularniDeo));
             this.cbTimovi = new System.Windows.Forms.ComboBox();
             this.rtbTimovi = new System.Windows.Forms.RichTextBox();
             this.btnDodajTim = new System.Windows.Forms.Button();
@@ -61,17 +62,19 @@ namespace Client.Forms.UserControls.Takmicenje
             this.rtbTimovi.Location = new System.Drawing.Point(356, 132);
             this.rtbTimovi.Name = "rtbTimovi";
             this.rtbTimovi.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
-            this.rtbTimovi.Size = new System.Drawing.Size(223, 379);
+            this.rtbTimovi.Size = new System.Drawing.Size(223, 407);
             this.rtbTimovi.TabIndex = 1;
             this.rtbTimovi.Text = "";
             // 
             // btnDodajTim
             // 
             this.btnDodajTim.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnDodajTim.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnDodajTim.BackgroundImage")));
+            this.btnDodajTim.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btnDodajTim.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDodajTim.Location = new System.Drawing.Point(602, 67);
             this.btnDodajTim.Name = "btnDodajTim";
-            this.btnDodajTim.Size = new System.Drawing.Size(173, 37);
+            this.btnDodajTim.Size = new System.Drawing.Size(223, 37);
             this.btnDodajTim.TabIndex = 2;
             this.btnDodajTim.Text = "Dodaj tim u ligu";
             this.btnDodajTim.UseVisualStyleBackColor = true;
@@ -101,18 +104,22 @@ namespace Client.Forms.UserControls.Takmicenje
             // btnSacuvajTakmicenje
             // 
             this.btnSacuvajTakmicenje.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnSacuvajTakmicenje.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSacuvajTakmicenje.BackgroundImage")));
+            this.btnSacuvajTakmicenje.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btnSacuvajTakmicenje.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSacuvajTakmicenje.Location = new System.Drawing.Point(356, 718);
+            this.btnSacuvajTakmicenje.Location = new System.Drawing.Point(356, 700);
             this.btnSacuvajTakmicenje.Name = "btnSacuvajTakmicenje";
-            this.btnSacuvajTakmicenje.Size = new System.Drawing.Size(223, 65);
+            this.btnSacuvajTakmicenje.Size = new System.Drawing.Size(223, 37);
             this.btnSacuvajTakmicenje.TabIndex = 5;
-            this.btnSacuvajTakmicenje.Text = "Sacuvaj takmičenje i utakmice";
+            this.btnSacuvajTakmicenje.Text = "Sačuvaj sezonu";
             this.btnSacuvajTakmicenje.UseVisualStyleBackColor = true;
             this.btnSacuvajTakmicenje.Click += new System.EventHandler(this.btnSacuvajTakmicenje_Click);
             // 
             // btnDodajUtakmicu
             // 
             this.btnDodajUtakmicu.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnDodajUtakmicu.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnDodajUtakmicu.BackgroundImage")));
+            this.btnDodajUtakmicu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btnDodajUtakmicu.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDodajUtakmicu.Location = new System.Drawing.Point(356, 635);
             this.btnDodajUtakmicu.Name = "btnDodajUtakmicu";
@@ -126,8 +133,9 @@ namespace Client.Forms.UserControls.Takmicenje
             // 
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.OrangeRed;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(53, 27);
+            this.label1.Location = new System.Drawing.Point(53, 34);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(152, 20);
             this.label1.TabIndex = 33;
@@ -138,8 +146,9 @@ namespace Client.Forms.UserControls.Takmicenje
             // 
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.OrangeRed;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(53, 76);
+            this.label2.Location = new System.Drawing.Point(53, 84);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(64, 20);
             this.label2.TabIndex = 34;
@@ -150,6 +159,7 @@ namespace Client.Forms.UserControls.Takmicenje
             // 
             this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.OrangeRed;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(53, 132);
             this.label3.Name = "label3";
@@ -162,8 +172,9 @@ namespace Client.Forms.UserControls.Takmicenje
             // 
             this.label4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.OrangeRed;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(53, 573);
+            this.label4.Location = new System.Drawing.Point(53, 580);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(241, 20);
             this.label4.TabIndex = 36;
@@ -174,6 +185,8 @@ namespace Client.Forms.UserControls.Takmicenje
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -185,6 +198,7 @@ namespace Client.Forms.UserControls.Takmicenje
             this.Controls.Add(this.btnDodajTim);
             this.Controls.Add(this.rtbTimovi);
             this.Controls.Add(this.cbTimovi);
+            this.DoubleBuffered = true;
             this.Name = "UCRegularniDeo";
             this.Size = new System.Drawing.Size(914, 909);
             this.ResumeLayout(false);

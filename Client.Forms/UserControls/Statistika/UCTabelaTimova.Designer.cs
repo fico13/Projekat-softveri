@@ -36,14 +36,15 @@ namespace Client.Forms.UserControls.Statistika
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UCTabelaTimova));
             this.dgvTabelaTimova = new System.Windows.Forms.DataGridView();
-            this.timBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.imeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.drzavaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.brojPobedaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.brojPorazaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bodoviDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.kosRazlikaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.timBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dgvTabelaTimova)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.timBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -100,10 +101,6 @@ namespace Client.Forms.UserControls.Statistika
             this.dgvTabelaTimova.Size = new System.Drawing.Size(989, 565);
             this.dgvTabelaTimova.TabIndex = 0;
             // 
-            // timBindingSource
-            // 
-            this.timBindingSource.DataSource = typeof(Common.Domain.Tim);
-            // 
             // imeDataGridViewTextBoxColumn
             // 
             this.imeDataGridViewTextBoxColumn.DataPropertyName = "Ime";
@@ -158,10 +155,16 @@ namespace Client.Forms.UserControls.Statistika
             this.kosRazlikaDataGridViewTextBoxColumn.ReadOnly = true;
             this.kosRazlikaDataGridViewTextBoxColumn.Width = 125;
             // 
+            // timBindingSource
+            // 
+            this.timBindingSource.DataSource = typeof(Common.Domain.Tim);
+            // 
             // UCTabelaTimova
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.Controls.Add(this.dgvTabelaTimova);
             this.Name = "UCTabelaTimova";
             this.Size = new System.Drawing.Size(1058, 634);
