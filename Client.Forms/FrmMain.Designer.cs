@@ -49,6 +49,9 @@ namespace Client.Forms
             this.izmeniUtakmicuToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.tabelaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.timoviToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.najboljiStrelciToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.najboljiSkakačiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.najboljiAsistentiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pnlMain = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.menuStrip1.SuspendLayout();
@@ -215,7 +218,10 @@ namespace Client.Forms
             // tabelaToolStripMenuItem
             // 
             this.tabelaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.timoviToolStripMenuItem});
+            this.timoviToolStripMenuItem,
+            this.najboljiStrelciToolStripMenuItem,
+            this.najboljiSkakačiToolStripMenuItem,
+            this.najboljiAsistentiToolStripMenuItem});
             this.tabelaToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("tabelaToolStripMenuItem.Image")));
             this.tabelaToolStripMenuItem.Name = "tabelaToolStripMenuItem";
             this.tabelaToolStripMenuItem.Size = new System.Drawing.Size(107, 32);
@@ -225,9 +231,31 @@ namespace Client.Forms
             // 
             this.timoviToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("timoviToolStripMenuItem.Image")));
             this.timoviToolStripMenuItem.Name = "timoviToolStripMenuItem";
-            this.timoviToolStripMenuItem.Size = new System.Drawing.Size(224, 32);
+            this.timoviToolStripMenuItem.Size = new System.Drawing.Size(259, 32);
             this.timoviToolStripMenuItem.Text = "Timovi";
             this.timoviToolStripMenuItem.Click += new System.EventHandler(this.timoviToolStripMenuItem_Click);
+            // 
+            // najboljiStrelciToolStripMenuItem
+            // 
+            this.najboljiStrelciToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("najboljiStrelciToolStripMenuItem.Image")));
+            this.najboljiStrelciToolStripMenuItem.Name = "najboljiStrelciToolStripMenuItem";
+            this.najboljiStrelciToolStripMenuItem.Size = new System.Drawing.Size(259, 32);
+            this.najboljiStrelciToolStripMenuItem.Text = "Najbolji strelci";
+            this.najboljiStrelciToolStripMenuItem.Click += new System.EventHandler(this.najboljiStrelciToolStripMenuItem_Click);
+            // 
+            // najboljiSkakačiToolStripMenuItem
+            // 
+            this.najboljiSkakačiToolStripMenuItem.Name = "najboljiSkakačiToolStripMenuItem";
+            this.najboljiSkakačiToolStripMenuItem.Size = new System.Drawing.Size(259, 32);
+            this.najboljiSkakačiToolStripMenuItem.Text = "Najbolji skakači";
+            this.najboljiSkakačiToolStripMenuItem.Click += new System.EventHandler(this.najboljiSkakačiToolStripMenuItem_Click);
+            // 
+            // najboljiAsistentiToolStripMenuItem
+            // 
+            this.najboljiAsistentiToolStripMenuItem.Name = "najboljiAsistentiToolStripMenuItem";
+            this.najboljiAsistentiToolStripMenuItem.Size = new System.Drawing.Size(259, 32);
+            this.najboljiAsistentiToolStripMenuItem.Text = "Najbolji asistenti";
+            this.najboljiAsistentiToolStripMenuItem.Click += new System.EventHandler(this.najboljiAsistentiToolStripMenuItem_Click);
             // 
             // pnlMain
             // 
@@ -297,5 +325,8 @@ namespace Client.Forms
         private System.Windows.Forms.ToolStripMenuItem takmicenjeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem regularniDeoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem plejofToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem najboljiStrelciToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem najboljiSkakačiToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem najboljiAsistentiToolStripMenuItem;
     }
 }

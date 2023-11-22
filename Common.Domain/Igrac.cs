@@ -19,11 +19,16 @@ namespace Common.Domain
         public Pozicija Pozicija { get; set; }
         public int BrojNaDresu { get; set; }
         public int Visina { get; set; }
-        public Tim Tim { get; set; }
         public double Tezina { get; set; }
+        public Tim Tim { get; set; }
 
         
-        
+        public double ProsekPoeni { get; set; }
+        public double ProsekSkokovi { get; set; }
+        public double ProsekAsistencije { get; set; }
+
+
+
         [Browsable(false)]
         public string TableName => "Igrac";
         [Browsable(false)]

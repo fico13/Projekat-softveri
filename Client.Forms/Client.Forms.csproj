@@ -90,6 +90,9 @@
     <Compile Include="GUIController\NadjiIgracaController.cs" />
     <Compile Include="GUIController\NadjiTimController.cs" />
     <Compile Include="GUIController\NadjiUtakmicuController.cs" />
+    <Compile Include="GUIController\NajboljiAsistentiController.cs" />
+    <Compile Include="GUIController\NajboljiSkakaciController.cs" />
+    <Compile Include="GUIController\NajboljiStrelciController.cs" />
     <Compile Include="GUIController\PlejofController.cs" />
     <Compile Include="GUIController\PrikaziStatistikuController.cs" />
     <Compile Include="GUIController\SacuvajTakmicenjeController.cs" />
@@ -122,6 +125,24 @@
     </Compile>
     <Compile Include="UserControls\Igrac\UCPretragaIgraca.Designer.cs">
       <DependentUpon>UCPretragaIgraca.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Statistika\UCNajboljiAsistenti.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\Statistika\UCNajboljiAsistenti.Designer.cs">
+      <DependentUpon>UCNajboljiAsistenti.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Statistika\UCNajboljiSkakaci.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\Statistika\UCNajboljiSkakaci.Designer.cs">
+      <DependentUpon>UCNajboljiSkakaci.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Statistika\UCNajboljiStrelci.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\Statistika\UCNajboljiStrelci.Designer.cs">
+      <DependentUpon>UCNajboljiStrelci.cs</DependentUpon>
     </Compile>
     <Compile Include="UserControls\Statistika\UCTabelaTimova.cs">
       <SubType>UserControl</SubType>
@@ -206,6 +227,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\Igrac\UCPretragaIgraca.resx">
       <DependentUpon>UCPretragaIgraca.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\Statistika\UCNajboljiAsistenti.resx">
+      <DependentUpon>UCNajboljiAsistenti.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\Statistika\UCNajboljiSkakaci.resx">
+      <DependentUpon>UCNajboljiSkakaci.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\Statistika\UCNajboljiStrelci.resx">
+      <DependentUpon>UCNajboljiStrelci.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\Statistika\UCTabelaTimova.resx">
       <DependentUpon>UCTabelaTimova.cs</DependentUpon>

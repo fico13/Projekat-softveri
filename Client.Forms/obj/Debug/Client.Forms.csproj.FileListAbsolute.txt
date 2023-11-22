@@ -56,3 +56,6 @@ C:\Users\Filip\Desktop\ide gas\Client.Forms\obj\Debug\Client.Forms.UserControls.
 C:\Users\Filip\Desktop\ide gas\Client.Forms\obj\Debug\Client.Forms.UserControls.Takmicenje.UCPlejof.resources
 C:\Users\Filip\Desktop\ide gas\Client.Forms\obj\Debug\Client.Forms.Dialogs.Utakmica.FrmPlejofUtakmica.resources
 C:\Users\Filip\Desktop\ide gas\Client.Forms\obj\Debug\Client.Forms.Dialogs.Utakmica.FrmRegularUtakmica.resources
+C:\Users\Filip\Desktop\ide gas\Client.Forms\obj\Debug\Client.Forms.UserControls.Statistika.UCNajboljiStrelci.resources
+C:\Users\Filip\Desktop\ide gas\Client.Forms\obj\Debug\Client.Forms.UserControls.Statistika.UCNajboljiAsistenti.resources
+C:\Users\Filip\Desktop\ide gas\Client.Forms\obj\Debug\Client.Forms.UserControls.Statistika.UCNajboljiSkakaci.resources

@@ -105,6 +105,19 @@ namespace Client.Forms
             ChangePanel(new UCPlejof());
         }
 
-        
+        private void najboljiStrelciToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ChangePanel(new UCNajboljiStrelci());
+        }
+
+        private void najboljiSkakačiToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ChangePanel(new UCNajboljiSkakaci());
+        }
+
+        private void najboljiAsistentiToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ChangePanel(new UCNajboljiAsistenti());
+        }
     }
 }
