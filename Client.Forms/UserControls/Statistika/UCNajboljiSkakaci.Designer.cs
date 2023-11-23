@@ -32,6 +32,9 @@ namespace Client.Forms.UserControls.Statistika
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UCNajboljiSkakaci));
             this.dgvIgraci = new System.Windows.Forms.DataGridView();
             this.imeIgracaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.prezimeIgracaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -48,6 +51,14 @@ namespace Client.Forms.UserControls.Statistika
             this.dgvIgraci.AllowUserToDeleteRows = false;
             this.dgvIgraci.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dgvIgraci.AutoGenerateColumns = false;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvIgraci.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvIgraci.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvIgraci.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.imeIgracaDataGridViewTextBoxColumn,
@@ -55,13 +66,21 @@ namespace Client.Forms.UserControls.Statistika
             this.timDataGridViewTextBoxColumn,
             this.prosekSkokoviDataGridViewTextBoxColumn});
             this.dgvIgraci.DataSource = this.igracBindingSource;
-            this.dgvIgraci.Location = new System.Drawing.Point(40, 45);
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvIgraci.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvIgraci.Location = new System.Drawing.Point(161, 84);
             this.dgvIgraci.Name = "dgvIgraci";
             this.dgvIgraci.ReadOnly = true;
             this.dgvIgraci.RowHeadersWidth = 51;
             this.dgvIgraci.RowTemplate.Height = 24;
             this.dgvIgraci.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.dgvIgraci.Size = new System.Drawing.Size(751, 445);
+            this.dgvIgraci.Size = new System.Drawing.Size(751, 565);
             this.dgvIgraci.TabIndex = 0;
             // 
             // imeIgracaDataGridViewTextBoxColumn
@@ -108,9 +127,12 @@ namespace Client.Forms.UserControls.Statistika
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.Controls.Add(this.dgvIgraci);
+            this.DoubleBuffered = true;
             this.Name = "UCNajboljiSkakaci";
-            this.Size = new System.Drawing.Size(841, 582);
+            this.Size = new System.Drawing.Size(1058, 634);
             ((System.ComponentModel.ISupportInitialize)(this.dgvIgraci)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.igracBindingSource)).EndInit();
             this.ResumeLayout(false);

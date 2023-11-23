@@ -18,6 +18,7 @@ namespace Client.Forms.UserControls.Takmicenje
         {
             InitializeComponent();
             sacuvajTakmicenjeController = new SacuvajTakmicenjeController(this);
+            sacuvajTakmicenjeController.Init();
         }
 
         private void btnDodajTim_Click(object sender, EventArgs e)

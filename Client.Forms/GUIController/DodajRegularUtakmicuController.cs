@@ -2,10 +2,14 @@
 using Client.Forms.Exceptions;
 using Client.Forms.GUIHelper;
 using Client.Forms.ServerCommunication;
+using Client.Forms.Validators;
 using Common.Communication;
 using Common.Domain;
+using FluentValidation;
+using FluentValidation.Results;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -34,18 +38,24 @@ namespace Client.Forms.GUIController
 
         internal void UcitajIgrace()
         {
-            if (UserControlsHelper.ComboBoxValidation(frmRegularUtakmica.CbDomacin) || UserControlsHelper.ComboBoxValidation(frmRegularUtakmica.CbGost))
+            ComboBoxValidator cbValidator = new ComboBoxValidator(frmRegularUtakmica.CbGost.SelectedIndex);
+            ValidationResult  cbResult = cbValidator.Validate(frmRegularUtakmica.CbDomacin);
+            if(!cbResult.IsValid)
             {
-                MessageBox.Show("Sistem ne može da zapamti utakmicu! Niste lepo odabrali tim u combo box-u! Pokušajte ponovo!");
+                MessageBox.Show("Sistem ne može da zapamti utakmicu! " + cbResult.Errors[0].ErrorMessage, "Upozorenje", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-            if (frmRegularUtakmica.CbDomacin.SelectedIndex == frmRegularUtakmica.CbGost.SelectedIndex)
+            cbValidator = new ComboBoxValidator(frmRegularUtakmica.CbDomacin.SelectedIndex);
+            cbResult = cbValidator.Validate(frmRegularUtakmica.CbGost);
+            if (!cbResult.IsValid)
             {
-                MessageBox.Show("Sistem ne može da zapamti utakmicu! Ne mogu isti timovi biti i domaćin i gost! Pokušajte ponovo!");
+                MessageBox.Show("Sistem ne može da zapamti utakmicu! " + cbResult.Errors[0].ErrorMessage, "Upozorenje", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
             Tim domacin = (Tim)frmRegularUtakmica.CbDomacin.SelectedItem;
+            frmRegularUtakmica.CbDomacin.Enabled = false;
             Tim gost = (Tim)frmRegularUtakmica.CbGost.SelectedItem;
+            frmRegularUtakmica.CbGost.Enabled = false;
             try
             {
                 Igrac domaci = new Igrac
@@ -84,29 +94,46 @@ namespace Client.Forms.GUIController
 
         internal void DodajUtakmicu()
         {
-            if (UserControlsHelper.EmptyText(frmRegularUtakmica.TxtBrojPoenaDomacin))
+            BrojValidator bv = new BrojValidator();
+            ValidationResult result = bv.Validate(frmRegularUtakmica.TxtBrojPoenaDomacin);
+            if(!result.IsValid)
             {
-                MessageBox.Show("Sistem ne može da zapamti utakmicu! Niste uneli broj poena domaćina! Pokušajte ponovo!");
+                MessageBox.Show("Sistem ne može da zapamti utakmicu! " + result.Errors[0].ErrorMessage, "Upozorenje", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                frmRegularUtakmica.TxtBrojPoenaDomacin.BackColor = Color.LightCoral;
                 return;
             }
-            if (UserControlsHelper.EmptyText(frmRegularUtakmica.TxtBrojPoenaGost))
+            else frmRegularUtakmica.TxtBrojPoenaDomacin.BackColor = Color.White;
+            result = bv.Validate(frmRegularUtakmica.TxtBrojPoenaGost);
+            if (!result.IsValid)
             {
-                MessageBox.Show("Sistem ne može da zapamti utakmicu! Niste uneli broj poena gosta! Pokušajte ponovo!");
+                MessageBox.Show("Sistem ne može da zapamti utakmicu! " + result.Errors[0].ErrorMessage, "Upozorenje", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                frmRegularUtakmica.TxtBrojPoenaGost.BackColor = Color.LightCoral;
+
                 return;
             }
-            if (UserControlsHelper.IntegerValidation(frmRegularUtakmica.TxtBrojPoenaDomacin))
+            else frmRegularUtakmica.TxtBrojPoenaGost.BackColor = Color.White;
+            result = bv.Validate(frmRegularUtakmica.TxtBrojGledalaca);
+            if (!result.IsValid)
             {
-                MessageBox.Show("Sistem ne može da zapamti utakmicu! Broj poena domaćina mora da bude prirodan broj! Pokušajte ponovo!");
+                MessageBox.Show("Sistem ne može da zapamti utakmicu! " + result.Errors[0].ErrorMessage, "Upozorenje", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                frmRegularUtakmica.TxtBrojGledalaca.BackColor = Color.LightCoral;
                 return;
             }
-            if (UserControlsHelper.IntegerValidation(frmRegularUtakmica.TxtBrojPoenaGost))
+            else frmRegularUtakmica.TxtBrojGledalaca.BackColor = Color.White;
+            DatumValidator dv = new DatumValidator();
+            ValidationResult res = dv.Validate(frmRegularUtakmica.DtpDatum);
+            if (!res.IsValid)
             {
-                MessageBox.Show("Sistem ne može da zapamti utakmicu! Broj poena gosta mora da bude prirodan broj! Pokušajte ponovo!");
+                MessageBox.Show("Sistem ne može da zapamti utakmicu! " + res.Errors[0].ErrorMessage, "Upozorenje", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                frmRegularUtakmica.DtpDatum.BackColor = Color.LightCoral;
                 return;
             }
-            if (frmRegularUtakmica.DtpDatum.Value >= DateTime.Now)
+            BrojacValidator brojac = new BrojacValidator();
+            ValidationResult brojacResult = brojac.Validate(frmRegularUtakmica.NudRunda);
+            if (!brojacResult.IsValid)
             {
-                MessageBox.Show("Sistem ne može da zapamti utakmicu! Datum ne sme biti veći od današnjeg dana! Pokušajte ponovo!");
+                MessageBox.Show("Sistem ne može da zapamti utakmicu! " + brojacResult.Errors[0].ErrorMessage, "Upozorenje", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                frmRegularUtakmica.NudRunda.BackColor = Color.LightCoral;
                 return;
             }
             try
@@ -123,9 +150,12 @@ namespace Client.Forms.GUIController
                     Gost = (Tim)frmRegularUtakmica.CbGost.SelectedItem,
                     Statistka = statistike
                 };
-                if (utakmica.BrojPoenaDomacin == utakmica.BrojPoenaGost)
+
+                UtakmicaValidator uv = new UtakmicaValidator(utakmica.BrojPoenaGost, utakmica.Domacin.Dvorana.Kapacitet);
+                ValidationResult utakmicaResult = uv.Validate(utakmica);
+                if (!utakmicaResult.IsValid)
                 {
-                    MessageBox.Show("Sistem ne može da zapamti utakmicu! Broj poena domaćina i gosta ne može biti isti! Pokušajte ponovo!");
+                    MessageBox.Show("Sistem ne može da zapamti utakmicu! " + utakmicaResult.Errors[0].ErrorMessage, "Upozorenje", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
                 if (utakmica.BrojPoenaDomacin > utakmica.BrojPoenaGost)
@@ -143,10 +173,11 @@ namespace Client.Forms.GUIController
                     utakmica.Gost.Bodovi += 2;
                 }
                 Session.SessionData.Instance.Utakmica = utakmica;
+                frmRegularUtakmica.Dispose();
             }
             catch (ServerCommunicationException)
             {
-                MessageBox.Show("Sistem ne može da zapamti utakmicu");
+                MessageBox.Show("Sistem ne može da zapamti utakmicu!");
                 throw;
             }
         }
@@ -155,32 +186,38 @@ namespace Client.Forms.GUIController
 
         internal void DodajStatsitkuGosta()
         {
-            if (UserControlsHelper.EmptyText(frmRegularUtakmica.TxtPoeniGostIgrac) || UserControlsHelper.EmptyText(frmRegularUtakmica.TxtSkokoviGostIgrac) || UserControlsHelper.EmptyText(frmRegularUtakmica.TxtAsistencijeGostIgrac))
+            BrojValidator bv = new BrojValidator();
+            ValidationResult result = bv.Validate(frmRegularUtakmica.TxtPoeniGostIgrac);
+            if (!result.IsValid)
             {
-                MessageBox.Show("Sistem ne može da zapamti utakmicu! Niste uneli sve podatke za statistiku gostujućeg igrača! Pokušajte ponovo!");
+                MessageBox.Show("Sistem ne može da zapamti utakmicu! " + result.Errors[0].ErrorMessage, "Upozorenje", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                frmRegularUtakmica.TxtPoeniGostIgrac.BackColor = Color.LightCoral;
                 return;
             }
-            if (UserControlsHelper.ComboBoxValidation(frmRegularUtakmica.CbIgracGosta))
+            else frmRegularUtakmica.TxtPoeniGostIgrac.BackColor = Color.White;
+            bv = new BrojValidator();
+            result = bv.Validate(frmRegularUtakmica.TxtSkokoviGostIgrac);
+            if (!result.IsValid)
             {
-                MessageBox.Show("Sistem ne može da zapamti utakmicu! Niste lepo odabrali igrača u combo box-u! Pokušajte ponovo!");
+                MessageBox.Show("Sistem ne može da zapamti utakmicu! " + result.Errors[0].ErrorMessage, "Upozorenje", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                frmRegularUtakmica.TxtSkokoviGostIgrac.BackColor = Color.LightCoral;
                 return;
             }
-            if (UserControlsHelper.IntegerValidation(frmRegularUtakmica.TxtPoeniGostIgrac))
+            else frmRegularUtakmica.TxtSkokoviGostIgrac.BackColor = Color.White;
+            bv = new BrojValidator();
+            result = bv.Validate(frmRegularUtakmica.TxtAsistencijeGostIgrac);
+            if (!result.IsValid)
             {
-                MessageBox.Show("Sistem ne može da zapamti utakmicu! Poeni igrača moraju biti prirodan broj! Pokušajte ponovo");
-                frmRegularUtakmica.TxtPoeniGostIgrac.Text = "";
+                MessageBox.Show("Sistem ne može da zapamti utakmicu! " + result.Errors[0].ErrorMessage, "Upozorenje", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                frmRegularUtakmica.TxtAsistencijeGostIgrac.BackColor = Color.LightCoral;
                 return;
             }
-            if (UserControlsHelper.IntegerValidation(frmRegularUtakmica.TxtSkokoviGostIgrac))
+            else frmRegularUtakmica.TxtAsistencijeGostIgrac.BackColor = Color.White;
+            ComboBoxValidator cbValidator = new ComboBoxValidator();
+            ValidationResult cbResult = cbValidator.Validate(frmRegularUtakmica.CbIgracGosta);
+            if (!cbResult.IsValid)
             {
-                MessageBox.Show("Sistem ne može da zapamti utakmicu! Skokovi igrača moraju biti prirodan broj! Pokušajte ponovo");
-                frmRegularUtakmica.TxtSkokoviGostIgrac.Text = "";
-                return;
-            }
-            if (UserControlsHelper.IntegerValidation(frmRegularUtakmica.TxtAsistencijeGostIgrac))
-            {
-                MessageBox.Show("Sistem ne može da zapamti utakmicu! Asistencije igrača moraju biti prirodan broj! Pokušajte ponovo");
-                frmRegularUtakmica.TxtAsistencijeGostIgrac.Text = "";
+                MessageBox.Show("Sistem ne može da zapamti utakmicu! " + cbResult.Errors[0].ErrorMessage, "Upozorenje", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
             try
@@ -220,32 +257,38 @@ namespace Client.Forms.GUIController
 
         internal void DodajStatsitkuDomacina()
         {
-            if (UserControlsHelper.EmptyText(frmRegularUtakmica.TxtPoeniDomacinIgrac) || UserControlsHelper.EmptyText(frmRegularUtakmica.TxtSkokoviDomacinIgrac) || UserControlsHelper.EmptyText(frmRegularUtakmica.TxtAsistencijeDomacinIgrac))
+            BrojValidator bv = new BrojValidator();
+            ValidationResult result = bv.Validate(frmRegularUtakmica.TxtPoeniDomacinIgrac);
+            if (!result.IsValid)
             {
-                MessageBox.Show("Sistem ne može da zapamti utakmicu! Niste uneli sve podatke za statistiku domaćeg igrača! Pokušajte ponovo!");
+                MessageBox.Show("Sistem ne može da zapamti utakmicu! " + result.Errors[0].ErrorMessage, "Upozorenje", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                frmRegularUtakmica.TxtPoeniDomacinIgrac.BackColor = Color.LightCoral;
                 return;
             }
-            if (UserControlsHelper.ComboBoxValidation(frmRegularUtakmica.CbIgracDomacina))
+            else frmRegularUtakmica.TxtPoeniDomacinIgrac.BackColor = Color.White;
+            bv = new BrojValidator();
+            result = bv.Validate(frmRegularUtakmica.TxtSkokoviDomacinIgrac);
+            if (!result.IsValid)
             {
-                MessageBox.Show("Sistem ne može da zapamti utakmicu! Niste lepo odabrali igrača u combo box-u! Pokušajte ponovo!");
+                MessageBox.Show("Sistem ne može da zapamti utakmicu! " + result.Errors[0].ErrorMessage, "Upozorenje", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                frmRegularUtakmica.TxtSkokoviDomacinIgrac.BackColor = Color.LightCoral;
                 return;
             }
-            if (UserControlsHelper.IntegerValidation(frmRegularUtakmica.TxtPoeniDomacinIgrac))
+            else frmRegularUtakmica.TxtSkokoviDomacinIgrac.BackColor = Color.White;
+            bv = new BrojValidator();
+            result = bv.Validate(frmRegularUtakmica.TxtAsistencijeDomacinIgrac);
+            if (!result.IsValid)
             {
-                MessageBox.Show("Sistem ne može da zapamti utakmicu! Poeni igrača moraju biti prirodan broj! Pokušajte ponovo");
-                frmRegularUtakmica.TxtPoeniDomacinIgrac.Text = "";
+                MessageBox.Show("Sistem ne može da zapamti utakmicu! " + result.Errors[0].ErrorMessage, "Upozorenje", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                frmRegularUtakmica.TxtAsistencijeDomacinIgrac.BackColor = Color.LightCoral;
                 return;
             }
-            if (UserControlsHelper.IntegerValidation(frmRegularUtakmica.TxtSkokoviDomacinIgrac))
+            else frmRegularUtakmica.TxtAsistencijeDomacinIgrac.BackColor = Color.White;
+            ComboBoxValidator cbValidator = new ComboBoxValidator();
+            ValidationResult cbResult = cbValidator.Validate(frmRegularUtakmica.CbIgracDomacina);
+            if (!cbResult.IsValid)
             {
-                MessageBox.Show("Sistem ne može da zapamti utakmicu! Skokovi igrača moraju biti prirodan broj! Pokušajte ponovo");
-                frmRegularUtakmica.TxtSkokoviDomacinIgrac.Text = "";
-                return;
-            }
-            if (UserControlsHelper.IntegerValidation(frmRegularUtakmica.TxtAsistencijeDomacinIgrac))
-            {
-                MessageBox.Show("Sistem ne može da zapamti utakmicu! Asistencije igrača moraju biti prirodan broj! Pokušajte ponovo");
-                frmRegularUtakmica.TxtAsistencijeDomacinIgrac.Text = "";
+                MessageBox.Show("Sistem ne može da zapamti utakmicu! " + cbResult.Errors[0].ErrorMessage, "Upozorenje", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
             try

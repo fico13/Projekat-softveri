@@ -245,6 +245,7 @@ namespace Client.Forms
             // 
             // najboljiSkakačiToolStripMenuItem
             // 
+            this.najboljiSkakačiToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("najboljiSkakačiToolStripMenuItem.Image")));
             this.najboljiSkakačiToolStripMenuItem.Name = "najboljiSkakačiToolStripMenuItem";
             this.najboljiSkakačiToolStripMenuItem.Size = new System.Drawing.Size(259, 32);
             this.najboljiSkakačiToolStripMenuItem.Text = "Najbolji skakači";
@@ -252,6 +253,7 @@ namespace Client.Forms
             // 
             // najboljiAsistentiToolStripMenuItem
             // 
+            this.najboljiAsistentiToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("najboljiAsistentiToolStripMenuItem.Image")));
             this.najboljiAsistentiToolStripMenuItem.Name = "najboljiAsistentiToolStripMenuItem";
             this.najboljiAsistentiToolStripMenuItem.Size = new System.Drawing.Size(259, 32);
             this.najboljiAsistentiToolStripMenuItem.Text = "Najbolji asistenti";

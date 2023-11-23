@@ -36,12 +36,13 @@ namespace Client.Forms.UserControls.Statistika
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UCNajboljiStrelci));
             this.dgvIgraci = new System.Windows.Forms.DataGridView();
-            this.igracBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.imeIgracaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.prezimeIgracaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.timDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.prosekPoeniDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.igracBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dgvIgraci)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.igracBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -75,7 +76,7 @@ namespace Client.Forms.UserControls.Statistika
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvIgraci.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvIgraci.Location = new System.Drawing.Point(41, 76);
+            this.dgvIgraci.Location = new System.Drawing.Point(161, 84);
             this.dgvIgraci.Name = "dgvIgraci";
             this.dgvIgraci.ReadOnly = true;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
@@ -91,12 +92,8 @@ namespace Client.Forms.UserControls.Statistika
             this.dgvIgraci.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvIgraci.RowTemplate.Height = 24;
             this.dgvIgraci.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.dgvIgraci.Size = new System.Drawing.Size(751, 445);
+            this.dgvIgraci.Size = new System.Drawing.Size(751, 565);
             this.dgvIgraci.TabIndex = 0;
-            // 
-            // igracBindingSource
-            // 
-            this.igracBindingSource.DataSource = typeof(Common.Domain.Igrac);
             // 
             // imeIgracaDataGridViewTextBoxColumn
             // 
@@ -134,13 +131,20 @@ namespace Client.Forms.UserControls.Statistika
             this.prosekPoeniDataGridViewTextBoxColumn.ReadOnly = true;
             this.prosekPoeniDataGridViewTextBoxColumn.Width = 125;
             // 
+            // igracBindingSource
+            // 
+            this.igracBindingSource.DataSource = typeof(Common.Domain.Igrac);
+            // 
             // UCNajboljiStrelci
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.Controls.Add(this.dgvIgraci);
+            this.DoubleBuffered = true;
             this.Name = "UCNajboljiStrelci";
-            this.Size = new System.Drawing.Size(961, 678);
+            this.Size = new System.Drawing.Size(1058, 634);
             ((System.ComponentModel.ISupportInitialize)(this.dgvIgraci)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.igracBindingSource)).EndInit();
             this.ResumeLayout(false);

@@ -54,7 +54,6 @@ namespace Client.Forms.Dialogs.Utakmica
         private void btnSacuvajUtakmicu_Click(object sender, EventArgs e)
         {
             dodajRegularUtakmicuController.DodajUtakmicu();
-            this.Dispose();
         }
     }
 }

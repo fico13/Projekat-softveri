@@ -32,10 +32,29 @@ namespace Client.Forms.GUIController
         private Tim f2;
         private Tim g1;
         private Tim g2;
+        private bool a;
+        private bool b;
+        private bool c;
+        private bool d;
+        private bool e;
+        private bool f;
 
         public PlejofController(UCPlejof uCPlejof)
         {
             this.uCPlejof = uCPlejof;
+        }
+
+        internal void Init()
+        {
+            uCPlejof.BtnDodajE.Enabled = false;
+            uCPlejof.BtnDodajF.Enabled = false;
+            uCPlejof.BtnDodajG.Enabled = false;
+            a = false;
+            b = false;
+            c = false;
+            d = false;
+            e = false;
+            f = false;
             try
             {
                 Tim tim = new Tim
@@ -59,8 +78,6 @@ namespace Client.Forms.GUIController
                 uCPlejof.TxtC2.Text = c2.ToString();
                 uCPlejof.TxtD1.Text = d1.ToString();
                 uCPlejof.TxtD2.Text = d2.ToString();
-                
-
             }
             catch (ServerCommunicationException)
             {
@@ -71,188 +88,278 @@ namespace Client.Forms.GUIController
 
         internal void DodajUtakmicuG()
         {
-            FrmPlejofUtakmica frmUtakmica = new FrmPlejofUtakmica(g1, g2, "finale");
-            frmUtakmica.ShowDialog();
-            Utakmica utakmica = new Utakmica
+            try
             {
-                FindCondition = $"where d.ImeTima like '{g1.Ime}%' and u.FazaTakmicenja = 'finale'"
-            };
-            List<Utakmica> utakmice = Communication.Instance.SendRequestGetResult<List<Utakmica>>(Operation.NadjiUtakmice, utakmica);
-            utakmica = utakmice[0];
-            uCPlejof.BtnDodajG.Enabled = false;
-            if (utakmica.BrojPoenaDomacin > utakmica.BrojPoenaGost)
-            {
-                MessageBox.Show($"Finale je zavrseno, pobednik je {g1.Ime}");
-                uCPlejof.TxtRezultatG1.Text = utakmica.BrojPoenaDomacin.ToString();
-                uCPlejof.TxtRezultatG2.Text = utakmica.BrojPoenaGost.ToString();
+                FrmPlejofUtakmica frmUtakmica = new FrmPlejofUtakmica(g1, g2, "finale");
+                frmUtakmica.ShowDialog();
+                Utakmica utakmica = new Utakmica
+                {
+                    FindCondition = $"where d.ImeTima like '{g1.Ime}%' and u.FazaTakmicenja = 'finale'"
+                };
+                List<Utakmica> utakmice = Communication.Instance.SendRequestGetResult<List<Utakmica>>(Operation.NadjiUtakmice, utakmica);
+                utakmica = utakmice[0];
+                uCPlejof.BtnDodajG.Enabled = false;
+                if (utakmica.BrojPoenaDomacin > utakmica.BrojPoenaGost)
+                {
+                    MessageBox.Show($"Finale je zavrseno, pobednik je {g1.Ime}");
+                    uCPlejof.TxtRezultatG1.Text = utakmica.BrojPoenaDomacin.ToString();
+                    uCPlejof.TxtRezultatG2.Text = utakmica.BrojPoenaGost.ToString();
+                }
+                else
+                {
+                    MessageBox.Show($"Finale je zavrseno, pobednik je {g2.Ime}");
+                    uCPlejof.TxtRezultatG1.Text = utakmica.BrojPoenaDomacin.ToString();
+                    uCPlejof.TxtRezultatG2.Text = utakmica.BrojPoenaGost.ToString();
+                }
             }
-            else
+            catch (ServerCommunicationException)
             {
-                MessageBox.Show($"Finale je zavrseno, pobednik je {g2.Ime}");
-                uCPlejof.TxtRezultatG1.Text = utakmica.BrojPoenaDomacin.ToString();
-                uCPlejof.TxtRezultatG2.Text = utakmica.BrojPoenaGost.ToString();
+
+                throw;
             }
+           
         }
 
         internal void DodajUtakmicuF()
         {
-            FrmPlejofUtakmica frmUtakmica = new FrmPlejofUtakmica(f1, f2, "polufinale");
-            frmUtakmica.ShowDialog();
-            Utakmica utakmica = new Utakmica
+            try
             {
-                FindCondition = $"where d.ImeTima like '{f1.Ime}%' and u.FazaTakmicenja = 'polufinale'"
-            };
-            List<Utakmica> utakmice = Communication.Instance.SendRequestGetResult<List<Utakmica>>(Operation.NadjiUtakmice, utakmica);
-            utakmica = utakmice[0];
-            uCPlejof.BtnDodajF.Enabled = false;
-            if (utakmica.BrojPoenaDomacin > utakmica.BrojPoenaGost)
-            {
-                MessageBox.Show($"Polufinale je zavrseno, pobednik je {f1.Ime}");
-                uCPlejof.TxtG2.Text = f1.Ime;
-                uCPlejof.TxtRezultatF1.Text = utakmica.BrojPoenaDomacin.ToString();
-                uCPlejof.TxtRezultatF2.Text = utakmica.BrojPoenaGost.ToString();
-                g2 = f1;
+                FrmPlejofUtakmica frmUtakmica = new FrmPlejofUtakmica(f1, f2, "polufinale");
+                frmUtakmica.ShowDialog();
+                Utakmica utakmica = new Utakmica
+                {
+                    FindCondition = $"where d.ImeTima like '{f1.Ime}%' and u.FazaTakmicenja = 'polufinale'"
+                };
+                List<Utakmica> utakmice = Communication.Instance.SendRequestGetResult<List<Utakmica>>(Operation.NadjiUtakmice, utakmica);
+                utakmica = utakmice[0];
+                uCPlejof.BtnDodajF.Enabled = false;
+                if (utakmica.BrojPoenaDomacin > utakmica.BrojPoenaGost)
+                {
+                    MessageBox.Show($"Polufinale je zavrseno, pobednik je {f1.Ime}");
+                    uCPlejof.TxtG2.Text = f1.Ime;
+                    uCPlejof.TxtRezultatF1.Text = utakmica.BrojPoenaDomacin.ToString();
+                    uCPlejof.TxtRezultatF2.Text = utakmica.BrojPoenaGost.ToString();
+                    g2 = f1;
+                    f = true;
+                    if (e == true) uCPlejof.BtnDodajG.Enabled = true;
+                }
+                else
+                {
+                    MessageBox.Show($"Polufinale je zavrseno, pobednik je {f2.Ime}");
+                    uCPlejof.TxtG2.Text = f2.Ime;
+                    uCPlejof.TxtRezultatF1.Text = utakmica.BrojPoenaDomacin.ToString();
+                    uCPlejof.TxtRezultatF2.Text = utakmica.BrojPoenaGost.ToString();
+                    g2 = f2;
+                    f = true;
+                    if (e == true) uCPlejof.BtnDodajG.Enabled = true;
+                }
             }
-            else
+            catch (ServerCommunicationException)
             {
-                MessageBox.Show($"Polufinale je zavrseno, pobednik je {f2.Ime}");
-                uCPlejof.TxtG2.Text = f2.Ime;
-                uCPlejof.TxtRezultatF1.Text = utakmica.BrojPoenaDomacin.ToString();
-                uCPlejof.TxtRezultatF2.Text = utakmica.BrojPoenaGost.ToString();
-                g2 = f2;
+
+                throw;
             }
         }
 
         internal void DodajUtakmicuE()
         {
-            FrmPlejofUtakmica frmUtakmica = new FrmPlejofUtakmica(e1, e2, "polufinale");
-            frmUtakmica.ShowDialog();
-            Utakmica utakmica = new Utakmica
+            try
             {
-                FindCondition = $"where d.ImeTima like '{e1.Ime}%' and u.FazaTakmicenja = 'polufinale'"
-            };
-            List<Utakmica> utakmice = Communication.Instance.SendRequestGetResult<List<Utakmica>>(Operation.NadjiUtakmice, utakmica);
-            utakmica = utakmice[0];
-            uCPlejof.BtnDodajE.Enabled = false;
-            if (utakmica.BrojPoenaDomacin > utakmica.BrojPoenaGost)
-            {
-                MessageBox.Show($"Polufinale je zavrseno, pobednik je {e1.Ime}");
-                uCPlejof.TxtG1.Text = e1.Ime;
-                uCPlejof.TxtRezultatE1.Text = utakmica.BrojPoenaDomacin.ToString();
-                uCPlejof.TxtRezultatE2.Text = utakmica.BrojPoenaGost.ToString();
-                g1 = e1;
+                FrmPlejofUtakmica frmUtakmica = new FrmPlejofUtakmica(e1, e2, "polufinale");
+                frmUtakmica.ShowDialog();
+                Utakmica utakmica = new Utakmica
+                {
+                    FindCondition = $"where d.ImeTima like '{e1.Ime}%' and u.FazaTakmicenja = 'polufinale'"
+                };
+                List<Utakmica> utakmice = Communication.Instance.SendRequestGetResult<List<Utakmica>>(Operation.NadjiUtakmice, utakmica);
+                utakmica = utakmice[0];
+                uCPlejof.BtnDodajE.Enabled = false;
+                if (utakmica.BrojPoenaDomacin > utakmica.BrojPoenaGost)
+                {
+                    MessageBox.Show($"Polufinale je zavrseno, pobednik je {e1.Ime}");
+                    uCPlejof.TxtG1.Text = e1.Ime;
+                    uCPlejof.TxtRezultatE1.Text = utakmica.BrojPoenaDomacin.ToString();
+                    uCPlejof.TxtRezultatE2.Text = utakmica.BrojPoenaGost.ToString();
+                    g1 = e1;
+                    e = true;
+                    if (f == true) uCPlejof.BtnDodajG.Enabled = true;
+                }
+                else
+                {
+                    MessageBox.Show($"Polufinale je zavrseno, pobednik je {e2.Ime}");
+                    uCPlejof.TxtG1.Text = e2.Ime;
+                    uCPlejof.TxtRezultatE1.Text = utakmica.BrojPoenaDomacin.ToString();
+                    uCPlejof.TxtRezultatE2.Text = utakmica.BrojPoenaGost.ToString();
+                    g1 = e2;
+                    e = true;
+                    if (f == true) uCPlejof.BtnDodajG.Enabled = true;
+                }
             }
-            else
+            catch (ServerCommunicationException)
             {
-                MessageBox.Show($"Polufinale je zavrseno, pobednik je {e2.Ime}");
-                uCPlejof.TxtG1.Text = e2.Ime;
-                uCPlejof.TxtRezultatE1.Text = utakmica.BrojPoenaDomacin.ToString();
-                uCPlejof.TxtRezultatE2.Text = utakmica.BrojPoenaGost.ToString();
-                g1 = e2;
+
+                throw;
             }
+      
 
         }
 
         internal void DodajUtakmicuD()
         {
-            FrmPlejofUtakmica frmUtakmica = new FrmPlejofUtakmica(d1, d2, "top8");
-            frmUtakmica.ShowDialog();
-            UpisiRezultat(d1, d2, uCPlejof.TxtRezultatD1, uCPlejof.TxtRezultatD2);
-            if (uCPlejof.TxtRezultatD1.Text == "3")
+            try
             {
-                MessageBox.Show($"Serija je zavrsena, ponbednik je {d1.Ime}");
-                uCPlejof.BtnDodajD.Enabled = false;
-                uCPlejof.TxtF2.Text = d1.Ime;
-                f2 = d1;
+                FrmPlejofUtakmica frmUtakmica = new FrmPlejofUtakmica(d1, d2, "top8");
+                frmUtakmica.ShowDialog();
+                UpisiRezultat(d1, d2, uCPlejof.TxtRezultatD1, uCPlejof.TxtRezultatD2);
+                if (uCPlejof.TxtRezultatD1.Text == "3")
+                {
+                    MessageBox.Show($"Serija je zavrsena, ponbednik je {d1.Ime}");
+                    uCPlejof.BtnDodajD.Enabled = false;
+                    uCPlejof.TxtF2.Text = d1.Ime;
+                    f2 = d1;
+                    d = true;
+                    if (c == true) uCPlejof.BtnDodajF.Enabled = true;
+                }
+                if (uCPlejof.TxtRezultatD2.Text == "3")
+                {
+                    MessageBox.Show($"Serija je zavrsena, ponbednik je {d2.Ime}");
+                    uCPlejof.BtnDodajD.Enabled = false;
+                    uCPlejof.TxtF2.Text = d2.Ime;
+                    f2 = d1;
+                    d = true;
+                    if (c == true) uCPlejof.BtnDodajF.Enabled = true;
+                }
             }
-            if (uCPlejof.TxtRezultatD2.Text == "3")
+            catch (ServerCommunicationException)
             {
-                MessageBox.Show($"Serija je zavrsena, ponbednik je {d2.Ime}");
-                uCPlejof.BtnDodajD.Enabled = false;
-                uCPlejof.TxtF2.Text = d2.Ime;
-                f2 = d1;
+
+                throw;
             }
         }
 
         internal void DodajUtakmicuC()
         {
-            FrmPlejofUtakmica frmUtakmica = new FrmPlejofUtakmica(c1, c2, "top8");
-            frmUtakmica.ShowDialog();
-            UpisiRezultat(c1, c2, uCPlejof.TxtRezultatC1, uCPlejof.TxtRezultatC2);
-            if (uCPlejof.TxtRezultatC1.Text == "3")
+            try
             {
-                MessageBox.Show($"Serija je zavrsena, ponbednik je {c1.Ime}");
-                uCPlejof.BtnDodajC.Enabled = false;
-                uCPlejof.TxtF1.Text = c1.Ime;
-                f1 = c1;
+                FrmPlejofUtakmica frmUtakmica = new FrmPlejofUtakmica(c1, c2, "top8");
+                frmUtakmica.ShowDialog();
+                UpisiRezultat(c1, c2, uCPlejof.TxtRezultatC1, uCPlejof.TxtRezultatC2);
+                if (uCPlejof.TxtRezultatC1.Text == "3")
+                {
+                    MessageBox.Show($"Serija je zavrsena, ponbednik je {c1.Ime}");
+                    uCPlejof.BtnDodajC.Enabled = false;
+                    uCPlejof.TxtF1.Text = c1.Ime;
+                    f1 = c1;
+                    c = true;
+                    if (d == true) uCPlejof.BtnDodajF.Enabled = true;
+                }
+                if (uCPlejof.TxtRezultatC2.Text == "3")
+                {
+                    MessageBox.Show($"Serija je zavrsena, ponbednik je {c2.Ime}");
+                    uCPlejof.BtnDodajC.Enabled = false;
+                    uCPlejof.TxtF1.Text = c2.Ime;
+                    f1 = c2;
+                    c = true;
+                    if (d == true) uCPlejof.BtnDodajF.Enabled = true;
+                }
             }
-            if (uCPlejof.TxtRezultatC2.Text == "3")
+            catch (ServerCommunicationException)
             {
-                MessageBox.Show($"Serija je zavrsena, ponbednik je {c2.Ime}");
-                uCPlejof.BtnDodajC.Enabled = false;
-                uCPlejof.TxtF1.Text = c2.Ime;
-                f1 = c2;
+
+                throw;
             }
         }
 
         internal void DodajUtakmicuB()
         {
-            FrmPlejofUtakmica frmUtakmica = new FrmPlejofUtakmica(b1, b2, "top8");
-            frmUtakmica.ShowDialog();
-            UpisiRezultat(b1, b2, uCPlejof.TxtRezultatB1, uCPlejof.TxtRezultatB2);
-            if (uCPlejof.TxtRezultatB1.Text == "3")
+            try
             {
-                MessageBox.Show($"Serija je zavrsena, ponbednik je {b1.Ime}");
-                uCPlejof.BtnDodajB.Enabled = false;
-                uCPlejof.TxtE2.Text = b1.Ime;
-                e2 = b1;
+                FrmPlejofUtakmica frmUtakmica = new FrmPlejofUtakmica(b1, b2, "top8");
+                frmUtakmica.ShowDialog();
+                UpisiRezultat(b1, b2, uCPlejof.TxtRezultatB1, uCPlejof.TxtRezultatB2);
+                if (uCPlejof.TxtRezultatB1.Text == "3")
+                {
+                    MessageBox.Show($"Serija je zavrsena, ponbednik je {b1.Ime}");
+                    uCPlejof.BtnDodajB.Enabled = false;
+                    uCPlejof.TxtE2.Text = b1.Ime;
+                    e2 = b1;
+                    b = true;
+                    if (a == true) uCPlejof.BtnDodajE.Enabled = true;
+                }
+                if (uCPlejof.TxtRezultatB2.Text == "3")
+                {
+                    MessageBox.Show($"Serija je zavrsena, ponbednik je {b2.Ime}");
+                    uCPlejof.BtnDodajB.Enabled = false;
+                    uCPlejof.TxtE2.Text = b2.Ime;
+                    e2 = b2;
+                    b = true;
+                    if (a == true) uCPlejof.BtnDodajE.Enabled = true;
+                }
             }
-            if (uCPlejof.TxtRezultatB2.Text == "3")
+            catch (ServerCommunicationException)
             {
-                MessageBox.Show($"Serija je zavrsena, ponbednik je {b2.Ime}");
-                uCPlejof.BtnDodajB.Enabled = false;
-                uCPlejof.TxtE2.Text = b2.Ime;
-                e2 = b2;
+
+                throw;
             }
         }
 
         internal void DodajUtakmicuA()
         {
-            FrmPlejofUtakmica frmUtakmica = new FrmPlejofUtakmica(a1, a2, "top8");
-            frmUtakmica.ShowDialog();
-            UpisiRezultat(a1, a2, uCPlejof.TxtRezultatA1, uCPlejof.TxtRezultatiA2);
-            if (uCPlejof.TxtRezultatA1.Text == "3")
+            try
             {
-                MessageBox.Show($"Serija je zavrsena, ponbednik je {a1.Ime}");
-                uCPlejof.BtnDodajA.Enabled = false;
-                uCPlejof.TxtE1.Text = a1.Ime;
-                e1 = a1;
+                FrmPlejofUtakmica frmUtakmica = new FrmPlejofUtakmica(a1, a2, "top8");
+                frmUtakmica.ShowDialog();
+                UpisiRezultat(a1, a2, uCPlejof.TxtRezultatA1, uCPlejof.TxtRezultatiA2);
+                if (uCPlejof.TxtRezultatA1.Text == "3")
+                {
+                    MessageBox.Show($"Serija je zavrsena, ponbednik je {a1.Ime}");
+                    uCPlejof.BtnDodajA.Enabled = false;
+                    uCPlejof.TxtE1.Text = a1.Ime;
+                    e1 = a1;
+                    a = true;
+                    if (b == true) uCPlejof.BtnDodajE.Enabled = true;
+                }
+                if (uCPlejof.TxtRezultatiA2.Text == "3")
+                {
+                    MessageBox.Show($"Serija je zavrsena, ponbednik je {a2.Ime}");
+                    uCPlejof.BtnDodajA.Enabled = false;
+                    uCPlejof.TxtE2.Text = a2.Ime;
+                    e1 = a2;
+                    a = true;
+                    if (b == true) uCPlejof.BtnDodajE.Enabled = true;
+                }
             }
-            if (uCPlejof.TxtRezultatiA2.Text == "3")
+            catch (ServerCommunicationException)
             {
-                MessageBox.Show($"Serija je zavrsena, ponbednik je {a2.Ime}");
-                uCPlejof.BtnDodajA.Enabled = false;
-                uCPlejof.TxtE2.Text = a2.Ime;
-                e1 = a2;
+
+                throw;
             }
         }
 
         private void UpisiRezultat(Tim a1, Tim a2, TextBox domacin, TextBox gost)
         {
-            Utakmica utakmica = new Utakmica
+            try
             {
-                FindCondition = $"where d.ImeTima like '{a1.Ime}' and u.FazaTakmicenja like 'top8'"
-            };
-            List<Utakmica> utakmice = Communication.Instance.SendRequestGetResult<List<Utakmica>>(Operation.NadjiUtakmice, utakmica);
-            int pobedeDomacin = 0;
-            int pobedeGost = 0;
-            foreach (var u in utakmice)
-            {
-                if (u.BrojPoenaDomacin > u.BrojPoenaGost) pobedeDomacin++;
-                else pobedeGost++;
+                Utakmica utakmica = new Utakmica
+                {
+                    FindCondition = $"where d.ImeTima like '{a1.Ime}' and u.FazaTakmicenja like 'top8'"
+                };
+                List<Utakmica> utakmice = Communication.Instance.SendRequestGetResult<List<Utakmica>>(Operation.NadjiUtakmice, utakmica);
+                int pobedeDomacin = 0;
+                int pobedeGost = 0;
+                foreach (var u in utakmice)
+                {
+                    if (u.BrojPoenaDomacin > u.BrojPoenaGost) pobedeDomacin++;
+                    else pobedeGost++;
+                }
+                domacin.Text = pobedeDomacin.ToString();
+                gost.Text = pobedeGost.ToString();
             }
-            domacin.Text = pobedeDomacin.ToString();
-            gost.Text = pobedeGost.ToString();
+            catch (ServerCommunicationException)
+            {
+
+                throw;
+            }
         }
     }
 }

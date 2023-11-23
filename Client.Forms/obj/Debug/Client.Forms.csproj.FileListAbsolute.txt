@@ -59,3 +59,9 @@ C:\Users\Filip\Desktop\ide gas\Client.Forms\obj\Debug\Client.Forms.Dialogs.Utakm
 C:\Users\Filip\Desktop\ide gas\Client.Forms\obj\Debug\Client.Forms.UserControls.Statistika.UCNajboljiStrelci.resources
 C:\Users\Filip\Desktop\ide gas\Client.Forms\obj\Debug\Client.Forms.UserControls.Statistika.UCNajboljiAsistenti.resources
 C:\Users\Filip\Desktop\ide gas\Client.Forms\obj\Debug\Client.Forms.UserControls.Statistika.UCNajboljiSkakaci.resources
+C:\Users\Filip\Desktop\ide gas\Client.Forms\bin\Debug\FluentValidation.dll
+C:\Users\Filip\Desktop\ide gas\Client.Forms\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\Filip\Desktop\ide gas\Client.Forms\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\Filip\Desktop\ide gas\Client.Forms\bin\Debug\FluentValidation.xml
+C:\Users\Filip\Desktop\ide gas\Client.Forms\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\Filip\Desktop\ide gas\Client.Forms\bin\Debug\System.Threading.Tasks.Extensions.xml

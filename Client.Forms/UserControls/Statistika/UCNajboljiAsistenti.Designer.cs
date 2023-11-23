@@ -32,12 +32,15 @@ namespace Client.Forms.UserControls.Statistika
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UCNajboljiAsistenti));
             this.dgvIgraci = new System.Windows.Forms.DataGridView();
-            this.igracBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.imeIgracaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.prezimeIgracaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.timDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.prosekAsistencijeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.igracBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dgvIgraci)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.igracBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -48,6 +51,14 @@ namespace Client.Forms.UserControls.Statistika
             this.dgvIgraci.AllowUserToDeleteRows = false;
             this.dgvIgraci.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dgvIgraci.AutoGenerateColumns = false;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvIgraci.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvIgraci.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvIgraci.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.imeIgracaDataGridViewTextBoxColumn,
@@ -55,18 +66,22 @@ namespace Client.Forms.UserControls.Statistika
             this.timDataGridViewTextBoxColumn,
             this.prosekAsistencijeDataGridViewTextBoxColumn});
             this.dgvIgraci.DataSource = this.igracBindingSource;
-            this.dgvIgraci.Location = new System.Drawing.Point(84, 54);
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvIgraci.DefaultCellStyle = dataGridViewCellStyle4;
+            this.dgvIgraci.Location = new System.Drawing.Point(161, 84);
             this.dgvIgraci.Name = "dgvIgraci";
             this.dgvIgraci.ReadOnly = true;
             this.dgvIgraci.RowHeadersWidth = 51;
             this.dgvIgraci.RowTemplate.Height = 24;
             this.dgvIgraci.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.dgvIgraci.Size = new System.Drawing.Size(751, 445);
+            this.dgvIgraci.Size = new System.Drawing.Size(751, 565);
             this.dgvIgraci.TabIndex = 0;
-            // 
-            // igracBindingSource
-            // 
-            this.igracBindingSource.DataSource = typeof(Common.Domain.Igrac);
             // 
             // imeIgracaDataGridViewTextBoxColumn
             // 
@@ -104,13 +119,20 @@ namespace Client.Forms.UserControls.Statistika
             this.prosekAsistencijeDataGridViewTextBoxColumn.ReadOnly = true;
             this.prosekAsistencijeDataGridViewTextBoxColumn.Width = 125;
             // 
+            // igracBindingSource
+            // 
+            this.igracBindingSource.DataSource = typeof(Common.Domain.Igrac);
+            // 
             // UCNajboljiAsistenti
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.Controls.Add(this.dgvIgraci);
+            this.DoubleBuffered = true;
             this.Name = "UCNajboljiAsistenti";
-            this.Size = new System.Drawing.Size(904, 574);
+            this.Size = new System.Drawing.Size(1058, 634);
             ((System.ComponentModel.ISupportInitialize)(this.dgvIgraci)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.igracBindingSource)).EndInit();
             this.ResumeLayout(false);

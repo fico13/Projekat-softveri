@@ -19,6 +19,7 @@ namespace Client.Forms.UserControls.Takmicenje
         {
             InitializeComponent();
             plejofController = new PlejofController(this);
+            plejofController.Init();
         }
 
         private void btnDodajA_Click(object sender, EventArgs e)
