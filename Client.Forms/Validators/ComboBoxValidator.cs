@@ -22,7 +22,7 @@ namespace Client.Forms.Validators
         {
             ClassLevelCascadeMode = CascadeMode.Stop;
             RuleFor(cb => cb.SelectedIndex)
-                .GreaterThan(-1).WithMessage("Niste lepo odabrali igrača u combo box-u!");
+                .GreaterThan(-1).WithMessage("Niste lepo odabrali u combo box-u!");
         }
     }
 }

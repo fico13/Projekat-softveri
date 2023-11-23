@@ -6,9 +6,11 @@ using Client.Forms.UserControls.Takmicenje;
 using Client.Forms.Validators;
 using Common.Communication;
 using Common.Domain;
+using FluentValidation.Results;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -36,6 +38,13 @@ namespace Client.Forms.GUIController
 
         internal void DodajTimULigu()
         {
+            ComboBoxValidator cbValidator = new ComboBoxValidator();
+            ValidationResult cbResult = cbValidator.Validate(uCRegularniDeo.CbTimovi);
+            if (!cbResult.IsValid)
+            {
+                MessageBox.Show("Sistem ne može da doda tim u ligu! " + cbResult.Errors[0].ErrorMessage, "Upozorenje", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
             try
             {
                 Tim tim = (Tim)uCRegularniDeo.CbTimovi.SelectedItem;
@@ -86,9 +95,11 @@ namespace Client.Forms.GUIController
                 var result = validator.Validate(takmicenje);
                 if (!result.IsValid)
                 {
-                    MessageBox.Show("Sistem ne može da zapamti takmičenje " + result.Errors[0].ErrorMessage);
+                    MessageBox.Show("Sistem ne može da zapamti takmičenje " + result.Errors[0].ErrorMessage, "Upozorenje", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    uCRegularniDeo.TxtNazivTakmicenja.BackColor = Color.LightCoral;
                     return;
                 }
+                else uCRegularniDeo.TxtNazivTakmicenja.BackColor = Color.White;
                 Communication.Instance.SendRequestNoResult(Operation.SacuvajTakmicenje, takmicenje);
             }
             catch (ServerCommunicationException)
