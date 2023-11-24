@@ -36,7 +36,7 @@ namespace Client.Forms.GUIController
             }
             catch (ServerCommunicationException)
             {
-                MessageBox.Show("Sistem ne može da nađe statistike po zadatoj vrednosti");
+                MessageBox.Show("Sistem ne može da nađe statistike po zadatoj vrednosti!", "Upozorenje", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 throw;
             }
             

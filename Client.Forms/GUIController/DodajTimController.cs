@@ -32,23 +32,23 @@ namespace Client.Forms.GUIController
         {
             if(UserControlsHelper.EmptyText(uCDodajTim.TxtIme) || UserControlsHelper.EmptyText(uCDodajTim.TxtDrzava))
             {
-                MessageBox.Show("Sistem ne može da zapamti tim! Niste uneli sve potrebne podatke! Pokušajte ponovo");
+                MessageBox.Show("Sistem ne može da zapamti tim! Niste uneli sve potrebne podatke! Pokušajte ponovo", "Upozorenje", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
             if(UserControlsHelper.ComboBoxValidation(uCDodajTim.CbDvorane))
             {
-                MessageBox.Show("Sistem ne može da zapamti tim! Niste lepo odabrali dvoranu u combo box-u! Pokušajte ponovo!");
+                MessageBox.Show("Sistem ne može da zapamti tim! Niste lepo odabrali dvoranu u combo box-u! Pokušajte ponovo!", "Upozorenje", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
             if (UserControlsHelper.WordValidation(uCDodajTim.TxtIme))
             {
-                MessageBox.Show("Sistem ne može da zapamti tim! Ime tima ne sme da sadrži broj u nazivu! Pokušajte ponovo!");
+                MessageBox.Show("Sistem ne može da zapamti tim! Ime tima ne sme da sadrži broj u nazivu! Pokušajte ponovo!", "Upozorenje", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
             if (UserControlsHelper.WordValidation(uCDodajTim.TxtDrzava))
             {
-                MessageBox.Show("Sistem ne može da zapamti tim! Država ne sme da sadrži broj u nazivu! Pokušajte ponovo!");
+                MessageBox.Show("Sistem ne može da zapamti tim! Država ne sme da sadrži broj u nazivu! Pokušajte ponovo!", "Upozorenje", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
             try
@@ -60,12 +60,12 @@ namespace Client.Forms.GUIController
                     Dvorana = (Dvorana)uCDodajTim.CbDvorane.SelectedItem
                 };
                 Communication.Instance.SendRequestNoResult(Operation.SacuvajTim, tim);
-                MessageBox.Show("Sistem je zapamtio tim!");
+                MessageBox.Show("Sistem je zapamtio tim!", "Obaveštenje", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 OcistiPodatke();
             }
             catch (ServerCommunicationException)
             {
-                MessageBox.Show("Sistem ne može da zapamti tim!");
+                MessageBox.Show("Sistem ne može da zapamti tim!", "Upozorenje", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 throw;
             }
         }

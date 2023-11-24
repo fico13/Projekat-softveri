@@ -19,7 +19,7 @@ namespace Client.Forms.GUIController
         {
             if((UserControlsHelper.EmptyText(frmLogin.TxtUsername) && UserControlsHelper.EmptyText(frmLogin.TxtPassword)) || UserControlsHelper.EmptyText(frmLogin.TxtUsername) || UserControlsHelper.EmptyText(frmLogin.TxtPassword))
             {
-                MessageBox.Show("Niste uneli sve podatke! Pokušajte ponovo!");
+                MessageBox.Show("Niste uneli sve podatke! Pokušajte ponovo!", "Upozorenje", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
             string username = frmLogin.TxtUsername.Text;
@@ -40,7 +40,7 @@ namespace Client.Forms.GUIController
                 }
                 else
                 {
-                    MessageBox.Show($"Dobrodošli {administrator.Ime} {administrator.Prezime}");
+                    MessageBox.Show($"Dobrodošli {administrator.Ime} {administrator.Prezime}", "Dobrodošli", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     frmLogin.DialogResult = DialogResult.OK;
                 }
             }

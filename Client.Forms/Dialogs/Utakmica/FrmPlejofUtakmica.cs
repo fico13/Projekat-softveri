@@ -20,6 +20,7 @@ namespace Client.Forms.Dialogs.Utakmica
         {
             InitializeComponent();
             dodajPlejofUtakmicu = new DodajPlejofUtakmicuController(this, tim1, tim2, faza);
+            dodajPlejofUtakmicu.Init();
         }
 
         private void FrmUtakmica_FormClosed(object sender, FormClosedEventArgs e)

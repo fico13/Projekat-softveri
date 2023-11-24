@@ -19,8 +19,8 @@ namespace Common.Domain
         public int KosRazlika { get; set; } = 0;
         public int Bodovi { get; set; } = 0;
         public Dvorana Dvorana { get; set; }
-        
 
+        public int Rank { get; set; }
 
 
         [Browsable(false)]

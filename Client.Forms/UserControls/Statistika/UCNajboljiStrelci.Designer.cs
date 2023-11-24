@@ -38,8 +38,10 @@ namespace Client.Forms.UserControls.Statistika
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UCNajboljiStrelci));
             this.dgvIgraci = new System.Windows.Forms.DataGridView();
+            this.rankDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.imeIgracaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.prezimeIgracaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.drzavaIgracaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.timDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.prosekPoeniDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.igracBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -53,6 +55,7 @@ namespace Client.Forms.UserControls.Statistika
             this.dgvIgraci.AllowUserToDeleteRows = false;
             this.dgvIgraci.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dgvIgraci.AutoGenerateColumns = false;
+            this.dgvIgraci.BackgroundColor = System.Drawing.Color.OrangeRed;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -63,8 +66,10 @@ namespace Client.Forms.UserControls.Statistika
             this.dgvIgraci.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvIgraci.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvIgraci.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.rankDataGridViewTextBoxColumn,
             this.imeIgracaDataGridViewTextBoxColumn,
             this.prezimeIgracaDataGridViewTextBoxColumn,
+            this.drzavaIgracaDataGridViewTextBoxColumn,
             this.timDataGridViewTextBoxColumn,
             this.prosekPoeniDataGridViewTextBoxColumn});
             this.dgvIgraci.DataSource = this.igracBindingSource;
@@ -76,7 +81,7 @@ namespace Client.Forms.UserControls.Statistika
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvIgraci.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvIgraci.Location = new System.Drawing.Point(161, 84);
+            this.dgvIgraci.Location = new System.Drawing.Point(210, 35);
             this.dgvIgraci.Name = "dgvIgraci";
             this.dgvIgraci.ReadOnly = true;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
@@ -87,13 +92,23 @@ namespace Client.Forms.UserControls.Statistika
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvIgraci.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvIgraci.RowHeadersVisible = false;
             this.dgvIgraci.RowHeadersWidth = 51;
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.dgvIgraci.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvIgraci.RowTemplate.Height = 24;
             this.dgvIgraci.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.dgvIgraci.Size = new System.Drawing.Size(751, 565);
+            this.dgvIgraci.Size = new System.Drawing.Size(1025, 565);
             this.dgvIgraci.TabIndex = 0;
+            // 
+            // rankDataGridViewTextBoxColumn
+            // 
+            this.rankDataGridViewTextBoxColumn.DataPropertyName = "Rank";
+            this.rankDataGridViewTextBoxColumn.HeaderText = "Rank";
+            this.rankDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.rankDataGridViewTextBoxColumn.Name = "rankDataGridViewTextBoxColumn";
+            this.rankDataGridViewTextBoxColumn.ReadOnly = true;
+            this.rankDataGridViewTextBoxColumn.Width = 125;
             // 
             // imeIgracaDataGridViewTextBoxColumn
             // 
@@ -112,6 +127,15 @@ namespace Client.Forms.UserControls.Statistika
             this.prezimeIgracaDataGridViewTextBoxColumn.Name = "prezimeIgracaDataGridViewTextBoxColumn";
             this.prezimeIgracaDataGridViewTextBoxColumn.ReadOnly = true;
             this.prezimeIgracaDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // drzavaIgracaDataGridViewTextBoxColumn
+            // 
+            this.drzavaIgracaDataGridViewTextBoxColumn.DataPropertyName = "DrzavaIgraca";
+            this.drzavaIgracaDataGridViewTextBoxColumn.HeaderText = "Država ";
+            this.drzavaIgracaDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.drzavaIgracaDataGridViewTextBoxColumn.Name = "drzavaIgracaDataGridViewTextBoxColumn";
+            this.drzavaIgracaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.drzavaIgracaDataGridViewTextBoxColumn.Width = 125;
             // 
             // timDataGridViewTextBoxColumn
             // 
@@ -144,7 +168,7 @@ namespace Client.Forms.UserControls.Statistika
             this.Controls.Add(this.dgvIgraci);
             this.DoubleBuffered = true;
             this.Name = "UCNajboljiStrelci";
-            this.Size = new System.Drawing.Size(1058, 634);
+            this.Size = new System.Drawing.Size(1433, 634);
             ((System.ComponentModel.ISupportInitialize)(this.dgvIgraci)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.igracBindingSource)).EndInit();
             this.ResumeLayout(false);
@@ -154,8 +178,10 @@ namespace Client.Forms.UserControls.Statistika
         #endregion
 
         private System.Windows.Forms.DataGridView dgvIgraci;
+        private DataGridViewTextBoxColumn rankDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn imeIgracaDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn prezimeIgracaDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn drzavaIgracaDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn timDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn prosekPoeniDataGridViewTextBoxColumn;
         private BindingSource igracBindingSource;

@@ -27,27 +27,27 @@ namespace Client.Forms.GUIController
         {
             if(UserControlsHelper.EmptyText(uCDodajDvoranu.TxtImeDvorane) || UserControlsHelper.EmptyText(uCDodajDvoranu.TxtDrzava) || UserControlsHelper.EmptyText(uCDodajDvoranu.TxtKapacitet))
             {
-                MessageBox.Show("Sistem ne može da zapamti dvoranu! Niste uneli sve potrebne podatke! Pokušajte ponovo!");
+                MessageBox.Show("Sistem ne može da zapamti dvoranu! Niste uneli sve potrebne podatke! Pokušajte ponovo!", "Upozorenje", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
             if (UserControlsHelper.IntegerValidation(uCDodajDvoranu.TxtKapacitet))
             {
-                MessageBox.Show("Sistem ne može da zapamti dvoranu! Kapacitet dvorane mora biti pozitivan broj! Pokušajte ponovo!");
+                MessageBox.Show("Sistem ne može da zapamti dvoranu! Kapacitet dvorane mora biti pozitivan broj! Pokušajte ponovo!", "Upozorenje", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
             if(UserControlsHelper.WordValidation(uCDodajDvoranu.TxtImeDvorane))
             {
-                MessageBox.Show("Sistem ne može da zapamti dvoranu! Ime dvorane ne sme da sadrži broj u nazivu! Pokušajte ponovo!");
+                MessageBox.Show("Sistem ne može da zapamti dvoranu! Ime dvorane ne sme da sadrži broj u nazivu! Pokušajte ponovo!", "Upozorenje", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
             if (UserControlsHelper.WordValidation(uCDodajDvoranu.TxtDrzava))
             {
-                MessageBox.Show("Sistem ne može da zapamti dvoranu! Država ne sme da sadrži broj u nazivu! Pokušajte ponovo!");
+                MessageBox.Show("Sistem ne može da zapamti dvoranu! Država ne sme da sadrži broj u nazivu! Pokušajte ponovo!", "Upozorenje", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
             if(UserControlsHelper.ZeroValidation(uCDodajDvoranu.TxtKapacitet))
             {
-                MessageBox.Show("Sistem ne može da zapamti dvoranu! Kapacitet ne može da bude 0! Pokušajte ponovo!");
+                MessageBox.Show("Sistem ne može da zapamti dvoranu! Kapacitet ne može da bude 0! Pokušajte ponovo!", "Upozorenje", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
             try
@@ -59,12 +59,12 @@ namespace Client.Forms.GUIController
                     Kapacitet = Convert.ToInt32(uCDodajDvoranu.TxtKapacitet.Text)
                 };
                 Communication.Instance.SendRequestNoResult(Operation.SacuvajDvoranu, dvorana);
-                MessageBox.Show("Sistem je zapamtio dvoranu!");
+                MessageBox.Show("Sistem je zapamtio dvoranu!", "Obaveštenje", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 OcistiPodatke(uCDodajDvoranu);
             }
             catch (ServerCommunicationException)
             {
-                MessageBox.Show("Sistem ne može da zapamti dvoranu!");
+                MessageBox.Show("Sistem ne može da zapamti dvoranu!", "Upozorenje", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 throw;
             }
         }

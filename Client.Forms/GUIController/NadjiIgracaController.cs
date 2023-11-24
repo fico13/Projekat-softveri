@@ -35,7 +35,7 @@ namespace Client.Forms.GUIController
             uCPretragaIgraca.DgvIgraci.DataSource = null;
             if(UserControlsHelper.EmptyText(uCPretragaIgraca.TxtImeIgraca) && UserControlsHelper.EmptyText(uCPretragaIgraca.TxtPrezimeIgraca))
             {
-                MessageBox.Show("Sistem ne može da nađe igrače po zadatoj vrednosti! Niste uneli nijedan podatak za pretragu! Pokušajte ponovo!");
+                MessageBox.Show("Sistem ne može da nađe igrače po zadatoj vrednosti! Niste uneli nijedan podatak za pretragu! Pokušajte ponovo!", "Upozorenje", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
@@ -51,16 +51,16 @@ namespace Client.Forms.GUIController
                     BindingList<Igrac> igraci = new BindingList<Igrac>(Communication.Instance.SendRequestGetResult<List<Igrac>>(Operation.NadjiIgrace, igrac));
                     if (igraci.Count == 0)
                     {
-                        MessageBox.Show("Sistem ne može da nađe igrače po zadatoj vrednosti!");
+                        MessageBox.Show("Sistem ne može da nađe igrače po zadatoj vrednosti!", "Upozorenje", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         uCPretragaIgraca.DgvIgraci.DataSource = null;
                         return;
                     }
                     uCPretragaIgraca.DgvIgraci.DataSource = igraci;
-                    MessageBox.Show("Sistem je našao igrače po zadatoj vrednosti");
+                    MessageBox.Show("Sistem je našao igrače po zadatoj vrednosti!", "Obaveštenje", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 catch (ServerCommunicationException)
                 {
-                    MessageBox.Show("Sistem ne može da nađe igrače po zadatoj vrednosti!");
+                    MessageBox.Show("Sistem ne može da nađe igrače po zadatoj vrednosti!", "Upozorenje", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     throw;
                 }
             }
@@ -77,16 +77,16 @@ namespace Client.Forms.GUIController
                     BindingList<Igrac> igraci = new BindingList<Igrac>(Communication.Instance.SendRequestGetResult<List<Igrac>>(Operation.NadjiIgrace, igrac));
                     if (igraci.Count == 0)
                     {
-                        MessageBox.Show("Sistem ne može da nađe igrače po zadatoj vrednosti!");
+                        MessageBox.Show("Sistem ne može da nađe igrače po zadatoj vrednosti!", "Upozorenje", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         uCPretragaIgraca.DgvIgraci.DataSource = null;
                         return;
                     }
                     uCPretragaIgraca.DgvIgraci.DataSource = igraci;
-                    MessageBox.Show("Sistem je našao igrače po zadatoj vrednosti");
+                    MessageBox.Show("Sistem je našao igrače po zadatoj vrednosti", "Obaveštenje", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 catch (ServerCommunicationException)
                 {
-                    MessageBox.Show("Sistem ne može da nađe igrače po zadatoj vrednosti!");
+                    MessageBox.Show("Sistem ne može da nađe igrače po zadatoj vrednosti!", "Upozorenje", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     throw;
                 }
             }
@@ -101,18 +101,18 @@ namespace Client.Forms.GUIController
                     BindingList<Igrac> igraci = new BindingList<Igrac>(Communication.Instance.SendRequestGetResult<List<Igrac>>(Operation.NadjiIgrace, igrac));
                     if (igraci.Count == 0)
                     {
-                        MessageBox.Show("Sistem ne može da nađe igrače po zadatoj vrednosti!");
+                        MessageBox.Show("Sistem ne može da nađe igrače po zadatoj vrednosti!", "Upozorenje", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         uCPretragaIgraca.DgvIgraci.DataSource = null;
                         uCPretragaIgraca.TxtImeIgraca.BackColor = Color.White;
                         uCPretragaIgraca.TxtPrezimeIgraca.BackColor = Color.White;
                         return;
                     }
                     uCPretragaIgraca.DgvIgraci.DataSource = igraci;
-                    MessageBox.Show("Sistem je našao igrače po zadatoj vrednosti");
+                    MessageBox.Show("Sistem je našao igrače po zadatoj vrednosti", "Obaveštenje", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 catch (ServerCommunicationException)
                 {
-                    MessageBox.Show("Sistem ne može da nađe igrače po zadatoj vrednosti!");
+                    MessageBox.Show("Sistem ne može da nađe igrače po zadatoj vrednosti!", "Upozorenje", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     throw;
                 }
             }
@@ -140,7 +140,7 @@ namespace Client.Forms.GUIController
         {
             if (uCPretragaIgraca.DgvIgraci.SelectedRows.Count == 0)
             {
-                MessageBox.Show("Sistem ne može da učita igrača! Niste odabrali nijednog igrača! Pokušajte ponovo!");
+                MessageBox.Show("Sistem ne može da učita igrača! Niste odabrali nijednog igrača! Pokušajte ponovo!", "Upozorenje", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
             try
@@ -157,12 +157,12 @@ namespace Client.Forms.GUIController
                 uCPretragaIgraca.TxtVisina.Text = igrac.Visina.ToString();  
                 uCPretragaIgraca.TxtTezina.Text = igrac.Tezina.ToString();
                 uCPretragaIgraca.TxtTim.Text = igrac.Tim.ToString();
-                MessageBox.Show("Sistem je učitao igrača");
+                MessageBox.Show("Sistem je učitao igrača!", "Obaveštenje", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 IzabraniIgrac = igrac;
             }
             catch (ServerCommunicationException)
             {
-                MessageBox.Show("Sistem ne može da učita igrača");
+                MessageBox.Show("Sistem ne može da učita igrača", "Upozorenje", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 throw;
             }
         }

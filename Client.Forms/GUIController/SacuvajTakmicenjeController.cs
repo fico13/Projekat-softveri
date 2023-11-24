@@ -101,6 +101,7 @@ namespace Client.Forms.GUIController
                 }
                 else uCRegularniDeo.TxtNazivTakmicenja.BackColor = Color.White;
                 Communication.Instance.SendRequestNoResult(Operation.SacuvajTakmicenje, takmicenje);
+                MessageBox.Show("Sistem je zapamtio takmičenje!", "Obaveštenje", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (ServerCommunicationException)
             {

@@ -44,22 +44,22 @@ namespace Client.Forms.GUIController
         {
             if(UserControlsHelper.EmptyText(uCIzmenaUtakmice.TxtPoeni) || UserControlsHelper.EmptyText(uCIzmenaUtakmice.TxtSkokovi) || UserControlsHelper.EmptyText(uCIzmenaUtakmice.TxtAsistencije))
             {
-                MessageBox.Show("Sistem ne može da izmeni statistku! Niste uneli sve podatke! Pokušajte ponovo!");
+                MessageBox.Show("Sistem ne može da izmeni statistku! Niste uneli sve podatke! Pokušajte ponovo!", "Upozorenje", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
             if(UserControlsHelper.IntegerValidation(uCIzmenaUtakmice.TxtPoeni))
             {
-                MessageBox.Show("Sistem ne može da izmeni statistku! Poeni moraju da budu prirodan broj! Pokušajte ponovo!");
+                MessageBox.Show("Sistem ne može da izmeni statistku! Poeni moraju da budu prirodan broj! Pokušajte ponovo!", "Upozorenje", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
             if (UserControlsHelper.IntegerValidation(uCIzmenaUtakmice.TxtSkokovi))
             {
-                MessageBox.Show("Sistem ne može da izmeni statistku! Skokovi moraju da budu prirodan broj! Pokušajte ponovo!");
+                MessageBox.Show("Sistem ne može da izmeni statistku! Skokovi moraju da budu prirodan broj! Pokušajte ponovo!", "Upozorenje", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
             if (UserControlsHelper.IntegerValidation(uCIzmenaUtakmice.TxtAsistencije))
             {
-                MessageBox.Show("Sistem ne može da izmeni statistku! Asistencije moraju da budu prirodan broj! Pokušajte ponovo!");
+                MessageBox.Show("Sistem ne može da izmeni statistku! Asistencije moraju da budu prirodan broj! Pokušajte ponovo!", "Upozorenje", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
             Statistika.Poeni = Convert.ToInt32(uCIzmenaUtakmice.TxtPoeni.Text);
@@ -79,7 +79,7 @@ namespace Client.Forms.GUIController
                 Utakmica.BrojGledalaca = Convert.ToInt32(uCIzmenaUtakmice.TxtBrojGledalaca.Text);
                 if (Utakmica.BrojPoenaDomacin  == Utakmica.BrojPoenaGost)
                 {
-                    MessageBox.Show("Sistem ne može da izmeni utakmicu! Broj poena domaćina i gosta ne može biti isti! Pokušajte ponovo!");
+                    MessageBox.Show("Sistem ne može da izmeni utakmicu! Broj poena domaćina i gosta ne može biti isti! Pokušajte ponovo!", "Upozorenje", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
                 else if(Utakmica.BrojPoenaDomacin > Utakmica.BrojPoenaGost)
@@ -97,14 +97,14 @@ namespace Client.Forms.GUIController
                     Utakmica.Gost.Bodovi += 2;
                 }
                 Communication.Instance.SendRequestNoResult(Operation.IzmeniUtakmicu, Utakmica);
-                MessageBox.Show("Sistem je izmenio utakmicu");
+                MessageBox.Show("Sistem je izmenio utakmicu", "Obaveštenje", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 OcistiPodatke();
                 uCIzmenaUtakmice.DgvUtakmice.DataSource = null;
                 Init();
             }
             catch (ServerCommunicationException)
             {
-                MessageBox.Show("Sistem ne može da izmeni utakmicu");
+                MessageBox.Show("Sistem ne može da izmeni utakmicu", "Upozorenje", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 throw;
             }
         }
@@ -113,7 +113,7 @@ namespace Client.Forms.GUIController
         {
             if (uCIzmenaUtakmice.DgvDomaci.SelectedRows.Count == 0 && uCIzmenaUtakmice.DgvGosti.SelectedRows.Count == 0)
             {
-                MessageBox.Show("Sistem ne može da učita statistiku igrača! Niste odabrali nijednu statistiku igrača! Pokušajte ponovo!");
+                MessageBox.Show("Sistem ne može da učita statistiku igrača! Niste odabrali nijednu statistiku igrača! Pokušajte ponovo!", "Upozorenje", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
             if(uCIzmenaUtakmice.DgvDomaci.SelectedRows.Count > 0)
@@ -170,7 +170,7 @@ namespace Client.Forms.GUIController
         {
             if (uCIzmenaUtakmice.DgvUtakmice.SelectedRows.Count == 0)
             {
-                MessageBox.Show("Sistem ne može da učita utakmicu! Niste odabrali nijednu utakmicu! Pokušajte ponovo!");
+                MessageBox.Show("Sistem ne može da učita utakmicu! Niste odabrali nijednu utakmicu! Pokušajte ponovo!", "Upozorenje", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
             try
@@ -202,11 +202,11 @@ namespace Client.Forms.GUIController
                     Utakmica.Gost.BrojPobeda -= 1;
                     Utakmica.Gost.Bodovi -= 2;
                 }
-                MessageBox.Show("Sistem je učitao utakmicu");
+                MessageBox.Show("Sistem je učitao utakmicu", "Obaveštenje", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (ServerCommunicationException)
             {
-                MessageBox.Show("Sistem ne može da učita utakmicu");
+                MessageBox.Show("Sistem ne može da učita utakmicu", "Upozorenje", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 throw;
             }
         }
@@ -215,9 +215,8 @@ namespace Client.Forms.GUIController
         {
             if (UserControlsHelper.ComboBoxValidation(uCIzmenaUtakmice.CbTimovi))
             {
-                MessageBox.Show("Sistem ne može da nađe utakmice po zadatoj vrednosti! Niste lepo odabrali tim iz combobox-a! Pokušajte ponovo!");
+                MessageBox.Show("Sistem ne može da nađe utakmice po zadatoj vrednosti! Niste lepo odabrali tim iz combobox-a! Pokušajte ponovo!", "Upozorenje", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-            //Tim tim = (Tim)uCPretragaUtakmica.CbTimovi.SelectedItem;
             Utakmica utakmica = new Utakmica
             {
                 FindCondition = $"where lower(d.ImeTima) like '{uCIzmenaUtakmice.CbTimovi.Text.ToLower()}' or lower(g.ImeTima) like '{uCIzmenaUtakmice.CbTimovi.Text.ToLower()}' order by DatumOdigravanja asc"
@@ -227,18 +226,18 @@ namespace Client.Forms.GUIController
                 BindingList<Utakmica> utakmice = new BindingList<Utakmica>(Communication.Instance.SendRequestGetResult<List<Utakmica>>(Operation.NadjiUtakmice, utakmica));
                 if (utakmice.Count == 0)
                 {
-                    MessageBox.Show("Sistem ne može da nađe utakmice po zadatoj vrednosti");
+                    MessageBox.Show("Sistem ne može da nađe utakmice po zadatoj vrednosti!", "Upozorenje", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     uCIzmenaUtakmice.DgvUtakmice.DataSource = null;
                     return;
                 }
                 uCIzmenaUtakmice.DgvUtakmice.DataSource = utakmice;
-                MessageBox.Show("Sistem je našao utakmice po zadatoj vrednosti");
+                MessageBox.Show("Sistem je našao utakmice po zadatoj vrednosti!", "Obaveštenje", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 uCIzmenaUtakmice.BtnUcitajUtakmicu.Enabled = true;
                 OcistiPodatke();
             }
             catch (ServerCommunicationException)
             {
-                MessageBox.Show("Sistem ne može da nađe utakmice po zadatoj vrednosti");
+                MessageBox.Show("Sistem ne može da nađe utakmice po zadatoj vrednosti!", "Upozorenje", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 throw;
             }
         }

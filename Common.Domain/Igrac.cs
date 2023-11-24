@@ -22,7 +22,9 @@ namespace Common.Domain
         public double Tezina { get; set; }
         public Tim Tim { get; set; }
 
-        
+        public int Rank { get; set; }
+
+
         public double ProsekPoeni { get; set; }
         public double ProsekSkokovi { get; set; }
         public double ProsekAsistencije { get; set; }

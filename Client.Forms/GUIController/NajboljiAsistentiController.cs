@@ -1,4 +1,5 @@
-﻿using Client.Forms.ServerCommunication;
+﻿using Client.Forms.Exceptions;
+using Client.Forms.ServerCommunication;
 using Client.Forms.UserControls.Statistika;
 using Common.Communication;
 using Common.Domain;
@@ -7,6 +8,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Client.Forms.GUIController
 {
@@ -24,27 +26,45 @@ namespace Client.Forms.GUIController
 
         internal void Init()
         {
-            Igrac igrac = new Igrac();
-            igraci = Communication.Instance.SendRequestGetResult<List<Igrac>>(
-                Operation.NadjiIgrace, igrac);
-            foreach (var i in igraci)
+            try
             {
-                Statistika statistika = new Statistika
+                Igrac igrac = new Igrac();
+                igraci = Communication.Instance.SendRequestGetResult<List<Igrac>>(
+                    Operation.NadjiIgrace, igrac);
+                if (igraci.Count == 0)
                 {
-                    FindCondition = $"where s.IgracId = {i.IgracId}"
-                };
-                statistike = Communication.Instance.SendRequestGetResult<List<Statistika>>(Operation.NadjiStatistiku, statistika);
-                foreach (var s in statistike)
-                {
-                    zbir += s.Asistencije;
+                    MessageBox.Show("Sistem ne može da nađe igrače po zadatoj vrednosti!", "Upozorenje", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
                 }
-                i.ProsekAsistencije = (double)zbir / statistike.Count;
-                statistike = new List<Statistika>();
-                zbir = 0;
+                foreach (var i in igraci)
+                {
+                    Statistika statistika = new Statistika
+                    {
+                        FindCondition = $"where s.IgracId = {i.IgracId}"
+                    };
+                    statistike = Communication.Instance.SendRequestGetResult<List<Statistika>>(Operation.NadjiStatistiku, statistika);
+                    foreach (var s in statistike)
+                    {
+                        zbir += s.Asistencije;
+                    }
+                    i.ProsekAsistencije = (double)zbir / statistike.Count;
+                    statistike = new List<Statistika>();
+                    zbir = 0;
+                }
+                igraci.Sort((x, y) => x.ProsekAsistencije.CompareTo(y.ProsekAsistencije));
+                igraci.Reverse();
+                for (int i = 0; i < igraci.Count; i++)
+                {
+                    igraci[i].Rank = i + 1;
+                }
+                uCNajboljiAsistenti.DgvIgraci.DataSource = igraci;
             }
-            igraci.Sort((x, y) => x.ProsekAsistencije.CompareTo(y.ProsekAsistencije));
-            igraci.Reverse();
-            uCNajboljiAsistenti.DgvIgraci.DataSource = igraci;
+            catch (ServerCommunicationException)
+            {
+                MessageBox.Show("Sistem ne može da nađe igrače po zadatoj vrednosti!", "Upozorenje", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                throw;
+            }
+           
         }
     }
 }

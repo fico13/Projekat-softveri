@@ -34,54 +34,54 @@ namespace Client.Forms.GUIController
         {
             if(UserControlsHelper.EmptyText(uCDodajIgraca.TxtIme) || UserControlsHelper.EmptyText(uCDodajIgraca.TxtPrezime) || UserControlsHelper.EmptyText(uCDodajIgraca.TxtDrzava) || UserControlsHelper.EmptyText(uCDodajIgraca.TxtBrojNaDresu) ||  UserControlsHelper.EmptyText(uCDodajIgraca.TxtVisina) || UserControlsHelper.EmptyText(uCDodajIgraca.TxtTezina))
             {
-                MessageBox.Show("Sistem ne može da zapamti igrača! Niste uneli sve potrebne podatke! Pokušajte ponovo!");
+                MessageBox.Show("Sistem ne može da zapamti igrača! Niste uneli sve potrebne podatke! Pokušajte ponovo!", "Upozorenje", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
             if(UserControlsHelper.ComboBoxValidation(uCDodajIgraca.CbTim))
             {
-                MessageBox.Show("Sistem ne može da zapamti igrača! Niste lepo odabrali tim u combo box-u! Pokušajte ponovo!");
+                MessageBox.Show("Sistem ne može da zapamti igrača! Niste lepo odabrali tim u combo box-u! Pokušajte ponovo!", "Upozorenje", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
             if (UserControlsHelper.ComboBoxValidation(uCDodajIgraca.CbPozicije))
             {
-                MessageBox.Show("Sistem ne može da zapamti igrača! Niste lepo odabrali poziciju u combo box-u! Pokušajte ponovo!");
+                MessageBox.Show("Sistem ne može da zapamti igrača! Niste lepo odabrali poziciju u combo box-u! Pokušajte ponovo!", "Upozorenje", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
             if (UserControlsHelper.IntegerValidation(uCDodajIgraca.TxtBrojNaDresu))
             {
-                MessageBox.Show("Sistem ne može da zapamti igrača! Broj na dresu mora da bude pozitivan broj! Pokušajte ponovo!");
+                MessageBox.Show("Sistem ne može da zapamti igrača! Broj na dresu mora da bude pozitivan broj! Pokušajte ponovo!", "Upozorenje", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
             if (UserControlsHelper.IntegerValidation(uCDodajIgraca.TxtVisina))
             {
-                MessageBox.Show("Sistem ne može da zapamti igrača! Visina mora da bude pozitivan broj! Pokušajte ponovo!");
+                MessageBox.Show("Sistem ne može da zapamti igrača! Visina mora da bude pozitivan broj! Pokušajte ponovo!", "Upozorenje", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
             if(UserControlsHelper.DoubleValidation(uCDodajIgraca.TxtTezina))
             {
-                MessageBox.Show("Sistem ne može da zapamti igrača! Težina mora da bude uneta kao decimalni broj! Pokušajte ponovo!");
+                MessageBox.Show("Sistem ne može da zapamti igrača! Težina mora da bude uneta kao decimalni broj! Pokušajte ponovo!", "Upozorenje", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
             if (UserControlsHelper.WordValidation(uCDodajIgraca.TxtIme))
             {
-                MessageBox.Show("Sistem ne može da zapamti igrača! Ime ne sme da sadrži broj u nazivu! Pokušajte ponovo!");
+                MessageBox.Show("Sistem ne može da zapamti igrača! Ime ne sme da sadrži broj u nazivu! Pokušajte ponovo!", "Upozorenje", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
             if (UserControlsHelper.WordValidation(uCDodajIgraca.TxtPrezime))
             {
-                MessageBox.Show("Sistem ne može da zapamti igrača! Prezime ne sme da sadrži broj u nazivu! Pokušajte ponovo!");
+                MessageBox.Show("Sistem ne može da zapamti igrača! Prezime ne sme da sadrži broj u nazivu! Pokušajte ponovo!", "Upozorenje", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
             if (UserControlsHelper.WordValidation(uCDodajIgraca.TxtDrzava))
             {
-                MessageBox.Show("Sistem ne može da zapamti igrača! Država ne sme da sadrži broj u nazivu! Pokušajte ponovo!");
+                MessageBox.Show("Sistem ne može da zapamti igrača! Država ne sme da sadrži broj u nazivu! Pokušajte ponovo!", "Upozorenje", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
             if(UserControlsHelper.ThreeDigitsNumberValidation(uCDodajIgraca.TxtBrojNaDresu))
             {
-                MessageBox.Show("Sistem ne može da zapamti igrača! Broj na dresu ne sme da bude trocifren broj! Pokušajte ponovo!");
+                MessageBox.Show("Sistem ne može da zapamti igrača! Broj na dresu ne sme da bude trocifren broj! Pokušajte ponovo!", "Upozorenje", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
             try
@@ -110,12 +110,12 @@ namespace Client.Forms.GUIController
                     Igrac.Tezina = Convert.ToDouble(uCDodajIgraca.TxtTezina.Text);
                 }
                 Communication.Instance.SendRequestNoResult(Operation.SacuvajIgraca, Igrac);
-                MessageBox.Show("Sistem je zapamtio igrača!");
+                MessageBox.Show("Sistem je zapamtio igrača!", "Obaveštenje", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 OcistiPodatke();
             }
             catch (ServerCommunicationException)
             {
-                MessageBox.Show("Sistem ne može da zapamti igrača!");
+                MessageBox.Show("Sistem ne može da zapamti igrača!", "Upozorenje", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 throw;
             }
         }

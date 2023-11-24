@@ -40,7 +40,7 @@ namespace Client.Forms.GUIController
             uCPretragaUtakmica.DgvGosti.Visible = false;
             if (UserControlsHelper.ComboBoxValidation(uCPretragaUtakmica.CbTimovi))
             {
-                MessageBox.Show("Sistem ne može da nađe utakmice po zadatoj vrednosti! Niste lepo odabrali tim iz combobox-a! Pokušajte ponovo!");
+                MessageBox.Show("Sistem ne može da nađe utakmice po zadatoj vrednosti! Niste lepo odabrali tim iz combobox-a! Pokušajte ponovo!", "Upozorenje", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             Utakmica utakmica = new Utakmica
             {
@@ -52,18 +52,18 @@ namespace Client.Forms.GUIController
                 if (utakmice.Count == 0)
                 {
                     uCPretragaUtakmica.DgvUtakmice.DataSource = null;
-                    MessageBox.Show("Sistem ne može da nađe utakmice po zadatoj vrednosti");
+                    MessageBox.Show("Sistem ne može da nađe utakmice po zadatoj vrednosti!", "Upozorenje", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
                 uCPretragaUtakmica.DgvUtakmice.DataSource = utakmice;
-                MessageBox.Show("Sistem je našao utakmice po zadatoj vrednosti");
+                MessageBox.Show("Sistem je našao utakmice po zadatoj vrednosti!", "Obaveštenje", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 uCPretragaUtakmica.BtnUcitajUtakmicu.Enabled = true;
                 OcistiPodatke();
 
             }
             catch (ServerCommunicationException)
             {
-                MessageBox.Show("Sistem ne može da nađe utakmice po zadatoj vrednosti");
+                MessageBox.Show("Sistem ne može da nađe utakmice po zadatoj vrednosti!", "Upozorenje", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 throw;
             }
         }
@@ -112,7 +112,7 @@ namespace Client.Forms.GUIController
         {
             if(uCPretragaUtakmica.DgvUtakmice.SelectedRows.Count == 0)
             {
-                MessageBox.Show("Sistem ne može da učita utakmicu! Niste odabrali nijednu utakmicu! Pokušajte ponovo!");
+                MessageBox.Show("Sistem ne može da učita utakmicu! Niste odabrali nijednu utakmicu! Pokušajte ponovo!", "Upozorenje", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
             try
@@ -128,11 +128,11 @@ namespace Client.Forms.GUIController
                 uCPretragaUtakmica.TxtBrojGledalaca.Text = utakmica.BrojGledalaca.ToString();
                 uCPretragaUtakmica.TxtRunda.Text = utakmica.Runda.ToString();
                 uCPretragaUtakmica.BtnPrikaziStatistiku.Enabled = true;
-                MessageBox.Show("Sistem je učitao utakmicu");
+                MessageBox.Show("Sistem je učitao utakmicu!", "Obaveštenje", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (ServerCommunicationException)
             {
-                MessageBox.Show("Sistem ne može da učita utakmicu");
+                MessageBox.Show("Sistem ne može da učita utakmicu!", "Upozorenje", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 throw;
             }
         }

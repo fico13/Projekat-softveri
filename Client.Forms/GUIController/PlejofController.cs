@@ -81,7 +81,7 @@ namespace Client.Forms.GUIController
             }
             catch (ServerCommunicationException)
             {
-                MessageBox.Show("Sistem ne može da nađe timove po zadatoj vrednosti!");
+                MessageBox.Show("Sistem ne može da nađe timove po zadatoj vrednosti!", "Upozorenje", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 throw;
             }
         }
@@ -101,13 +101,13 @@ namespace Client.Forms.GUIController
                 uCPlejof.BtnDodajG.Enabled = false;
                 if (utakmica.BrojPoenaDomacin > utakmica.BrojPoenaGost)
                 {
-                    MessageBox.Show($"Finale je zavrseno, pobednik je {g1.Ime}");
+                    MessageBox.Show($"Finale je završeno, pobednik je {g1.Ime}");
                     uCPlejof.TxtRezultatG1.Text = utakmica.BrojPoenaDomacin.ToString();
                     uCPlejof.TxtRezultatG2.Text = utakmica.BrojPoenaGost.ToString();
                 }
                 else
                 {
-                    MessageBox.Show($"Finale je zavrseno, pobednik je {g2.Ime}");
+                    MessageBox.Show($"Finale je završeno, pobednik je {g2.Ime}");
                     uCPlejof.TxtRezultatG1.Text = utakmica.BrojPoenaDomacin.ToString();
                     uCPlejof.TxtRezultatG2.Text = utakmica.BrojPoenaGost.ToString();
                 }
@@ -135,7 +135,7 @@ namespace Client.Forms.GUIController
                 uCPlejof.BtnDodajF.Enabled = false;
                 if (utakmica.BrojPoenaDomacin > utakmica.BrojPoenaGost)
                 {
-                    MessageBox.Show($"Polufinale je zavrseno, pobednik je {f1.Ime}");
+                    MessageBox.Show($"Polufinale je završeno, pobednik je {f1.Ime}");
                     uCPlejof.TxtG2.Text = f1.Ime;
                     uCPlejof.TxtRezultatF1.Text = utakmica.BrojPoenaDomacin.ToString();
                     uCPlejof.TxtRezultatF2.Text = utakmica.BrojPoenaGost.ToString();
@@ -145,7 +145,7 @@ namespace Client.Forms.GUIController
                 }
                 else
                 {
-                    MessageBox.Show($"Polufinale je zavrseno, pobednik je {f2.Ime}");
+                    MessageBox.Show($"Polufinale je završeno, pobednik je {f2.Ime}");
                     uCPlejof.TxtG2.Text = f2.Ime;
                     uCPlejof.TxtRezultatF1.Text = utakmica.BrojPoenaDomacin.ToString();
                     uCPlejof.TxtRezultatF2.Text = utakmica.BrojPoenaGost.ToString();
@@ -176,7 +176,7 @@ namespace Client.Forms.GUIController
                 uCPlejof.BtnDodajE.Enabled = false;
                 if (utakmica.BrojPoenaDomacin > utakmica.BrojPoenaGost)
                 {
-                    MessageBox.Show($"Polufinale je zavrseno, pobednik je {e1.Ime}");
+                    MessageBox.Show($"Polufinale je završeno, pobednik je {e1.Ime}");
                     uCPlejof.TxtG1.Text = e1.Ime;
                     uCPlejof.TxtRezultatE1.Text = utakmica.BrojPoenaDomacin.ToString();
                     uCPlejof.TxtRezultatE2.Text = utakmica.BrojPoenaGost.ToString();
@@ -186,7 +186,7 @@ namespace Client.Forms.GUIController
                 }
                 else
                 {
-                    MessageBox.Show($"Polufinale je zavrseno, pobednik je {e2.Ime}");
+                    MessageBox.Show($"Polufinale je završeno, pobednik je {e2.Ime}");
                     uCPlejof.TxtG1.Text = e2.Ime;
                     uCPlejof.TxtRezultatE1.Text = utakmica.BrojPoenaDomacin.ToString();
                     uCPlejof.TxtRezultatE2.Text = utakmica.BrojPoenaGost.ToString();
@@ -213,7 +213,7 @@ namespace Client.Forms.GUIController
                 UpisiRezultat(d1, d2, uCPlejof.TxtRezultatD1, uCPlejof.TxtRezultatD2);
                 if (uCPlejof.TxtRezultatD1.Text == "3")
                 {
-                    MessageBox.Show($"Serija je zavrsena, ponbednik je {d1.Ime}");
+                    MessageBox.Show($"Serija je završena, ponbednik je {d1.Ime}");
                     uCPlejof.BtnDodajD.Enabled = false;
                     uCPlejof.TxtF2.Text = d1.Ime;
                     f2 = d1;
@@ -222,7 +222,7 @@ namespace Client.Forms.GUIController
                 }
                 if (uCPlejof.TxtRezultatD2.Text == "3")
                 {
-                    MessageBox.Show($"Serija je zavrsena, ponbednik je {d2.Ime}");
+                    MessageBox.Show($"Serija je završena, ponbednik je {d2.Ime}");
                     uCPlejof.BtnDodajD.Enabled = false;
                     uCPlejof.TxtF2.Text = d2.Ime;
                     f2 = d1;
@@ -246,7 +246,7 @@ namespace Client.Forms.GUIController
                 UpisiRezultat(c1, c2, uCPlejof.TxtRezultatC1, uCPlejof.TxtRezultatC2);
                 if (uCPlejof.TxtRezultatC1.Text == "3")
                 {
-                    MessageBox.Show($"Serija je zavrsena, ponbednik je {c1.Ime}");
+                    MessageBox.Show($"Serija je završena, ponbednik je {c1.Ime}");
                     uCPlejof.BtnDodajC.Enabled = false;
                     uCPlejof.TxtF1.Text = c1.Ime;
                     f1 = c1;
@@ -255,7 +255,7 @@ namespace Client.Forms.GUIController
                 }
                 if (uCPlejof.TxtRezultatC2.Text == "3")
                 {
-                    MessageBox.Show($"Serija je zavrsena, ponbednik je {c2.Ime}");
+                    MessageBox.Show($"Serija je završena, ponbednik je {c2.Ime}");
                     uCPlejof.BtnDodajC.Enabled = false;
                     uCPlejof.TxtF1.Text = c2.Ime;
                     f1 = c2;
@@ -279,7 +279,7 @@ namespace Client.Forms.GUIController
                 UpisiRezultat(b1, b2, uCPlejof.TxtRezultatB1, uCPlejof.TxtRezultatB2);
                 if (uCPlejof.TxtRezultatB1.Text == "3")
                 {
-                    MessageBox.Show($"Serija je zavrsena, ponbednik je {b1.Ime}");
+                    MessageBox.Show($"Serija je završena, ponbednik je {b1.Ime}");
                     uCPlejof.BtnDodajB.Enabled = false;
                     uCPlejof.TxtE2.Text = b1.Ime;
                     e2 = b1;
@@ -288,7 +288,7 @@ namespace Client.Forms.GUIController
                 }
                 if (uCPlejof.TxtRezultatB2.Text == "3")
                 {
-                    MessageBox.Show($"Serija je zavrsena, ponbednik je {b2.Ime}");
+                    MessageBox.Show($"Serija je završena, ponbednik je {b2.Ime}");
                     uCPlejof.BtnDodajB.Enabled = false;
                     uCPlejof.TxtE2.Text = b2.Ime;
                     e2 = b2;
@@ -312,7 +312,7 @@ namespace Client.Forms.GUIController
                 UpisiRezultat(a1, a2, uCPlejof.TxtRezultatA1, uCPlejof.TxtRezultatiA2);
                 if (uCPlejof.TxtRezultatA1.Text == "3")
                 {
-                    MessageBox.Show($"Serija je zavrsena, ponbednik je {a1.Ime}");
+                    MessageBox.Show($"Serija je završena, ponbednik je {a1.Ime}");
                     uCPlejof.BtnDodajA.Enabled = false;
                     uCPlejof.TxtE1.Text = a1.Ime;
                     e1 = a1;
@@ -321,7 +321,7 @@ namespace Client.Forms.GUIController
                 }
                 if (uCPlejof.TxtRezultatiA2.Text == "3")
                 {
-                    MessageBox.Show($"Serija je zavrsena, ponbednik je {a2.Ime}");
+                    MessageBox.Show($"Serija je završena, ponbednik je {a2.Ime}");
                     uCPlejof.BtnDodajA.Enabled = false;
                     uCPlejof.TxtE2.Text = a2.Ime;
                     e1 = a2;

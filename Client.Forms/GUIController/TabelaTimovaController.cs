@@ -27,13 +27,17 @@ namespace Client.Forms.GUIController
                 {
                     FindCondition = "order by t.Bodovi desc, t.KosRazlika desc"
                 };
-                BindingList<Tim> timovi = new BindingList<Tim>(Communication.Instance.SendRequestGetResult<List<Tim>>(Operation.NadjiTimove, tim)); 
+                List<Tim> timovi = Communication.Instance.SendRequestGetResult<List<Tim>>(Operation.NadjiTimove, tim);
+                for (int i = 0; i < timovi.Count; i++)
+                {
+                    timovi[i].Rank = i + 1;
+                }
                 uCTabelaTimova.DgvTabelaTimova.DataSource = timovi;
                 
             }
             catch (ServerCommunicationException)
             {
-                MessageBox.Show("Sistem ne može da nađe timove po zadatoj vrednosti!");
+                MessageBox.Show("Sistem ne može da nađe timove po zadatoj vrednosti!", "Upozorenje", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 throw;
             }
         }

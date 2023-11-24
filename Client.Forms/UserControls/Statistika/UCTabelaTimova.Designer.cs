@@ -38,6 +38,7 @@ namespace Client.Forms.UserControls.Statistika
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UCTabelaTimova));
             this.dgvTabelaTimova = new System.Windows.Forms.DataGridView();
+            this.rankDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.imeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.drzavaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.brojPobedaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -55,7 +56,7 @@ namespace Client.Forms.UserControls.Statistika
             this.dgvTabelaTimova.AllowUserToDeleteRows = false;
             this.dgvTabelaTimova.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dgvTabelaTimova.AutoGenerateColumns = false;
-            this.dgvTabelaTimova.BackgroundColor = System.Drawing.Color.DarkGray;
+            this.dgvTabelaTimova.BackgroundColor = System.Drawing.Color.OrangeRed;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -66,6 +67,7 @@ namespace Client.Forms.UserControls.Statistika
             this.dgvTabelaTimova.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvTabelaTimova.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvTabelaTimova.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.rankDataGridViewTextBoxColumn,
             this.imeDataGridViewTextBoxColumn,
             this.drzavaDataGridViewTextBoxColumn,
             this.brojPobedaDataGridViewTextBoxColumn,
@@ -81,7 +83,7 @@ namespace Client.Forms.UserControls.Statistika
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvTabelaTimova.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvTabelaTimova.Location = new System.Drawing.Point(35, 33);
+            this.dgvTabelaTimova.Location = new System.Drawing.Point(107, 37);
             this.dgvTabelaTimova.Name = "dgvTabelaTimova";
             this.dgvTabelaTimova.ReadOnly = true;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
@@ -97,9 +99,18 @@ namespace Client.Forms.UserControls.Statistika
             dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
             this.dgvTabelaTimova.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvTabelaTimova.RowTemplate.Height = 24;
-            this.dgvTabelaTimova.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.dgvTabelaTimova.Size = new System.Drawing.Size(989, 565);
+            this.dgvTabelaTimova.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.dgvTabelaTimova.Size = new System.Drawing.Size(1167, 565);
             this.dgvTabelaTimova.TabIndex = 0;
+            // 
+            // rankDataGridViewTextBoxColumn
+            // 
+            this.rankDataGridViewTextBoxColumn.DataPropertyName = "Rank";
+            this.rankDataGridViewTextBoxColumn.HeaderText = "Rank";
+            this.rankDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.rankDataGridViewTextBoxColumn.Name = "rankDataGridViewTextBoxColumn";
+            this.rankDataGridViewTextBoxColumn.ReadOnly = true;
+            this.rankDataGridViewTextBoxColumn.Width = 125;
             // 
             // imeDataGridViewTextBoxColumn
             // 
@@ -113,7 +124,7 @@ namespace Client.Forms.UserControls.Statistika
             // drzavaDataGridViewTextBoxColumn
             // 
             this.drzavaDataGridViewTextBoxColumn.DataPropertyName = "Drzava";
-            this.drzavaDataGridViewTextBoxColumn.HeaderText = "Drzava";
+            this.drzavaDataGridViewTextBoxColumn.HeaderText = "Država";
             this.drzavaDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.drzavaDataGridViewTextBoxColumn.Name = "drzavaDataGridViewTextBoxColumn";
             this.drzavaDataGridViewTextBoxColumn.ReadOnly = true;
@@ -166,8 +177,9 @@ namespace Client.Forms.UserControls.Statistika
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.Controls.Add(this.dgvTabelaTimova);
+            this.DoubleBuffered = true;
             this.Name = "UCTabelaTimova";
-            this.Size = new System.Drawing.Size(1058, 634);
+            this.Size = new System.Drawing.Size(1433, 634);
             ((System.ComponentModel.ISupportInitialize)(this.dgvTabelaTimova)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.timBindingSource)).EndInit();
             this.ResumeLayout(false);
@@ -177,6 +189,7 @@ namespace Client.Forms.UserControls.Statistika
         #endregion
 
         private DataGridView dgvTabelaTimova;
+        private DataGridViewTextBoxColumn rankDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn imeDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn drzavaDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn brojPobedaDataGridViewTextBoxColumn;
