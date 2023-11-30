@@ -130,6 +130,7 @@ namespace Client.Forms.GUIController
             uCDodajIgraca.TxtTezina.Clear();
             uCDodajIgraca.CbPozicije.SelectedIndex = 0;
             uCDodajIgraca.CbTim.SelectedIndex = 0;
+            uCDodajIgraca.DtpDatum.Value = DateTime.Today;
         }
     }
 }

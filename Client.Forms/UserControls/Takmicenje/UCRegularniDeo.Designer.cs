@@ -88,7 +88,6 @@ namespace Client.Forms.UserControls.Takmicenje
             this.txtNazivTakmicenja.Name = "txtNazivTakmicenja";
             this.txtNazivTakmicenja.Size = new System.Drawing.Size(223, 27);
             this.txtNazivTakmicenja.TabIndex = 3;
-            this.txtNazivTakmicenja.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txtBrojKola
             // 
@@ -99,7 +98,6 @@ namespace Client.Forms.UserControls.Takmicenje
             this.txtBrojKola.ReadOnly = true;
             this.txtBrojKola.Size = new System.Drawing.Size(223, 27);
             this.txtBrojKola.TabIndex = 4;
-            this.txtBrojKola.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // btnSacuvajTakmicenje
             // 

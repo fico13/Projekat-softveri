@@ -31,6 +31,12 @@ namespace Client.Forms.GUIController
             uCDodajUtakmicu.BtnSacuvajUtakmicu.Enabled = false;
             uCDodajUtakmicu.BtnDodajStatistikuDomacin.Enabled = false;
             uCDodajUtakmicu.BtnDodajStatistikuGost.Enabled = false;
+            List<Utakmica> utakmice = Communication.Instance.SendRequestGetResult<List<Utakmica>>(Operation.NadjiUtakmice, new Utakmica());
+            if(utakmice.Count == 34*9)
+            {
+                MessageBox.Show("Regularni deo je završen", "Obaveštenje", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                uCDodajUtakmicu.Enabled = false;
+            }
         }
 
         internal void DodajStatistikuDomacina()
@@ -159,15 +165,35 @@ namespace Client.Forms.GUIController
                     utakmica.Gost.BrojPobeda += 1;
                     utakmica.Gost.Bodovi += 2;
                 }
+                Utakmica utakmica2 = new Utakmica
+                {
+                    FindCondition = $"where u.Runda = {utakmica.Runda}"
+                };
+                List<Utakmica> utakmice = Communication.Instance.SendRequestGetResult<List<Utakmica>>(Operation.NadjiUtakmice, utakmica2);
+                if(utakmice.Count == 9)
+                {
+                    MessageBox.Show("Sistem ne može da zapamti utakmicu! Sve utakmice u ovoj rundi su već dodate!", "Upozorenje", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+                Utakmica utakmica3 = new Utakmica
+                {
+                    FindCondition = $"where u.DomacinId = {utakmica.Domacin.TimId} and u.GostId = {utakmica.Gost.TimId}"
+                };
+                List<Utakmica> utakmice2 = Communication.Instance.SendRequestGetResult<List<Utakmica>>(Operation.NadjiUtakmice, utakmica3);
+                if (utakmice2.Count != 0)
+                {
+                    MessageBox.Show("Sistem ne može da zapamti utakmicu! Utakmica za ove timove je već dodata!", "Upozorenje", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
                 Communication.Instance.SendRequestNoResult(Operation.SacuvajUtakmicu, utakmica);
-                MessageBox.Show("Sistem je zapamtio utakmicu", "Obaveštenje", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Sistem je zapamtio utakmicu!", "Obaveštenje", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 OcistiPodatke();
                 uCDodajUtakmicu.CbDomacin.DataSource = Communication.Instance.SendRequestGetResult<List<Tim>>(Operation.VratiSveTimove);
                 uCDodajUtakmicu.CbGost.DataSource = Communication.Instance.SendRequestGetResult<List<Tim>>(Operation.VratiSveTimove);
             }
             catch (ServerCommunicationException)
             {
-                MessageBox.Show("Sistem ne može da zapamti utakmicu", "Upozorenje", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Sistem ne može da zapamti utakmicu!", "Upozorenje", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 throw;
             }
         }
