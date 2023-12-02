@@ -34,6 +34,7 @@ namespace Client.Forms.GUIController
             frmRegularUtakmica.BtnSacuvajUtakmicu.Enabled = false;
             frmRegularUtakmica.BtnDodajStatistikuDomacin.Enabled = false;
             frmRegularUtakmica.BtnDodajStatistikuGost.Enabled = false;
+            frmRegularUtakmica.NudRunda.Maximum = (Session.SessionData.Instance.Domaci.Count - 1) * 2;
         }
 
         internal void UcitajIgrace()
@@ -161,15 +162,19 @@ namespace Client.Forms.GUIController
                 {
                     utakmica.Domacin.BrojPobeda += 1;
                     utakmica.Domacin.Bodovi += 2;
+                    utakmica.Domacin.KosRazlika += utakmica.BrojPoenaDomacin - utakmica.BrojPoenaGost;
                     utakmica.Gost.BrojPoraza += 1;
                     utakmica.Gost.Bodovi += 1;
+                    utakmica.Gost.KosRazlika -= utakmica.BrojPoenaDomacin - utakmica.BrojPoenaGost;
                 }
                 if (utakmica.BrojPoenaDomacin < utakmica.BrojPoenaGost)
                 {
                     utakmica.Domacin.BrojPoraza += 1;
                     utakmica.Domacin.Bodovi += 1;
+                    utakmica.Domacin.KosRazlika -= utakmica.BrojPoenaGost - utakmica.BrojPoenaDomacin;
                     utakmica.Gost.BrojPobeda += 1;
                     utakmica.Gost.Bodovi += 2;
+                    utakmica.Gost.KosRazlika += utakmica.BrojPoenaGost - utakmica.BrojPoenaDomacin;
                 }
                 Session.SessionData.Instance.Utakmica = utakmica;
                 frmRegularUtakmica.Dispose();

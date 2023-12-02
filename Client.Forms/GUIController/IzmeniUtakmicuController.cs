@@ -86,15 +86,19 @@ namespace Client.Forms.GUIController
                 {
                     Utakmica.Domacin.BrojPobeda += 1;
                     Utakmica.Domacin.Bodovi += 2;
+                    Utakmica.Domacin.KosRazlika += Utakmica.BrojPoenaDomacin - Utakmica.BrojPoenaGost;
                     Utakmica.Gost.BrojPoraza += 1;
                     Utakmica.Gost.Bodovi += 1;
+                    Utakmica.Gost.KosRazlika -= Utakmica.BrojPoenaDomacin - Utakmica.BrojPoenaGost;
                 }
                 else
                 {
                     Utakmica.Domacin.BrojPoraza += 1;
                     Utakmica.Domacin.Bodovi += 1;
+                    Utakmica.Domacin.KosRazlika -= Utakmica.BrojPoenaGost - Utakmica.BrojPoenaDomacin;
                     Utakmica.Gost.BrojPobeda += 1;
                     Utakmica.Gost.Bodovi += 2;
+                    Utakmica.Gost.KosRazlika += Utakmica.BrojPoenaGost - Utakmica.BrojPoenaDomacin;
                 }
                 Communication.Instance.SendRequestNoResult(Operation.IzmeniUtakmicu, Utakmica);
                 MessageBox.Show("Sistem je izmenio utakmicu", "Obaveštenje", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -192,15 +196,19 @@ namespace Client.Forms.GUIController
                 {
                     Utakmica.Domacin.BrojPobeda -= 1;
                     Utakmica.Domacin.Bodovi -= 2;
+                    Utakmica.Domacin.KosRazlika -= Utakmica.BrojPoenaDomacin - Utakmica.BrojPoenaGost;
                     Utakmica.Gost.BrojPoraza -= 1;
                     Utakmica.Gost.Bodovi -= 1;
+                    Utakmica.Gost.KosRazlika += Utakmica.BrojPoenaDomacin - Utakmica.BrojPoenaGost;
                 }
                 else
                 {
                     Utakmica.Domacin.BrojPoraza -= 1;
                     Utakmica.Domacin.Bodovi -= 1;
+                    Utakmica.Domacin.KosRazlika += Utakmica.BrojPoenaGost - Utakmica.BrojPoenaDomacin;
                     Utakmica.Gost.BrojPobeda -= 1;
                     Utakmica.Gost.Bodovi -= 2;
+                    Utakmica.Gost.KosRazlika -= Utakmica.BrojPoenaGost - Utakmica.BrojPoenaDomacin;
                 }
                 MessageBox.Show("Sistem je učitao utakmicu", "Obaveštenje", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }

@@ -38,7 +38,7 @@ namespace Common.Domain
         [Browsable(false)]
         public string JoinCondition => "(t.DvoranaId = d.DvoranaId)";
         [Browsable(false)]
-        public string UpdateCondition => $"BrojPobeda = {BrojPobeda}, BrojPoraza = {BrojPoraza}, Bodovi = {Bodovi}";
+        public string UpdateCondition => $"BrojPobeda = {BrojPobeda}, BrojPoraza = {BrojPoraza}, Bodovi = {Bodovi}, KosRazlika = {KosRazlika}";
         [Browsable(false)]
 
         public string IdColumnName => "";

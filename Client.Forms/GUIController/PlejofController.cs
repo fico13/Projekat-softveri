@@ -62,6 +62,21 @@ namespace Client.Forms.GUIController
                     FindCondition = "order by t.Bodovi desc, t.KosRazlika desc"
                 };
                 timovi = Communication.Instance.SendRequestGetResult<List<Tim>>(Operation.NadjiTimove, tim);
+                Utakmica utakmica = new Utakmica
+                {
+                    FindCondition = "where u.FazaTakmicenja = 'regularni deo'"
+                };
+                List<Utakmica> utakmice = Communication.Instance.SendRequestGetResult<List<Utakmica>>(Operation.NadjiUtakmice, utakmica);
+                if(utakmice.Count == 0)
+                {
+                    MessageBox.Show("Niste dodali nijednu utakmicu u regularnom delu!", "Upozorenje", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    uCPlejof.Enabled = false;
+                }
+                else if (utakmice.Count < utakmice[0].Takmicenje.BrojKola * timovi.Count)
+                {
+                    MessageBox.Show("Regularni deo sezone još nije završen!", "Upozorenje", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    uCPlejof.Enabled = false;
+                }
                 a1 = timovi[0];
                 a2 = timovi[7];
                 b1 = timovi[3];

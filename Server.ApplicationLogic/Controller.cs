@@ -144,5 +144,7 @@ namespace Server.ApplicationLogic
             SystemOperationBase so = new SacuvajTakmicenjeSO(takmicenje);
             so.ExecuteTemplate();
         }
+
+        
     }
 }

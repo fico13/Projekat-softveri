@@ -48,7 +48,7 @@ namespace Client.Forms.GUIController
                     {
                         zbir += s.Skokovi;
                     }
-                    i.ProsekSkokovi = (double)zbir / statistike.Count;
+                    i.ProsekSkokovi = Math.Round((double)zbir / statistike.Count,2);
                     statistike = new List<Statistika>();
                     zbir = 0;
                 }

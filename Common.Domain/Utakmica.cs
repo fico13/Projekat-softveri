@@ -72,7 +72,8 @@ namespace Common.Domain
                 Takmicenje = new Takmicenje
                 {
                     TakmicenjeID = reader.GetInt32(26),
-                    Naziv = reader.GetString(27)
+                    Naziv = reader.GetString(27),
+                    BrojKola = reader.GetInt32(28)
                 },
                 Domacin = new Tim
                 {

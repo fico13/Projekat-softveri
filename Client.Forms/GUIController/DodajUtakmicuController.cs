@@ -31,12 +31,17 @@ namespace Client.Forms.GUIController
             uCDodajUtakmicu.BtnSacuvajUtakmicu.Enabled = false;
             uCDodajUtakmicu.BtnDodajStatistikuDomacin.Enabled = false;
             uCDodajUtakmicu.BtnDodajStatistikuGost.Enabled = false;
-            List<Utakmica> utakmice = Communication.Instance.SendRequestGetResult<List<Utakmica>>(Operation.NadjiUtakmice, new Utakmica());
-            if(utakmice.Count == 34*9)
+            Utakmica utakmica = new Utakmica
+            {
+                FindCondition = "where u.FazaTakmicenja = 'regularni deo'"
+            };
+            List<Utakmica> utakmice = Communication.Instance.SendRequestGetResult<List<Utakmica>>(Operation.NadjiUtakmice, utakmica);
+            if (utakmice.Count == utakmice[0].Takmicenje.BrojKola * uCDodajUtakmicu.CbDomacin.Items.Count)
             {
                 MessageBox.Show("Regularni deo je završen", "Obaveštenje", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 uCDodajUtakmicu.Enabled = false;
             }
+            uCDodajUtakmicu.NudRunda.Maximum = utakmice[0].Takmicenje.BrojKola;
         }
 
         internal void DodajStatistikuDomacina()
@@ -155,15 +160,19 @@ namespace Client.Forms.GUIController
                 {
                     utakmica.Domacin.BrojPobeda += 1;
                     utakmica.Domacin.Bodovi += 2;
+                    utakmica.Domacin.KosRazlika += utakmica.BrojPoenaDomacin - utakmica.BrojPoenaGost;
                     utakmica.Gost.BrojPoraza += 1;
                     utakmica.Gost.Bodovi += 1;
+                    utakmica.Gost.KosRazlika -= utakmica.BrojPoenaDomacin - utakmica.BrojPoenaGost;
                 }
                 if(utakmica.BrojPoenaDomacin < utakmica.BrojPoenaGost)
                 {
                     utakmica.Domacin.BrojPoraza += 1;
                     utakmica.Domacin.Bodovi += 1;
+                    utakmica.Domacin.KosRazlika -= utakmica.BrojPoenaGost - utakmica.BrojPoenaDomacin;
                     utakmica.Gost.BrojPobeda += 1;
                     utakmica.Gost.Bodovi += 2;
+                    utakmica.Gost.KosRazlika += utakmica.BrojPoenaGost - utakmica.BrojPoenaDomacin;
                 }
                 Utakmica utakmica2 = new Utakmica
                 {

@@ -77,6 +77,16 @@ namespace Client.Forms.Dialogs.Utakmica
             this.nudRunda.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.nudRunda.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nudRunda.Location = new System.Drawing.Point(164, 180);
+            this.nudRunda.Maximum = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            this.nudRunda.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.nudRunda.Name = "nudRunda";
             this.nudRunda.Size = new System.Drawing.Size(58, 27);
             this.nudRunda.TabIndex = 51;

@@ -47,7 +47,7 @@ namespace Client.Forms.GUIController
                     {
                         zbir += s.Asistencije;
                     }
-                    i.ProsekAsistencije = (double)zbir / statistike.Count;
+                    i.ProsekAsistencije = Math.Round((double)zbir / statistike.Count,2);
                     statistike = new List<Statistika>();
                     zbir = 0;
                 }
