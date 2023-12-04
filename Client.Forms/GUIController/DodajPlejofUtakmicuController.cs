@@ -197,6 +197,7 @@ namespace Client.Forms.GUIController
                 };
                 statistike.Add(statistika);
                 frmUtakmica.CbIgracGosta.SelectedIndex = frmUtakmica.CbIgracGosta.SelectedIndex + 1;
+                OcistiPodatkeIgrac();
             }
             catch (ArgumentOutOfRangeException)
             {
@@ -208,6 +209,16 @@ namespace Client.Forms.GUIController
                 MessageBox.Show("Sistem ne može da zapamti utakmicu!", "Upozorenje", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 throw;
             }
+        }
+
+        private void OcistiPodatkeIgrac()
+        {
+            frmUtakmica.TxtPoeniDomacinIgrac.Text = "";
+            frmUtakmica.TxtSkokoviDomacinIgrac.Text = "";
+            frmUtakmica.TxtAsistencijeDomacinIgrac.Text = "";
+            frmUtakmica.TxtPoeniGostIgrac.Text = "";
+            frmUtakmica.TxtSkokoviGostIgrac.Text = "";
+            frmUtakmica.TxtAsistencijeGostIgrac.Text = "";
         }
 
         internal void DodajStatistikuDomacina()
@@ -250,6 +261,7 @@ namespace Client.Forms.GUIController
                 };
                 statistike.Add(statistika);
                 frmUtakmica.CbIgracDomacina.SelectedIndex = frmUtakmica.CbIgracDomacina.SelectedIndex + 1;
+                OcistiPodatkeIgrac();
             }
             catch (ArgumentOutOfRangeException)
             {

@@ -36,7 +36,7 @@ namespace Client.Forms.GUIController
                 FindCondition = "where u.FazaTakmicenja = 'regularni deo'"
             };
             List<Utakmica> utakmice = Communication.Instance.SendRequestGetResult<List<Utakmica>>(Operation.NadjiUtakmice, utakmica);
-            if (utakmice.Count == utakmice[0].Takmicenje.BrojKola * uCDodajUtakmicu.CbDomacin.Items.Count)
+            if (utakmice.Count * 2 == utakmice[0].Takmicenje.BrojKola * uCDodajUtakmicu.CbDomacin.Items.Count)
             {
                 MessageBox.Show("Regularni deo je završen", "Obaveštenje", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 uCDodajUtakmicu.Enabled = false;

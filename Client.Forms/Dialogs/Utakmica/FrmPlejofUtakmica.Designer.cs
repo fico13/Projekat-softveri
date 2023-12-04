@@ -76,7 +76,7 @@ namespace Client.Forms.Dialogs.Utakmica
             // 
             this.nudRunda.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.nudRunda.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nudRunda.Location = new System.Drawing.Point(164, 180);
+            this.nudRunda.Location = new System.Drawing.Point(253, 179);
             this.nudRunda.Maximum = new decimal(new int[] {
             5,
             0,
@@ -102,7 +102,7 @@ namespace Client.Forms.Dialogs.Utakmica
             this.label14.AutoSize = true;
             this.label14.BackColor = System.Drawing.Color.OrangeRed;
             this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(56, 187);
+            this.label14.Location = new System.Drawing.Point(145, 186);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(62, 20);
             this.label14.TabIndex = 50;
@@ -122,7 +122,7 @@ namespace Client.Forms.Dialogs.Utakmica
             this.groupBox2.Controls.Add(this.cbIgracGosta);
             this.groupBox2.Controls.Add(this.label12);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(718, 231);
+            this.groupBox2.Location = new System.Drawing.Point(807, 230);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(365, 332);
             this.groupBox2.TabIndex = 45;
@@ -229,7 +229,7 @@ namespace Client.Forms.Dialogs.Utakmica
             this.btnUcitajIgrace.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btnUcitajIgrace.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUcitajIgrace.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnUcitajIgrace.Location = new System.Drawing.Point(836, 58);
+            this.btnUcitajIgrace.Location = new System.Drawing.Point(925, 57);
             this.btnUcitajIgrace.Name = "btnUcitajIgrace";
             this.btnUcitajIgrace.Size = new System.Drawing.Size(247, 44);
             this.btnUcitajIgrace.TabIndex = 47;
@@ -244,7 +244,7 @@ namespace Client.Forms.Dialogs.Utakmica
             this.btnSacuvajUtakmicu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btnSacuvajUtakmicu.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSacuvajUtakmicu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSacuvajUtakmicu.Location = new System.Drawing.Point(59, 605);
+            this.btnSacuvajUtakmicu.Location = new System.Drawing.Point(148, 604);
             this.btnSacuvajUtakmicu.Name = "btnSacuvajUtakmicu";
             this.btnSacuvajUtakmicu.Size = new System.Drawing.Size(365, 44);
             this.btnSacuvajUtakmicu.TabIndex = 46;
@@ -256,7 +256,7 @@ namespace Client.Forms.Dialogs.Utakmica
             // 
             this.txtBrojGledalaca.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtBrojGledalaca.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBrojGledalaca.Location = new System.Drawing.Point(887, 128);
+            this.txtBrojGledalaca.Location = new System.Drawing.Point(976, 127);
             this.txtBrojGledalaca.MaxLength = 5;
             this.txtBrojGledalaca.Multiline = true;
             this.txtBrojGledalaca.Name = "txtBrojGledalaca";
@@ -270,7 +270,7 @@ namespace Client.Forms.Dialogs.Utakmica
             this.label13.AutoSize = true;
             this.label13.BackColor = System.Drawing.Color.OrangeRed;
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(714, 135);
+            this.label13.Location = new System.Drawing.Point(803, 134);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(130, 20);
             this.label13.TabIndex = 48;
@@ -290,7 +290,7 @@ namespace Client.Forms.Dialogs.Utakmica
             this.groupBox1.Controls.Add(this.cbIgracDomacina);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(59, 231);
+            this.groupBox1.Location = new System.Drawing.Point(148, 230);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(365, 332);
             this.groupBox1.TabIndex = 44;
@@ -396,7 +396,7 @@ namespace Client.Forms.Dialogs.Utakmica
             this.dtpDatum.CustomFormat = "dd.MM.yyyy. HH:mm";
             this.dtpDatum.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpDatum.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpDatum.Location = new System.Drawing.Point(274, 128);
+            this.dtpDatum.Location = new System.Drawing.Point(363, 127);
             this.dtpDatum.Name = "dtpDatum";
             this.dtpDatum.Size = new System.Drawing.Size(247, 27);
             this.dtpDatum.TabIndex = 43;
@@ -408,7 +408,7 @@ namespace Client.Forms.Dialogs.Utakmica
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.OrangeRed;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(56, 135);
+            this.label4.Location = new System.Drawing.Point(145, 134);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(166, 20);
             this.label4.TabIndex = 42;
@@ -420,7 +420,7 @@ namespace Client.Forms.Dialogs.Utakmica
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.OrangeRed;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(418, 73);
+            this.label3.Location = new System.Drawing.Point(507, 72);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(19, 29);
             this.label3.TabIndex = 39;
@@ -430,7 +430,7 @@ namespace Client.Forms.Dialogs.Utakmica
             // 
             this.txtBrojPoenaGost.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtBrojPoenaGost.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBrojPoenaGost.Location = new System.Drawing.Point(443, 73);
+            this.txtBrojPoenaGost.Location = new System.Drawing.Point(532, 72);
             this.txtBrojPoenaGost.MaxLength = 3;
             this.txtBrojPoenaGost.Name = "txtBrojPoenaGost";
             this.txtBrojPoenaGost.Size = new System.Drawing.Size(53, 27);
@@ -441,7 +441,7 @@ namespace Client.Forms.Dialogs.Utakmica
             // 
             this.txtBrojPoenaDomacin.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtBrojPoenaDomacin.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBrojPoenaDomacin.Location = new System.Drawing.Point(359, 73);
+            this.txtBrojPoenaDomacin.Location = new System.Drawing.Point(448, 72);
             this.txtBrojPoenaDomacin.MaxLength = 3;
             this.txtBrojPoenaDomacin.Name = "txtBrojPoenaDomacin";
             this.txtBrojPoenaDomacin.Size = new System.Drawing.Size(53, 27);
@@ -454,7 +454,7 @@ namespace Client.Forms.Dialogs.Utakmica
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.OrangeRed;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(742, 28);
+            this.label2.Location = new System.Drawing.Point(831, 27);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(49, 20);
             this.label2.TabIndex = 36;
@@ -466,7 +466,7 @@ namespace Client.Forms.Dialogs.Utakmica
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.OrangeRed;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(56, 28);
+            this.label1.Location = new System.Drawing.Point(145, 27);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(83, 20);
             this.label1.TabIndex = 35;
@@ -476,7 +476,7 @@ namespace Client.Forms.Dialogs.Utakmica
             // 
             this.txtTim1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtTim1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTim1.Location = new System.Drawing.Point(58, 73);
+            this.txtTim1.Location = new System.Drawing.Point(147, 72);
             this.txtTim1.MaxLength = 5;
             this.txtTim1.Multiline = true;
             this.txtTim1.Name = "txtTim1";
@@ -489,7 +489,7 @@ namespace Client.Forms.Dialogs.Utakmica
             // 
             this.txtTim2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtTim2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTim2.Location = new System.Drawing.Point(562, 73);
+            this.txtTim2.Location = new System.Drawing.Point(651, 72);
             this.txtTim2.MaxLength = 5;
             this.txtTim2.Multiline = true;
             this.txtTim2.Name = "txtTim2";
