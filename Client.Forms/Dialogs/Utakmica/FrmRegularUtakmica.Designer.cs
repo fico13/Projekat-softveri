@@ -512,8 +512,9 @@ namespace Client.Forms.Dialogs.Utakmica
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.DoubleBuffered = true;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmRegularUtakmica";
-            this.Text = "FrmRegularUtakmica";
+            this.Text = "Dodaj utakmicu";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmRegularUtakmica_FormClosed);
             this.groupBox2.ResumeLayout(false);

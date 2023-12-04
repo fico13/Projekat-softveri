@@ -110,7 +110,7 @@ namespace Client.Forms.Dialogs.Igrac
             this.dgvStatistika.RowsDefaultCellStyle = dataGridViewCellStyle9;
             this.dgvStatistika.RowTemplate.Height = 24;
             this.dgvStatistika.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.dgvStatistika.Size = new System.Drawing.Size(768, 288);
+            this.dgvStatistika.Size = new System.Drawing.Size(795, 288);
             this.dgvStatistika.TabIndex = 1;
             // 
             // utakmicaDataGridViewTextBoxColumn

@@ -43,11 +43,18 @@ namespace Client.Forms.GUIController
                         FindCondition = $"where s.IgracId = {i.IgracId}"
                     };
                     statistike = Communication.Instance.SendRequestGetResult<List<Statistika>>(Operation.NadjiStatistiku, statistika);
-                    foreach (var s in statistike)
+                    if(statistike.Count == 0)
                     {
-                        zbir += s.Asistencije;
+                        i.ProsekAsistencije = 0;
                     }
-                    i.ProsekAsistencije = Math.Round((double)zbir / statistike.Count,2);
+                    else
+                    {
+                        foreach (var s in statistike)
+                        {
+                            zbir += s.Asistencije;
+                        }
+                        i.ProsekAsistencije = Math.Round((double)zbir / statistike.Count, 2);
+                    }
                     statistike = new List<Statistika>();
                     zbir = 0;
                 }
