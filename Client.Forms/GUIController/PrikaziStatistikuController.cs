@@ -30,9 +30,15 @@ namespace Client.Forms.GUIController
                 {
                     FindCondition = $"where i.IgracId = {izabraniIgrac.IgracId}"
                 };
-                List<Statistika> statistikas = Communication.Instance.SendRequestGetResult<List<Statistika>>(
+                List<Statistika> statistike = Communication.Instance.SendRequestGetResult<List<Statistika>>(
                     Operation.NadjiStatistiku, statistika);
-                frmStatistikaIgraca.DgvStatistika.DataSource = statistikas;
+                if(statistike.Count == 0)
+                {
+                    MessageBox.Show("Sistem ne može da nađe statistike po zadatoj vrednosti!", "Upozorenje", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+                MessageBox.Show("Sistem je našao statistike po zadatoj vrednosti!", "Obaveštenje", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                frmStatistikaIgraca.DgvStatistika.DataSource = statistike;
             }
             catch (ServerCommunicationException)
             {

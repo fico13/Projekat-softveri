@@ -101,7 +101,7 @@ namespace Common.Domain
 
         public override string ToString()
         {
-            return $"{Domacin.Ime} {BrojPoenaDomacin} : {BrojPoenaGost} {Gost.Ime} {DatumOdigravanja}"; 
+            return $"{Domacin.Ime} {BrojPoenaDomacin} : {BrojPoenaGost} {Gost.Ime} {DatumOdigravanja.Day}.{DatumOdigravanja.Month}.{DatumOdigravanja.Year}."; 
         }
     }
 }
