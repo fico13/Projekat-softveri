@@ -1,4 +1,5 @@
 ﻿using Client.Forms.Dialogs.Utakmica;
+using Client.Forms.Exceptions;
 using Client.Forms.GUIController;
 using System;
 using System.Collections.Generic;
@@ -17,9 +18,18 @@ namespace Client.Forms.UserControls.Takmicenje
         private PlejofController plejofController; 
         public UCPlejof()
         {
-            InitializeComponent();
-            plejofController = new PlejofController(this);
-            plejofController.Init();
+            try
+            {
+                InitializeComponent();
+                plejofController = new PlejofController(this);
+                plejofController.Init();
+            }
+            catch (ServerCommunicationException)
+            {
+
+                throw;
+            }
+           
         }
 
         private void btnDodajA_Click(object sender, EventArgs e)

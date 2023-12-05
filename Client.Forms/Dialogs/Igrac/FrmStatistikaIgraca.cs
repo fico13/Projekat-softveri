@@ -19,6 +19,7 @@ namespace Client.Forms.Dialogs.Igrac
         {
             InitializeComponent();
             prikaziStatistikuController = new PrikaziStatistikuController(this, izabraniIgrac);
+            prikaziStatistikuController.Init();
         }
 
 

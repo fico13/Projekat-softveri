@@ -1,4 +1,5 @@
-﻿using Client.Forms.GUIController;
+﻿using Client.Forms.Exceptions;
+using Client.Forms.GUIController;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,8 +17,17 @@ namespace Client.Forms.UserControls.Dvorana
         private DodajDvoranuController dodajDvoranuController;
         public UCDodajDvoranu()
         {
-            InitializeComponent();
-            dodajDvoranuController = new DodajDvoranuController(this);
+            try
+            {
+                InitializeComponent();
+                dodajDvoranuController = new DodajDvoranuController(this);
+            }
+            catch (ServerCommunicationException)
+            {
+
+                throw;
+            }
+         
         }
 
         private void btnDodajDvoranu_Click(object sender, EventArgs e)

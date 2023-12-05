@@ -75,10 +75,19 @@ namespace Client.Forms.GUIController
             {
                 SessionData.Instance.Gost.Add(tim);
             }
-            uCRegularniDeo.BtnSacuvajTakmicenje.Enabled = true;
-            FrmRegularUtakmica frmRegularUtakmica = new FrmRegularUtakmica();
-            frmRegularUtakmica.ShowDialog();
-            utakmice.Add(Session.SessionData.Instance.Utakmica);
+            try
+            {
+                FrmRegularUtakmica frmRegularUtakmica = new FrmRegularUtakmica();
+                frmRegularUtakmica.ShowDialog();
+                utakmice.Add(Session.SessionData.Instance.Utakmica);
+                uCRegularniDeo.BtnSacuvajTakmicenje.Enabled = true;
+            }
+            catch (ServerCommunicationException)
+            {
+
+                throw;
+            }
+            
         }
 
         internal void SacuvajTakmicenje()

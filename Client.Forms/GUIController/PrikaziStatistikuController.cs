@@ -23,6 +23,10 @@ namespace Client.Forms.GUIController
         {
             this.frmStatistikaIgraca = frmStatistikaIgraca;
             this.izabraniIgrac = izabraniIgrac;
+        }
+
+        internal void Init()
+        {
             frmStatistikaIgraca.LblIgrac.Text = izabraniIgrac.ToString() + $"\nTim: {izabraniIgrac.Tim.Ime}";
             try
             {
@@ -32,7 +36,7 @@ namespace Client.Forms.GUIController
                 };
                 List<Statistika> statistike = Communication.Instance.SendRequestGetResult<List<Statistika>>(
                     Operation.NadjiStatistiku, statistika);
-                if(statistike.Count == 0)
+                if (statistike.Count == 0)
                 {
                     MessageBox.Show("Sistem ne može da nađe statistike po zadatoj vrednosti!", "Upozorenje", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
@@ -45,9 +49,6 @@ namespace Client.Forms.GUIController
                 MessageBox.Show("Sistem ne može da nađe statistike po zadatoj vrednosti!", "Upozorenje", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 throw;
             }
-            
         }
-
-        
     }
 }

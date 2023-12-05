@@ -1,4 +1,5 @@
-﻿using Client.Forms.GUIController;
+﻿using Client.Forms.Exceptions;
+using Client.Forms.GUIController;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,8 +17,17 @@ namespace Client.Forms.UserControls.Tim
         private NadjiTimController nadjiTimController;
         public UCNadjiTim()
         {
-            InitializeComponent();
-            nadjiTimController = new NadjiTimController(this);
+            try
+            {
+                InitializeComponent();
+                nadjiTimController = new NadjiTimController(this);
+            }
+            catch (ServerCommunicationException)
+            {
+
+                throw;
+            }
+            
         }
 
         private void btnPretrazi_Click(object sender, EventArgs e)

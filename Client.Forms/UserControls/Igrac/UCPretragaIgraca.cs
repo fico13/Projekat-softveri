@@ -1,4 +1,5 @@
 ﻿using Client.Forms.Dialogs.Igrac;
+using Client.Forms.Exceptions;
 using Client.Forms.GUIController;
 using System;
 using System.Collections.Generic;
@@ -17,8 +18,17 @@ namespace Client.Forms.UserControls.Igrac
         private NadjiIgracaController nadjiIgracaController;
         public UCPretragaIgraca()
         {
-            InitializeComponent();
-            nadjiIgracaController = new NadjiIgracaController(this);
+            try
+            {
+                InitializeComponent();
+                nadjiIgracaController = new NadjiIgracaController(this);
+            }
+            catch (ServerCommunicationException)
+            {
+
+                throw;
+            }
+           
         }
 
         private void btnTraziIgraca_Click(object sender, EventArgs e)

@@ -1,4 +1,5 @@
-﻿using Client.Forms.GUIController;
+﻿using Client.Forms.Exceptions;
+using Client.Forms.GUIController;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,9 +17,18 @@ namespace Client.Forms.UserControls.Statistika
         private NajboljiSkakaciController najboljiSkakaciController;
         public UCNajboljiSkakaci()
         {
-            InitializeComponent();
-            najboljiSkakaciController = new NajboljiSkakaciController(this);
-            najboljiSkakaciController.Init();
+            try
+            {
+                InitializeComponent();
+                najboljiSkakaciController = new NajboljiSkakaciController(this);
+                najboljiSkakaciController.Init();
+            }
+            catch (ServerCommunicationException)
+            {
+
+                throw;
+            }
+            
         }
     }
 }

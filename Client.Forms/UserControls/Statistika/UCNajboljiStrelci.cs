@@ -1,4 +1,5 @@
-﻿using Client.Forms.GUIController;
+﻿using Client.Forms.Exceptions;
+using Client.Forms.GUIController;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,9 +17,18 @@ namespace Client.Forms.UserControls.Statistika
         private NajboljiStrelciController najboljiStrelciController;
         public UCNajboljiStrelci()
         {
-            InitializeComponent();
-            najboljiStrelciController = new NajboljiStrelciController(this);
-            najboljiStrelciController.Init();
+            try
+            {
+                InitializeComponent();
+                najboljiStrelciController = new NajboljiStrelciController(this);
+                najboljiStrelciController.Init();
+            }
+            catch (ServerCommunicationException)
+            {
+
+                throw;
+            }
+            
         }
     }
 }

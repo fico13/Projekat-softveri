@@ -1,4 +1,5 @@
-﻿using Client.Forms.GUIController;
+﻿using Client.Forms.Exceptions;
+using Client.Forms.GUIController;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,8 +17,17 @@ namespace Client.Forms.UserControls.Statistika
         private TabelaTimovaController tabelaTimovaController;
         public UCTabelaTimova()
         {
-            InitializeComponent();
-            tabelaTimovaController = new TabelaTimovaController(this);
+            try
+            {
+                InitializeComponent();
+                tabelaTimovaController = new TabelaTimovaController(this);
+            }
+            catch (ServerCommunicationException)
+            {
+
+                throw;
+            }
+           
         }
     }
 }

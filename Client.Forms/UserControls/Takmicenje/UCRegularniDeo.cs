@@ -1,4 +1,5 @@
-﻿using Client.Forms.GUIController;
+﻿using Client.Forms.Exceptions;
+using Client.Forms.GUIController;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,9 +17,18 @@ namespace Client.Forms.UserControls.Takmicenje
         private SacuvajTakmicenjeController sacuvajTakmicenjeController;
         public UCRegularniDeo()
         {
-            InitializeComponent();
-            sacuvajTakmicenjeController = new SacuvajTakmicenjeController(this);
-            sacuvajTakmicenjeController.Init();
+            try
+            {
+                InitializeComponent();
+                sacuvajTakmicenjeController = new SacuvajTakmicenjeController(this);
+                sacuvajTakmicenjeController.Init();
+            }
+            catch (ServerCommunicationException)
+            {
+
+                throw;
+            }
+            
         }
 
         private void btnDodajTim_Click(object sender, EventArgs e)
