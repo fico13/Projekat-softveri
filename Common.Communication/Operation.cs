@@ -24,7 +24,7 @@ namespace Common.Communication
         UcitajUtakmicu,
         UcitajTim,
         UcitajIgraca,
-        NadjiStatistiku,
+        NadjiStatistikе,
         SacuvajTakmicenje
     }
 }

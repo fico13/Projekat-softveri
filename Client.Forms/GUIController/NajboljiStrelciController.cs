@@ -43,7 +43,7 @@ namespace Client.Forms.GUIController
                     {
                         FindCondition = $"where s.IgracId = {i.IgracId}"
                     };
-                    statistike = Communication.Instance.SendRequestGetResult<List<Statistika>>(Operation.NadjiStatistiku, statistika);
+                    statistike = Communication.Instance.SendRequestGetResult<List<Statistika>>(Operation.NadjiStatistikе, statistika);
                     if(statistike.Count == 0)
                     {
                         i.ProsekPoeni = 0;

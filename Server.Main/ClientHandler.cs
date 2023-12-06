@@ -124,7 +124,7 @@ namespace Server.Main
                 case Operation.UcitajIgraca:
                     response.ResponseObject = Controller.Instance.UcitajIgraca((Igrac)request.RequestObject);
                     break;
-                case Operation.NadjiStatistiku:
+                case Operation.NadjiStatistikе:
                     response.ResponseObject = Controller.Instance.NadjiStatistike((Statistika)request.RequestObject);
                     break;
                 case Operation.SacuvajTakmicenje:
