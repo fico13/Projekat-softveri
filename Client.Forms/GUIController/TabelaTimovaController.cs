@@ -32,6 +32,7 @@ namespace Client.Forms.GUIController
                 {
                     timovi[i].Rank = i + 1;
                 }
+                MessageBox.Show("Sistem je našao timove po zadatoj vrednosti!", "Obaveštenje", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 uCTabelaTimova.DgvTabelaTimova.DataSource = timovi;
                 
             }

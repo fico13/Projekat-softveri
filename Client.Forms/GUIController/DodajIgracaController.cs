@@ -48,7 +48,11 @@ namespace Client.Forms.GUIController
                 MessageBox.Show("Sistem ne može da zapamti igrača! Niste lepo odabrali poziciju u combo box-u! Pokušajte ponovo!", "Upozorenje", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-
+            if(uCDodajIgraca.DtpDatum.Value > DateTime.Now)
+            {
+                MessageBox.Show("Sistem ne može da zapamti igrača! Datum rođenja igrača ne može biti u budućnosti! Pokušajte ponovo!", "Upozorenje", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
             if (UserControlsHelper.IntegerValidation(uCDodajIgraca.TxtBrojNaDresu))
             {
                 MessageBox.Show("Sistem ne može da zapamti igrača! Broj na dresu mora da bude pozitivan broj! Pokušajte ponovo!", "Upozorenje", MessageBoxButtons.OK, MessageBoxIcon.Warning);

@@ -105,18 +105,25 @@ namespace Client.Forms.GUIController
                 if (!result.IsValid)
                 {
                     MessageBox.Show("Sistem ne može da zapamti takmičenje " + result.Errors[0].ErrorMessage, "Upozorenje", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    uCRegularniDeo.TxtNazivTakmicenja.BackColor = Color.LightCoral;
                     return;
                 }
-                else uCRegularniDeo.TxtNazivTakmicenja.BackColor = Color.White;
                 Communication.Instance.SendRequestNoResult(Operation.SacuvajTakmicenje, takmicenje);
                 MessageBox.Show("Sistem je zapamtio takmičenje!", "Obaveštenje", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                OcistiPodatke();
             }
             catch (ServerCommunicationException)
             {
                 throw;
             }
             
+        }
+
+        private void OcistiPodatke()
+        {
+            uCRegularniDeo.TxtNazivTakmicenja.Text = "";
+            uCRegularniDeo.RtbTimovi.Text = "";
+            uCRegularniDeo.CbTimovi.SelectedIndex = 0;
+            uCRegularniDeo.TxtBrojKola.Text = "";
         }
     }
 }

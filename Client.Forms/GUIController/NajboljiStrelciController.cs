@@ -34,7 +34,7 @@ namespace Client.Forms.GUIController
                     Operation.NadjiIgrace, igrac);
                 if(igraci.Count == 0)
                 {
-                    MessageBox.Show("Sistem ne može da nađe igrače po zadatoj vrednosti!", "Upozorenje", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Sistem ne može da nađe statistike po zadatoj vrednosti!", "Upozorenje", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
                 foreach (var i in igraci)
@@ -65,11 +65,12 @@ namespace Client.Forms.GUIController
                 {
                     igraci[i].Rank = i + 1;
                 }
+                MessageBox.Show("Sistem je našao statistike po zadatoj vrednosti!", "Obaveštenje", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 uCNajboljiStrelci.DgvIgraci.DataSource = igraci;
             }
             catch (ServerCommunicationException)
             {
-                MessageBox.Show("Sistem ne može da nađe igrače po zadatoj vrednosti!", "Upozorenje", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Sistem ne može da nađe statistike po zadatoj vrednosti!", "Upozorenje", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 throw;
             }
            
