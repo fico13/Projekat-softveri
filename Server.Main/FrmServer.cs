@@ -30,7 +30,7 @@ namespace Server.Main
                 server.Start();
                 Thread nit = new Thread(server.ObradiKlijente);
                 nit.Start();
-                MessageBox.Show("Server je pokrenut");
+                MessageBox.Show("Server je pokrenut", "Obaveštenje", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 btnPokreni.Enabled = false;
                 btnZaustavi.Enabled = true;
                 txtStatus.Text = "Pokrenut";
@@ -39,7 +39,7 @@ namespace Server.Main
             }
             catch (SocketException)
             {
-                MessageBox.Show("Prekinuta je veza sa serverom!");
+                MessageBox.Show("Prekinuta je veza sa serverom!", "Upozorenje", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             catch(Exception ex)
             {
@@ -51,7 +51,7 @@ namespace Server.Main
         {
             server?.Close();
             server = null;
-            MessageBox.Show("Server je zaustavljen");
+            MessageBox.Show("Server je zaustavljen", "Obaveštenje", MessageBoxButtons.OK, MessageBoxIcon.Information);
             btnPokreni.Enabled = true;
             btnZaustavi.Enabled = false;
             txtStatus.Text = "Stopiran";

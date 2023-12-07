@@ -1,4 +1,5 @@
-﻿using Client.Forms.ServerCommunication;
+﻿using Client.Forms.Exceptions;
+using Client.Forms.ServerCommunication;
 using Client.Forms.UserControls.Dvorana;
 using Client.Forms.UserControls.Igrac;
 using Client.Forms.UserControls.Statistika;
@@ -85,7 +86,7 @@ namespace Client.Forms
             }
             catch (IOException)
             {
-                throw;
+                
             }
         }
 

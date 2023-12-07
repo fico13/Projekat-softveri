@@ -38,11 +38,11 @@ namespace Client.Forms
                 }
                 catch (ServerCommunicationException)
                 {
-                    MessageBox.Show("Server je isključen! Uključite ga i pokušajte ponovo!");
+                    MessageBox.Show("Server je isključen! Uključite ga i pokušajte ponovo!", "Upozorenje", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
                 catch (SystemOperationException ex)
                 {
-                    MessageBox.Show(ex.Message);
+                    MessageBox.Show(ex.Message, "Upozorenje", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
         }
