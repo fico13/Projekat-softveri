@@ -18,6 +18,7 @@ namespace Client.Forms.GUIController
     {
         private UCDodajUtakmicu uCDodajUtakmicu;
         private List<Statistika> statistike = new List<Statistika>();
+        private List<Utakmica> utakmice = new List<Utakmica>();
 
         public DodajUtakmicuController(UCDodajUtakmicu uCDodajUtakmicu)
         {
@@ -31,17 +32,24 @@ namespace Client.Forms.GUIController
             uCDodajUtakmicu.BtnSacuvajUtakmicu.Enabled = false;
             uCDodajUtakmicu.BtnDodajStatistikuDomacin.Enabled = false;
             uCDodajUtakmicu.BtnDodajStatistikuGost.Enabled = false;
+            List<Takmicenje> takmicenja = Communication.Instance.SendRequestGetResult<List<Takmicenje>>(Operation.VratiSvaTakmicenja);
+            if(takmicenja.Count == 0)
+            {
+                MessageBox.Show("Niste napravili takmičenje!", "Upozorenje", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                uCDodajUtakmicu.Enabled = false;
+                return;
+            }
             Utakmica utakmica = new Utakmica
             {
                 FindCondition = "where u.FazaTakmicenja = 'regularni deo'"
             };
-            List<Utakmica> utakmice = Communication.Instance.SendRequestGetResult<List<Utakmica>>(Operation.NadjiUtakmice, utakmica);
-            if (utakmice.Count * 2 == utakmice[0].Takmicenje.BrojKola * uCDodajUtakmicu.CbDomacin.Items.Count)
+            utakmice = Communication.Instance.SendRequestGetResult<List<Utakmica>>(Operation.NadjiUtakmice, utakmica);
+            if (utakmice.Count * 2 == takmicenja[0].BrojKola * uCDodajUtakmicu.CbDomacin.Items.Count)
             {
                 MessageBox.Show("Regularni deo je završen", "Obaveštenje", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 uCDodajUtakmicu.Enabled = false;
             }
-            uCDodajUtakmicu.NudRunda.Maximum = utakmice[0].Takmicenje.BrojKola;
+            uCDodajUtakmicu.NudRunda.Maximum = takmicenja[0].BrojKola;
         }
 
         internal void DodajStatistikuDomacina()
@@ -179,7 +187,7 @@ namespace Client.Forms.GUIController
                     FindCondition = $"where u.Runda = {utakmica.Runda}"
                 };
                 List<Utakmica> utakmice = Communication.Instance.SendRequestGetResult<List<Utakmica>>(Operation.NadjiUtakmice, utakmica2);
-                if(utakmice.Count == 9)
+                if(utakmice.Count == (uCDodajUtakmicu.CbDomacin.Items.Count / 2))
                 {
                     MessageBox.Show("Sistem ne može da zapamti utakmicu! Sve utakmice u ovoj rundi su već dodate!", "Upozorenje", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;

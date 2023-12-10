@@ -24,3 +24,16 @@ C:\Users\Filip\Desktop\ide gas\Server.SystemOperations\obj\Debug\Server.SystemOp
 C:\Users\Filip\Desktop\ide gas\Server.SystemOperations\obj\Debug\Server.SystemOperations.csproj.CopyComplete
 C:\Users\Filip\Desktop\ide gas\Server.SystemOperations\obj\Debug\Server.SystemOperations.dll
 C:\Users\Filip\Desktop\ide gas\Server.SystemOperations\obj\Debug\Server.SystemOperations.pdb
+C:\Users\Filip\Desktop\diplomski\Server.SystemOperations\bin\Debug\Server.SystemOperations.dll
+C:\Users\Filip\Desktop\diplomski\Server.SystemOperations\bin\Debug\Server.SystemOperations.pdb
+C:\Users\Filip\Desktop\diplomski\Server.SystemOperations\bin\Debug\Common.Domain.dll
+C:\Users\Filip\Desktop\diplomski\Server.SystemOperations\bin\Debug\Server.Repository.dll
+C:\Users\Filip\Desktop\diplomski\Server.SystemOperations\bin\Debug\Server.DatabaseBroker.dll
+C:\Users\Filip\Desktop\diplomski\Server.SystemOperations\bin\Debug\Common.Domain.pdb
+C:\Users\Filip\Desktop\diplomski\Server.SystemOperations\bin\Debug\Server.Repository.pdb
+C:\Users\Filip\Desktop\diplomski\Server.SystemOperations\bin\Debug\Server.DatabaseBroker.pdb
+C:\Users\Filip\Desktop\diplomski\Server.SystemOperations\obj\Debug\Server.SystemOperations.csproj.AssemblyReference.cache
+C:\Users\Filip\Desktop\diplomski\Server.SystemOperations\obj\Debug\Server.SystemOperations.csproj.CoreCompileInputs.cache
+C:\Users\Filip\Desktop\diplomski\Server.SystemOperations\obj\Debug\Server.SystemOperations.csproj.CopyComplete
+C:\Users\Filip\Desktop\diplomski\Server.SystemOperations\obj\Debug\Server.SystemOperations.dll
+C:\Users\Filip\Desktop\diplomski\Server.SystemOperations\obj\Debug\Server.SystemOperations.pdb

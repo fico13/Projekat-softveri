@@ -16,8 +16,8 @@ namespace Client.Forms.Validators
             RuleFor(t => t.Naziv)
                 .NotEmpty().WithMessage("{PropertyName} mora da sadrži neka slova!")
                 .Must(ValidnoIme).WithMessage("{PropertyName} mora da sadrži samo slova!");
-            RuleFor(t => t.Utakmice.First())
-                .NotEmpty().WithMessage("Niste dodali nijednu utakmicu!");
+            RuleFor(t => t.BrojKola)
+                .GreaterThan(0).WithMessage("Morate dodati bar 2 tima u takmičenje!");
         }
 
         public bool ValidnoIme(string ime)

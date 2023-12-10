@@ -67,12 +67,6 @@
     <Compile Include="Dialogs\Utakmica\FrmPlejofUtakmica.Designer.cs">
       <DependentUpon>FrmPlejofUtakmica.cs</DependentUpon>
     </Compile>
-    <Compile Include="Dialogs\Utakmica\FrmRegularUtakmica.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Dialogs\Utakmica\FrmRegularUtakmica.Designer.cs">
-      <DependentUpon>FrmRegularUtakmica.cs</DependentUpon>
-    </Compile>
     <Compile Include="Exceptions\ServerCommunicationException.cs" />
     <Compile Include="Exceptions\SystemOperationException.cs" />
     <Compile Include="FrmLogin.cs">
@@ -90,7 +84,6 @@
     <Compile Include="GUIController\DodajDvoranuController.cs" />
     <Compile Include="GUIController\DodajIgracaController.cs" />
     <Compile Include="GUIController\DodajPlejofUtakmicuController.cs" />
-    <Compile Include="GUIController\DodajRegularUtakmicuController.cs" />
     <Compile Include="GUIController\DodajTimController.cs" />
     <Compile Include="GUIController\DodajUtakmicuController.cs" />
     <Compile Include="GUIController\IzmeniIgracaController.cs" />
@@ -212,9 +205,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Dialogs\Utakmica\FrmPlejofUtakmica.resx">
       <DependentUpon>FrmPlejofUtakmica.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Dialogs\Utakmica\FrmRegularUtakmica.resx">
-      <DependentUpon>FrmRegularUtakmica.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmLogin.resx">
       <DependentUpon>FrmLogin.cs</DependentUpon>

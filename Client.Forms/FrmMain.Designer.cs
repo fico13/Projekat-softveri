@@ -168,15 +168,15 @@ namespace Client.Forms
             // 
             this.regularniDeoToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("regularniDeoToolStripMenuItem.Image")));
             this.regularniDeoToolStripMenuItem.Name = "regularniDeoToolStripMenuItem";
-            this.regularniDeoToolStripMenuItem.Size = new System.Drawing.Size(416, 32);
-            this.regularniDeoToolStripMenuItem.Text = "Kreiraj takmičenje i regularni deo";
+            this.regularniDeoToolStripMenuItem.Size = new System.Drawing.Size(271, 32);
+            this.regularniDeoToolStripMenuItem.Text = "Kreiraj takmičenje";
             this.regularniDeoToolStripMenuItem.Click += new System.EventHandler(this.regularniDeoToolStripMenuItem_Click);
             // 
             // plejofToolStripMenuItem
             // 
             this.plejofToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("plejofToolStripMenuItem.Image")));
             this.plejofToolStripMenuItem.Name = "plejofToolStripMenuItem";
-            this.plejofToolStripMenuItem.Size = new System.Drawing.Size(416, 32);
+            this.plejofToolStripMenuItem.Size = new System.Drawing.Size(271, 32);
             this.plejofToolStripMenuItem.Text = "Plejof";
             this.plejofToolStripMenuItem.Click += new System.EventHandler(this.plejofToolStripMenuItem_Click);
             // 

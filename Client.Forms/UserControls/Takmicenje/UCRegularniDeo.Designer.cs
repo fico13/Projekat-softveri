@@ -38,7 +38,6 @@ namespace Client.Forms.UserControls.Takmicenje
             this.txtNazivTakmicenja = new System.Windows.Forms.TextBox();
             this.txtBrojKola = new System.Windows.Forms.TextBox();
             this.btnSacuvajTakmicenje = new System.Windows.Forms.Button();
-            this.btnDodajUtakmicu = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -52,7 +51,7 @@ namespace Client.Forms.UserControls.Takmicenje
             this.cbTimovi.FormattingEnabled = true;
             this.cbTimovi.Location = new System.Drawing.Point(356, 76);
             this.cbTimovi.Name = "cbTimovi";
-            this.cbTimovi.Size = new System.Drawing.Size(223, 28);
+            this.cbTimovi.Size = new System.Drawing.Size(290, 28);
             this.cbTimovi.TabIndex = 0;
             // 
             // rtbTimovi
@@ -62,7 +61,7 @@ namespace Client.Forms.UserControls.Takmicenje
             this.rtbTimovi.Location = new System.Drawing.Point(356, 132);
             this.rtbTimovi.Name = "rtbTimovi";
             this.rtbTimovi.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
-            this.rtbTimovi.Size = new System.Drawing.Size(223, 407);
+            this.rtbTimovi.Size = new System.Drawing.Size(290, 407);
             this.rtbTimovi.TabIndex = 1;
             this.rtbTimovi.Text = "";
             // 
@@ -72,7 +71,7 @@ namespace Client.Forms.UserControls.Takmicenje
             this.btnDodajTim.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnDodajTim.BackgroundImage")));
             this.btnDodajTim.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btnDodajTim.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDodajTim.Location = new System.Drawing.Point(602, 67);
+            this.btnDodajTim.Location = new System.Drawing.Point(673, 67);
             this.btnDodajTim.Name = "btnDodajTim";
             this.btnDodajTim.Size = new System.Drawing.Size(223, 37);
             this.btnDodajTim.TabIndex = 2;
@@ -86,7 +85,7 @@ namespace Client.Forms.UserControls.Takmicenje
             this.txtNazivTakmicenja.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNazivTakmicenja.Location = new System.Drawing.Point(356, 27);
             this.txtNazivTakmicenja.Name = "txtNazivTakmicenja";
-            this.txtNazivTakmicenja.Size = new System.Drawing.Size(223, 27);
+            this.txtNazivTakmicenja.Size = new System.Drawing.Size(290, 27);
             this.txtNazivTakmicenja.TabIndex = 3;
             // 
             // txtBrojKola
@@ -96,7 +95,7 @@ namespace Client.Forms.UserControls.Takmicenje
             this.txtBrojKola.Location = new System.Drawing.Point(356, 573);
             this.txtBrojKola.Name = "txtBrojKola";
             this.txtBrojKola.ReadOnly = true;
-            this.txtBrojKola.Size = new System.Drawing.Size(223, 27);
+            this.txtBrojKola.Size = new System.Drawing.Size(290, 27);
             this.txtBrojKola.TabIndex = 4;
             // 
             // btnSacuvajTakmicenje
@@ -105,27 +104,13 @@ namespace Client.Forms.UserControls.Takmicenje
             this.btnSacuvajTakmicenje.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSacuvajTakmicenje.BackgroundImage")));
             this.btnSacuvajTakmicenje.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btnSacuvajTakmicenje.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSacuvajTakmicenje.Location = new System.Drawing.Point(356, 700);
+            this.btnSacuvajTakmicenje.Location = new System.Drawing.Point(356, 634);
             this.btnSacuvajTakmicenje.Name = "btnSacuvajTakmicenje";
-            this.btnSacuvajTakmicenje.Size = new System.Drawing.Size(223, 37);
+            this.btnSacuvajTakmicenje.Size = new System.Drawing.Size(290, 37);
             this.btnSacuvajTakmicenje.TabIndex = 5;
-            this.btnSacuvajTakmicenje.Text = "Sačuvaj sezonu";
+            this.btnSacuvajTakmicenje.Text = "Sačuvaj takmičenje";
             this.btnSacuvajTakmicenje.UseVisualStyleBackColor = true;
             this.btnSacuvajTakmicenje.Click += new System.EventHandler(this.btnSacuvajTakmicenje_Click);
-            // 
-            // btnDodajUtakmicu
-            // 
-            this.btnDodajUtakmicu.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnDodajUtakmicu.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnDodajUtakmicu.BackgroundImage")));
-            this.btnDodajUtakmicu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnDodajUtakmicu.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDodajUtakmicu.Location = new System.Drawing.Point(356, 635);
-            this.btnDodajUtakmicu.Name = "btnDodajUtakmicu";
-            this.btnDodajUtakmicu.Size = new System.Drawing.Size(223, 37);
-            this.btnDodajUtakmicu.TabIndex = 32;
-            this.btnDodajUtakmicu.Text = "Dodaj utakmicu";
-            this.btnDodajUtakmicu.UseVisualStyleBackColor = true;
-            this.btnDodajUtakmicu.Click += new System.EventHandler(this.btnDodajUtakmicu_Click);
             // 
             // label1
             // 
@@ -189,7 +174,6 @@ namespace Client.Forms.UserControls.Takmicenje
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.btnDodajUtakmicu);
             this.Controls.Add(this.btnSacuvajTakmicenje);
             this.Controls.Add(this.txtBrojKola);
             this.Controls.Add(this.txtNazivTakmicenja);
@@ -212,7 +196,6 @@ namespace Client.Forms.UserControls.Takmicenje
         private System.Windows.Forms.TextBox txtNazivTakmicenja;
         private System.Windows.Forms.TextBox txtBrojKola;
         private System.Windows.Forms.Button btnSacuvajTakmicenje;
-        private Button btnDodajUtakmicu;
         private Label label1;
         private Label label2;
         private Label label3;
@@ -224,6 +207,5 @@ namespace Client.Forms.UserControls.Takmicenje
         public TextBox TxtNazivTakmicenja { get => txtNazivTakmicenja; set => txtNazivTakmicenja = value; }
         public TextBox TxtBrojKola { get => txtBrojKola; set => txtBrojKola = value; }
         public Button BtnSacuvajTakmicenje { get => btnSacuvajTakmicenje; set => btnSacuvajTakmicenje = value; }
-        public Button BtnDodajUtakmicu { get => btnDodajUtakmicu; set => btnDodajUtakmicu = value; }
     }
 }

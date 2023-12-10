@@ -10,3 +10,9 @@ C:\Users\Filip\Desktop\ide gas\Common.Domain\obj\Debug\Common.Domain.csproj.Asse
 C:\Users\Filip\Desktop\ide gas\Common.Domain\obj\Debug\Common.Domain.csproj.CoreCompileInputs.cache
 C:\Users\Filip\Desktop\ide gas\Common.Domain\obj\Debug\Common.Domain.dll
 C:\Users\Filip\Desktop\ide gas\Common.Domain\obj\Debug\Common.Domain.pdb
+C:\Users\Filip\Desktop\diplomski\Common.Domain\bin\Debug\Common.Domain.dll
+C:\Users\Filip\Desktop\diplomski\Common.Domain\bin\Debug\Common.Domain.pdb
+C:\Users\Filip\Desktop\diplomski\Common.Domain\obj\Debug\Common.Domain.csproj.AssemblyReference.cache
+C:\Users\Filip\Desktop\diplomski\Common.Domain\obj\Debug\Common.Domain.csproj.CoreCompileInputs.cache
+C:\Users\Filip\Desktop\diplomski\Common.Domain\obj\Debug\Common.Domain.dll
+C:\Users\Filip\Desktop\diplomski\Common.Domain\obj\Debug\Common.Domain.pdb

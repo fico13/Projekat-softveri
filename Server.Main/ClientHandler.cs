@@ -130,6 +130,9 @@ namespace Server.Main
                 case Operation.SacuvajTakmicenje:
                     Controller.Instance.SacuvajTakmicenje((Takmicenje)request.RequestObject);
                     break;
+                case Operation.VratiSvaTakmicenja:
+                    response.ResponseObject = Controller.Instance.VratiSvaTakmicenja();
+                    break;
                 default:
                     break;
             }

@@ -32,7 +32,6 @@ namespace Client.Forms.GUIController
         internal void Init()
         {
             uCRegularniDeo.CbTimovi.DataSource = Communication.Instance.SendRequestGetResult<List<Tim>>(Operation.VratiSveTimove);
-            uCRegularniDeo.BtnDodajUtakmicu.Enabled = false;
             uCRegularniDeo.BtnSacuvajTakmicenje.Enabled = false;
         }
 
@@ -52,43 +51,16 @@ namespace Client.Forms.GUIController
                 uCRegularniDeo.RtbTimovi.AppendText(tim + Environment.NewLine);
                 uCRegularniDeo.CbTimovi.SelectedIndex = uCRegularniDeo.CbTimovi.SelectedIndex + 1;
                 uCRegularniDeo.TxtBrojKola.Text = (2 * timovi.Count() - 2).ToString();
+                uCRegularniDeo.BtnSacuvajTakmicenje.Enabled = true;
             }
             catch (ArgumentOutOfRangeException)
             {
                 uCRegularniDeo.BtnDodajTim.Enabled = false;
                 uCRegularniDeo.TxtBrojKola.Text = (2 * timovi.Count() - 2).ToString();
-                uCRegularniDeo.BtnDodajUtakmicu.Enabled = true;
-            }
-        }
-
-        
-
-        internal void DodajUtakmice()
-        {
-            SessionData.Instance.Domaci = new List<Tim>();
-            SessionData.Instance.Gost = new List<Tim>();
-            foreach (var tim in timovi)
-            {
-                SessionData.Instance.Domaci.Add(tim);
-            }
-            foreach (var tim in timovi)
-            {
-                SessionData.Instance.Gost.Add(tim);
-            }
-            try
-            {
-                FrmRegularUtakmica frmRegularUtakmica = new FrmRegularUtakmica();
-                frmRegularUtakmica.ShowDialog();
-                utakmice.Add(Session.SessionData.Instance.Utakmica);
                 uCRegularniDeo.BtnSacuvajTakmicenje.Enabled = true;
             }
-            catch (ServerCommunicationException)
-            {
-
-                throw;
-            }
-            
         }
+
 
         internal void SacuvajTakmicenje()
         {
@@ -97,8 +69,7 @@ namespace Client.Forms.GUIController
                 Takmicenje takmicenje = new Takmicenje
                 {
                     Naziv = uCRegularniDeo.TxtNazivTakmicenja.Text,
-                    BrojKola = Convert.ToInt32(uCRegularniDeo.TxtBrojKola.Text),
-                    Utakmice = utakmice
+                    BrojKola = Convert.ToInt32(uCRegularniDeo.TxtBrojKola.Text)
                 };
                 TakmicenjeValidator validator = new TakmicenjeValidator();
                 var result = validator.Validate(takmicenje);
@@ -113,6 +84,7 @@ namespace Client.Forms.GUIController
             }
             catch (ServerCommunicationException)
             {
+                MessageBox.Show("Sistem ne može da zapamti takmičenje ", "Upozorenje", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 throw;
             }
             

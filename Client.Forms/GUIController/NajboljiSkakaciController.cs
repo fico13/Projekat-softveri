@@ -65,8 +65,8 @@ namespace Client.Forms.GUIController
                 {
                     igraci[i].Rank = i + 1;
                 }
-                MessageBox.Show("Sistem je našao statistike po zadatoj vrednosti!", "Obaveštenje", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 uCNajboljiSkakaci.DgvIgraci.DataSource = igraci;
+                MessageBox.Show("Sistem je našao statistike po zadatoj vrednosti!", "Obaveštenje", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             }
             catch (ServerCommunicationException)

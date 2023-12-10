@@ -36,11 +36,6 @@ namespace Client.Forms.UserControls.Takmicenje
             sacuvajTakmicenjeController.DodajTimULigu();
         }
 
-        private void btnDodajUtakmicu_Click(object sender, EventArgs e)
-        {
-            sacuvajTakmicenjeController.DodajUtakmice();
-        }
-
         private void btnSacuvajTakmicenje_Click(object sender, EventArgs e)
         {
             sacuvajTakmicenjeController.SacuvajTakmicenje();

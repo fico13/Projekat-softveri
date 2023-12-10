@@ -145,6 +145,11 @@ namespace Server.ApplicationLogic
             so.ExecuteTemplate();
         }
 
-        
+        public List<Takmicenje> VratiSvaTakmicenja()
+        {
+            SystemOperationBase so = new VratiListuTakmicenjaSO();
+            so.ExecuteTemplate();
+            return ((VratiListuTakmicenjaSO)so).Result;
+        }
     }
 }

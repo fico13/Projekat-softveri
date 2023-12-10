@@ -16,9 +16,6 @@ namespace Common.Domain
         public int BrojKola { get; set; }
 
         [Browsable(false)]
-        public List<Utakmica> Utakmice { get; set; }
-
-        [Browsable(false)]
         public string TableName => "Takmicenje";
 
         [Browsable(false)]
@@ -48,7 +45,13 @@ namespace Common.Domain
         [Browsable(false)]
         public IDomainObject ReadObjectRow(SqlDataReader reader)
         {
-            throw new NotImplementedException();
+            Takmicenje takmicenje = new Takmicenje
+            {
+                TakmicenjeID = (int)reader["TakmicenjeId"],
+                Naziv = (string)reader["Naziv"],
+                BrojKola = (int)reader["BrojKola"]
+            };
+            return takmicenje;
         }
 
         public override string ToString()
