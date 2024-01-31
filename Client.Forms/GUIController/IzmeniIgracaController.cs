@@ -120,7 +120,7 @@ namespace Client.Forms.GUIController
 
         internal void IzmeniIgraca()
         {
-            if(UserControlsHelper.EmptyText(uCIzmeniIgraca.TxtIme) && UserControlsHelper.EmptyText(uCIzmeniIgraca.TxtPrezime) && UserControlsHelper.EmptyText(uCIzmeniIgraca.TxtDrzava) && UserControlsHelper.EmptyText(uCIzmeniIgraca.TxtBrojNaDresu) && UserControlsHelper.EmptyText(uCIzmeniIgraca.TxtVisina) && UserControlsHelper.EmptyText(uCIzmeniIgraca.TxtTezina))
+            if(UserControlsHelper.EmptyText(uCIzmeniIgraca.TxtIme) || UserControlsHelper.EmptyText(uCIzmeniIgraca.TxtPrezime) || UserControlsHelper.EmptyText(uCIzmeniIgraca.TxtDrzava) || UserControlsHelper.EmptyText(uCIzmeniIgraca.TxtBrojNaDresu) || UserControlsHelper.EmptyText(uCIzmeniIgraca.TxtVisina) && UserControlsHelper.EmptyText(uCIzmeniIgraca.TxtTezina))
             {
                 MessageBox.Show("Sistem ne može da izmeni igrača! Niste uneli sve potrebne vrednosti! Pokušajte ponovo!", "Upozorenje", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;

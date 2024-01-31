@@ -72,7 +72,6 @@ C:\Users\Filip\Desktop\Projekat\Client.Forms\bin\Debug\FluentValidation.xml
 C:\Users\Filip\Desktop\Projekat\Client.Forms\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 C:\Users\Filip\Desktop\Projekat\Client.Forms\bin\Debug\System.Threading.Tasks.Extensions.xml
 C:\Users\Filip\Desktop\Projekat\Client.Forms\obj\Debug\Client.Forms.Dialogs.Utakmica.FrmPlejofUtakmica.resources
-C:\Users\Filip\Desktop\Projekat\Client.Forms\obj\Debug\Client.Forms.Dialogs.Utakmica.FrmRegularUtakmica.resources
 C:\Users\Filip\Desktop\Projekat\Client.Forms\obj\Debug\Client.Forms.UserControls.Statistika.UCNajboljiAsistenti.resources
 C:\Users\Filip\Desktop\Projekat\Client.Forms\obj\Debug\Client.Forms.UserControls.Statistika.UCNajboljiSkakaci.resources
 C:\Users\Filip\Desktop\Projekat\Client.Forms\obj\Debug\Client.Forms.UserControls.Statistika.UCNajboljiStrelci.resources
